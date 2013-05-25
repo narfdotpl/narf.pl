@@ -7,7 +7,7 @@ One day I decided to play [Contra][] with my very special lady friend.
 It was great, although the game is *hard*.  This post contains a list of
 steps I took to get the following picture:
 
-![Contra](/assets/pegasus/contra-instagram.jpg)
+[![Contra](/thumbnails/pegasus/contra-instagram.jpg)](/assets/pegasus/contra-instagram.jpg)
 
   [Contra]: http://en.wikipedia.org/wiki/Contra_(video_game)
 

@@ -4,8 +4,9 @@
 from __future__ import division
 from hashlib import md5
 from os import walk
-from os.path import getmtime, join
+from os.path import exists, getmtime, join
 
+import Image
 from flask import Flask, redirect, render_template, request
 from markdown import markdown as render_markdown
 
@@ -63,6 +64,32 @@ class memoized(object):
         mtime = getmtime(join(settings.ASSETS_DIR, path))
         return '/static/assets/%s?%s' % (path, get_hash(mtime))
 
+    def static_url_for_thumbnail(path):
+        # 'a/b/c.jpg' → '/static/thumbnails/sdfsdfsdf.jpg'
+
+        # get asset data
+        asset_path = join(settings.ASSETS_DIR, path)
+        mtime = getmtime(asset_path)
+        image = Image.open(asset_path)
+        width, height = image.size
+
+        # don't scale small images
+        max_width = 640
+        if width <= max_width:
+            return memoized.static_url_for_asset(path)
+
+        # create hashed filename
+        filename = '%s.jpg' % get_hash('%s:%f:%d' % (path, mtime, max_width))
+        thumbnail_path = join(settings.THUMBNAILS_DIR, filename)
+        url = '/static/thumbnails/%s' % filename
+
+        # create thumbnail if it doesn't exist
+        if not exists(thumbnail_path):
+            image.thumbnail((max_width, height), Image.ANTIALIAS)
+            image.save(thumbnail_path, "JPEG", quality=95)
+
+        return url
+
 
 def get_hash(x):
     return md5(str(x)).hexdigest()
@@ -115,6 +142,20 @@ def asset(path):
         return redirect(memoized.static_url_for_asset(path))
     else:
         return HTTP_404
+
+
+@app.route('/thumbnails/<path:path>')
+def thumbnails(path):
+    # fail fast
+    if path not in memoized.asset_relative_paths():
+        return
+
+    # allow only thumbnails of jpgs and pngs
+    if not any(path.endswith(x) for x in ['.jpg', '.png']):
+        return '418', 418
+
+    # redirect to thumbnail
+    return redirect(memoized.static_url_for_thumbnail(path))
 
 
 if __name__ == '__main__':
