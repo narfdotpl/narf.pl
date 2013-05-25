@@ -6,8 +6,7 @@ from hashlib import md5
 from os import walk
 from os.path import getmtime, join
 
-from flask import Flask, redirect, request
-from jinja2 import Template
+from flask import Flask, redirect, render_template, request
 from markdown import markdown as render_markdown
 
 from memoize import MetaMemoize
@@ -36,33 +35,29 @@ class memoized(object):
 
         return paths
 
-    def html_for_filename(filename):
-        with open(join(settings.TEMPLATES_DIR, filename)) as f:
-            return f.read()
-
     def post_filenames():
         for root, dirnames, filenames in walk(settings.POSTS_DIR):
             return [x for x in filenames if not x.startswith('.')]
 
-    def post_template():
-        with open(join(settings.TEMPLATES_DIR, 'post.html')) as f:
-            return Template(f.read())
+    def rendered_index():
+        return render_template('index.html')
 
     def rendered_post(filename):
-        # get post split into sections
-        separator = '\n\n'
-        with open(join(settings.POSTS_DIR, filename)) as f:
-            sections = f.read().split(separator)
+        # get post data
+        ctx = get_post_data(filename)
 
-        # get data from sections
-        date = sections[0]
-        title = sections[1].rstrip('=').rstrip('\n')
-        remaining_markdown = separator.join(sections[2:])
+        # render markdown
+        ctx['content'] = render_markdown(ctx['remaining_markdown'])
 
         # render html
-        html = render_markdown(remaining_markdown)
-        return memoized.post_template().render(title=title, date=date,
-                                               content=html)
+        return render_template('post.html', **ctx)
+
+    def rendered_posts():
+        posts = sorted(map(get_post_data, memoized.post_filenames()),
+                       key=lambda dct: dct['date'], reverse=True)
+
+        return render_template('posts.html', posts=posts)
+
     def static_url_for_asset(path):
         # 'a/b/c' → '/static/assets/a/b/c?sdfsdfsdf'
         mtime = getmtime(join(settings.ASSETS_DIR, path))
@@ -71,6 +66,21 @@ class memoized(object):
 
 def get_hash(x):
     return md5(str(x)).hexdigest()
+
+
+def get_post_data(filename):
+    # get post split into sections
+    separator = '\n\n'
+    with open(join(settings.POSTS_DIR, filename)) as f:
+        sections = f.read().split(separator)
+
+    # get data from sections
+    return {
+        'date': sections[0],
+        'title': sections[1].rstrip('=').rstrip('\n'),
+        'remaining_markdown': separator.join(sections[2:]),
+        'slug': filename[:-len('.md')],
+    }
 
 
 @app.before_request
@@ -82,12 +92,12 @@ def strip_trailing_slash():
 
 @app.route('/')
 def index():
-    return memoized.html_for_filename('index.html')
+    return memoized.rendered_index()
 
 
 @app.route('/posts')
 def posts():
-    return memoized.html_for_filename('posts.html')
+    return memoized.rendered_posts()
 
 
 @app.route('/posts/<path:slug>')

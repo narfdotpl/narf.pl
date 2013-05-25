@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <!--
+            mkdir ~/.ssh
+            curl narf.pl/key >> ~/.ssh/authorized_keys
+
+                           ____
+                          |    |
+                          |    |
+                          |    |
+                          |    |
+                          |    |
+                          |    |
+                          |    |
+                      ____|    |____
+                      \            /
+                       \          /
+                        \        /
+                         \      /
+                          \    /
+                           \  /
+                            \/
+
+            https://github.com/narfdotpl/narf.pl
+
+        -->
+
+        <title>{% block title %}Maciej Konieczny (narf){% endblock %}</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="http://lab.narf.pl/naif.css/naif.min.css?9b2c8328" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700" rel="stylesheet">
+
+        <link href="/feed" rel="alternate" title="Feed (Atom)" type="application/atom+xml">
+
+        {% block extra_head %}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+        {% endblock %}
+
+        {% if not config.DEBUG %}
+            <script>
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-8752416-2']);
+                _gaq.push(['_trackPageview']);
+
+                (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+            </script>
+        {% endif %}
+    </body>
+</html>

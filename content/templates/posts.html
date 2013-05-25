@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+
+{% block title %}posts{% endblock %}
+
+
+{% block body %}
+    <section id="main-wrapper" class="narrow">
+
+        <header class="centered">
+            <h1>posts</h1>
+
+            <address class="inlined author">
+                written by <a href="/" class="fn">Maciej Konieczny</a>
+            </address>
+        </header>
+
+        <br>
+
+        <ul class="narrow">
+            {% for post in posts %}
+                <li><a href="/posts/{{ post.slug }}">{{ post.title|safe }}</a></li>
+            {% endfor %}
+        </ul>
+    </article>
+{% endblock %}

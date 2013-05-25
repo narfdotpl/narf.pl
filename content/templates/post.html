@@ -1,3 +1,26 @@
-title: {{ title }}
-date: {{ date }}
-content: {{ content }}
+{% extends "base.html" %}
+
+
+{% block title %}{{ title|safe }}{% endblock %}
+
+
+{% block body %}
+    <article id="main-wrapper">
+
+        <header class="centered narrow">
+            <h1>{{ title|safe }}</h1>
+
+            <address class="inlined">
+                <a href="/">Maciej Konieczny</a>
+            </address>
+
+            &middot;
+
+            <time pubdate datetime="{{ date }}">{{ date }}</time>
+        </header>
+
+        <br>
+
+        {{ content|safe }}
+    </article>
+{% endblock %}
