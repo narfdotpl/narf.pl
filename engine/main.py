@@ -59,10 +59,17 @@ class memoized(object):
 
         return render_template('posts.html', posts=posts)
 
+    def static_url():
+        if app.debug:
+            return '/static'
+        else:
+            return 'http://static.narf.pl/main'
+
     def static_url_for_asset(path):
         # 'a/b/c' → '/static/assets/a/b/c?sdfsdfsdf'
         mtime = getmtime(join(settings.ASSETS_DIR, path))
-        return '/static/assets/%s?%s' % (path, get_hash(mtime))
+        base = memoized.static_url()
+        return '%s/assets/%s?%s' % (base, path, get_hash(mtime))
 
     def static_url_for_thumbnail(path):
         # 'a/b/c.jpg' → '/static/thumbnails/sdfsdfsdf.jpg'
@@ -81,7 +88,8 @@ class memoized(object):
         # create hashed filename
         filename = '%s.jpg' % get_hash('%s:%f:%d' % (path, mtime, max_width))
         thumbnail_path = join(settings.THUMBNAILS_DIR, filename)
-        url = '/static/thumbnails/%s' % filename
+        base = memoized.static_url()
+        url = '%s/thumbnails/%s' % (base, filename)
 
         # create thumbnail if it doesn't exist
         if not exists(thumbnail_path):
