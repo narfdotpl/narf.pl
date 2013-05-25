@@ -2,20 +2,20 @@
 # encoding: utf-8
 
 from __future__ import division
+from hashlib import md5
 from os import walk
 from os.path import getmtime, join
 
-from flask import Flask, redirect
+from flask import Flask, redirect, request
 from jinja2 import Template
 from markdown import markdown as render_markdown
 
-from helpers import RouteFactory, get_hash
 from memoize import MetaMemoize
 import settings
 
 
+HTTP_404 = '404', 404
 app = Flask(__name__)
-route = RouteFactory(app)
 
 
 class memoized(object):
@@ -69,27 +69,42 @@ class memoized(object):
         return '/static/assets/%s?%s' % (path, get_hash(mtime))
 
 
-@route('/')
+def get_hash(x):
+    return md5(str(x)).hexdigest()
+
+
+@app.before_request
+def strip_trailing_slash():
+    path = request.path
+    if path != '/' and path.endswith('/'):
+        return redirect(path.rstrip('/'), 301)
+
+
+@app.route('/')
 def index():
     return memoized.html_for_filename('index.html')
 
 
-@route('/posts')
+@app.route('/posts')
 def posts():
     return memoized.html_for_filename('posts.html')
 
 
-@route('/posts/<path:slug>')
+@app.route('/posts/<path:slug>')
 def post(slug):
     filename = slug + '.md'
     if filename in memoized.post_filenames():
         return memoized.rendered_post(filename)
+    else:
+        return HTTP_404
 
 
-@route('/assets/<path:path>')
+@app.route('/assets/<path:path>')
 def asset(path):
     if path in memoized.asset_relative_paths():
         return redirect(memoized.static_url_for_asset(path))
+    else:
+        return HTTP_404
 
 
 if __name__ == '__main__':
