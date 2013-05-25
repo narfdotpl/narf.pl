@@ -1,6 +1,5 @@
-[@narfdotpl](http://narf.pl/) &middot; 2013-03-25
+2013-03-25
 
----------------------------
 Instapaper &lt; Readability
 ===========================
 

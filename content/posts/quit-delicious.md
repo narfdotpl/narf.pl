@@ -1,6 +1,5 @@
-[@narfdotpl](http://narf.pl/) &middot; 2011-10-24
+2011-10-24
 
---------------
 Quit Delicious
 ==============
 

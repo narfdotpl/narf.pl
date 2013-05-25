@@ -1,6 +1,5 @@
-[@narfdotpl](http://narf.pl/) &middot; 2011-06-07, 2013-02-16
+2011-06-07
 
-----------
 Plain Text
 ==========
 
@@ -20,7 +19,7 @@ plain text files.
   [Dustin Sallings]: http://dustin.github.com/2009/12/31/countdown.html
 
 
-In early 2013 I [switched][commit] to using [GitHub Flavored Markdown][gfm]
+2013-02-16: I [switched][commit] to using [GitHub Flavored Markdown][gfm]
 and hosting it on GitHub.
 
 
