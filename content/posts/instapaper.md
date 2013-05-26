@@ -8,7 +8,7 @@ by [Arc90][].  Today I use three of their products: a Chrome Extension,
 an iPad app, and an iPhone app.
 
 [A few weeks ago][homescreen] I decided to give [Instapaper][] a try.
-I really wanted to like it - it'd be heartwarming if a sole developer
+I really wanted to like it -- it'd be heartwarming if a sole developer
 could create a polished product and make a sustainable business out of
 it.  Although I'm convinced that [Marco][] is doing well financially, his
 product is far from being polished.  In my three weeks with Instapaper

@@ -7,8 +7,9 @@ from os import walk
 from os.path import exists, getmtime, join
 
 import Image
-from flask import Flask, redirect, render_template, request
+from flask import Flask, Markup, redirect, render_template, request
 from markdown import markdown as render_markdown
+import typogrify.filters
 
 from memoize import MetaMemoize
 import settings
@@ -116,6 +117,14 @@ def get_post_data(filename):
         'remaining_markdown': separator.join(sections[2:]),
         'slug': filename[:-len('.md')],
     }
+
+
+@app.template_filter('typo')
+def typo_filter(text):
+    text = typogrify.filters.widont(text)
+    text = typogrify.filters.smartypants(text)
+
+    return Markup(text)
 
 
 @app.before_request

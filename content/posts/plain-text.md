@@ -11,7 +11,7 @@ plain text files.
 
 > If something looks ghetto, that's a feature.
 >
-> &mdash; [Dustin Sallings][]
+> -- [Dustin Sallings][]
 
 
   [Jekyll]: http://jekyllrb.com/

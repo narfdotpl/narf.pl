@@ -36,17 +36,19 @@
 
 
 {% block body %}
-    <div id="main-wrapper" class="narrow">
+    <div id="main-wrapper" class="narrow legible">
 
         <header class="centered">
             <h1>Maciej Konieczny</h1>
         </header>
 
         <p>
-            I'm a programmer from Milanówek, Poland.
-            Some know me as narf.
-            You can contact me via email at <a href="mailto:hello@narf.pl">hello<wbr>@<wbr>narf.pl</a>.
-            Word wrapping is&nbsp;hard.
+            {{ "
+                I'm a programmer from Milanówek, Poland.
+                Some know me as narf.
+                You can contact me via email at <a href='mailto:hello@narf.pl'>hello<wbr>@<wbr>narf.pl</a>.
+                Word wrapping is hard.
+            "|typo }}
         </p>
 
         <div class="row">

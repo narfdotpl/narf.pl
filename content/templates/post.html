@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
 
-{% block title %}{{ title|safe }}{% endblock %}
+{% block title %}{{ title|typo }}{% endblock %}
 
 
 {% block body %}
     <article id="main-wrapper">
 
-        <header class="centered narrow">
-            <h1>{{ title|safe }}</h1>
+        <header class="centered narrow legible">
+            <h1>{{ title|typo }}</h1>
 
             <address class="inlined">
                 <a href="/">Maciej Konieczny</a>
@@ -21,6 +21,6 @@
 
         <br>
 
-        {{ content|safe }}
+        {{ content|typo }}
     </article>
 {% endblock %}

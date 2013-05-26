@@ -5,7 +5,7 @@
 
 
 {% block body %}
-    <section id="main-wrapper" class="narrow">
+    <section id="main-wrapper" class="narrow legible">
 
         <header class="centered">
             <h1>posts</h1>
@@ -19,7 +19,7 @@
 
         <ul class="narrow">
             {% for post in posts %}
-                <li><a href="/posts/{{ post.slug }}">{{ post.title|safe }}</a></li>
+                <li><a href="/posts/{{ post.slug }}">{{ post.title|typo }}</a></li>
             {% endfor %}
         </ul>
     </article>
