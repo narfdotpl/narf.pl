@@ -18,6 +18,7 @@ plain text files.
   [Hyde]: http://ringce.com/hyde
   [Dustin Sallings]: http://dustin.github.com/2009/12/31/countdown.html
 
+------------------------------------------------------------------------------
 
 2013-02-16: I [switched][commit] to using [GitHub Flavored Markdown][gfm]
 and hosting it on GitHub.

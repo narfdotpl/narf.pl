@@ -47,8 +47,8 @@ Cons:
   the article view)
 - no support for "browse the web and quickly make a page readable" workflow
   (try to read [Programming in Lua][PIL]...)
-- support for only one device orientation (especially annoying when you use
-  an iPad upside down because it's charging)
+- support for only one device orientation (especially annoying when you're
+  using an iPad upside down because it's charging)
 
   [PIL]: http://www.lua.org/pil/contents.html
 

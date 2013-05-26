@@ -61,7 +61,7 @@ After a couple of minutes my right thumb started to hurt, so I rebound
 Step 5: experiment with emulator effects
 ----------------------------------------
 
-In Nestopia you can tweak many settings (screen curvature, NTSC video
+In Nestopia one can tweak many settings (screen curvature, NTSC video
 artifacts, etc.) to induce various levels of nostalgia:
 
 - normal
