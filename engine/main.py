@@ -2,6 +2,7 @@
 # encoding: utf-8
 
 from __future__ import division
+import datetime
 from hashlib import md5
 from os import walk
 from os.path import exists, getmtime, join
@@ -42,7 +43,7 @@ class memoized(object):
             return [x for x in filenames if not x.startswith('.')]
 
     def rendered_index():
-        return render_template('index.html')
+        return render_template('index.html', year=datetime.date.today().year)
 
     def rendered_post(filename):
         # get post data
