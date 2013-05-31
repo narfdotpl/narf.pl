@@ -209,5 +209,31 @@ def thumbnails(path):
     return redirect(memoized.static_url_for_thumbnail(path))
 
 
+@app.route('/key')
+def redirect_to_key():
+    return redirect(memoized.static_url_for_asset('index/id_rsa.pub'))
+
+
+REDIRECTS = {
+    '/feed.xml': '/feed',
+    '/plain.txt': '/posts/plain-text',
+    '/quit.txt': '/posts/quit-delicious',
+}
+
+@app.route('/<path:path>')
+def redirect_from_old_path(path):
+    # /tmp or specific redirect
+    if path.startswith('tmp/'):
+        url = 'http://lab.narf.pl/' + path
+    else:
+        url = REDIRECTS.get('/' + path, None)
+
+    # 301 or 404
+    if url:
+        return redirect(url, 301)
+    else:
+        return HTTP_404
+
+
 if __name__ == '__main__':
     app.run(debug=True)
