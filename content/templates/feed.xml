@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>narf.pl</title>
+    <author>
+        <name>Maciej Konieczny</name>
+        <uri>http://narf.pl/</uri>
+    </author>
+    <id>urn:uuid:f13015d1-8910-4ceb-9217-7d14141c2918</id>
+    <updated>{{ entries[0].updated }}</updated>
+    <link href="http://narf.pl/feed" rel="self" type="application/atom+xml" />
+
+    {% for entry in entries %}
+        <entry>
+            <title>{{ entry.title|safe }}</title>
+            <link href="{{ entry.link }}" rel="alternate" type="text/html" />
+            <id>{% if entry.uuid %}urn:uuid:{{ entry.uuid }}{% else %}{{ entry.link }}{% endif %}</id>
+            <updated>{{ entry.updated }}</updated>
+            <content type="html">
+                {% if entry.body %}
+                    {{ entry.body }}
+                {% else %}
+                    goto &lt;a href="{{ entry.link }}"&gt;{{ entry.link }}&lt;/a&gt;
+                {% endif %}
+            </content>
+        </entry>
+    {% endfor %}
+</feed>

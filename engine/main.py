@@ -8,9 +8,11 @@ from os import walk
 from os.path import exists, getmtime, join
 
 import Image
-from flask import Flask, Markup, redirect, render_template, request
+from flask import (Flask, Markup, make_response, redirect, render_template,
+    request)
 from markdown import markdown as render_markdown
 import typogrify.filters
+import yaml
 
 from memoize import MetaMemoize
 import settings
@@ -41,6 +43,30 @@ class memoized(object):
     def post_filenames():
         for root, dirnames, filenames in walk(settings.POSTS_DIR):
             return [x for x in filenames if not x.startswith('.')]
+
+    def rendered_feed():
+        # get entries from YAML
+        path = join(settings.CONTENT_DIR, 'feed.yaml')
+        with open(path) as f:
+            entries = yaml.load(f)
+
+        # add posts
+        for filename in memoized.post_filenames():
+            dct = get_post_data(filename)
+            entries.append({
+                'title': dct['title'],
+                'time': '%s 00:00' % dct['date'],
+                'link': 'http://narf.pl/posts/%s' % dct['slug'],
+            })
+
+        # set "updated" field (ISO 8601) in a retarded manner
+        for e in entries:
+            e['updated'] = '%s:00+01:00' % e['time'].replace(' ', 'T')
+
+        # sort entries by update time
+        entries = sorted(entries, reverse=True, key=lambda e: e['updated'])
+
+        return render_template('feed.xml', entries=entries)
 
     def rendered_index():
         return render_template('index.html', year=datetime.date.today().year)
@@ -152,6 +178,13 @@ def post(slug):
         return memoized.rendered_post(filename)
     else:
         return HTTP_404
+
+
+@app.route('/feed')
+def feed():
+    response = make_response(memoized.rendered_feed())
+    response.mimetype = 'application/atom+xml'
+    return response
 
 
 @app.route('/assets/<path:path>')
