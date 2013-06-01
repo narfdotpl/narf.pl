@@ -5,22 +5,25 @@
 
 
 {% block body %}
-    <article id="main-wrapper">
+    {# https://www.readability.com/developers/guidelines #}
+    <article id="main-wrapper" class="hentry">
 
         <header class="centered narrow legible">
-            <h1>{{ title|typo }}</h1>
+            <h1 class="entry-title">{{ title|typo }}</h1>
 
-            <address class="inlined">
-                <a href="/">Maciej Konieczny</a>
+            <address class="inlined byline author vcard">
+                <a href="/" class="fn">Maciej Konieczny</a>
             </address>
 
             &middot;
 
-            <time pubdate datetime="{{ date }}">{{ date }}</time>
+            <time pubdate datetime="{{ date }}" class="published">{{ date }}</time>
         </header>
 
         <br>
 
-        {{ content|typo }}
+        <div class="entry-content">
+            {{ content|typo }}
+        </div>
     </article>
 {% endblock %}
