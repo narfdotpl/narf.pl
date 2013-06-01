@@ -9,6 +9,7 @@ from fabric.api import cd, env, lcd, local, run, task
 
 CURRENT_DIR = dirname(realpath(__file__))
 REPO_DIR = CURRENT_DIR
+CONTENT_DIR = join(REPO_DIR, 'content')
 ENGINE_DIR = join(REPO_DIR, 'engine')
 
 
@@ -45,6 +46,14 @@ def dev():
         # run server
         local('python main.py')
 
+
+@task
+def js():
+    'Compile CoffeeScript.'
+
+    with lcd(join(CONTENT_DIR, 'assets', 'index')):
+        local('coffee --print script.coffee | '
+              'uglifyjs --no-copyright > script.js')
 
 @task
 def restart():
