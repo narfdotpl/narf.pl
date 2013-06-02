@@ -214,19 +214,20 @@ def redirect_to_key():
     return redirect(memoized.static_url_for_asset('index/id_rsa.pub'))
 
 
-REDIRECTS = {
+SPECIFIC_REDIRECTS = {
     '/feed.xml': '/feed',
     '/plain.txt': '/posts/plain-text',
     '/quit.txt': '/posts/quit-delicious',
 }
+LAB_REDIRECT_PREFIXES = ['canvas-pong', 'jquery-typing', 'tmp']
 
 @app.route('/<path:path>')
 def redirect_from_old_path(path):
-    # /tmp or specific redirect
-    if path.startswith('tmp/'):
+    # lab or specific redirect
+    if any(path.startswith(prefix) for prefix in LAB_REDIRECT_PREFIXES):
         url = 'http://lab.narf.pl/' + path
     else:
-        url = REDIRECTS.get('/' + path, None)
+        url = SPECIFIC_REDIRECTS.get('/' + path, None)
 
     # 301 or 404
     if url:
