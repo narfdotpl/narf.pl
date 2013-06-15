@@ -1,7 +1,7 @@
 2013-03-20
 
-How to play NES (Pegasus) games on a Mac using a PS3 controller
-===============================================================
+How to play NES (Pegasus) games on OS X using a PS3 controller
+==============================================================
 
 One day I decided to play [Contra][] with my very special lady friend.
 It was great, although the game is *hard*.  This post contains a list of
