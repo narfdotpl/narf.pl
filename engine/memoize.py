@@ -4,6 +4,8 @@
 from __future__ import absolute_import, division
 from functools import wraps
 
+from flask import current_app
+
 
 class MetaMemoize(type):
     """
@@ -36,7 +38,7 @@ def memoize(func):
 
         # get memoized result or compute and memoize it
         key = args
-        if key in dct:
+        if key in dct and not current_app.debug:
             result = dct[key]
         else:
             result = func(*args)
