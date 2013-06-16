@@ -150,6 +150,7 @@ def get_post_data(filename):
 def typo_filter(text):
     text = typogrify.filters.widont(text)
     text = typogrify.filters.smartypants(text)
+    text = text.replace('OS X', 'OS&nbsp;X')
 
     return Markup(text)
 
