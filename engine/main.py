@@ -135,7 +135,7 @@ def get_post_data(filename):
     # get post split into sections
     separator = '\n\n'
     with open(join(settings.POSTS_DIR, filename)) as f:
-        sections = f.read().split(separator)
+        sections = f.read().decode('utf8').split(separator)
 
     # get data from sections
     return {
