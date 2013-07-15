@@ -6,6 +6,7 @@ import datetime
 from hashlib import md5
 from os import walk
 from os.path import exists, getmtime, join
+import re
 
 import Image
 from flask import (Flask, Markup, make_response, redirect, render_template,
@@ -75,10 +76,11 @@ class memoized(object):
         # get post data
         ctx = get_post_data(filename)
 
-        # render markdown
-        ctx['content'] = render_markdown(ctx['remaining_markdown'])
+        # render markdown and add footnote links
+        html = render_markdown(ctx['remaining_markdown'])
+        ctx['content'] = add_footnote_links(html)
 
-        # render html
+        # render final html
         return render_template('post.html', **ctx)
 
     def rendered_posts():
@@ -125,6 +127,23 @@ class memoized(object):
             image.save(thumbnail_path, "JPEG", quality=95)
 
         return url
+
+
+def add_footnote_links(html):
+    # replace all "[numbers]" with "<sup>" links
+    pattern = re.compile(r'([^\s])\[(\d+)\]([^\w])')
+    def repl(match):
+        repl.was_called = True
+        return '%s<a href="#footnotes"><sup>%s</sup></a>%s' % match.groups()
+
+    # perform replacement
+    html = pattern.sub(repl, html)
+
+    # wrap last <hr> in <a name>
+    if getattr(repl, 'was_called', True):
+        html = '<a name="footnotes"><hr></a>'.join(html.rsplit('<hr />', 1))
+
+    return html
 
 
 def get_hash(x):
