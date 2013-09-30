@@ -3,4 +3,4 @@
 Shattered Polygons
 ==================
 
-[![Shattered Polygons](/thumbnails/shattered-polygons.png)](/assets/shattered-polygons.png)
+![](polygons.png)

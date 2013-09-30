@@ -25,12 +25,12 @@ millions[1] (of unknown units).  This suggests an incredible fidelity!
 I decided to investigate.  I recorded the light level every five seconds
 during a day at the office.  Here are my results[2].
 
-[![Ambient light level](/thumbnails/vim-holy-light/ambient-light-level.png)](/assets/vim-holy-light/ambient-light-level.png)
+![Ambient light level](ambient-light-level.png)
 
 As expected, measurements aren't precise.  You can safely discard last
 five digits of that million.  Or even six:
 
-[![Ambient light level, last 5 and 6 digits discarded](/thumbnails/vim-holy-light/ambient-light-level-discarded.png)](/assets/vim-holy-light/ambient-light-level-discarded.png)
+![Ambient light level, last 5 and 6 digits discarded](ambient-light-level-discarded.png)
 
 ------------------------------------------------------------------------------
 

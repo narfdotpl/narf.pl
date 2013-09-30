@@ -7,7 +7,7 @@ One day I decided to play [Contra][] with my very special lady friend.
 It was great, although the game is *hard*.  This post contains a list of
 steps I took to get the following picture:
 
-[![Contra](/thumbnails/pegasus/contra-instagram.jpg)](/assets/pegasus/contra-instagram.jpg)
+![Contra](contra-instagram.jpg)
 
   [Contra]: http://en.wikipedia.org/wiki/Contra_(video_game)
 
@@ -38,7 +38,7 @@ in an emulator you can test it with [Joystick Show][], an 0.89 EUR app.
 To turn the controller off you have to choose "disconnect" from
 a Bluetooth menu:
 
-![how to disconnect a controller](/assets/pegasus/disconnect-controller.png)
+![how to disconnect a controller](disconnect-controller.png)
 
   [yt]: http://www.youtube.com/watch?v=IlR_HxeOQpI
   [Joystick Show]: https://itunes.apple.com/pl/app/joystick-show/id515886877?mt=12
@@ -55,7 +55,7 @@ Initially I bound arrows to arrows (duh), `X` to `A`, and `O` to `B`.
 After a couple of minutes my right thumb started to hurt, so I rebound
 `L1` to `A` and `L2` to `B`.
 
-![Nestopia preferences](/assets/pegasus/nestopia-preferences.png)
+![Nestopia preferences](nestopia-preferences.png)
 
 
 Step 5: experiment with emulator effects
@@ -66,12 +66,12 @@ artifacts, etc.) to induce various levels of nostalgia:
 
 - normal
 
-  ![normal](/assets/pegasus/contra-normal.png)
+  ![normal](contra-normal.png)
 
 - depixelized
 
-  ![depixelized](/assets/pegasus/contra-depixelized.png)
+  ![depixelized](contra-depixelized.png)
 
 - hipster
 
-  ![hipster](/assets/pegasus/contra-hipster.png)
+  ![hipster](contra-hipster.png)

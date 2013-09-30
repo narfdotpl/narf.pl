@@ -73,7 +73,7 @@ If you switch to a wider screen, you should switch to a wider FOV too.
 I used simple trigonometry to compute how big my new 16:9 FOV *β* should
 be, if I used to play with FOV *α* on a 4:3 screen:
 
-[![FOV formula](/thumbnails/cpma/fov-formula.png)](/assets/cpma/fov-formula.png)
+![FOV formula](fov-formula.png)
 
 Resulting formula is hard to do in the head, but Google can help with
 the [computation][] (replace "110" with your 4:3 FOV and "16/9" with

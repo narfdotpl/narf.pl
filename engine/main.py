@@ -3,12 +3,14 @@
 
 from __future__ import division
 import datetime
+from functools import partial
 from hashlib import md5
 from os import walk
 from os.path import exists, getmtime, join
 import re
 
 import Image
+from bs4 import BeautifulSoup
 from flask import (Flask, Markup, make_response, redirect, render_template,
     request)
 from markdown import markdown as render_markdown
@@ -76,9 +78,13 @@ class memoized(object):
         # get post data
         ctx = get_post_data(filename)
 
-        # render markdown and add footnote links
-        html = render_markdown(ctx['remaining_markdown'])
-        ctx['content'] = add_footnote_links(html)
+        # render and process markdown
+        ctx['content'] = antimap(ctx['remaining_markdown'], [
+            render_markdown,
+            partial(resolve_asset_urls, filename),
+            thumbnail_big_images,
+            add_footnote_links,
+        ])
 
         # render final html
         return render_template('post.html', **ctx)
@@ -129,6 +135,17 @@ class memoized(object):
         return url
 
 
+def antimap(x, functions):
+    """
+    `antimap(x, [f, g])` == `g(f(x))`
+    """
+
+    for f in functions:
+        x = f(x)
+
+    return x
+
+
 def add_footnote_links(html):
     # replace all "[numbers]" with "<sup>" links
     pattern = re.compile(r'([^\s])\[(\d+)\]([^\w])')
@@ -163,6 +180,58 @@ def get_post_data(filename):
         'remaining_markdown': separator.join(sections[2:]),
         'slug': filename[:-len('.md')],
     }
+
+
+def resolve_asset_urls(filename, html):
+    """
+    >>> resolve_asset_urls('foo.md', '<a href="bar.jpg">baz</a>')
+    u'<a href="/assets/foo/bar.jpg">baz</a>'
+    """
+
+    slug = filename[:-len('.md')]
+    soup = BeautifulSoup(html)
+
+    def change_url(tag, key):
+        url = tag[key]
+        if not (url.startswith('/') or url.startswith('#') or '//' in url):
+            tag[key] = '/assets/%s/%s' % (slug, url)
+
+    for tag_name, key in [
+        ('a', 'href'),
+        ('img', 'src'),
+    ]:
+        for tag in soup.find_all(tag_name):
+            change_url(tag, key)
+
+    return unicode(soup)
+
+
+def thumbnail_big_images(html):
+    """
+    >>> thumbnail_big_images('<img src="/assets/foo.jpg">')
+    u'<a href="/assets/foo.jpg"><img src="/thumbnails/foo.jpg"></a>'
+    """
+
+    prefix = '/assets/'
+    soup = BeautifulSoup(html)
+
+    for img in soup.find_all('img'):
+        url = img['src']
+        path = url[len(prefix):]
+
+        # check if the image can have a thumbnail
+        if url.startswith(prefix) and 'thumbnails' in \
+                                      memoized.static_url_for_thumbnail(path):
+            # use the thumbnail instead of the original image
+            img['src'] = '/thumbnails/%s' % path
+
+            # wrap the thumbnail in a link to the original image
+            if not (img.parent and img.parent.name == 'a'):
+                a = soup.new_tag('a')
+                a['href'] = url
+                a.append(img.replace_with(a))
+
+    return unicode(soup)
 
 
 @app.template_filter('typo')

@@ -15,7 +15,7 @@ office use.  My criteria were:
 I researched and, thanks to friends, tested, for at least one day,
 the following headphones:
 
-[![headphones](/thumbnails/office-headphones.jpg)](/assets/office-headphones.jpg)
+![headphones](headphones.jpg)
 
 - Sennheiser CX 200
 - Sennheiser HD 202
