@@ -216,7 +216,7 @@ def asset(path):
 
 
 @app.route('/thumbnails/<path:path>')
-def thumbnails(path):
+def thumbnail(path):
     # fail fast
     if path not in memoized.asset_relative_paths():
         return
