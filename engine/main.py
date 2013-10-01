@@ -158,7 +158,7 @@ def add_footnote_links(html):
 
     # wrap last <hr> in <a name>
     if getattr(repl, 'was_called', True):
-        html = '<a name="footnotes"><hr></a>'.join(html.rsplit('<hr />', 1))
+        html = '<a name="footnotes"><hr></a>'.join(html.rsplit('<hr/>', 1))
 
     return html
 
