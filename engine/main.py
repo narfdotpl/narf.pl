@@ -307,6 +307,7 @@ SPECIFIC_REDIRECTS = {
     '/feed.xml': '/feed',
     '/plain.txt': '/posts/plain-text',
     '/quit.txt': '/posts/quit-delicious',
+    '/samo-sie-nie-zrobi': 'http://www.youtube.com/watch?v=xOUjIr70XgQ',
 }
 LAB_REDIRECT_PREFIXES = ['canvas-pong', 'jquery-typing', 'tmp']
 
