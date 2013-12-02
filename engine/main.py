@@ -59,7 +59,7 @@ class memoized(object):
             entries.append({
                 'title': dct['title'],
                 'time': '%s 00:00' % dct['date'],
-                'link': 'http://narf.pl/posts/%s' % dct['slug'],
+                'link': dct['url'],
             })
 
         # set "updated" field (ISO 8601) in a retarded manner
@@ -85,6 +85,19 @@ class memoized(object):
             thumbnail_big_images,
             add_footnote_links,
         ])
+
+        # get image URLs
+        soup = BeautifulSoup(ctx['content'])
+        ctx['image_urls'] = []
+        for img in soup.find_all('img'):
+            url = img['src']
+
+            # add domain
+            if url.startswith('/'):
+                url = 'http://narf.pl' + url
+
+            ctx['image_urls'].append(url)
+
 
         # render final html
         return render_template('post.html', **ctx)
@@ -174,11 +187,13 @@ def get_post_data(filename):
         sections = f.read().decode('utf8').split(separator)
 
     # get data from sections
+    slug = filename[:-len('.md')]
     return {
         'date': sections[0],
         'title': sections[1].rstrip('=').rstrip('\n'),
         'remaining_markdown': separator.join(sections[2:]),
-        'slug': filename[:-len('.md')],
+        'slug': slug,
+        'url': 'http://narf.pl/posts/%s' % slug,
     }
 
 

@@ -4,6 +4,18 @@
 {% block title %}{{ title|typo }}{% endblock %}
 
 
+{% block extra_head %}
+    <meta property="og:url" content="{{ url }}">
+    <meta property="og:title" content="{{ title|typo }}">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="{{ date }}">
+
+    {% if image_urls %}
+        <meta property="og:image" content="{{ image_urls.0 }}">
+    {% endif %}
+{% endblock %}
+
+
 {% block body %}
     {# https://www.readability.com/developers/guidelines #}
     <article id="main-wrapper" class="hentry">
