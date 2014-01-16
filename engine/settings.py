@@ -14,3 +14,5 @@ ASSETS_DIR = join(CONTENT_DIR, 'assets')
 POSTS_DIR = join(CONTENT_DIR, 'posts')
 STATIC_DIR = join(ENGINE_DIR, '_static')
 THUMBNAILS_DIR = join(STATIC_DIR, 'thumbnails')
+
+STATS_DIR = join(ENGINE_DIR, 'stats')

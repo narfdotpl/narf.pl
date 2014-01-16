@@ -318,6 +318,19 @@ def redirect_to_key():
     return redirect(memoized.static_url_for_asset('index/id_rsa.pub'))
 
 
+@app.route('/companion')
+def redirect_to_companion():
+    # save stats
+    path = join(settings.STATS_DIR, 'companion.csv')
+    with open(path, 'a') as f:
+        f.write('%s\t%s\t%s\n' % (
+            datetime.datetime.now().isoformat(),
+            request.url,
+            request.headers.get('Referer')))
+
+    return redirect('http://lab.narf.pl/companion/')
+
+
 SPECIFIC_REDIRECTS = {
     '/feed.xml': '/feed',
     '/plain.txt': '/posts/plain-text',
