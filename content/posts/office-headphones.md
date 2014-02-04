@@ -10,7 +10,7 @@ office use.  My criteria were:
 - moderate to good blocking of outside sound
 - not too uncomfortable to wear for six hours a day
 - comfortable to take off quickly
-- price below 150 EUR
+- priced below 150 EUR
 
 I researched and, thanks to friends, tested, for at least one day,
 the following headphones:
@@ -49,14 +49,14 @@ Sennheiser HD 202
 I was using the strong bass HD 202s, "the cheapest big Sennheisers",
 for, I think, at least two years when I was at the university.
 Unfortunately, they're the *on* ear, not *around* the ear headphones and
-as such are too uncomfortable to keep on the head for half a day.
+as such are too uncomfortable to keep on the head for half of a day.
 
 
 Sennheiser HD 380 Pro
 ---------------------
 
-I saw the HD 380s' recommendations in my Facebook feed a couple of
-times.  [Other geeks][Marco] seemed to be fond of them too.  Given
+I have seen the HD 380s' recommendations in my Facebook feed a couple
+of times.  [Other geeks][Marco] seemed to be fond of them too.  Given
 this, the "Pro" label, and the fact that they were the most expensive
 headphones of the four pairs I tested, I had high expectations.
 
