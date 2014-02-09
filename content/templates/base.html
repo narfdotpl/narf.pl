@@ -33,6 +33,18 @@
         <link href="http://lab.narf.pl/naif.css/naif.min.css?9b2c8328" rel="stylesheet">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700" rel="stylesheet">
 
+        <style>
+            figure {
+                margin: 0 -192px 28px;
+            }
+
+            @media (max-width: 1024px) {
+                figure {
+                    margin: 0 -12px 28px;
+                }
+            }
+        </style>
+
         <link href="/feed" rel="alternate" title="Feed (Atom)" type="application/atom+xml">
 
         {% block extra_head %}
@@ -41,6 +53,25 @@
     <body>
         {% block body %}
         {% endblock %}
+
+        <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+        <script>
+            $(function () {
+                var $figures = $('figure')
+
+                var adjustFigureMargins = function () {
+                    var width = $(window).width()
+                    var margin = Math.max(-192, Math.min(-12, -((width - 640) / 2)))
+
+                    $figures.css('margin-left',  margin + 'px')
+                    $figures.css('margin-right', margin + 'px')
+                }
+
+                adjustFigureMargins()
+
+                $(window).resize(adjustFigureMargins)
+            })
+        </script>
 
         {% if not config.DEBUG %}
             <script>
