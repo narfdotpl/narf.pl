@@ -82,6 +82,7 @@ class memoized(object):
         ctx['content'] = antimap(ctx['remaining_markdown'], [
             render_markdown,
             partial(resolve_asset_urls, filename),
+            wrap_images_in_links,
             thumbnail_big_images,
             add_footnote_links,
         ])
@@ -224,7 +225,7 @@ def resolve_asset_urls(filename, html):
 def thumbnail_big_images(html):
     """
     >>> thumbnail_big_images('<img src="/assets/foo.jpg">')
-    u'<a href="/assets/foo.jpg"><img src="/thumbnails/foo.jpg"></a>'
+    u'<img src="/thumbnails/foo.jpg">'
     """
 
     prefix = '/assets/'
@@ -240,11 +241,22 @@ def thumbnail_big_images(html):
             # use the thumbnail instead of the original image
             img['src'] = '/thumbnails/%s' % path
 
-            # wrap the thumbnail in a link to the original image
-            if not (img.parent and img.parent.name == 'a'):
-                a = soup.new_tag('a')
-                a['href'] = url
-                a.append(img.replace_with(a))
+    return unicode(soup)
+
+
+def wrap_images_in_links(html):
+    """
+    >>> wrap_images_in_links('<img src="/assets/foo.jpg">')
+    u'<a href="/assets/foo.jpg"><img src="/assets/foo.jpg"></a>'
+    """
+
+    soup = BeautifulSoup(html)
+
+    for img in soup.find_all('img'):
+        if not (img.parent and img.parent.name == 'a'):
+            a = soup.new_tag('a')
+            a['href'] = img['src']
+            a.append(img.replace_with(a))
 
     return unicode(soup)
 
