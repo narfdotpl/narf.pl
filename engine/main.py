@@ -82,6 +82,7 @@ class memoized(object):
         ctx['content'] = antimap(ctx['remaining_markdown'], [
             render_markdown,
             partial(resolve_asset_urls, filename),
+            wrap_images_in_figures_instead_of_paragraphs,
             wrap_images_in_links,
             thumbnail_big_images,
             add_footnote_links,
@@ -240,6 +241,27 @@ def thumbnail_big_images(html):
                                       memoized.static_url_for_thumbnail(path):
             # use the thumbnail instead of the original image
             img['src'] = '/thumbnails/%s' % path
+
+    return unicode(soup)
+
+
+def wrap_images_in_figures_instead_of_paragraphs(html):
+    """
+    >>> wrap_images_in_figures_instead_of_paragraphs('<p><img src="/assets/foo.jpg"></p>')
+    u'<figure><img src="/assets/foo.jpg"></figure>'
+    """
+
+    soup = BeautifulSoup(html)
+
+    for img in soup.find_all('img'):
+        # get parent paragraph
+        parent = img.parent
+        if parent and parent.name == 'a':
+            parent = parent.parent
+
+        # change <p> into <figure>
+        if parent and parent.name == 'p':
+            parent.name = 'figure'
 
     return unicode(soup)
 
