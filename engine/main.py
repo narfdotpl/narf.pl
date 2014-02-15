@@ -132,8 +132,8 @@ class memoized(object):
         width, height = image.size
 
         # don't scale small images
-        max_width = 1024
-        max_height = 780
+        max_width = 1024 * 2
+        max_height = 780 * 2
         if width <= max_width and height <= max_height:
             return memoized.static_url_for_asset(path)
 
