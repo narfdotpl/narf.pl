@@ -1,0 +1,47 @@
+body {
+    background: #fff;
+    background: #fafafa;
+    /* background: url('grid-lines.png') center top repeat-y; */
+}
+
+svg {
+    background: #fff;
+    margin: 0 -192px 28px;
+}
+
+.title {
+    text-anchor: middle;
+}
+
+.subtitle {
+    text-anchor: middle;
+    font-size: 12px;
+}
+
+.axis text {
+    font-size: 16px;
+}
+
+.axis text.year {
+    font-size: 17px;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.spotify {
+    color: #2ecc40;
+    fill:  #2ecc40;
+}
+
+text.spotify {
+    font-size: 16px;
+}
+
+.legend text {
+    font-size: 16px;
+}
