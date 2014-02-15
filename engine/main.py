@@ -133,18 +133,20 @@ class memoized(object):
 
         # don't scale small images
         max_width = 1024
-        if width <= max_width:
+        max_height = 780
+        if width <= max_width and height <= max_height:
             return memoized.static_url_for_asset(path)
 
         # create hashed filename
-        filename = '%s.jpg' % get_hash('%s:%f:%d' % (path, mtime, max_width))
+        filename = '%s.jpg' % get_hash('%s:%f:%d:%d' % \
+                                       (path, mtime, max_width, max_height))
         thumbnail_path = join(settings.THUMBNAILS_DIR, filename)
         base = memoized.static_url()
         url = '%s/thumbnails/%s' % (base, filename)
 
         # create thumbnail if it doesn't exist
         if not exists(thumbnail_path):
-            image.thumbnail((max_width, height), Image.ANTIALIAS)
+            image.thumbnail((max_width, max_height), Image.ANTIALIAS)
             image.save(thumbnail_path, "JPEG", quality=95)
 
         return url

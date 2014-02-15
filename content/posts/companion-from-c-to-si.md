@@ -11,6 +11,4 @@ and silicon.
 
 ![sketch](moleskine.jpg)
 
-<a href="5s.png">
-    <img alt="screen shot" src="5s.png" style="max-height: 95%">
-</a>
+![screen shot](5s.jpg)
