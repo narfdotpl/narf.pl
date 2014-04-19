@@ -19,7 +19,7 @@
 
         <ul class="narrow">
             {% for post in posts %}
-                <li><a href="/posts/{{ post.slug }}">{{ post.title|typo }}</a></li>
+                <li><a class="balance-text" href="/posts/{{ post.slug }}">{{ post.title|typo }}</a></li>
             {% endfor %}
         </ul>
     </article>
