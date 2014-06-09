@@ -44,8 +44,8 @@ access a hidden item, I click to the left of the network graph.
 
 ![](menu-bar-items-shown.png)
 
-Apps on the above screen shot are [Dropbox][], [f.lux][], and [Slate][].
-Other items are system icons.
+Apps on the above screen shot are [Dropbox][], [f.lux][], and
+[Slate][][4].  Other items are system icons.
 
   [Dropbox]: https://www.dropbox.com/
   [f.lux]: https://justgetflux.com/
@@ -56,3 +56,4 @@ Other items are system icons.
 1. [Bartender preferences](bartender-preferences.png).
 2. [MenuMeters network graph preferences](menu-meters-network.png).
 3. [MenuMeters CPU graph preferences](menu-meters-cpu.png).
+4. [Slate configuration](https://github.com/narfdotpl/dotfiles/blob/master/home/.slate.coffee).
