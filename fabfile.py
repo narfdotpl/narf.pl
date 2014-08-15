@@ -36,7 +36,7 @@ def deploy():
     'Update production with latest changes.'
     # aka push, pull, checkout, install, restart, visit
 
-    local('git push')
+    local('git push private')
 
     with cd(REMOTE_APP_DIR):
         run('git pull')
@@ -73,6 +73,14 @@ def js():
     with lcd(join(CONTENT_DIR, 'assets', 'index')):
         local('coffee --print script.coffee | '
               'uglifyjs --no-copyright > script.js')
+
+@task
+def publish():
+    'Publish to GitHub and deploy to production.'
+
+    deploy()
+    local('git push public')
+
 
 @task
 def restart():
