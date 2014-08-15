@@ -105,10 +105,11 @@ class memoized(object):
         return render_template('post.html', **ctx)
 
     def rendered_posts():
-        posts = sorted(map(get_post_data, memoized.post_filenames()),
-                       key=lambda dct: dct['date'], reverse=True)
-
-        return render_template('posts.html', posts=posts)
+        return render_template('posts.html', posts=antimap(
+            memoized.post_filenames(), [
+                partial(map, get_post_data),
+                partial(sorted, key=lambda x: x['date'], reverse=True),
+            ]))
 
     def static_url():
         if app.debug:
