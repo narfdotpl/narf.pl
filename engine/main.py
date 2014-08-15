@@ -56,6 +56,10 @@ class memoized(object):
         # add posts
         for filename in memoized.post_filenames():
             dct = get_post_data(filename)
+
+            if dct['is_draft']:
+                continue
+
             entries.append({
                 'title': dct['title'],
                 'time': '%s 00:00' % dct['date'],
@@ -108,6 +112,7 @@ class memoized(object):
         return render_template('posts.html', posts=antimap(
             memoized.post_filenames(), [
                 partial(map, get_post_data),
+                partial(filter, lambda x: not x['is_draft']),
                 partial(sorted, key=lambda x: x['date'], reverse=True),
             ]))
 
@@ -186,6 +191,10 @@ def get_hash(x):
 
 
 def get_post_data(filename):
+    # is post a draft?
+    is_draft = filename.startswith(settings.DRAFT_FILENAME_PREFIX)
+    title_prefix = 'DRAFT: ' if is_draft else ''
+
     # get post split into sections
     separator = '\n\n'
     with open(join(settings.POSTS_DIR, filename)) as f:
@@ -194,8 +203,9 @@ def get_post_data(filename):
     # get data from sections
     slug = filename[:-len('.md')]
     return {
+        'is_draft': is_draft,
         'date': sections[0],
-        'title': sections[1].rstrip('=').rstrip('\n'),
+        'title': title_prefix + sections[1].rstrip('=').rstrip('\n'),
         'remaining_markdown': separator.join(sections[2:]),
         'slug': slug,
         'url': 'http://narf.pl/posts/%s' % slug,
