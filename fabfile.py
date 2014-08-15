@@ -12,19 +12,38 @@ REPO_DIR = CURRENT_DIR
 CONTENT_DIR = join(REPO_DIR, 'content')
 ENGINE_DIR = join(REPO_DIR, 'engine')
 
+REMOTE_APP_DIR = '~/narf.pl/main'
+
 
 env.hosts = ['narf@narf.megiteam.pl']
 
 
 @task
+def checkout(branch=None):
+    'Checkout branch in production. Use current branch by default.'
+
+    if branch is None:
+        branches = local('git branch', capture=True).split('\n')
+        predicate = lambda s: s.startswith('*')
+        branch = filter(predicate, branches)[0].lstrip('*').strip()
+
+    with cd(REMOTE_APP_DIR):
+        run('git checkout %s' % branch)
+
+
+@task
 def deploy():
     'Update production with latest changes.'
-    # aka push, pull, install, restart, visit
+    # aka push, pull, checkout, install, restart, visit
 
     local('git push')
 
-    with cd('~/narf.pl/main'):
+    with cd(REMOTE_APP_DIR):
         run('git pull')
+
+    checkout()
+
+    with cd(REMOTE_APP_DIR):
         run('source engine/.environment && pip install -r requirements.txt')
 
     restart()
