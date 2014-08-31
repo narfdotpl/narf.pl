@@ -34,7 +34,7 @@ def checkout(branch=None):
 @task
 def deploy():
     'Update production with latest changes.'
-    # aka push, pull, checkout, install, restart, visit
+    # aka push, pull, checkout, pull, install, restart, visit
 
     local('git push private')
 
@@ -44,6 +44,7 @@ def deploy():
     checkout()
 
     with cd(REMOTE_APP_DIR):
+        run('git pull')
         run('source engine/.environment && pip install -r requirements.txt')
 
     restart()
