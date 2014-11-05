@@ -360,11 +360,6 @@ def thumbnail(path):
     return redirect(memoized.static_url_for_thumbnail(path))
 
 
-@app.route('/key')
-def redirect_to_key():
-    return redirect(memoized.static_url_for_asset('index/id_rsa.pub'))
-
-
 @app.route('/companion')
 def redirect_to_companion():
     # save stats
@@ -378,27 +373,45 @@ def redirect_to_companion():
     return redirect('http://lab.narf.pl/companion/')
 
 
-SPECIFIC_REDIRECTS = {
-    '/feed.xml': '/feed',
-    '/plain.txt': '/posts/plain-text',
-    '/quit.txt': '/posts/quit-delicious',
-    '/liczba': 'http://www.youtube.com/watch?v=Gc31UQ-C6dw',
-    '/liczba-nie-ilosc': 'http://www.youtube.com/watch?v=Gc31UQ-C6dw',
-    '/samo-sie-nie-zrobi': 'http://www.youtube.com/watch?v=xOUjIr70XgQ',
-}
-LAB_REDIRECT_PREFIXES = ['canvas-pong', 'jquery-typing', 'tmp']
 
 @app.route('/<path:path>')
 def redirect_from_old_path(path):
+    # DSL-ish
+    permanent = True
+
     # lab or specific redirect
-    if any(path.startswith(prefix) for prefix in LAB_REDIRECT_PREFIXES):
+    if any(path.startswith(prefix) for prefix in [
+        'canvas-pong',
+        'jquery-typing',
+        'tmp',
+    ]):
         url = 'http://lab.narf.pl/' + path
     else:
-        url = SPECIFIC_REDIRECTS.get('/' + path, None)
+        url, permanent = {
+            '/feed.xml': ('/feed', permanent),
+            '/plain.txt': ('/posts/plain-text', permanent),
+            '/quit.txt': ('/posts/quit-delicious', permanent),
 
-    # 301 or 404
+            '/key':
+                (memoized.static_url_for_asset('index/id_rsa.pub'),
+                 not permanent),
+
+            '/liczba':
+                ('http://www.youtube.com/watch?v=Gc31UQ-C6dw',
+                 not permanent),
+
+            '/liczba-nie-ilosc':
+                ('http://www.youtube.com/watch?v=Gc31UQ-C6dw',
+                 not permanent),
+
+            '/samo-sie-nie-zrobi':
+                ('http://www.youtube.com/watch?v=xOUjIr70XgQ',
+                 not permanent),
+        }.get('/' + path, (None, None))
+
+    # 301, 302, or 404
     if url:
-        return redirect(url, 301)
+        return redirect(url, 301 if permanent else 302)
     else:
         return HTTP_404
 
