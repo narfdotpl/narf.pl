@@ -392,6 +392,10 @@ def redirect_from_old_path(path):
             '/plain.txt': ('/posts/plain-text', permanent),
             '/quit.txt': ('/posts/quit-delicious', permanent),
 
+            '/have-seen':
+                (memoized.static_url_for_asset('index/have-seen.jpg'),
+                 not permanent),
+
             '/key':
                 (memoized.static_url_for_asset('index/id_rsa.pub'),
                  not permanent),
