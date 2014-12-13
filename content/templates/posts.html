@@ -17,10 +17,17 @@
 
         <br>
 
-        <ul class="narrow">
-            {% for post in posts %}
-                <li><a class="balance-text" href="/posts/{{ post.slug }}">{{ post.title|typo }}</a></li>
-            {% endfor %}
-        </ul>
+        {% for year, posts in posts_by_year %}
+            <section class="narrow">
+                <p class="centered">{{ year }}</p>
+
+                <ul class="posts">
+                    {% for post in posts %}
+                        <li><a class="balance-text" href="/posts/{{ post.slug }}">{{ post.title|typo }}</a></li>
+                    {% endfor %}
+                </ul>
+            </section>
+        {% endfor %}
+
     </article>
 {% endblock %}

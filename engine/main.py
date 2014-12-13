@@ -5,6 +5,7 @@ from __future__ import division
 import datetime
 from functools import partial
 from hashlib import md5
+from itertools import groupby
 from os import walk
 from os.path import exists, getmtime, join
 import re
@@ -109,12 +110,15 @@ class memoized(object):
         return render_template('post.html', **ctx)
 
     def rendered_posts():
-        return render_template('posts.html', posts=antimap(
-            memoized.post_filenames(), [
-                partial(map, get_post_data),
-                partial(filter, lambda x: not x['is_draft']),
-                partial(sorted, key=lambda x: x['date'], reverse=True),
-            ]))
+        posts = antimap(memoized.post_filenames(), [
+            partial(map, get_post_data),
+            partial(filter, lambda x: not x['is_draft']),
+            partial(sorted, key=lambda x: x['date'], reverse=True),
+        ])
+        get_year = lambda x: int(x['date'].split('-')[0])
+
+        return render_template('posts.html',
+            posts_by_year=groupby(posts, get_year))
 
     def static_url():
         if app.debug:
