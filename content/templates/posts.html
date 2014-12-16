@@ -15,11 +15,9 @@
             </address>
         </header>
 
-        <br>
-
         {% for year, posts in posts_by_year %}
             <section class="narrow">
-                <p class="centered">{{ year }}</p>
+                <h3 class="centered">{{ year }}</h3>
 
                 <ul class="posts">
                     {% for post in posts %}
