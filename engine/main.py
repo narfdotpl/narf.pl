@@ -115,7 +115,7 @@ class memoized(object):
             partial(filter, lambda x: not x['is_draft']),
             partial(sorted, key=lambda x: x['date'], reverse=True),
         ])
-        get_year = lambda x: int(x['date'].split('-')[0])
+        get_year = lambda x: x['date'].split('-')[0]
 
         return render_template('posts.html',
             posts_by_year=groupby(posts, get_year))
