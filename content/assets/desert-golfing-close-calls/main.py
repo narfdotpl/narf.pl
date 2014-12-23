@@ -3,7 +3,7 @@
 
 from __future__ import absolute_import, division
 from os import walk, system
-from os.path import dirname, join, realpath
+from os.path import dirname, exists, join, realpath
 
 current_directory = dirname(realpath(__file__))
 full_images_directory_name = 'full'
@@ -25,9 +25,12 @@ def _main():
         full_path = join(full_dir, name)
         min_path = join(min_dir, name)
 
-        system("convert '%s' -resize 50%% '%s'" % (full_path, min_path))
-        system("optipng '%s' 2> /dev/null" % full_path)
-        system("optipng '%s' 2> /dev/null" % min_path)
+        if not exists(min_path):
+            system("convert '%s' -resize 642x361 -shave 1x0 '%s'" % \
+                (full_path, min_path))
+
+            system("optipng '%s' 2> /dev/null" % full_path)
+            system("optipng '%s' 2> /dev/null" % min_path)
 
         print '[![](%s/%s)](%s/%s)\n' % \
             (miniatures_directory_name, name,
