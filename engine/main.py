@@ -227,7 +227,8 @@ def resolve_asset_urls(filename, html):
 
     def change_url(tag, key):
         url = tag[key]
-        if not (url.startswith('/') or url.startswith('#') or '//' in url):
+        if not ('//' in url or
+                any(url.startswith(x) for x in ['/', '#', 'mailto:'])):
             tag[key] = '/assets/%s/%s' % (slug, url)
 
     for tag_name, key in [
