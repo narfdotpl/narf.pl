@@ -1,7 +1,7 @@
 2015-01-06
 
-Checkers teaser
-===============
+Checkers: Teaser
+================
 
 I'm working on a futuristic checkers game for the iPad.  Things glitch,
 shatter, and explode.  This is much of a lab project: the current
