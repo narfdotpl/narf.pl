@@ -397,7 +397,7 @@ def redirect_from_old_path(path):
             '/plain.txt': ('/posts/plain-text', permanent),
             '/quit.txt': ('/posts/quit-delicious', permanent),
 
-            '/checkers': ('/posts/checkers-teaser', not permanent),
+            '/checkers': ('/posts/checkers-update-1', not permanent),
 
             '/have-seen':
                 (memoized.static_url_for_asset('index/have-seen.jpg'),
