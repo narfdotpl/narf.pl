@@ -21,27 +21,23 @@ these images:
 
 [![](min/281.png)](full/281.png)
 
-[![](min/302.png)](full/302.png)
-
 [![](min/306.png)](full/306.png)
 
 [![](min/532.png)](full/532.png)
 
 [![](min/691.png)](full/691.png)
 
-[![](min/816.png)](full/816.png)
-
 [![](min/877.png)](full/877.png)
 
 [![](min/932.png)](full/932.png)
 
-[![](min/937.png)](full/937.png)
-
-[![](min/946.png)](full/946.png)
-
-[![](min/990.png)](full/990.png)
-
 [![](min/998.png)](full/998.png)
+
+[![](min/1497.png)](full/1497.png)
+
+[![](min/1527.png)](full/1527.png)
+
+[![](min/1810.png)](full/1810.png)
 
 <p class="centered">
     <i>How much farther does this desert go?</i>
