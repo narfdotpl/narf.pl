@@ -21,7 +21,7 @@ def _main():
             if file_name.endswith('.png'):
                 screen_shot_names.append(file_name)
 
-    for name in sorted(screen_shot_names):
+    for name in sorted(screen_shot_names, key=lambda s: int(s.split('.')[0])):
         full_path = join(full_dir, name)
         min_path = join(min_dir, name)
 
