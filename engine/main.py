@@ -109,12 +109,15 @@ class memoized(object):
         # render final html
         return render_template('post.html', **ctx)
 
-    def rendered_posts():
-        posts = antimap(memoized.post_filenames(), [
+    def public_posts():
+        return antimap(memoized.post_filenames(), [
             partial(map, get_post_data),
             partial(filter, lambda x: not x['is_draft']),
             partial(sorted, key=lambda x: x['date'], reverse=True),
         ])
+
+    def rendered_posts():
+        posts = memoized.public_posts()
         get_year = lambda x: x['date'].split('-')[0]
 
         return render_template('posts.html',
@@ -382,6 +385,7 @@ def redirect_to_companion():
 @app.route('/<path:path>')
 def redirect_from_old_path(path):
     # DSL-ish
+    url = None
     permanent = True
 
     # lab or specific redirect
@@ -396,8 +400,6 @@ def redirect_from_old_path(path):
             '/feed.xml': ('/feed', permanent),
             '/plain.txt': ('/posts/plain-text', permanent),
             '/quit.txt': ('/posts/quit-delicious', permanent),
-
-            '/checkers': ('/posts/checkers-update-1', not permanent),
 
             '/have-seen':
                 (memoized.static_url_for_asset('index/have-seen.jpg'),
@@ -419,6 +421,19 @@ def redirect_from_old_path(path):
                 ('http://www.youtube.com/watch?v=xOUjIr70XgQ',
                  not permanent),
         }.get('/' + path, (None, None))
+
+    # match latest post
+    if not url:
+        strip_extra = lambda s: antimap(s, [
+            lambda x: re.sub(r'[^\w]', ' ', x),
+            lambda x: re.sub(r'  +', ' ', x),
+        ])
+
+        for post in memoized.public_posts():
+            if path in strip_extra(post['title']).lower().split(' '):
+                url = post['url']
+                permanent = False
+                break
 
     # 301, 302, or 404
     if url:
