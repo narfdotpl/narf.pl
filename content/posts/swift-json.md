@@ -69,8 +69,7 @@ In the old days of Swift 1.1, to implement the protocol, I was using
                 Player.fromJSON(json["player"]),
                 json["isCaptured"].bool,
                 json["isKing"].bool
-            ).map { (id, player, isCaptured,
-                     isKing) in
+            ).map { (id, player, isCaptured, isKing) in
                 // newlines added to fit in
                 // my narrow blog layout
                 Piece(id: id,
@@ -88,17 +87,17 @@ Swift 1.2
 In Swift 1.2 I just use `if let` with multiple optionals:
 
     static func fromJSON(json: JSON) -> Piece? {
-      if let id = json["id"].int,
-             player = Player.fromJSON(json["player"]),
-             isCaptured = json["isCaptured"].bool,
-             isKing = json["isKing"].bool {
-          return Piece(id: id,
-                       player: player,
-                       isCaptured: isCaptured,
-                       isKing: isKing)
-      } else {
-          return nil
-      }
+        if let id = json["id"].int,
+               player = Player.fromJSON(json["player"]),
+               isCaptured = json["isCaptured"].bool,
+               isKing = json["isKing"].bool {
+            return Piece(id: id,
+                         player: player,
+                         isCaptured: isCaptured,
+                         isKing: isKing)
+        } else {
+            return nil
+        }
     }
 
 
