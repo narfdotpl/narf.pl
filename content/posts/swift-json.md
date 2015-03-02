@@ -127,3 +127,11 @@ For more discussion of this limitation, see Rob Napier's [answer to a
 question about returning `Self`][rnapier].
 
   [rnapier]: http://stackoverflow.com/a/25645689/98763
+
+
+---
+
+*You can discuss this post on [Reddit][] or message me on [Twitter][].*
+
+  [Reddit]: http://www.reddit.com/r/swift/comments/2xlkmy/swift_json_again/
+  [Twitter]: https://twitter.com/narfdotpl/status/572108946485473280
