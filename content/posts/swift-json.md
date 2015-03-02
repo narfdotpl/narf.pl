@@ -129,6 +129,41 @@ question about returning `Self`][rnapier].
   [rnapier]: http://stackoverflow.com/a/25645689/98763
 
 
+Update &middot; 2015-03-02
+--------------------------
+
+ElvishJerricco [pointed out on Reddit][Reddit comment] that the final class
+limitation mentioned above can be worked around by using a required
+initializer that accepts `JSON` and returning it from `fromJSON`.
+Unfortunately, such initializer can't be defined in an extension, which
+destroys the elegance of the solution for me:
+
+  [Reddit comment]: http://www.reddit.com/r/swift/comments/2xlkmy/swift_json_again/cp19x1h
+
+    class MyClass {
+        /* ... */
+        required init?(json: JSON) { /* ... */ }
+    }
+
+
+    extension MyClass: JSONConvertible {
+        func toJSON() -> JSON { /* ... */ }
+
+        static func fromJSON(json: JSON) -> Self? {
+            return self(json: json)
+        }
+    }
+
+I don't have a good answer here, but if one has to use non-final classes
+and add code to main class definitions, maybe a better solution is to
+get rid of `fromJSON` altogether?
+
+    protocol JSONConvertible {
+        init?(json: JSON)
+        func toJSON() -> JSON
+    }
+
+
 ---
 
 *You can discuss this post on [Reddit][] or message me on [Twitter][].*
