@@ -186,6 +186,14 @@ the number of artists than with the number of tracks.  Which makes
 sense, because in general there's more diversity between artists than
 between songs of a given artist.
 
+I posted an [imgur mirror][] of this graph (with a slightly longer
+title) to the [Data Is Beautiful subreddit][].  Feel free to join the
+discussion there.  Also, if you'd like to share an image from this post
+on social media, this is the one. :)
+
+  [imgur mirror]: http://i.imgur.com/fwkNNDy.png
+  [Data Is Beautiful subreddit]: http://www.reddit.com/r/dataisbeautiful/comments/33clwk/music_streaming_impact_number_of_artists_i/
+
 
 Conclusion
 ----------
@@ -235,5 +243,10 @@ As always, [data and code][] are on GitHub.
 
 ---
 
+*You can discuss this post on [Reddit][] or message me on [Twitter][].*
+
 *Thanks to Wioleta Grabowska, Filip Konieczny, and Jarek Pendowski for
 reading drafts of this.*
+
+  [Reddit]: http://www.reddit.com/r/dataisbeautiful/comments/33clwk/music_streaming_impact_number_of_artists_i/
+  [Twitter]: https://twitter.com/narfdotpl/status/590501836186071041
