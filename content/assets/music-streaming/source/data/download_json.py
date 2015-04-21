@@ -18,8 +18,9 @@ def get_chart_path(timestamp1, timestamp2):
 
 def query_api(params):
     # provide default params
+    raise Exception('set an `api_key`')
     default_params = {
-        'api_key': '07c522bda91505417d7b69fc80b70704',
+        'api_key': 'API-enabled app deleted',
         'format': 'json',
     }
     default_params.update(params)
