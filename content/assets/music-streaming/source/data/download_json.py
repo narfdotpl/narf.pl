@@ -9,8 +9,7 @@ from time import sleep
 
 import requests
 
-from settings import API_JSON_DIR
-
+from settings import API_JSON_DIR, USERNAME, API_KEY
 
 def get_chart_path(timestamp1, timestamp2):
     return join(API_JSON_DIR, '%s-%s.json' % (timestamp1, timestamp2))
@@ -18,9 +17,9 @@ def get_chart_path(timestamp1, timestamp2):
 
 def query_api(params):
     # provide default params
-    raise Exception('set an `api_key`')
+    # raise Exception('set an `api_key`')
     default_params = {
-        'api_key': 'API-enabled app deleted',
+        'api_key': API_KEY,
         'format': 'json',
     }
     default_params.update(params)
@@ -37,8 +36,9 @@ def _main():
     # get weekly track charts for each timestamp range
     dct = query_api({
         'method': 'user.getWeeklyChartList',
-        'user': 'narfdotpl',
+        'user': USERNAME,
     })
+    i = 1
     for d in reversed(dct['weeklychartlist']['chart']):
         # get file path
         a, b = d['from'], d['to']
@@ -46,12 +46,14 @@ def _main():
 
         # skip if file exists
         if exists(path):
+            i += 1
             continue
 
         # download
+        print 'downloading '+str(i)+' of '+str(len(dct['weeklychartlist']['chart']))
         weekly_dict = query_api({
             'method': 'user.getWeeklyTrackChart',
-            'user': 'narfdotpl',
+            'user': USERNAME,
             'from': a,
             'to': b,
         })
@@ -62,6 +64,8 @@ def _main():
 
         # don't spam
         sleep(0.25)
+        
+        i += 1
 
 
 if __name__ == '__main__':
