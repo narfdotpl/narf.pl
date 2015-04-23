@@ -368,20 +368,6 @@ def thumbnail(path):
     return redirect(memoized.static_url_for_thumbnail(path))
 
 
-@app.route('/companion')
-def redirect_to_companion():
-    # save stats
-    path = join(settings.STATS_DIR, 'companion.csv')
-    with open(path, 'a') as f:
-        f.write('%s\t%s\t%s\n' % (
-            datetime.datetime.now().isoformat(),
-            request.url,
-            request.headers.get('Referer')))
-
-    return redirect('http://lab.narf.pl/companion/')
-
-
-
 @app.route('/<path:path>')
 def redirect_from_old_path(path):
     # DSL-ish
@@ -391,6 +377,7 @@ def redirect_from_old_path(path):
     # lab or specific redirect
     if any(path.startswith(prefix) for prefix in [
         'canvas-pong',
+        'companion',
         'jquery-typing',
         'tmp',
     ]):
