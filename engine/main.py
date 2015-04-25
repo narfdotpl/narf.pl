@@ -229,7 +229,11 @@ def resolve_asset_urls(filename, html):
     soup = BeautifulSoup(html)
 
     def change_url(tag, key):
-        url = tag[key]
+        try:
+            url = tag[key]
+        except KeyError:
+            return
+
         if not ('//' in url or
                 any(url.startswith(x) for x in ['/', '#', 'mailto:'])):
             tag[key] = '/assets/%s/%s' % (slug, url)
