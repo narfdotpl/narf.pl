@@ -195,6 +195,55 @@ on social media, this is the one. :)
   [Data Is Beautiful subreddit]: http://www.reddit.com/r/dataisbeautiful/comments/33clwk/music_streaming_impact_number_of_artists_i/
 
 
+<a name="update">
+
+Update • 2015-04-26
+-------------------
+
+Wow, I didn't expect this article to do *this* well!  The reception was
+really good, with many comments, a couple of tweets, and even a few
+emails from people at Spotify.  Thanks to everyone for the kind words,
+it was a very nice feeling! :)
+
+[The Reddit post][Reddit] hit [the front page][front page] (*sic!*) and
+ended up with a score of 3400 and a mind-boggling number of 850,000
+imgur image views that used 49 GB of transfer.  Google Analytics numbers
+are more modest (link to the article was in the image and in my
+top-level comment) but still the best for any of my posts: 2200
+pageviews.
+
+  [front page]: reddit-front-page.png
+
+I followed [Tips for making a successful Original Content [OC]
+post][tips], paying special attention to [the submission graph][].
+I posted at 14 UTC on Tuesday.
+
+  [tips]: http://www.reddit.com/r/dataisbeautiful/wiki/greatpost
+  [the submission graph]: https://i.imgur.com/LlRVth0.png
+
+There were 345 comments under the post.  Redditors mostly agreed
+that Spotify is a good service for the listeners but expressed concerns
+about the amount of money that goes to the artists.
+
+I especially liked one [comment][] made by /u/Jahkral, who suggested
+adding a third color for tracks/artists discovered in the last few
+months.  This is a very good idea, a one that would help to show if I
+keep listening to the music I find.  I'll use this approach if I revisit
+the subject in the future.
+
+  [comment]: http://www.reddit.com/r/dataisbeautiful/comments/33clwk/music_streaming_impact_number_of_artists_i/cqk1sli
+
+A few people thanked for the "Technical outline" section.  I think
+it's good to share information about the process, as well as code and
+raw data, even if it's not perfect or well-documented.  Some pointed
+out that I left an API key in my script, which I am thankful for (I
+revoked the key, there's no need to message me about removing it from
+the repo history).  There was even one [pull request][], created by
+Elliot Bentley, adding documentation for my scripts.  Thanks!
+
+  [pull request]: https://github.com/narfdotpl/narf.pl/pull/1
+
+
 Conclusion
 ----------
 
@@ -239,7 +288,7 @@ As always, [data and code][] are on GitHub.
   [scrobbling]: http://en.wiktionary.org/wiki/scrobble
   [D3.js]: http://d3js.org/
   [tutorial]: http://bost.ocks.org/mike/bar/
-  [data and code]: https://github.com/narfdotpl/narf.pl/tree/master/content/assets/music-streaming
+  [data and code]: https://github.com/narfdotpl/narf.pl/tree/master/content/assets/music-streaming/source
 
 ---
 
