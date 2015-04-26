@@ -4,7 +4,7 @@ This app uses the Last.fm API to retrieve data on last.fm listening activity. Yo
 
 * [Download a copy of this repository](https://github.com/narfdotpl/narf.pl/archive/master.zip)
 * `cd narf.pl/content/assets/music-streaming/source/`
-* `rm data/api-json/*.json && m data/chart-csv/*.csv` to clear narf's data
+* `rm data/api-json/*.json && rm data/chart-csv/*.csv` to clear narf's data
 * `sudo pip install -r data/requirements.txt`
 * Register a new application at [last.fm/api/accounts](http://www.last.fm/api/accounts).
 * Add your API key and username to `data/settings.py`
