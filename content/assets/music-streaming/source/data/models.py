@@ -174,7 +174,11 @@ class Manager(object):
             # read JSON
             path = join(directory, name)
             with open(path, 'r', encoding='utf-8') as f:
-                dct = json.load(f)['weeklytrackchart']
+                try:
+                    dct = json.load(f)['weeklytrackchart']
+                except KeyError:
+                    print 'error reading %s, skipping' % name
+                    continue
 
             # create week object
             if '@attr' in dct:
@@ -188,8 +192,13 @@ class Manager(object):
             if 'track' not in dct:
                 continue
 
+            # get track dictionaries
+            track_dictionaries = dct['track']
+            if not isinstance(track_dictionaries, list):
+                track_dictionaries = [track_dictionaries]
+
             # get tracks and artists
-            for d in dct['track']:
+            for d in track_dictionaries:
                 # get artist
                 name = d['artist']['#text']
                 artist = self.artists_by_name.get(name, None)
