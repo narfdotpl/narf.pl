@@ -129,11 +129,7 @@ class Group(object):
 
     @property
     def total_play_count(self):
-        tot = sum(week.total_play_count for week in self.weeks)
-        if tot > 0:
-            return tot
-        else:
-            return 1
+        return sum(week.total_play_count for week in self.weeks)
 
 
 class Manager(object):
@@ -178,14 +174,7 @@ class Manager(object):
             # read JSON
             path = join(directory, name)
             with open(path, 'r', encoding='utf-8') as f:
-                try:
-                    jsonf = json.load(f)
-                    if 'weeklytrackchart' in jsonf:
-                        dct = jsonf['weeklytrackchart']
-                    else:
-                        continue
-                except ValueError:
-                    continue
+                dct = json.load(f)['weeklytrackchart']
 
             # create week object
             if '@attr' in dct:
@@ -198,9 +187,6 @@ class Manager(object):
             # skip weeks with no track data
             if 'track' not in dct:
                 continue
-                
-            if isinstance(dct['track'], list) == False:
-                dct['track'] = [ dct['track'] ]
 
             # get tracks and artists
             for d in dct['track']:
