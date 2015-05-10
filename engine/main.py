@@ -2,7 +2,6 @@
 # encoding: utf-8
 
 from __future__ import division
-import datetime
 from functools import partial
 from hashlib import md5
 from itertools import groupby
@@ -77,7 +76,7 @@ class memoized(object):
         return render_template('feed.xml', entries=entries)
 
     def rendered_index():
-        return render_template('index.html', year=datetime.date.today().year)
+        return render_template('index.html')
 
     def rendered_post(filename):
         # get post data
