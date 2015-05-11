@@ -18,6 +18,7 @@ import typogrify.filters
 import yaml
 
 from memoize import MetaMemoize
+from post_collection import add_collections_to_posts
 import settings
 
 
@@ -459,6 +460,8 @@ def redirect_from_old_path(path):
     else:
         return HTTP_404
 
+
+add_collections_to_posts(memoized.public_posts())
 
 if __name__ == '__main__':
     app.run(debug=True)

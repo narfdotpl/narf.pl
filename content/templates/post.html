@@ -39,6 +39,23 @@
             &middot;
 
             <time pubdate datetime="{{ date }}" class="published">{{ date }}</time>
+
+            {% with item = collection_navigation_item %}
+                {% if item %}
+                    <br>
+                    {{ item.tagline }}:
+
+                    {% if item.previous_post %}
+                        <a href="{{ item.previous_post.path }}">previous</a>{% if item.next_post %},{% endif %}
+                    {% endif %}
+
+                    {% if item.next_post %}
+                        <a href="{{ item.next_post.path }}">next</a>
+                    {% endif %}
+
+                    post
+                {% endif %}
+            {% endwith %}
         </header>
 
         <br>
