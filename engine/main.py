@@ -208,10 +208,12 @@ def get_post_data(filename):
 
     # get data from sections
     slug = filename[:-len('.md')]
+    title = title_prefix + sections[1].rstrip('=').rstrip('\n')
     return {
         'is_draft': is_draft,
         'date': sections[0],
-        'title': title_prefix + sections[1].rstrip('=').rstrip('\n'),
+        'title': title,
+        'stupified_title': stupify(title),
         'remaining_markdown': separator.join(sections[2:]),
         'slug': slug,
         'url': 'http://narf.pl/posts/%s' % slug,
@@ -245,6 +247,16 @@ def resolve_asset_urls(filename, html):
             change_url(tag, key)
 
     return unicode(soup)
+
+
+stupify_regex = re.compile(r'[^a-z0-9]')
+
+def stupify(s):
+    """
+    Transform string to lowercase and remove non-alphanumeric characters.
+    """
+
+    return stupify_regex.sub('', s.lower())
 
 
 def thumbnail_big_images(html):
@@ -414,13 +426,9 @@ def redirect_from_old_path(path):
 
     # match latest post
     if not url:
-        strip_extra = lambda s: antimap(s, [
-            lambda x: re.sub(r'[^\w]', ' ', x),
-            lambda x: re.sub(r'  +', ' ', x),
-        ])
-
+        s = stupify(path)
         for post in memoized.public_posts():
-            if path in strip_extra(post['title']).lower().split(' '):
+            if s in post['stupified_title']:
                 url = post['url']
                 permanent = False
                 break
