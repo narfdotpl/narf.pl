@@ -90,6 +90,7 @@ class memoized(object):
             wrap_images_in_links,
             thumbnail_big_images,
             add_footnote_links,
+            add_title_text_to_post_links,
         ])
 
         # get image URLs
@@ -190,6 +191,24 @@ def add_footnote_links(html):
         html = '<a name="footnotes"><hr></a>'.join(html.rsplit('<hr/>', 1))
 
     return html
+
+
+def add_title_text_to_post_links(html):
+    prefixes = ['/posts', 'http://narf.pl/posts']
+    soup = BeautifulSoup(html)
+
+    for link in soup.find_all('a'):
+        url = link.get('href', '')
+
+        if any(url.startswith(x) for x in prefixes):
+            slug = url.split('/')[-1]
+
+            for post in memoized.public_posts():
+                if post['slug'] == slug:
+                    link['title'] = post['title']
+                    break
+
+    return unicode(soup)
 
 
 def get_hash(x):
