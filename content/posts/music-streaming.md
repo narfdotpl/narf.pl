@@ -195,7 +195,7 @@ on social media, this is the one. :)
   [Data Is Beautiful subreddit]: http://www.reddit.com/r/dataisbeautiful/comments/33clwk/music_streaming_impact_number_of_artists_i/
 
 
-<a name="update">
+<a id="update">
 
 Update • 2015-04-26
 -------------------
