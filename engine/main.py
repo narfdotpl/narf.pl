@@ -72,6 +72,13 @@ class memoized(object):
         for root, dirnames, filenames in walk(settings.POSTS_DIR):
             return [x for x in filenames if not x.startswith('.')]
 
+    def public_posts():
+        return antimap(memoized.post_filenames(), [
+            partial(map, memoized.post_data),
+            partial(filter, lambda x: not x['is_draft']),
+            partial(sorted, key=lambda x: x['date'], reverse=True),
+        ])
+
     def rendered_feed():
         # get entries from YAML
         path = join(settings.CONTENT_DIR, 'feed.yaml')
@@ -133,13 +140,6 @@ class memoized(object):
 
         # render final html
         return render_template('post.html', **ctx)
-
-    def public_posts():
-        return antimap(memoized.post_filenames(), [
-            partial(map, memoized.post_data),
-            partial(filter, lambda x: not x['is_draft']),
-            partial(sorted, key=lambda x: x['date'], reverse=True),
-        ])
 
     def rendered_posts():
         posts = memoized.public_posts()
