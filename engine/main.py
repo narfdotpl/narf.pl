@@ -123,7 +123,6 @@ class memoized(object):
             wrap_images_in_links,
             thumbnail_big_images,
             add_footnote_links,
-            add_title_text_to_post_links,
         ])
 
         # get image URLs
@@ -140,7 +139,8 @@ class memoized(object):
 
 
         # render final html
-        return render_template('post.html', **ctx)
+        html = render_template('post.html', **ctx)
+        return add_title_text_to_post_links(html)
 
     def rendered_posts():
         posts = memoized.public_posts()
