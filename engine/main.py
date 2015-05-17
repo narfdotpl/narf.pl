@@ -228,6 +228,7 @@ def get_post_data(filename):
     # get data from sections
     slug = filename[:-len('.md')]
     title = title_prefix + sections[1].rstrip('=').rstrip('\n')
+    path = '/posts/%s' % slug
     return {
         'is_draft': is_draft,
         'date': sections[0],
@@ -235,7 +236,8 @@ def get_post_data(filename):
         'stupified_title': stupify(title),
         'remaining_markdown': separator.join(sections[2:]),
         'slug': slug,
-        'url': 'http://narf.pl/posts/%s' % slug,
+        'path': path,
+        'url': 'http://narf.pl%s' % path,
     }
 
 
