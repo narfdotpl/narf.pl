@@ -443,6 +443,8 @@ def redirect_from_old_path(path):
             '/samo-sie-nie-zrobi':
                 ('http://www.youtube.com/watch?v=xOUjIr70XgQ',
                  not permanent),
+
+            '/newsletter': ('http://eepurl.com/baKQjf', not permanent),
         }.get('/' + path, (None, None))
 
     # match latest post
