@@ -455,5 +455,5 @@ time!
 
 *You can discuss this post on [Reddit][] or message me on [Twitter][].*
 
-  [Reddit]: TODO
-  [Twitter]: TODO
+  [Reddit]: http://www.reddit.com/r/gamedev/comments/38d4kn/tweaking_values_while_the_game_is_running/
+  [Twitter]: https://twitter.com/narfdotpl/status/606086074050461697
