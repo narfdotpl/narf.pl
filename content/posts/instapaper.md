@@ -69,3 +69,23 @@ Cons:
 
 - free app (you are the product)
 - occasional sync problems (that can be fixed by re-downloading articles)
+
+
+<a id="update">
+
+Update • 2015-06-26
+-------------------
+
+About two weeks ago I switched from Readability to Instapaper because of
+the following reasons:
+
+1. Readability's sync is slow and unreliable.
+1. There's an annoying visual bug after switching between portrait and
+   landscape orientations on an iPad.
+1. It looks like an abandonware: the last minor app update was on
+   2014-10-24 and the last post on [their blog](http://blog.readability.com/)
+   is from 2014-01-23.
+1. Marco [sold Instapaper][] a month after my post.  It's become a better
+   product in the last two years.  I like it.
+
+  [sold Instapaper]: http://www.marco.org/2013/04/25/instapaper-next-generation
