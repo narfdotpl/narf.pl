@@ -53,6 +53,6 @@ explosions create "rings" while the buggy ones are amorphic.
 
 ---
 
-*To get new posts subscribe to the [RSS feed](/feed),
+*To get new posts, subscribe to the [RSS feed](/feed),
 or the [Checkers newsletter](/newsletter),
 or follow me on [Twitter](https://twitter.com/narfdotpl).*
