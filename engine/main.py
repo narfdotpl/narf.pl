@@ -65,6 +65,7 @@ class memoized(object):
             'stupified_title': stupify(title),
             'remaining_markdown': separator.join(sections[2:]),
             'slug': slug,
+            'stupified_slug': stupify(slug),
             'path': path,
             'url': 'http://narf.pl%s' % path,
         }
@@ -451,7 +452,8 @@ def redirect_from_old_path(path):
     if not url:
         s = stupify(path)
         for post in memoized.public_posts():
-            if s in post['stupified_title']:
+            if s in post['stupified_title'] or \
+               s in post['stupified_slug']:
                 url = post['url']
                 permanent = False
                 break
