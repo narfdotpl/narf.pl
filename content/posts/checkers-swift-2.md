@@ -149,7 +149,7 @@ enumerations in [state machines][] and need their representations when
 generating diagrams.
 
 The change was trivial but sound in terms of the number of lines of
-code: 167 deletions, 26 insertions.  A ~2% decrease in the vain of:
+code: 167 deletions, 26 insertions.  A ~2% decrease in the vein of:
 
     +extension DOTLabelable {
     +    var DOTLabel: String {
