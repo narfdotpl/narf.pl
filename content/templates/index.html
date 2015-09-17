@@ -6,30 +6,32 @@
         .row {
             overflow: hidden; }
 
-        .row h2 {
-            margin-top: 0; }
-
         .col {
             float: left;
-            width: 120px; }
+            width: 130px; }
+
+        .col-left {
+            width: 180px; }
 
         .col-mid {
-            width: 180px;
-            margin-left: 70px;
-            margin-right: 15px; }
+            margin-left: 25px;
+            margin-right: 45px; }
 
         @media (max-width: 400px) {
             .col {
                 float: none;
                 width: 100%;
                 margin-left: 0; }}
+
+        ul {
+            margin-bottom: 0; }
     </style>
 
     <meta property="og:title" content="Maciej Konieczny (narf)">
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://narf.pl/">
     <meta property="og:image" content="http://narf.pl/assets/index/self.jpg">
-    <meta property="og:description" content="I'm a software creator based in Warsaw, Poland. Some know me as narf.">
+    <meta property="og:description" content="I'm a software creator focused on iOS and Swift, interested in game development.  Some know me as narf.">
 {% endblock %}
 
 
@@ -41,28 +43,34 @@
         </header>
 
         <p>
-            {{ "
-                Hello, my name is Maciej.
-                Some know me as narf.
-                I'm a&nbsp;software creator based in Warsaw, Poland.
-                You can contact me via email at <a href='mailto:hello@narf.pl'>hello<wbr>@<wbr>narf.pl</a>.
-            "|typo }}
+            Hello, my name is Maciej.
+            Some know me as narf.
+            I’m a&nbsp;software creator focused on iOS and Swift, interest&shy;ed in game development.
         </p>
 
-        <div class="row">
-            <div class="col">
-                <h2>collections</h2>
-                <ul>
-                    <li><a href="/posts">posts</a></li>
-                    <li><a href="http://links.narf.pl">links</a></li>
-                    <li class="hidden"><a href="https://github.com/narfdotpl/playlists">playlists</a></li>
-                    <li class="hidden"><a href="https://github.com/narfdotpl/doodles">doodles</a></li>
-                    <li class="js-toggle"><a href="#turn-javascript-on-yo">&hellip;</a></li>
-                </ul>
-            </div>
+        <p>
+            Check out <a href="/posts/checkers-explosion-bug">Checkers</a>, a futuristic checkers game for the iPad that I'm working on in my free time.
+        </p>
 
-            <div class="col col-mid">
-                <h2>projects</h2>
+
+        <h2>Selected posts</h2>
+
+        <ul>
+            {% for post in posts %}
+                <li
+                {% if loop.index0 > 1 %}
+                    class="hidden"
+                {% endif %}
+            ><a href="{{ post.path }}">{{ post.title|typo }}</a></li>
+            {% endfor %}
+            <li class="hidden"><a href="/posts">All posts</a></li>
+            <li class="js-toggle"><a href="#turn-javascript-on-yo">&hellip;</a></li>
+        </ul>
+
+
+        <div class="row">
+            <div class="col col-left">
+                <h2>Projects</h2>
                 <ul>
                     <li><a href="/checkers">Checkers</a></li>
                     <li><a href="https://github.com/macoscope/SwiftyStateMachine">Swifty State Machine</a></li>
@@ -74,8 +82,21 @@
                 </ul>
             </div>
 
+            <div class="col col-mid">
+                <h2>Collections</h2>
+
+                <ul>
+                    <li><a href="/posts">blog</a></li>
+                    <li><a href="http://links.narf.pl">link blog</a></li>
+                    <li class="hidden"><a href="https://github.com/narfdotpl/playlists">playlists</a></li>
+                    <li class="hidden"><a href="https://github.com/narfdotpl/doodles">doodles</a></li>
+                    <li class="js-toggle"><a href="#turn-javascript-on-yo">&hellip;</a></li>
+                </ul>
+            </div>
+
             <div class="col">
-                <h2>profiles</h2>
+                <h2>Profiles</h2>
+
                 <ul>
                     <li class="hidden"><a href="http://www.filmweb.pl/user/narfdotpl">Filmweb</a></li>
                     <li><a href="https://github.com/narfdotpl">GitHub</a></li>
@@ -88,15 +109,16 @@
             </div>
         </div>
 
-        <br>
 
-        <footer>
-            <p class="centered">
-                <i>
-                    Subscribe to the <a href="/feed">RSS feed</a>
-                </i>
-            </p>
-        </footer>
+        <h2>Contact</h2>
+
+        <p>
+            You can contact me via email at <a href='mailto:hello@narf.pl'>hello<wbr>@<wbr>narf.pl</a>,
+            via Twitter at <a href="https://twitter.com/narfdotpl">@narfdotpl</a>, or meet me in in Warsaw, Poland, where I live.
+
+            You can also subscribe to the <a href="/feed">RSS feed</a>
+            to get notified when I post something here.
+        </p>
 
     </div>
 

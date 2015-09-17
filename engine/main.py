@@ -110,7 +110,18 @@ class memoized(object):
         return render_template('feed.xml', entries=entries)
 
     def rendered_index():
-        return render_template('index.html')
+        selected_slugs = [
+            'checkers-explosion-bug',
+            'music-streaming',
+            'pegasus',
+        ]
+
+        posts = []
+        for index, post in enumerate(memoized.public_posts()):
+            if post['slug'] in selected_slugs:
+                posts.append(post)
+
+        return render_template('index.html', posts=posts)
 
     def rendered_post(filename):
         # get post data
