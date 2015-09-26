@@ -416,6 +416,11 @@ def thumbnail(path):
     return redirect(memoized.static_url_for_thumbnail(path))
 
 
+@app.route('/checkers')
+def checkers():
+    return redirect('/posts/checkers-explosion-bug', 302)
+
+
 @app.route('/<path:path>')
 def redirect_from_old_path(path):
     # DSL-ish
