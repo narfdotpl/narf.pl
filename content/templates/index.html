@@ -58,7 +58,7 @@
         <ul>
             {% for post in posts %}
                 <li
-                {% if loop.index0 > 1 %}
+                {% if loop.index > number_of_visible_posts %}
                     class="hidden"
                 {% endif %}
             ><a href="{{ post.path }}">{{ post.title|typo }}</a></li>

@@ -110,6 +110,7 @@ class memoized(object):
         return render_template('feed.xml', entries=entries)
 
     def rendered_index():
+        number_of_visible_posts = 2
         selected_slugs = [
             'checkers-explosion-bug',
             'music-streaming',
@@ -121,7 +122,9 @@ class memoized(object):
             if post['slug'] in selected_slugs:
                 posts.append(post)
 
-        return render_template('index.html', posts=posts)
+        return render_template('index.html',
+            posts=posts,
+            number_of_visible_posts=number_of_visible_posts)
 
     def rendered_post(filename):
         # get post data
