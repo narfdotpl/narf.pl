@@ -9,7 +9,11 @@ from os import walk
 from os.path import exists, getmtime, join
 import re
 
-import Image
+try:
+    import Image
+except ImportError:
+    from PIL import Image
+
 from bs4 import BeautifulSoup
 from flask import (Flask, Markup, make_response, redirect, render_template,
     request)
