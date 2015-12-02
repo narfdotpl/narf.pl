@@ -425,7 +425,7 @@ def thumbnail(path):
 
 @app.route('/checkers')
 def checkers():
-    return redirect('/posts/checkers-explosion-bug', 302)
+    return redirect('/posts/checkers-glitchy-checkers', 302)
 
 
 @app.route('/<path:path>')
