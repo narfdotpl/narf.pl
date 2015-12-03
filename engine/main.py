@@ -114,8 +114,9 @@ class memoized(object):
         return render_template('feed.xml', entries=entries)
 
     def rendered_index():
-        number_of_visible_posts = 2
+        number_of_visible_posts = 3
         selected_slugs = [
+            'checkers-glitchy-checkers',
             'checkers-explosion-bug',
             'music-streaming',
             'pegasus',
