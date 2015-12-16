@@ -116,7 +116,7 @@ class memoized(object):
     def rendered_index():
         number_of_visible_posts = 3
         selected_slugs = [
-            'checkers-glitchy-checkers',
+            'glitchy-checkers-release',
             'checkers-explosion-bug',
             'music-streaming',
             'pegasus',
@@ -426,7 +426,7 @@ def thumbnail(path):
 
 @app.route('/checkers')
 def checkers():
-    return redirect('/posts/checkers-glitchy-checkers', 302)
+    return redirect('/posts/glitchy-checkers-release', 302)
 
 
 @app.route('/<path:path>')
