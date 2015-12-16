@@ -37,4 +37,4 @@ def add_collections_to_posts(posts):
 
     # max one collection per post, last one wins
     PostCollection("Checkers series",
-                   filter(lambda x: x['slug'].startswith('checkers'), posts))
+                   filter(lambda x: 'checkers' in x['slug'], posts))
