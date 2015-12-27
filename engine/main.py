@@ -164,7 +164,7 @@ class memoized(object):
 
     def selected_posts():
         selected_slugs = [
-            'glitchy-checkers-release',
+            '5k-imac',
             'checkers-explosion-bug',
             'music-streaming',
             'pegasus',
