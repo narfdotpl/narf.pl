@@ -131,6 +131,7 @@ class memoized(object):
             render_markdown,
             partial(resolve_asset_urls, filename),
             wrap_images_in_figures_instead_of_paragraphs,
+            center_figure_captions,
             wrap_images_in_links,
             thumbnail_big_images,
             add_footnote_links,
@@ -257,6 +258,26 @@ def add_title_text_to_post_links(html):
                 if post['slug'] == slug:
                     link['title'] = post['title']
                     break
+
+    return unicode(soup)
+
+
+def center_figure_captions(html):
+    soup = BeautifulSoup(html)
+
+    for figure in soup.find_all('figure'):
+        # get next paragraph
+        p = figure.find_next_sibling('p')
+        if p is None:
+            continue
+
+        # make sure paragraph is caption
+        children = list(p.children)
+        if len(children) != 1 or children[0].name != 'em':
+            continue
+
+        # center paragraph
+        p['class'] = 'narrow centered'
 
     return unicode(soup)
 
