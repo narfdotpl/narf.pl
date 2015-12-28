@@ -15,6 +15,16 @@
             </address>
         </header>
 
+        <section class="narrow">
+            <h3 class="centered">Selected posts</h3>
+
+            <ul class="posts">
+                {% for post in selected_posts %}
+                    <li><a class="balance-text" href="{{ post.path }}">{{ post.title|typo }}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+
         {% for year, posts in posts_by_year %}
             <section class="narrow">
                 <h3 class="centered">{{ year }}</h3>

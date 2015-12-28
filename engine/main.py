@@ -114,22 +114,9 @@ class memoized(object):
         return render_template('feed.xml', entries=entries)
 
     def rendered_index():
-        number_of_visible_posts = 3
-        selected_slugs = [
-            'glitchy-checkers-release',
-            'checkers-explosion-bug',
-            'music-streaming',
-            'pegasus',
-        ]
-
-        posts = []
-        for index, post in enumerate(memoized.public_posts()):
-            if post['slug'] in selected_slugs:
-                posts.append(post)
-
         return render_template('index.html',
-            posts=posts,
-            number_of_visible_posts=number_of_visible_posts)
+            posts=memoized.selected_posts(),
+            number_of_visible_posts=3)
 
     def rendered_post(filename):
         # get post data
@@ -167,7 +154,20 @@ class memoized(object):
         get_year = lambda x: x['date'].split('-')[0]
 
         return render_template('posts.html',
+            selected_posts=memoized.selected_posts(),
             posts_by_year=groupby(posts, get_year))
+
+    def selected_posts():
+        selected_slugs = [
+            'glitchy-checkers-release',
+            'checkers-explosion-bug',
+            'music-streaming',
+            'pegasus',
+        ]
+
+        predicate = lambda post: post['slug'] in selected_slugs
+
+        return filter(predicate, memoized.public_posts())
 
     def static_url():
         if app.debug:
