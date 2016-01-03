@@ -48,14 +48,18 @@ class memoized(object):
 
         return paths
 
+    def draft_filenames():
+        return public_filnames_in_directory(settings.DRAFTS_DIR)
+
     def post_data(filename):
         # is post a draft?
-        is_draft = filename.startswith(settings.DRAFT_FILENAME_PREFIX)
+        is_draft = filename in memoized.draft_filenames()
         title_prefix = 'DRAFT: ' if is_draft else ''
+        directory = settings.DRAFTS_DIR if is_draft else settings.POSTS_DIR
 
         # get post split into sections
         separator = '\n\n'
-        with open(join(settings.POSTS_DIR, filename)) as f:
+        with open(join(directory, filename)) as f:
             sections = f.read().decode('utf8').split(separator)
 
         # get data from sections
@@ -75,8 +79,7 @@ class memoized(object):
         }
 
     def post_filenames():
-        for root, dirnames, filenames in walk(settings.POSTS_DIR):
-            return [x for x in filenames if not x.startswith('.')]
+        return public_filnames_in_directory(settings.POSTS_DIR)
 
     def public_posts():
         return antimap(memoized.post_filenames(), [
@@ -262,6 +265,13 @@ def get_hash(x):
     return md5(str(x)).hexdigest()
 
 
+def public_filnames_in_directory(directory):
+    for root, dirnames, filenames in walk(directory):
+        return [x for x in filenames if not x.startswith('.')]
+
+    return []
+
+
 def resolve_asset_urls(filename, html):
     """
     >>> resolve_asset_urls('foo.md', '<a href="bar.jpg">baz</a>')
@@ -385,6 +395,17 @@ def index():
 @app.route('/posts')
 def posts():
     return memoized.rendered_posts()
+
+
+@app.route('/drafts/<path:slug>')
+def draft(slug):
+    filename = slug + '.md'
+    if filename in memoized.post_filenames():
+        return redirect(memoized.post_data(filename)['path'])
+    elif filename in memoized.draft_filenames():
+        return memoized.rendered_post(filename)
+    else:
+        return HTTP_404
 
 
 @app.route('/posts/<path:slug>')

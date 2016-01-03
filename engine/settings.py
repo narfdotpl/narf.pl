@@ -11,10 +11,9 @@ CONTENT_DIR = join(REPO_DIR, 'content')
 ENGINE_DIR = join(REPO_DIR, 'engine')
 
 ASSETS_DIR = join(CONTENT_DIR, 'assets')
+DRAFTS_DIR = join(CONTENT_DIR, 'drafts')
 POSTS_DIR = join(CONTENT_DIR, 'posts')
 STATIC_DIR = join(ENGINE_DIR, '_static')
 THUMBNAILS_DIR = join(STATIC_DIR, 'thumbnails')
 
 STATS_DIR = join(ENGINE_DIR, 'stats')
-
-DRAFT_FILENAME_PREFIX = 'DRAFT-'
