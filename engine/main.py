@@ -446,6 +446,11 @@ def thumbnail(path):
     return redirect(memoized.static_url_for_thumbnail(path))
 
 
+@app.route('/cv')
+def cv():
+    return redirect('https://www.linkedin.com/in/narfdotpl', 302)
+
+
 @app.route('/checkers')
 def checkers():
     return redirect('/posts/glitchy-checkers-release', 302)
