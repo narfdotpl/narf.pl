@@ -397,21 +397,21 @@ def posts():
     return memoized.rendered_posts()
 
 
+@app.route('/posts/<path:slug>')
+def post(slug):
+    filename = slug + '.md'
+    if filename in memoized.post_filenames():
+        return memoized.rendered_post(filename)
+    else:
+        return HTTP_404
+
+
 @app.route('/drafts/<path:slug>')
 def draft(slug):
     filename = slug + '.md'
     if filename in memoized.post_filenames():
         return redirect(memoized.post_data(filename)['path'])
     elif filename in memoized.draft_filenames():
-        return memoized.rendered_post(filename)
-    else:
-        return HTTP_404
-
-
-@app.route('/posts/<path:slug>')
-def post(slug):
-    filename = slug + '.md'
-    if filename in memoized.post_filenames():
         return memoized.rendered_post(filename)
     else:
         return HTTP_404
