@@ -83,6 +83,7 @@ class memoized(object):
             partial(map, memoized.post_data),
             partial(filter, lambda x: not x['is_draft']),
             partial(sorted, key=lambda x: x['date'], reverse=True),
+            add_collections_to_posts,
         ])
 
     def rendered_feed():
@@ -488,8 +489,6 @@ def redirect_from_old_path(path):
     else:
         return HTTP_404
 
-
-add_collections_to_posts(memoized.public_posts())
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -33,8 +33,11 @@ class PostCollectionNavigationItem(object):
 def add_collections_to_posts(posts):
     # yay for mutable data! :E
 
+    posts_in_original_order = posts
     posts = sorted(posts, key=lambda x: x['date'])
 
     # max one collection per post, last one wins
     PostCollection("Checkers series",
                    filter(lambda x: 'checkers' in x['slug'], posts))
+
+    return posts_in_original_order
