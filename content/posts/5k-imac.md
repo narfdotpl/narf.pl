@@ -159,4 +159,4 @@ Overall
 
 Overall the 5k iMac is a great computer, but not a *perfect* one.  Requires a good desk.  Would buy again.
 
-*Follow me on [Twitter](https://twitter.com/narfdotpl) and discuss this post on [Reddit](https://www.reddit.com/r/apple/comments/3zvl68/grumpy_review_of_the_late_2015_5k_imac/).  Subscribe to the [RSS feed](/feed) to get notified about the second part, the one about software.*
+*Follow me on [Twitter](https://twitter.com/narfdotpl/status/684867869142810624) and discuss this post on [Reddit](https://www.reddit.com/r/apple/comments/3zvl68/grumpy_review_of_the_late_2015_5k_imac/).  Subscribe to the [RSS feed](/feed) to get notified about the second part, the one about software.*
