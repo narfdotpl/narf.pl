@@ -21,7 +21,9 @@ Buying a desktop instead of a laptop is uncommon among programmers, but to work 
 
 I wanted a fast computer with a big, high resolution screen for a long time.  When Apple released the first Retina iMac in 2014, I told myself "I'm getting the second generation of this".  So, when they refreshed the line with even better displays and a new CPU architecture, buying the big iMac was a no-brainer.  (But still a very exciting purchase!)
 
-I decided to go with the top-of-the-line model because I wanted to have The Best Mac They Make™, and also because I plan to use it as my main machine for at least four years.  It's how long I kept my Air and, before that, a white MacBook.
+I decided to go with the top-of-the-line model because I wanted to have The Best Mac They Make™, and also because I plan to use it as my main machine for at least four years.  It's how long I kept my Air and, before that, a white MacBook.  I wanted the best CPU because I use my machine for software development: I recently released an iPad game called [Glitchy Checkers][]. Go buy it! ;)
+
+  [Glitchy Checkers]: http://GlitchyCheckers.com
 
 The iMac I configured is "maxed-out" with a "star": I chose the fastest CPU and the best GPU, but settled for the smallest SSD (256&nbsp;GB) because I don't use much "disk" space (I was *almost* fine with 128 gigs in the Air).  I also ordered it with only 8 GB of RAM and swapped the memory myself for 32&nbsp;GB of Kingston HyperX Impact RAM [from Allegro][allegro], which saved me over 500&nbsp;USD.  (RAM is the only thing a user can change themself.  Without removing the front glass, that is.)
 
@@ -149,9 +151,7 @@ The final aspect I want to write about is performance.  It's really good, again!
 
 The CPU runs extremely cool, at ~35°C when browsing the web and writing grumpy reviews, at ~60°C when playing Dirt.  The fan is quiet.  At idle 1200 RPM it's *almost* inaudible, which means that when it gets very quiet in the room and you could focus, you get slightly annoyed instead because you begin to hear the fan.  Such a first world problem.
 
-In daily use I notice that all things are slightly faster, but many are still too slow.  Swift compilation is sometimes very slow.  No longer go-to-the-kitchen-and-make-a-tea slow, but slow enough for me to loose focus and start thinking about something else before the app compiles and launches.  (I recently released an iPad game written in Swift called [Glitchy Checkers][]. Go buy it! ;))
-
-  [Glitchy Checkers]: http://GlitchyCheckers.com
+In daily use I notice that all things are slightly faster, but many are still too slow.  Swift compilation is sometimes very slow.  No longer go-to-the-kitchen-and-make-a-tea slow, but slow enough for me to loose focus and start thinking about something else before the app compiles and launches.
 
 It's also worth mentioning that a big part of daily computer use is browsing the web and you spend seconds staring at incomplete loading pages regardless of the Geekbench score of your machine.  On a happier note, on this iMac I can watch a YouTube video and, unlike on my MacBook Air, the fan doesn't go crazy and the keyboard doesn't get hot.  This computer is so powerful that I have even stopped watching YouTube through [`youtube-dl`](https://github.com/rg3/youtube-dl/), like a proper programmer that I used to be.
 
