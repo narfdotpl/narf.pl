@@ -149,7 +149,9 @@ The final aspect I want to write about is performance.  It's really good, again!
 
 The CPU runs extremely cool, at ~35°C when browsing the web and writing grumpy reviews, at ~60°C when playing Dirt.  The fan is quiet.  At idle 1200 RPM it's *almost* inaudible, which means that when it gets very quiet in the room and you could focus, you get slightly annoyed instead because you begin to hear the fan.  Such a first world problem.
 
-In daily use I notice that all things are slightly faster, but many are still too slow.  Swift compilation sometimes is very slow.  No longer go-to-the-kitchen-and-make-a-tea slow, but slow enough for me to loose focus and start thinking about something else before the app compiles and launches.
+In daily use I notice that all things are slightly faster, but many are still too slow.  Swift compilation is sometimes very slow.  No longer go-to-the-kitchen-and-make-a-tea slow, but slow enough for me to loose focus and start thinking about something else before the app compiles and launches.  (I recently released an iPad game written in Swift called [Glitchy Checkers][]. Go buy it! ;))
+
+  [Glitchy Checkers]: http://GlitchyCheckers.com
 
 It's also worth mentioning that a big part of daily computer use is browsing the web and you spend seconds staring at incomplete loading pages regardless of the Geekbench score of your machine.  On a happier note, on this iMac I can watch a YouTube video and, unlike on my MacBook Air, the fan doesn't go crazy and the keyboard doesn't get hot.  This computer is so powerful that I have even stopped watching YouTube through [`youtube-dl`](https://github.com/rg3/youtube-dl/), like a proper programmer that I used to be.
 
