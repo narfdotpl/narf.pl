@@ -161,4 +161,14 @@ Overall
 
 Overall the 5k iMac is a great computer, but not a *perfect* one.  Requires a good desk.  Would buy again.
 
-*Follow me on [Twitter](https://twitter.com/narfdotpl/status/684867869142810624) and discuss this post on [Reddit](https://www.reddit.com/r/apple/comments/3zvl68/grumpy_review_of_the_late_2015_5k_imac/).  Subscribe to the [RSS feed](/feed) to get notified about the second part, the one about software.*
+
+Reception
+---------
+
+I expected this post to get maybe five likes from my geeky friends and everyone else to roll their eyes.  I posted a link to [Reddit](https://www.reddit.com/r/apple/comments/3zvl68/grumpy_review_of_the_late_2015_5k_imac/) and it did much better than I expected.  Some of the comments are just great. :D
+
+> This guy has some mild form of autism. Basically the computer is great, the way he set it up is ugly and it causes him so much distress he wrote an article to vent his frustrations. Very atypical way of analyzing and dealing with his issues.
+>
+> -- [renec588](https://www.reddit.com/r/apple/comments/3zvl68/grumpy_review_of_the_late_2015_5k_imac/cypqfoy)
+
+*Follow me on [Twitter](https://twitter.com/narfdotpl/status/684867869142810624) and subscribe to the [RSS feed](/feed) to get notified about the second part of this post, the one about software.*
