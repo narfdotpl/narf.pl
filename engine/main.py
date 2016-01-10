@@ -2,6 +2,7 @@
 # encoding: utf-8
 
 from __future__ import division
+import codecs
 from functools import partial
 from hashlib import md5
 from itertools import groupby
@@ -88,6 +89,13 @@ class memoized(object):
             partial(sorted, key=lambda x: x['date'], reverse=True),
             add_collections_to_posts,
         ])
+
+    def rendered_cv():
+        path = join(settings.CONTENT_DIR, 'cv.md')
+        with codecs.open(path, encoding='utf8') as f:
+            text = f.read()
+
+        return render_template('cv.html', content=render_markdown(text))
 
     def rendered_feed():
         # get entries from YAML
@@ -469,7 +477,7 @@ def thumbnail(path):
 
 @app.route('/cv')
 def cv():
-    return redirect('https://www.linkedin.com/in/narfdotpl', 302)
+    return memoized.rendered_cv()
 
 
 @app.route('/checkers')
