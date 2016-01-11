@@ -128,7 +128,7 @@ class memoized(object):
     def rendered_index():
         return render_template('index.html',
             posts=memoized.selected_posts(),
-            number_of_visible_posts=3)
+            number_of_visible_posts=4)
 
     def rendered_post(filename):
         # get post data
@@ -172,6 +172,7 @@ class memoized(object):
 
     def selected_posts():
         selected_slugs = [
+            'lenses-in-swift',
             '5k-imac',
             'checkers-explosion-bug',
             'music-streaming',
