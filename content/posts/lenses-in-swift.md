@@ -208,6 +208,6 @@ Also, check out [Lenso][], my framework/generator.  The part that will probably 
 Happy lensing!
 
 <br/>
-*Follow me on [Twitter](https://twitter.com/narfdotpl) and discuss this post on [Reddit](https://www.reddit.com/r/swift/comments/40mjpw/lenses_in_swift_or_how_to_change_parts_of/).*
+*Follow me on [Twitter](https://twitter.com/narfdotpl/status/686912983969173504) and discuss this post on [Reddit](https://www.reddit.com/r/swift/comments/40mjpw/lenses_in_swift_or_how_to_change_parts_of/).*
 
 *Thanks to Arek Holko for reading drafts of this.*
