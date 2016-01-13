@@ -7,7 +7,7 @@ Previous Sunday, over breakfast, I watched Brandon Williams' talk [Lenses in Swi
 
 I started to wonder: could one design a lenses API that was more familiar to non-functional-programming crowd?  Would creating a code generator mentioned by Brandon be much work?
 
-It led me to start experimenting.  I gathered results of these experiments here, in this post, and in [Lenso][], a Swift µframework and code generator that I published on GitHub.  Stay here and continue reading for more story and more information about lenses.  Visit GitHub for a shorter and much more dry version.
+It led me to start experimenting.  I gathered results of these experiments here, in this post, and in [Lenso][], a Swift µframework and code generator that I published on GitHub.  Stay here and continue reading for more story and more information about lenses.  Visit [GitHub][Lenso] for a shorter and much more dry version.
 
   [talk]: https://www.youtube.com/watch?v=ofjehH9f-CU
   [Lenso]: https://github.com/narfdotpl/lenso
