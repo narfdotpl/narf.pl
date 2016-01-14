@@ -85,3 +85,7 @@ I decided Physics was not for me in the middle of the fourth semester.
 - As a teenager I played a lot of Quake 3 CPMA and Ragnarok Online.
 - I've watched almost all Formula 1 races in the last decade (except for 2 or 3?) but lost interest last season.
 - In June I started practicing yoga to become a better motorcycle rider.
+
+If you're interested in working with me, drop me an email at <hello@narf.pl>.
+
+Cheers,<br>Maciej
