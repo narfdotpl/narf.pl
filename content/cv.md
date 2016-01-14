@@ -16,6 +16,8 @@ I started making websites towards the end of primary school and I've been intere
 
 I usually have a programming-related side project. I recently released a futuristic iPad game called [Glitchy Checkers](http://GlitchyCheckers.com), written in Swift and SpriteKit.
 
+I also have a [blog](http://narf.pl/posts), where I write about development- and tech-related topics.
+
 
 ## Software Developer at Macoscope &middot; 2014–2015
 
