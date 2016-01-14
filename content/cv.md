@@ -2,7 +2,7 @@
 
 Hi, my name is Maciej. I'm an experienced software creator focused on iOS and Swift, interested in game development. Before iOS I used to make web apps in Python, Django, and CoffeeScript.
 
-My current career goal is to work on user-facing applications at a product company, preferably remotely. I want to affect project decisions and be able to refine and polish the apps I co-create.
+My current career goal is to work on user-facing applications at a product company, preferably remotely. I want to affect project decisions and be able to refine and polish the software I co-create.
 
 I like Vim, Test-Driven Development, small commits, one letter shell aliases, and Oxford comma. I'm a heavy Git and GitHub user (I have almost 70 aliases and scripts in my [git config](https://github.com/narfdotpl/dotfiles/blob/master/home/.config/git/config)). Also, I used to have an Octocat on my car: <http://flic.kr/p/9ymNrs>. (I've since sold the car and bought a motorcycle. No eight-armed cephalopods on that one, yet.)
 
