@@ -4,7 +4,9 @@ Hi, my name is Maciej. I'm an experienced software creator focused on iOS and Sw
 
 My current career goal is to work on user-facing applications at a product company, preferably remotely. I want to affect project decisions and be able to refine and polish the software I co-create.
 
-I like Vim, Test-Driven Development, small commits, one letter shell aliases, and Oxford comma. I'm a heavy Git and GitHub user (I have almost 70 aliases and scripts in my [git config](https://github.com/narfdotpl/dotfiles/blob/master/home/.config/git/config)). Also, I used to have an Octocat on my car: <http://flic.kr/p/9ymNrs>. (I've since sold the car and bought a motorcycle. No eight-armed cephalopods on that one, yet.)
+I like Vim, Test-Driven Development, small commits, one letter shell aliases, and Oxford comma. I'm a heavy Git and GitHub user (I have almost 70 aliases and scripts in my [git config](https://github.com/narfdotpl/dotfiles/blob/master/home/.config/git/config)). Also, I used to have an Octocat on my car: <http://flic.kr/p/9ymNrs>. (I've since sold the car and bought a [motorcycle][]. No eight-armed cephalopods on that one, yet.)
+
+  [motorcycle]: https://www.instagram.com/p/5MGS4DF8d5/
 
 
 # Experience
@@ -78,7 +80,7 @@ I decided Physics was not for me in the middle of the fourth semester.
 - I'm comfortable communicating in English and I'm a Polish native speaker.
 - I'm registered as a one-man business in Poland.
 - I like products with the  logo.
-- I ride a [motorcycle](https://www.instagram.com/p/5MGS4DF8d5/) (a white Honda CB500F).
+- I ride a [motorcycle][] (a white Honda CB500F).
 - I like Jacek Dukaj's books (hard sf).
 - I listen to a lot of [music](/music) (varied, but mostly metal).
 - I listen to a lot of [podcasts](http://links.narf.pl/tags/podcast) too!
