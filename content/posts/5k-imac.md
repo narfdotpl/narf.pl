@@ -5,7 +5,7 @@ Grumpy review of the late 2015 5k iMac
 
 I bought a computer that I, and many &nbsp;geeks, were excited about.
 
-I wanted to publish the list of software that I put on the machine when I was setting it up, starting from a clean installation of OS X.  I began to write a preface for that list and it somehow turned into a very grumpy review of a very good computer.  It became *this* post.  So, here we are.  I'll publish the software part some other day.
+I wanted to publish the [list of software](/posts/osx-software) that I put on the machine when I was setting it up, starting from a clean installation of OS X.  I began to write a preface for that list and it somehow turned into a very grumpy review of a very good computer.  It became *this* post.  So, here we are.  I'll publish the software part some other day.
 
 ![](clean.jpg)
 

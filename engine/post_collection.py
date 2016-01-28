@@ -43,6 +43,7 @@ def add_collections_to_posts(posts):
                    filter(lambda x: x['slug'] in [
                        'menu-bar',
                        '5k-imac',
+                       'mac-software',
                    ], posts))
 
     return posts_in_original_order
