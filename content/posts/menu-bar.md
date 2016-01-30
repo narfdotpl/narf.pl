@@ -1,7 +1,7 @@
 2014-05-20
 
-Setup: OS X menu bar
-====================
+Menu bar
+========
 
 > One of the advantages of not working remotely is that I can look over
 > your shoulder and learn about all these little apps.  It couldn't
