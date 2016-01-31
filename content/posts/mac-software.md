@@ -240,4 +240,4 @@ This sums up my list of Mac apps.  Let me know on [Twitter][] if you have
 any app recommendations.  See you next time, in another hilarious
 installment of My New Computer!
 
-  [Twitter]: https://twitter.com/narfdotpl
+  [Twitter]: https://twitter.com/narfdotpl/status/693740837923061760
