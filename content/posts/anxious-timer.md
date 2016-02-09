@@ -27,5 +27,3 @@ cheerfully reply that they can finish all their tasks in a finite amount of
 time.  They just need to do each task twice as fast as the previous one.
 
 It remains to be seen, whether the joke is on me... or on you.
-
----
