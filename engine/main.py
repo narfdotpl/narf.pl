@@ -66,6 +66,7 @@ class memoized(object):
                 'xero',
                 'bytebeat',
                 'summer-of-creative-coding',
+                'procedural-trees',
             ]),
         ]
 
@@ -208,6 +209,7 @@ class memoized(object):
 
     def selected_posts():
         selected_slugs = [
+            'procedural-trees',
             'checkers-skull',
             'bytebeat',
             'lenses-in-swift',
