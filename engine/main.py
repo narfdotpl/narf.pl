@@ -130,8 +130,9 @@ class memoized(object):
         # render and process markdown
         ctx['content'] = antimap(ctx['remaining_markdown'], [
             render_markdown,
-            partial(resolve_asset_urls, filename),
             wrap_images_in_figures_instead_of_paragraphs,
+            turn_mp4_images_to_videos,
+            partial(resolve_asset_urls, filename),
             center_figure_captions,
             wrap_images_in_links,
             thumbnail_big_images,
@@ -319,6 +320,7 @@ def resolve_asset_urls(filename, html):
         ('img', 'src'),
         ('script', 'src'),
         ('video', 'src'),
+        ('source', 'src'),
     ]:
         for tag in soup.find_all(tag_name):
             change_url(tag, key)
@@ -354,6 +356,31 @@ def thumbnail_big_images(html):
                                       memoized.static_url_for_thumbnail(path):
             # use the thumbnail instead of the original image
             img['src'] = '/thumbnails/%s' % path
+
+    return unicode(soup)
+
+
+def turn_mp4_images_to_videos(html):
+    """
+    >>> turn_mp4_images_to_videos('<img src="foo.mp4">')
+    u'<video autoplay loop>
+        <source src="foo.mp4" type="video/mp4">
+        <source src="foo.webm" type="video/webm">
+    </video>'
+    """
+
+    soup = BeautifulSoup(html)
+
+    for img in soup.find_all('img'):
+        src = img['src']
+        if src.endswith('.mp4'):
+            video = soup.new_tag('video', autoplay='autoplay', loop='loop')
+            for extension in ['mp4', 'webm']:
+                video.append(soup.new_tag('source',
+                    src=src.replace('.mp4', '.' + extension),
+                    type='video/' + extension))
+
+            img.replace_with(video)
 
     return unicode(soup)
 
