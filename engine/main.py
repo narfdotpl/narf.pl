@@ -318,6 +318,7 @@ def resolve_asset_urls(filename, html):
         ('a', 'href'),
         ('img', 'src'),
         ('script', 'src'),
+        ('video', 'src'),
     ]:
         for tag in soup.find_all(tag_name):
             change_url(tag, key)
