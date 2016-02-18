@@ -363,10 +363,7 @@ def thumbnail_big_images(html):
 def turn_mp4_images_to_videos(html):
     """
     >>> turn_mp4_images_to_videos('<img src="foo.mp4">')
-    u'<video autoplay loop>
-        <source src="foo.mp4" type="video/mp4">
-        <source src="foo.webm" type="video/webm">
-    </video>'
+    u'<video src="foo.mp4" autoplay loop></video>'
     """
 
     soup = BeautifulSoup(html)
@@ -374,13 +371,10 @@ def turn_mp4_images_to_videos(html):
     for img in soup.find_all('img'):
         src = img['src']
         if src.endswith('.mp4'):
-            video = soup.new_tag('video', autoplay='autoplay', loop='loop')
-            for extension in ['mp4', 'webm']:
-                video.append(soup.new_tag('source',
-                    src=src.replace('.mp4', '.' + extension),
-                    type='video/' + extension))
-
-            img.replace_with(video)
+            img.replace_with(soup.new_tag('video',
+                src=src,
+                autoplay='autoplay',
+                loop='loop'))
 
     return unicode(soup)
 
