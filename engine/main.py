@@ -118,9 +118,12 @@ class memoized(object):
         return render_template('feed.xml', entries=entries)
 
     def rendered_index():
-        return render_template('index.html',
+        html = render_template('index.html',
             posts=memoized.selected_posts(),
             number_of_visible_posts=4)
+
+        # dirty hack!
+        return resolve_asset_urls('index.md', html)
 
     def rendered_post(filename):
         # get post data
@@ -316,6 +319,7 @@ def resolve_asset_urls(filename, html):
     for tag_name, key in [
         ('a', 'href'),
         ('img', 'src'),
+        ('script', 'src'),
     ]:
         for tag in soup.find_all(tag_name):
             change_url(tag, key)
