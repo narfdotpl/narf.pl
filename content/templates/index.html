@@ -3,28 +3,11 @@
 
 {% block extra_head %}
     <style>
-        .row {
-            overflow: hidden; }
-
-        .col {
-            float: left;
-            width: 130px; }
-
-        .col-left {
-            width: 180px; }
-
-        .col-mid {
-            margin-left: 25px;
-            margin-right: 45px; }
-
-        @media (max-width: 400px) {
-            .col {
-                float: none;
-                width: 100%;
-                margin-left: 0; }}
-
-        ul {
-            margin-bottom: 0; }
+        .introduction {
+            max-width: 580px;
+            margin-left: auto;
+            margin-right: auto;
+        }
     </style>
 
     <meta property="og:title" content="Maciej Konieczny (narf)">
@@ -41,12 +24,13 @@
             <h1>Maciej Konieczny</h1>
         </header>
 
-        <p>
+        <p class="introduction">
             Hi, welcome!
             My name is Maciej.
             Some know me as narf.
             I&nbsp;create software.
-            You can contact me via email at <a href="mailto:hello@narf.pl">hello@&hellip;</a>
+            You can contact me via email at <a href="mailto:hello@narf.pl">hello@</a>.
+            Check out my blogs: <a href="/posts">one with articles</a> and <a href="http://links.narf.pl">one with links</a>.
         </p>
 
         <br>
@@ -76,48 +60,5 @@
             </a>
         </figure>
 
-
-        <div class="row">
-            <div class="col col-left">
-                <h2>Projects</h2>
-                <ul>
-                    <li><a href="http://glitchycheckers.com/">Glitchy Checkers</a></li>
-                    <li><a href="https://github.com/macoscope/SwiftyStateMachine">Swifty State Machine</a></li>
-                    <li class="hidden"><a href="https://github.com/narfdotpl/lenso">Lenso</a></li>
-                    <li class="hidden"><a href="/posts/anxious-timer">Anxious Timer</a></li>
-                    <li class="hidden"><a href="https://github.com/narfdotpl/debug">import debug</a></li>
-                    <li class="hidden"><a href="https://github.com/narfdotpl/selfdot.vim">selfdot.vim</a></li>
-                    <li class="hidden"><a href="https://github.com/narfdotpl/dotfiles">dotfiles</a></li>
-                    <li class="hidden"><a href="https://github.com/narfdotpl?tab=repositories">elephants’ graveyard</a></li>
-                    <li class="js-toggle"><a href="#turn-javascript-on-yo">&hellip;</a></li>
-                </ul>
-            </div>
-
-            <div class="col col-mid">
-                <h2>Collections</h2>
-
-                <ul>
-                    <li><a href="/posts">blog</a></li>
-                    <li><a href="http://links.narf.pl">link blog</a></li>
-                    <li class="hidden"><a href="https://github.com/narfdotpl/playlists">playlists</a></li>
-                    <li class="hidden"><a href="https://github.com/narfdotpl/doodles">doodles</a></li>
-                    <li class="js-toggle"><a href="#turn-javascript-on-yo">&hellip;</a></li>
-                </ul>
-            </div>
-
-            <div class="col">
-                <h2>Profiles</h2>
-
-                <ul>
-                    <li class="hidden"><a href="http://www.filmweb.pl/user/narfdotpl">Filmweb</a></li>
-                    <li><a href="https://github.com/narfdotpl">GitHub</a></li>
-                    <li class="hidden"><a href="http://instagram.com/narfdotpl">Instagram</a></li>
-                    <li class="hidden"><a href="http://www.last.fm/user/narfdotpl">Last.fm</a></li>
-                    <li class="hidden"><a href="http://www.linkedin.com/in/narfdotpl">LinkedIn</a></li>
-                    <li><a href="http://twitter.com/narfdotpl">Twitter</a></li>
-                    <li class="js-toggle"><a href="#turn-javascript-on-yo">&hellip;</a></li>
-                </ul>
-            </div>
-        </div>
     </div>
 {% endblock %}
