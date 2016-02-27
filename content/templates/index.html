@@ -77,21 +77,6 @@
         </figure>
 
 
-        <h2>Selected blog posts</h2>
-
-        <ul>
-            {% for post in posts %}
-                <li
-                {% if loop.index > number_of_visible_posts %}
-                    class="hidden"
-                {% endif %}
-            ><a href="{{ post.path }}">{{ post.title|typo }}</a></li>
-            {% endfor %}
-            <li class="hidden"><a href="/posts">All posts</a></li>
-            <li class="js-toggle"><a href="#turn-javascript-on-yo">&hellip;</a></li>
-        </ul>
-
-
         <div class="row">
             <div class="col col-left">
                 <h2>Projects</h2>
