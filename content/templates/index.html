@@ -56,30 +56,18 @@
 
         <br>
 
-
-        <figure>
-            <a href="http://glitchycheckers.com/">
-                <img src="links/glitchy-checkers.png">
-            </a>
-        </figure>
-
-        <figure>
-            <a href="/posts/anxious-timer">
-                <img src="/assets/anxious-timer/anxious-timer.png">
-            </a>
-        </figure>
-
-        <figure>
-            <a href="/posts/music-streaming">
-                <img src="links/spotify.png">
-            </a>
-        </figure>
-
-        <figure>
-            <a href="https://github.com/macoscope/SwiftyStateMachine">
-                <img src="links/state-machine.png">
-            </a>
-        </figure>
+        {% for (link, image) in [
+            ("http://glitchycheckers.com/", "glitchy-checkers.png"),
+            ("/posts/anxious-timer", "/assets/anxious-timer/anxious-timer.png"),
+            ("/posts/music-streaming", "spotify.png"),
+            ("https://github.com/macoscope/SwiftyStateMachine", "state-machine.png"),
+        ] %}
+            <figure>
+                <a href="{{ link }}">
+                    <img src="{% if not image.startswith("/") %}links/{% endif %}{{ image }}">
+                </a>
+            </figure>
+        {% endfor %}
 
     </div>
 {% endblock %}
