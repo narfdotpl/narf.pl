@@ -9,6 +9,7 @@
             margin-right: auto;
         }
 
+
         .icons {
             letter-spacing: 0.5ex;
         }
@@ -19,6 +20,7 @@
         .icons a:hover {
             color: #333;
         }
+
 
         {% with size="4px" %}
             {% for (hover, color) in [
@@ -31,6 +33,23 @@
                 }
             {% endfor %}
         {% endwith %}
+
+
+        figure {
+            margin-bottom: 4px;
+        }
+
+        @media (max-width: 900px) {
+            figure {
+                margin-bottom: 2px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            figure {
+                margin-bottom: 1px;
+            }
+        }
     </style>
 
     <meta property="og:title" content="Maciej Konieczny (narf)">
