@@ -118,9 +118,7 @@ class memoized(object):
         return render_template('feed.xml', entries=entries)
 
     def rendered_index():
-        html = render_template('index.html',
-            posts=memoized.selected_posts(),
-            number_of_visible_posts=4)
+        html = render_template('index.html')
 
         # dirty hack!
         return resolve_asset_urls('index.md', html)
