@@ -25,7 +25,6 @@
         {% with size="4px" %}
             {% for (hover, color) in [
                 (False, "#eee"),
-                (True,  "#bbf"),
             ] %}
                 figure{% if hover %}:hover{% endif %} {
                     background-image: linear-gradient(-45deg, {{ color }} 25%, transparent 25%, transparent 50%, {{ color }} 50%, {{ color }} 75%, transparent 75%, transparent);
@@ -49,6 +48,40 @@
             figure {
                 margin-bottom: 1px;
             }
+        }
+
+
+        figure {
+            position: relative;
+        }
+
+        /* http://omoss.io/ */
+        .overlay {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.8);
+
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            opacity: 0;
+            transition-property: opacity;
+            transition-duration: 0.3s;
+            transition-timing-function: ease;
+        }
+
+        .overlay:hover {
+            opacity: 1;
+        }
+
+        /* http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/ */
+        .overlay h1 {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
         }
     </style>
 
@@ -87,17 +120,23 @@
 
         <br>
 
-        {% for (link, image) in [
-            ("http://glitchycheckers.com/", "glitchy-checkers.png"),
-            ("/posts/anxious-timer", "/assets/anxious-timer/anxious-timer.png"),
-            ("/posts/music-streaming", "spotify.png"),
-            ("https://github.com/macoscope/SwiftyStateMachine", "state-machine.png"),
+        {% for (title, link, image) in [
+            ("Glitchy Checkers", "http://glitchycheckers.com/", "glitchy-checkers.png"),
+            ("Anxious Timer", "/posts/anxious-timer", "/assets/anxious-timer/anxious-timer.png"),
+            ("Impact of music streaming on my listening habits", "/posts/music-streaming", "spotify.png"),
+            ("SwiftyStateMachine", "https://github.com/macoscope/SwiftyStateMachine", "state-machine.png"),
         ] %}
-            <figure>
+            <article>
                 <a href="{{ link }}">
-                    <img src="{% if not image.startswith("/") %}links/{% endif %}{{ image }}">
+                    <figure>
+                        <img src="{% if not image.startswith("/") %}links/{% endif %}{{ image }}">
+
+                        <div class="overlay">
+                            <h1 class="balance-text">{{ title }}</h1>
+                        </div>
+                    </figure>
                 </a>
-            </figure>
+            </article>
         {% endfor %}
 
     </div>
