@@ -136,6 +136,7 @@ class memoized(object):
             center_figure_captions,
             wrap_images_in_links,
             thumbnail_big_images,
+            add_max_height_class_to_images,
             add_footnote_links,
         ])
 
@@ -198,9 +199,15 @@ class memoized(object):
         image = Image.open(asset_path)
         width, height = image.size
 
-        # don't scale small images
+        # set size limits
         max_width = 1024 * 2
         max_height = 780 * 2
+
+        # ignore max height for selected images
+        if '@max-height' in path:
+            max_height = height
+
+        # don't scale small images
         if width <= max_width and height <= max_height:
             return memoized.static_url_for_asset(path)
 
@@ -245,6 +252,24 @@ def add_footnote_links(html):
         html = '<a name="footnotes"><hr></a>'.join(html.rsplit('<hr/>', 1))
 
     return html
+
+
+def add_max_height_class_to_images(html):
+    """
+    >>> add_max_height_class_to_images('<img src="foo@max-height.jpg">')
+    u'<img src="foo@max-height.jpg" class="max-height">'
+    """
+
+    soup = BeautifulSoup(html)
+
+    for img in soup.find_all('img'):
+        if '@max-height' in img['src']:
+            img['class'] = ' '.join(filter(None, [
+                img.get('class'),
+                'max-height',
+            ]))
+
+    return unicode(soup)
 
 
 def add_title_text_to_post_links(html):
