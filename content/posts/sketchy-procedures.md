@@ -25,7 +25,8 @@ and pentagon, but there are a few images that don't follow this rule.*
 
 ![](fill.mp4)
 
-*Fill procedure development progress.*
+*Fill procedure development progress.
+[YouTube mirror](https://youtu.be/B-MeRtQcQU0).*
 
 
 <br>
@@ -33,4 +34,5 @@ and pentagon, but there are a few images that don't follow this rule.*
 
 ![](stroke.mp4)
 
-*Stroke procedure development progress.*
+*Stroke procedure development progress.
+[YouTube mirror](https://youtu.be/5maIezJxZQs).*
