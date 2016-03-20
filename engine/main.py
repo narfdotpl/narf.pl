@@ -22,7 +22,7 @@ import typogrify.filters
 import yaml
 
 from memoize import MetaMemoize
-from post_collection import add_collections_to_posts
+from post_collection import PostCollectionRecipe
 import settings
 
 
@@ -47,6 +47,26 @@ class memoized(object):
                     paths.append(join(dir_, filename))
 
         return paths
+
+    def collections():
+        recipes = [
+            PostCollectionRecipe("Checkers series",
+                predicate=lambda post: 'checkers' in post['slug']),
+
+            PostCollectionRecipe("Setup series", slugs=[
+                'menu-bar',
+                '5k-imac',
+                'mac-software',
+            ]),
+
+            PostCollectionRecipe("Procedural series", slugs=[
+                'shattered-polygons',
+                'sketchy-procedures',
+            ]),
+        ]
+
+        posts = sorted(memoized.public_posts(), key=lambda x: x['date'])
+        return [r.collection_with_posts(posts) for r in recipes]
 
     def draft_filenames():
         return public_filnames_in_directory(settings.DRAFTS_DIR)
@@ -86,7 +106,6 @@ class memoized(object):
             partial(map, memoized.post_data),
             partial(filter, lambda x: not x['is_draft']),
             partial(sorted, key=lambda x: x['date'], reverse=True),
-            add_collections_to_posts,
         ])
 
     def rendered_feed():
@@ -139,6 +158,13 @@ class memoized(object):
             add_max_height_class_to_images,
             add_footnote_links,
         ])
+
+        # add collection info
+        for collection in memoized.collections():
+            if collection.contains_post(ctx):
+                ctx['collection_navigation_item'] = \
+                     collection.navigation_item_for_post(ctx)
+                break
 
         # get dedicated social image
         social_image_url = None

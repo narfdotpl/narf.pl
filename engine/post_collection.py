@@ -4,51 +4,44 @@
 from __future__ import absolute_import, division
 
 
+class PostCollectionRecipe(object):
+
+    def __init__(self, tagline, predicate=None, slugs=None):
+        self.tagline = tagline
+
+        if slugs:
+            self.predicate = lambda post: post['slug'] in slugs
+        else:
+            self.predicate = predicate
+
+    def collection_with_posts(self, posts):
+        return PostCollection(self.tagline, filter(self.predicate, posts))
+
+
 class PostCollection(object):
 
     def __init__(self, tagline, posts):
         self.tagline = tagline
         self.posts = posts
 
-        padded_posts = [None] + posts + [None]
-        for (i, post) in enumerate(padded_posts):
-            if post:
-                post['collection_navigation_item'] = \
-                    PostCollectionNavigationItem(self, padded_posts[i - 1],
-                                                       padded_posts[i + 1])
+    def contains_post(self, post):
+        return post['slug'] in [p['slug'] for p in self.posts]
+
+    def navigation_item_for_post(self, post):
+        if not self.contains_post(post):
+            return None
+
+        padded_posts = [None] + self.posts + [None]
+        for (i, p) in enumerate(padded_posts):
+            if p and p['slug'] == post['slug']:
+                return PostCollectionNavigationItem(self.tagline,
+                                                    padded_posts[i - 1],
+                                                    padded_posts[i + 1])
 
 
 class PostCollectionNavigationItem(object):
 
-    def __init__(self, collection, previous_post, next_post):
-        self.collection = collection
+    def __init__(self, tagline, previous_post, next_post):
+        self.tagline = tagline
         self.previous_post = previous_post
         self.next_post = next_post
-
-    @property
-    def tagline(self):
-        return self.collection.tagline
-
-
-def add_collections_to_posts(posts):
-    # yay for mutable data! :E
-
-    posts_in_original_order = posts
-    posts = sorted(posts, key=lambda x: x['date'])
-
-    # max one collection per post, last one wins
-    PostCollection("Checkers series",
-                   filter(lambda x: 'checkers' in x['slug'], posts))
-    PostCollection("Setup series",
-                   filter(lambda x: x['slug'] in [
-                       'menu-bar',
-                       '5k-imac',
-                       'mac-software',
-                   ], posts))
-    PostCollection("Procedural series",
-                   filter(lambda x: x['slug'] in [
-                       'shattered-polygons',
-                       'sketchy-procedures',
-                   ], posts))
-
-    return posts_in_original_order
