@@ -45,5 +45,10 @@ def add_collections_to_posts(posts):
                        '5k-imac',
                        'mac-software',
                    ], posts))
+    PostCollection("Procedural series",
+                   filter(lambda x: x['slug'] in [
+                       'shattered-polygons',
+                       'sketchy-procedures',
+                   ], posts))
 
     return posts_in_original_order

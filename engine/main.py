@@ -130,26 +130,35 @@ class memoized(object):
         # render and process markdown
         ctx['content'] = antimap(ctx['remaining_markdown'], [
             render_markdown,
-            partial(resolve_asset_urls, filename),
             wrap_images_in_figures_instead_of_paragraphs,
+            turn_mp4_images_to_videos,
+            partial(resolve_asset_urls, filename),
             center_figure_captions,
             wrap_images_in_links,
             thumbnail_big_images,
+            add_max_height_class_to_images,
             add_footnote_links,
         ])
 
-        # get image URLs
-        soup = BeautifulSoup(ctx['content'])
-        ctx['image_urls'] = []
-        for img in soup.find_all('img'):
-            url = img['src']
+        # get dedicated social image
+        social_image_url = None
+        relative_path = '%s/social.jpg' % filename[:-len('.md')]
+        if relative_path in memoized.asset_relative_paths():
+            social_image_url = '/thumbnails/' + relative_path
 
-            # add domain
-            if url.startswith('/'):
-                url = 'http://narf.pl' + url
+        # use first image as social image
+        if social_image_url is None:
+            soup = BeautifulSoup(ctx['content'])
+            for img in soup.find_all('img'):
+                social_image_url = img['src']
+                break
 
-            ctx['image_urls'].append(url)
+        # add domain
+        if social_image_url.startswith('/'):
+            social_image_url = 'http://narf.pl' + social_image_url
 
+        # set social image
+        ctx['social_image_url'] = social_image_url
 
         # render final html
         html = render_template('post.html', **ctx)
@@ -197,9 +206,15 @@ class memoized(object):
         image = Image.open(asset_path)
         width, height = image.size
 
-        # don't scale small images
+        # set size limits
         max_width = 1024 * 2
         max_height = 780 * 2
+
+        # ignore max height for selected images
+        if '@max-height' in path:
+            max_height = height
+
+        # don't scale small images
         if width <= max_width and height <= max_height:
             return memoized.static_url_for_asset(path)
 
@@ -244,6 +259,24 @@ def add_footnote_links(html):
         html = '<a name="footnotes"><hr></a>'.join(html.rsplit('<hr/>', 1))
 
     return html
+
+
+def add_max_height_class_to_images(html):
+    """
+    >>> add_max_height_class_to_images('<img src="foo@max-height.jpg">')
+    u'<img src="foo@max-height.jpg" class="max-height">'
+    """
+
+    soup = BeautifulSoup(html)
+
+    for img in soup.find_all('img'):
+        if '@max-height' in img['src']:
+            img['class'] = ' '.join(filter(None, [
+                img.get('class'),
+                'max-height',
+            ]))
+
+    return unicode(soup)
 
 
 def add_title_text_to_post_links(html):
@@ -318,6 +351,8 @@ def resolve_asset_urls(filename, html):
         ('a', 'href'),
         ('img', 'src'),
         ('script', 'src'),
+        ('video', 'src'),
+        ('source', 'src'),
     ]:
         for tag in soup.find_all(tag_name):
             change_url(tag, key)
@@ -353,6 +388,25 @@ def thumbnail_big_images(html):
                                       memoized.static_url_for_thumbnail(path):
             # use the thumbnail instead of the original image
             img['src'] = '/thumbnails/%s' % path
+
+    return unicode(soup)
+
+
+def turn_mp4_images_to_videos(html):
+    """
+    >>> turn_mp4_images_to_videos('<img src="foo.mp4">')
+    u'<video src="foo.mp4" autoplay loop></video>'
+    """
+
+    soup = BeautifulSoup(html)
+
+    for img in soup.find_all('img'):
+        src = img['src']
+        if src.endswith('.mp4'):
+            img.replace_with(soup.new_tag('video',
+                src=src,
+                autoplay='autoplay',
+                loop='loop'))
 
     return unicode(soup)
 

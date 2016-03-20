@@ -85,11 +85,24 @@
         }
     </style>
 
-    <meta property="og:title" content="Maciej Konieczny (narf)">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="http://narf.pl/">
-    <meta property="og:image" content="http://narf.pl/assets/index/self.jpg">
-    <meta property="og:description" content="Hi, my name is Maciej.  Some know me as narf.  I create software.">
+    {% with
+        title="Maciej Konieczny (narf)",
+        description="Hi, my name is Maciej.  Some know me as narf.  I create software.",
+        image_url="http://narf.pl/assets/index/self.jpg"
+    %}
+        <meta property="og:title" content="{{ title}}">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://narf.pl/">
+        <meta property="og:image" content="{{ image_url}}">
+        <meta property="og:description" content="{{ description }}">
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@narfdotpl">
+        <meta name="twitter:creator" content="@narfdotpl">
+        <meta name="twitter:title" content="{{ title }}">
+        <meta name="twitter:description" content="{{ description }}">
+        <meta name="twitter:image" content="{{ image_url }}">
+    {% endwith %}
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 {% endblock %}
@@ -122,6 +135,7 @@
 
         {% for (title, link, image) in [
             ("Glitchy Checkers", "http://glitchycheckers.com/", "glitchy-checkers.png"),
+            ("Sketchy procedures", "/posts/sketchy-procedures", "sketchy-procedures.jpg"),
             ("Anxious Timer", "/posts/anxious-timer", "/assets/anxious-timer/anxious-timer.png"),
             ("Impact of music streaming on my listening habits", "/posts/music-streaming", "spotify.png"),
             ("SwiftyStateMachine", "https://github.com/macoscope/SwiftyStateMachine", "state-machine.png"),

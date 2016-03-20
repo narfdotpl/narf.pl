@@ -9,10 +9,21 @@
     <meta property="og:title" content="{{ title|typo }}">
     <meta property="og:type" content="article">
     <meta property="article:published_time" content="{{ date }}">
-
-    {% if image_urls %}
-        <meta property="og:image" content="{{ image_urls.0 }}">
+    {% if social_image_url %}
+        <meta property="og:image" content="{{ social_image_url }}">
     {% endif %}
+
+
+    {% if social_image_url %}
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="{{ social_image_url }}">
+    {% else %}
+        <meta name="twitter:card" content="summary">
+    {% endif %}
+    <meta name="twitter:site" content="@narfdotpl">
+    <meta name="twitter:creator" content="@narfdotpl">
+    <meta name="twitter:title" content="{{ title|typo }}">
+
 
     <link rel="stylesheet" href="/assets/index/highlight/styles/github.css">
 
