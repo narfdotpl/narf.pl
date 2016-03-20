@@ -140,18 +140,25 @@ class memoized(object):
             add_footnote_links,
         ])
 
-        # get image URLs
-        soup = BeautifulSoup(ctx['content'])
-        ctx['image_urls'] = []
-        for img in soup.find_all('img'):
-            url = img['src']
+        # get dedicated social image
+        social_image_url = None
+        relative_path = '%s/social.jpg' % filename[:-len('.md')]
+        if relative_path in memoized.asset_relative_paths():
+            social_image_url = '/thumbnails/' + relative_path
 
-            # add domain
-            if url.startswith('/'):
-                url = 'http://narf.pl' + url
+        # use first image as social image
+        if social_image_url is None:
+            soup = BeautifulSoup(ctx['content'])
+            for img in soup.find_all('img'):
+                social_image_url = img['src']
+                break
 
-            ctx['image_urls'].append(url)
+        # add domain
+        if social_image_url.startswith('/'):
+            social_image_url = 'http://narf.pl' + social_image_url
 
+        # set social image
+        ctx['social_image_url'] = social_image_url
 
         # render final html
         html = render_template('post.html', **ctx)
