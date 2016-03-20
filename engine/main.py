@@ -179,12 +179,12 @@ class memoized(object):
                 social_image_url = img['src']
                 break
 
-        # add domain
-        if social_image_url.startswith('/'):
-            social_image_url = 'http://narf.pl' + social_image_url
+        # add domain and set social image
+        if social_image_url:
+            if social_image_url.startswith('/'):
+                social_image_url = 'http://narf.pl' + social_image_url
 
-        # set social image
-        ctx['social_image_url'] = social_image_url
+            ctx['social_image_url'] = social_image_url
 
         # render final html
         html = render_template('post.html', **ctx)
