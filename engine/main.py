@@ -581,7 +581,11 @@ def redirect_from_old_path(path):
             '/quit.txt': ('/posts/quit-delicious', permanent),
 
             '/have-seen':
-                (memoized.static_url_for_asset('index/have-seen.jpg'),
+                (memoized.static_url_for_asset('index/urls/have-seen.jpg'),
+                 not permanent),
+
+            '/js':
+                (memoized.static_url_for_asset('index/urls/ancient-aliens-javascript.jpg'),
                  not permanent),
 
             '/key':
