@@ -36,3 +36,12 @@ and pentagon, but there are a few images that don't follow this rule.*
 
 *Stroke procedure development progress.
 [YouTube mirror](https://youtu.be/5maIezJxZQs).*
+
+
+Update • 2016-03-26
+-------------------
+
+I posted this to the [Procedural Generation subreddit][Reddit post].
+I've never had [a 100%](reddit.png). :)
+
+  [Reddit post]: https://www.reddit.com/r/proceduralgeneration/comments/4b7str/sketchy_procedures_lead_to_a_beautiful_catastrophe/
