@@ -600,6 +600,10 @@ def redirect_from_old_path(path):
                 ('http://www.youtube.com/watch?v=Gc31UQ-C6dw',
                  not permanent),
 
+            '/pie-chart':
+                ('https://twitter.com/maxcroser/status/676563118512840704',
+                 not permanent),
+
             '/samo-sie-nie-zrobi':
                 ('http://www.youtube.com/watch?v=xOUjIr70XgQ',
                  not permanent),
