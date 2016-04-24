@@ -62,6 +62,7 @@ class memoized(object):
             PostCollectionRecipe("Procedural series", slugs=[
                 'shattered-polygons',
                 'sketchy-procedures',
+                'xero',
             ]),
         ]
 
