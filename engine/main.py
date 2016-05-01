@@ -63,6 +63,7 @@ class memoized(object):
                 'shattered-polygons',
                 'sketchy-procedures',
                 'xero',
+                'bytebeat',
             ]),
         ]
 
@@ -201,6 +202,7 @@ class memoized(object):
 
     def selected_posts():
         selected_slugs = [
+            'bytebeat',
             'lenses-in-swift',
             '5k-imac',
             'checkers-explosion-bug',
