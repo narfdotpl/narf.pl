@@ -41,7 +41,7 @@ using QuickTime and [Soundflower][]:
 I had a great time playing those but I have to admit that after a few
 hours of experimentation with bytebeat the initial excitement started
 to fade a little bit.  Maybe this won't be the tool that will allow me
-to add proper gameplay-/physics-based sound to [Glitchy Checkers][].
+to add reactive sound to [Glitchy Checkers][].
 Maybe.  Maybe the fact that I enjoy making noise with code is an
 indication that I should refresh my Ruby and give [Sonic Pi][] a
 try? (Thanks to Maciej Gajewski for the recommendation.)
