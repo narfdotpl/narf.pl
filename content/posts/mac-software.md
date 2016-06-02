@@ -140,10 +140,16 @@ devices and OS X.
   [Dropbox on The Verge]: http://www.theverge.com/2015/9/22/9372563/dropbox-really-is-a-feature
 
 
-[iA Writer Classic][] is the text editor that I use when I occasionally need
-to sync text with my iPhone.
+[iA Writer Classic][] is the text editor that I use when I need to sync
+text with my iPhone.  2016-06-02 update: a few weeks ago I removed iA
+Writer and switched to [Editorial][] on iOS.  It's very impressive.  I
+use MacVim on my Mac and sync notes via Dropbox.  The sync seems faster,
+provides visual feedback (a tiny spinner is better than nothing), and
+can be triggered manually.  Overall, Editorial is a better app and
+Dropbox is more reliable and less frustrating than iCloud.
 
   [iA Writer Classic]: https://itunes.apple.com/bf/app/ia-writer-classic/id439623248?mt=12
+  [Editorial]: http://omz-software.com/editorial/
 
 
 [Clear][] is the to-do app that I still use from time to time, even though
