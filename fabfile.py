@@ -95,3 +95,4 @@ def visit():
     'Visit http://narf.pl/.'
 
     local('open http://narf.pl/')
+    local('open http://narf.pl/feed')
