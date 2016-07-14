@@ -10,18 +10,6 @@
         }
 
 
-        .icons {
-            letter-spacing: 0.5ex;
-        }
-
-        .icons a {
-            color: #999;
-        }
-        .icons a:hover {
-            color: #333;
-        }
-
-
         {% with size="4px" %}
             {% for (hover, color) in [
                 (False, "#eee"),
@@ -103,8 +91,6 @@
         <meta name="twitter:description" content="{{ description }}">
         <meta name="twitter:image" content="{{ image_url }}">
     {% endwith %}
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 {% endblock %}
 
 
