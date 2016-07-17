@@ -14,6 +14,6 @@ Barcelona
 ![](5.jpg)
 
 <p class="centered">
-    2013-09-01 &ndash; 2013-09-10<br>
+    2013-09-01 &ndash; 2013-09-10<br/>
     Shot on iPhone 4S
 </p>

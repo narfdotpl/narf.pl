@@ -20,6 +20,6 @@ Lisbon
 ![](8.jpg)
 
 <p class="centered">
-    2015-05-04 &ndash; 2015-05-11<br>
+    2015-05-04 &ndash; 2015-05-11<br/>
     Shot on iPhone 6
 </p>

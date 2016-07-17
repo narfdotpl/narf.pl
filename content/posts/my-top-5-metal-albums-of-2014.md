@@ -45,8 +45,8 @@ Super catchy metalcore album from a melodic death metal band with a much
 darker back catalog.  This release is full of songs with cheesy choruses
 that you can't not sign along to.
 
-> Why wait for the silence to be heard<br>
-> When you are the reason<br>
+> Why wait for the silence to be heard<br/>
+> When you are the reason<br/>
 > Why I'm in love with the world
 
 

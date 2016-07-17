@@ -20,7 +20,7 @@ times.  Most rows show the same algorithm applied to a triangle, square,
 and pentagon, but there are a few images that don't follow this rule.*
 
 
-<br>
+<br/>
 
 
 ![](fill.mp4)
@@ -29,7 +29,7 @@ and pentagon, but there are a few images that don't follow this rule.*
 [YouTube mirror](https://youtu.be/B-MeRtQcQU0).*
 
 
-<br>
+<br/>
 
 
 ![](stroke.mp4)
