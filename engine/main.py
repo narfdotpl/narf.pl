@@ -553,16 +553,6 @@ def thumbnail(path):
     return redirect(memoized.static_url_for_thumbnail(path))
 
 
-@app.route('/cv')
-def cv():
-    return redirect('https://www.linkedin.com/in/narfdotpl', 302)
-
-
-@app.route('/checkers')
-def checkers():
-    return redirect('/posts/glitchy-checkers-release', 302)
-
-
 @app.route('/<path:path>')
 def redirect_from_old_path(path):
     # DSL-ish
@@ -582,6 +572,8 @@ def redirect_from_old_path(path):
             '/feed.xml': ('/feed', permanent),
             '/plain.txt': ('/posts/plain-text', permanent),
             '/quit.txt': ('/posts/quit-delicious', permanent),
+
+            '/cv': ('https://www.linkedin.com/in/narfdotpl', not permanent),
 
             '/have-seen':
                 (memoized.static_url_for_asset('index/urls/have-seen.jpg'),
