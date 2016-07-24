@@ -59,7 +59,7 @@ Make some n͍ͧ͋o̜̖̾ỉ̅͡s᷀ͧ̅e̳͠͠!
   [Sonic Pi]: https://www.youtube.com/watch?v=TK1mBqKvIyU
 
 
-<a id="update">
+<a id="update-2016-07-10">
 
 Update • 2016-07-10
 -------------------
@@ -75,5 +75,19 @@ Cortini][blindoldfreak]:
 <figure>
     <div class="video-wrapper">
         <iframe src="//www.youtube.com/embed/-qnqK5OiNq8" frameborder="0" allowfullscreen></iframe>
+    </div>
+</figure>
+
+
+<a id="update-2016-07-24">
+
+Update • 2016-07-24
+-------------------
+
+More drone experiments:
+
+<figure>
+    <div class="video-wrapper">
+        <iframe src="//www.youtube.com/embed/oo9kadxlZ1E" frameborder="0" allowfullscreen></iframe>
     </div>
 </figure>
