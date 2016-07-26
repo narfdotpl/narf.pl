@@ -21,8 +21,6 @@ make for so-so iPhone ([6][] and [6+][]) wallpapers:
 
 ![](iphone-photo.jpg)
 
-Hack the Planet!
-
   [Kimi]: https://www.youtube.com/watch?v=RiomuRm41YI
   [Belleruche]: https://www.youtube.com/watch?v=ntonFtX4Fpo
   [6]: wallpaper-iphone-6.png
