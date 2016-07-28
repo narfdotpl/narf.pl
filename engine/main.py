@@ -424,7 +424,7 @@ def thumbnail_big_images(html):
 def turn_mp4_images_to_videos(html):
     """
     >>> turn_mp4_images_to_videos('<img src="foo.mp4">')
-    u'<video src="foo.mp4" autoplay loop></video>'
+    u'<video src="foo.mp4" controls autoplay loop></video>'
     """
 
     soup = BeautifulSoup(html)
@@ -434,6 +434,7 @@ def turn_mp4_images_to_videos(html):
         if src.endswith('.mp4'):
             img.replace_with(soup.new_tag('video',
                 src=src,
+                controls='controls',
                 autoplay='autoplay',
                 loop='loop'))
 
