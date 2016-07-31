@@ -224,7 +224,7 @@ class memoized(object):
         if app.debug:
             return '/static'
         else:
-            return 'http://static.narf.pl/main'
+            return 'http://cdn.narf.pl/main'
 
     def static_url_for_asset(path):
         # 'a/b/c' → '/static/assets/a/b/c?sdfsdfsdf'
