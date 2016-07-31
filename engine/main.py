@@ -139,10 +139,11 @@ class memoized(object):
         return render_template('feed.xml', entries=entries)
 
     def rendered_index():
-        html = render_template('index.html')
-
-        # dirty hack!
-        return resolve_asset_urls('index.md', html)
+        return antimap('index.html', [
+            render_template,
+            partial(resolve_asset_urls, 'index.md'),  # dirty hack!
+            resolve_static_urls,
+        ])
 
     def rendered_post(filename):
         # get post data
@@ -190,15 +191,20 @@ class memoized(object):
 
         # render final html
         html = render_template('post.html', **ctx)
-        return add_title_text_to_post_links(html)
+        return antimap(html, [
+            add_title_text_to_post_links,
+            resolve_static_urls,
+        ])
 
     def rendered_posts():
         posts = memoized.public_posts()
         get_year = lambda x: x['date'].split('-')[0]
 
-        return render_template('posts.html',
+        html = render_template('posts.html',
             selected_posts=memoized.selected_posts(),
             posts_by_year=groupby(posts, get_year))
+
+        return resolve_static_urls(html)
 
     def selected_posts():
         selected_slugs = [
@@ -385,6 +391,29 @@ def resolve_asset_urls(filename, html):
     ]:
         for tag in soup.find_all(tag_name):
             change_url(tag, key)
+
+    return unicode(soup)
+
+
+def resolve_static_urls(html):
+    """
+    >>> resolve_static_urls('<img src="/assets/foo.jpg"/>')
+    u'<img src="http://static.narf.pl/main/assets/foo.jpg?123456789"/>'
+    """
+
+    soup = BeautifulSoup(html)
+
+    for attr in ['href', 'src']:
+        predicate = lambda tag: tag.has_attr(attr)
+        for tag in soup.find_all(predicate):
+            for (prefix, get_url) in [
+                ('/assets/', memoized.static_url_for_asset),
+                ('/thumbnails/', memoized.static_url_for_thumbnail),
+            ]:
+                url = tag[attr]
+                if url.startswith(prefix):
+                    path = url[len(prefix):]
+                    tag[attr] = get_url(path)
 
     return unicode(soup)
 
