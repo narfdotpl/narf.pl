@@ -195,7 +195,7 @@ on social media, this is the one. :)
   [Data Is Beautiful subreddit]: http://www.reddit.com/r/dataisbeautiful/comments/33clwk/music_streaming_impact_number_of_artists_i/
 
 
-<a id="update">
+<a id="update"/>
 
 Update • 2015-04-26
 -------------------
@@ -276,7 +276,7 @@ I visualized CSV data with [D3.js][] and CoffeeScript.  It was the first
 time I used D3 and I am very happy with the results.  I based my work on
 [Mike Bostock's tutorial][tutorial].  The tutorial is not perfect for
 complete beginners, but is sufficient for people with web
-programming<wbr>experience.
+programming<wbr/>experience.
 
 The most important thing I learned about D3 is the fact that it's
 not a library for creating charts, but rather a framework for writing

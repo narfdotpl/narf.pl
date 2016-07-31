@@ -311,7 +311,7 @@ Tweaks add an overhead of finding a few properties and calling a few
 simple functions.  They are negligible compared to computational cost of
 moving things on the screen.  Deserialization happens only on the first
 access.  In release builds I use dummy tweaks that return the supplied
-value right away and bypass the whole serialization/<wbr>remembering
+value right away and bypass the whole serialization/<wbr/>remembering
 mechanism.  I think that `tweak` methods can be optimized by adding an
 `#if DEBUG` clause and asking the compiler to inline the method, but I
 would have to find the time too look at the assembly to verify this:

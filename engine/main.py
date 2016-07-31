@@ -285,15 +285,15 @@ def add_footnote_links(html):
 
     # wrap last <hr> in <a name>
     if getattr(repl, 'was_called', True):
-        html = '<a name="footnotes"><hr></a>'.join(html.rsplit('<hr/>', 1))
+        html = '<a name="footnotes"><hr/></a>'.join(html.rsplit('<hr/>', 1))
 
     return html
 
 
 def add_max_height_class_to_images(html):
     """
-    >>> add_max_height_class_to_images('<img src="foo@max-height.jpg">')
-    u'<img src="foo@max-height.jpg" class="max-height">'
+    >>> add_max_height_class_to_images('<img src="foo@max-height.jpg"/>')
+    u'<img src="foo@max-height.jpg" class="max-height"/>'
     """
 
     soup = BeautifulSoup(html)
@@ -401,8 +401,8 @@ def stupify(s):
 
 def thumbnail_big_images(html):
     """
-    >>> thumbnail_big_images('<img src="/assets/foo.jpg">')
-    u'<img src="/thumbnails/foo.jpg">'
+    >>> thumbnail_big_images('<img src="/assets/foo.jpg"/>')
+    u'<img src="/thumbnails/foo.jpg"/>'
     """
 
     prefix = '/assets/'
@@ -423,7 +423,7 @@ def thumbnail_big_images(html):
 
 def turn_mp4_images_to_videos(html):
     """
-    >>> turn_mp4_images_to_videos('<img src="foo.mp4">')
+    >>> turn_mp4_images_to_videos('<img src="foo.mp4"/>')
     u'<video src="foo.mp4" controls autoplay loop></video>'
     """
 
@@ -443,8 +443,8 @@ def turn_mp4_images_to_videos(html):
 
 def wrap_images_in_figures_instead_of_paragraphs(html):
     """
-    >>> wrap_images_in_figures_instead_of_paragraphs('<p><img src="/assets/foo.jpg"></p>')
-    u'<figure><img src="/assets/foo.jpg"></figure>'
+    >>> wrap_images_in_figures_instead_of_paragraphs('<p><img src="/assets/foo.jpg"/></p>')
+    u'<figure><img src="/assets/foo.jpg"/></figure>'
     """
 
     soup = BeautifulSoup(html)
@@ -464,8 +464,8 @@ def wrap_images_in_figures_instead_of_paragraphs(html):
 
 def wrap_images_in_links(html):
     """
-    >>> wrap_images_in_links('<img src="/assets/foo.jpg">')
-    u'<a href="/assets/foo.jpg"><img src="/assets/foo.jpg"></a>'
+    >>> wrap_images_in_links('<img src="/assets/foo.jpg"/>')
+    u'<a href="/assets/foo.jpg"><img src="/assets/foo.jpg"/></a>'
     """
 
     soup = BeautifulSoup(html)

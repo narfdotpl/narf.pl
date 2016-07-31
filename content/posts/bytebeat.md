@@ -59,7 +59,7 @@ Make some n͍ͧ͋o̜̖̾ỉ̅͡s᷀ͧ̅e̳͠͠!
   [Sonic Pi]: https://www.youtube.com/watch?v=TK1mBqKvIyU
 
 
-<a id="update-2016-07-10">
+<a id="update-2016-07-10"/>
 
 Update • 2016-07-10
 -------------------
@@ -79,7 +79,7 @@ Cortini][blindoldfreak]:
 </figure>
 
 
-<a id="update-2016-07-24">
+<a id="update-2016-07-24"/>
 
 Update • 2016-07-24
 -------------------

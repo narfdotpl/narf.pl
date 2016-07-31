@@ -71,7 +71,7 @@ Cons:
 - occasional sync problems (that can be fixed by re-downloading articles)
 
 
-<a id="update">
+<a id="update"/>
 
 Update • 2015-06-26
 -------------------
