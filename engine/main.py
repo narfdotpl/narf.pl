@@ -74,6 +74,7 @@ class memoized(object):
             PostCollectionRecipe("Visualization series", slugs=[
                 'music-streaming',
                 'spiral',
+                'screenshot-log',
             ]),
 
             PostCollectionRecipe("Robotics series", slugs=[
