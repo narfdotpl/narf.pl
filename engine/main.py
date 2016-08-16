@@ -64,6 +64,7 @@ class memoized(object):
                 'sketchy-procedures',
                 'xero',
                 'bytebeat',
+                'summer-of-creative-coding',
             ]),
         ]
 

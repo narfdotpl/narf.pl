@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+convert -scale 50% -delay 3 -loop 0 *.png loop.gif
