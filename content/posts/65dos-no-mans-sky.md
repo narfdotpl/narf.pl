@@ -14,7 +14,8 @@ and animals.
   [No Man's Sky]: http://www.no-mans-sky.com/
 
 
-I like the soundtrack, especially the second album, and I've listened
+I haven't played the game because I don't have the hardware, but
+I like the soundtrack, especially the second album.  I've listened
 to the whole thing a couple of times.  With its sci-fi aesthetic it
 makes a good background for programming (or taking a long journey by
 train).  You can listen to it on [Spotify][] and [YouTube][] (where it
