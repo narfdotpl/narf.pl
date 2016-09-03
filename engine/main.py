@@ -598,6 +598,7 @@ def redirect_from_old_path(path):
     ]):
         url = 'http://lab.narf.pl/' + path
     else:
+        suspense = 'http://narf.pl/assets/5k-imac/suspense_accent_1.mp3'
         url, permanent = {
             '/feed.xml': ('/feed', permanent),
             '/plain.txt': ('/posts/plain-text', permanent),
@@ -632,6 +633,9 @@ def redirect_from_old_path(path):
             '/samo-sie-nie-zrobi':
                 ('http://www.youtube.com/watch?v=xOUjIr70XgQ',
                  not permanent),
+
+            '/suspense': (suspense, not permanent),
+            '/suspens':  (suspense, not permanent),
 
             '/newsletter': ('http://eepurl.com/baKQjf', not permanent),
         }.get('/' + path, (None, None))
