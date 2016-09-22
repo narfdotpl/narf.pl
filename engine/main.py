@@ -68,6 +68,7 @@ class memoized(object):
                 'bytebeat',
                 'summer-of-creative-coding',
                 'procedural-trees',
+                'pixel-sorting',
             ]),
 
             PostCollectionRecipe("Visualization series", slugs=[

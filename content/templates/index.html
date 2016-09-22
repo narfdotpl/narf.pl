@@ -14,21 +14,8 @@
 
         figure {
             position: relative;
-            margin-bottom: 4px;
+            margin-bottom: 1px;
             background: radial-gradient(#fff, #eee);
-        }
-
-
-        @media (max-width: 900px) {
-            figure {
-                margin-bottom: 2px;
-            }
-        }
-
-        @media (max-width: 640px) {
-            figure {
-                margin-bottom: 1px;
-            }
         }
 
         /* http://omoss.io/ */
@@ -107,6 +94,7 @@
 
         {% for (title, link, image) in [
             ("Glitchy Checkers", "http://glitchycheckers.com/", "glitchy-checkers.png"),
+            ("Pixel sorting study", "/posts/pixel-sorting", "pixel-sorting.jpg"),
             ("Procedural graphics: trees and circuit boards", "/posts/procedural-trees", "procedural-trees.png"),
             ("Quadruped robot movement", "/posts/robot-movement", "robot-movement.jpg"),
             ("Summer of Creative Coding", "/posts/summer-of-creative-coding", "summer-of-creative-coding.jpg"),

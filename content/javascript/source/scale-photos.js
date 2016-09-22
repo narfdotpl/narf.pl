@@ -1,6 +1,7 @@
 $(function () {
     for (const [selector, maxWidth, offset] of [
-        ['figure', 1024, 0],
+        ['figure:not(.figure4608)', 1024, 0],
+        ['.figure4608', 4608/2, 0],
         ['ul.gallery', 1024, -2],
     ]) {
         const $el = $(selector)
