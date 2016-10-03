@@ -72,7 +72,7 @@ class memoized(object):
         return [r.collection_with_posts(posts) for r in recipes]
 
     def draft_filenames():
-        return public_filnames_in_directory(settings.DRAFTS_DIR)
+        return filnames_in_directory(settings.DRAFTS_DIR)
 
     def is_draft(filename):
         return filename in memoized.draft_filenames()
@@ -109,7 +109,7 @@ class memoized(object):
         }
 
     def post_filenames():
-        return public_filnames_in_directory(settings.POSTS_DIR)
+        return filnames_in_directory(settings.POSTS_DIR)
 
     def public_posts():
         return antimap(memoized.post_filenames(), [
@@ -125,16 +125,11 @@ class memoized(object):
             entries = yaml.load(f)
 
         # add posts
-        for filename in memoized.post_filenames():
-            dct = memoized.post_data(filename)
-
-            if dct['is_hidden']:
-                continue
-
+        for post in memoized.public_posts():
             entries.append({
-                'title': dct['title'],
-                'time': '%s 00:00' % dct['date'],
-                'link': dct['url'],
+                'title': post['title'],
+                'time': '%s 00:00' % post['date'],
+                'link': post['url'],
             })
 
         # set "updated" field (ISO 8601) in a retarded manner
@@ -364,7 +359,7 @@ def get_hash(x):
     return md5(str(x)).hexdigest()
 
 
-def public_filnames_in_directory(directory):
+def filnames_in_directory(directory):
     for root, dirnames, filenames in walk(directory):
         return [x for x in filenames if not x.startswith('.')]
 
