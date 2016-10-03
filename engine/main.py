@@ -74,9 +74,15 @@ class memoized(object):
     def draft_filenames():
         return public_filnames_in_directory(settings.DRAFTS_DIR)
 
+    def is_draft(filename):
+        return filename in memoized.draft_filenames()
+
+    def is_hidden(filename):
+        return memoized.is_draft(filename) or filename[:-len('.md')] in []
+
     def post_data(filename):
         # is post a draft?
-        is_draft = filename in memoized.draft_filenames()
+        is_draft = memoized.is_draft(filename)
         title_prefix = 'DRAFT: ' if is_draft else ''
         directory = settings.DRAFTS_DIR if is_draft else settings.POSTS_DIR
 
@@ -91,6 +97,7 @@ class memoized(object):
         path = '/posts/%s' % slug
         return {
             'is_draft': is_draft,
+            'is_hidden': memoized.is_hidden(filename),
             'date': sections[0],
             'title': title,
             'stupified_title': stupify(title),
@@ -107,7 +114,7 @@ class memoized(object):
     def public_posts():
         return antimap(memoized.post_filenames(), [
             partial(map, memoized.post_data),
-            partial(filter, lambda x: not x['is_draft']),
+            partial(filter, lambda x: not x['is_hidden']),
             partial(sorted, key=lambda x: x['date'], reverse=True),
         ])
 
@@ -121,7 +128,7 @@ class memoized(object):
         for filename in memoized.post_filenames():
             dct = memoized.post_data(filename)
 
-            if dct['is_draft']:
+            if dct['is_hidden']:
                 continue
 
             entries.append({
