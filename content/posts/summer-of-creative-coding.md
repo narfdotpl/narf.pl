@@ -114,7 +114,7 @@ I was reading [The Algorithmic Beauty of Plants][abop]
 (link to a&nbsp;17&nbsp;MB PDF)
 on an iPad.
 I struggled to simulate the presented systems in my head. I wanted to see them in action, see what they do step by step.
-A friend created an LTE hotspot for me and I downloaded the Pythonista app.
+A friend created an LTE hotspot for me and I downloaded the [Pythonista][] app.
 It was the first time I used Pythonista. I'm very impressed.
 I'm amazed that thanks to this app I was able to *comfortably* create a program to interactively explore examples from the book.
 Complete with UI and image generation. All of this *on an iPad* (a book reading device!) and offline (no Stack Overflow).
@@ -125,3 +125,4 @@ I think the difference in comfort is even smaller if you're not a Vim user.
 ![](l-systems.png)
 
   [abop]: http://algorithmicbotany.org/papers/abop/abop.pdf
+  [Pythonista]: http://omz-software.com/pythonista/
