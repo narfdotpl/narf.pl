@@ -70,28 +70,6 @@
             &middot;
 
             <time pubdate datetime="{{ date }}" class="published">{{ date }}</time>
-
-            {% with item = collection_navigation_item %}
-                {% if item %}
-                    <br/>
-                    {{ item.tagline }}:
-
-                    {% if item.previous_post %}
-                        <a href="{{ item.previous_post.path }}">previous</a>{% if item.next_post %},{% endif %}
-                    {% endif %}
-
-                    {% if item.next_post %}
-                        <a href="{{ item.next_post.path }}">next</a>
-                    {% endif %}
-
-                    post
-
-                    {% if item.tagline == "Checkers series" %}
-                        <br/>
-                        Game’s website: <a href="http://GlitchyCheckers.com/">GlitchyCheckers.com</a>
-                    {% endif %}
-                {% endif %}
-            {% endwith %}
         </header>
 
         <br/>
@@ -101,6 +79,34 @@
         </div>
 
         {% include "footer-icons.html" %}
+
+        {% if collection %}
+            <p id="collection-trigger" style="display: none">
+                <a href="#">More&hellip;</a>
+            </p>
+
+            <div id="collection">
+                <h2>{{ collection.tagline }}</h2>
+
+                <ul>
+                    {% for post in collection.posts|reverse %}
+                        <li {% if post.path == path %}style="opacity: 0.5"{% endif %}>
+                            <a href="{{ post.path }}">{{ post.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                {% if collection.tagline == "Checkers series" %}
+                    <h2>Game's website</h2>
+
+                    <ul>
+                        <li>
+                            <a href="http://GlitchyCheckers.com/">GlitchyCheckers.com</a>
+                        </li>
+                    </ul>
+                {% endif %}
+            </div>
+        {% endif %}
     </article>
 {% endblock %}
 

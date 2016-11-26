@@ -3,7 +3,7 @@
 mainjs=../assets/index/main.js
 echo > $mainjs
 
-for path in jquery.js jquery.balancetext.min.js highlight.pack.js scale-photos.js balance-text.js highlight.js; do
+for path in jquery.js jquery.balancetext.min.js highlight.pack.js scale-photos.js show-collection.js balance-text.js highlight.js; do
     cat source/$path >> $mainjs
     echo \; >> $mainjs
 done

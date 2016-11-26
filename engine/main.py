@@ -168,8 +168,7 @@ class memoized(object):
         # add collection info
         for collection in memoized.collections():
             if collection.contains_post(ctx):
-                ctx['collection_navigation_item'] = \
-                     collection.navigation_item_for_post(ctx)
+                ctx['collection'] = collection
                 break
 
         # get dedicated social image
