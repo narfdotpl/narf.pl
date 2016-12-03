@@ -271,9 +271,3 @@ looks like in terms of the number of characters in the source code
 instead of the number of lines.  I don't want to redo calculations
 for each step, but before the transition I had 226790 characters and
 afterwards I had 6396 less.  A ~3% decrease.
-
----
-
-*To get new posts, subscribe to the [RSS feed](/feed),
-or the [Checkers newsletter](/newsletter),
-or follow me on [Twitter](https://twitter.com/narfdotpl).*

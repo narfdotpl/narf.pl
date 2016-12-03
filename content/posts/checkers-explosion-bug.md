@@ -50,9 +50,3 @@ in the video at the top of this post.  Notice how the "implode and
 bounce away from each other" behavior affects not only the velocity
 of fragments but also the overall shape of the debris "cloud": normal
 explosions create "rings" while the buggy ones are amorphic.
-
----
-
-*To get new posts, subscribe to the [RSS feed](/feed),
-or the [Checkers newsletter](/newsletter),
-or follow me on [Twitter](https://twitter.com/narfdotpl).*

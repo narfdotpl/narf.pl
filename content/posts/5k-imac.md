@@ -170,5 +170,3 @@ I expected this post to get maybe five likes from my geeky friends and everyone 
 > This guy has some mild form of autism. Basically the computer is great, the way he set it up is ugly and it causes him so much distress he wrote an article to vent his frustrations. Very atypical way of analyzing and dealing with his issues.
 >
 > -- [renec588](https://www.reddit.com/r/apple/comments/3zvl68/grumpy_review_of_the_late_2015_5k_imac/cypqfoy)
-
-*Follow me on [Twitter](https://twitter.com/narfdotpl/status/684867869142810624) and subscribe to the [RSS feed](/feed) to get notified about the second part of this post, the one about software.*
