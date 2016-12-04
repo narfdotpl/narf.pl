@@ -71,9 +71,8 @@ def dev():
 def js():
     'Compile CoffeeScript.'
 
-    with lcd(join(CONTENT_DIR, 'assets', 'index')):
-        local('coffee --print script.coffee | '
-              'uglifyjs --no-copyright > script.js')
+    with lcd(join(CONTENT_DIR, 'javascript')):
+        local('./generate-main-js')
 
 @task
 def publish():
