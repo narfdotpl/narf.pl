@@ -4,7 +4,7 @@ Procedural photocopier textures
 ===============================
 
 Yesterday I was taken out by a food poisoning and I couldn't do much.
-When I was lying on a couch watching *Harry Potter and the Deathly
+When I was laying on a couch watching *Harry Potter and the Deathly
 Hallows*, I had an idea.  I thought about creating images that would
 look like black printouts from a [photocopier][Kimi].  In the evening I
 started feeling better, so I sat down to code.  This is what I have so
