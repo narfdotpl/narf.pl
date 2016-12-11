@@ -163,6 +163,7 @@ class memoized(object):
             thumbnail_big_images,
             add_max_height_class_to_images,
             add_footnote_links,
+            link_headers_and_render_table_of_contents,
         ])
 
         # add collection info
@@ -354,6 +355,30 @@ def center_figure_captions(html):
     return unicode(soup)
 
 
+def link_headers_and_render_table_of_contents(html):
+    soup = BeautifulSoup(html)
+    headers = []  # `(title, id)` pairs
+
+    for h2 in soup.find_all('h2'):
+        # get title and id
+        title = h2.text
+        id = slugify(title)
+        headers.append((title, id))
+
+        # add link before header
+        link = soup.new_tag('a', id=id)
+        h2.insert_before(link)
+
+    # render table of contents
+    tag = soup.find('table-of-contents')
+    if tag:
+        p = tag.parent
+        html = render_template('table-of-contents.html', headers=headers)
+        p.replace_with(BeautifulSoup(html))
+
+    return unicode(soup)
+
+
 def get_hash(x):
     return md5(str(x)).hexdigest()
 
@@ -418,6 +443,18 @@ def resolve_static_urls(html):
                     tag[attr] = get_url(path)
 
     return unicode(soup)
+
+
+slugify_regex = re.compile(r'[^\w-]')
+hyphens_regex = re.compile(r'--+')
+
+def slugify(s):
+    """
+    "Update • 2015-06-26" → "update-2015-06-26"
+    """
+
+    return hyphens_regex.sub('-',
+        slugify_regex.sub('', s.lower().replace(' ', '-')))
 
 
 stupify_regex = re.compile(r'[^a-z0-9]')
