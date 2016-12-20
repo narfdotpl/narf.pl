@@ -2,15 +2,18 @@
 # encoding: utf-8
 
 from __future__ import absolute_import, division
+from os import walk
 from os.path import dirname, join, realpath
 
-from fabric.api import cd, env, lcd, local, run, task
+from fabric.api import cd, env, lcd, local, quiet, run, task
 
 
 CURRENT_DIR = dirname(realpath(__file__))
 REPO_DIR = CURRENT_DIR
 CONTENT_DIR = join(REPO_DIR, 'content')
 ENGINE_DIR = join(REPO_DIR, 'engine')
+TESTS_DIR = join(REPO_DIR, 'tests')
+POSTS_DIR = join(CONTENT_DIR, 'posts')
 
 REMOTE_APP_DIR = '~/narf.pl/main'
 
@@ -34,7 +37,9 @@ def checkout(branch=None):
 @task
 def deploy():
     'Update production with latest changes.'
-    # aka push, pull, checkout, pull, install, restart, visit
+    # aka test, push, pull, checkout, pull, install, restart, visit
+
+    test()
 
     local('git push private')
 
@@ -87,6 +92,33 @@ def restart():
     'Restart production.'
 
     run('restart-app main')
+
+
+@task
+def test():
+    'Test differences in rendering.'
+
+    reference = 'reference.txt'
+    output = 'output.txt'
+
+    with lcd(TESTS_DIR):
+        def curl(path):
+            local('curl http://localhost:5000%s >> %s' % (path, output))
+
+        with quiet():
+            local('echo > ' + output)
+            curl('/')
+            curl('/feed')
+            curl('/posts')
+
+            for root, dirnames, filenames in walk(POSTS_DIR):
+                for filename in sorted(filenames):
+                    if filename.startswith('.'): continue
+                    if not filename.endswith('.md'): continue
+
+                    curl('/posts/%s' % filename[:-len('.md')])
+
+        local('git diff --no-index -- %s %s' % (reference, output))
 
 
 @task
