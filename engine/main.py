@@ -156,12 +156,11 @@ class memoized(object):
         ctx['content'] = antimap(ctx['remaining_markdown'], [
             render_markdown,
             wrap_images_in_figures_instead_of_paragraphs,
+            center_figure_captions,
             turn_mp4_images_to_videos,
             partial(resolve_asset_urls, filename),
-            center_figure_captions,
             wrap_images_in_links,
             thumbnail_big_images,
-            add_max_height_class_to_images,
             add_footnote_links,
             link_headers_and_render_table_of_contents,
         ])
@@ -295,24 +294,6 @@ def add_footnote_links(html):
     return html
 
 
-def add_max_height_class_to_images(html):
-    """
-    >>> add_max_height_class_to_images('<img src="foo@max-height.jpg"/>')
-    u'<img src="foo@max-height.jpg" class="max-height"/>'
-    """
-
-    soup = BeautifulSoup(html)
-
-    for img in soup.find_all('img'):
-        if '@max-height' in img['src']:
-            img['class'] = ' '.join(filter(None, [
-                img.get('class'),
-                'max-height',
-            ]))
-
-    return unicode(soup)
-
-
 def add_title_text_to_post_links(html):
     prefixes = ['/posts', 'http://narf.pl/posts']
     soup = BeautifulSoup(html)
@@ -425,18 +406,16 @@ def resolve_static_urls(html):
     """
 
     soup = BeautifulSoup(html)
+    prefix = '/assets/'
+    get_url = memoized.static_url_for_asset
 
     for attr in ['href', 'src', 'content']:
         predicate = lambda tag: tag.has_attr(attr)
         for tag in soup.find_all(predicate):
-            for (prefix, get_url) in [
-                ('/assets/', memoized.static_url_for_asset),
-                ('/thumbnails/', memoized.static_url_for_thumbnail),
-            ]:
-                url = tag[attr]
-                if url.startswith(prefix):
-                    path = url[len(prefix):]
-                    tag[attr] = get_url(path)
+            url = tag[attr]
+            if url.startswith(prefix):
+                path = url[len(prefix):]
+                tag[attr] = get_url(path)
 
     return unicode(soup)
 
@@ -466,7 +445,7 @@ def stupify(s):
 def thumbnail_big_images(html):
     """
     >>> thumbnail_big_images('<img src="/assets/foo.jpg"/>')
-    u'<img src="/thumbnails/foo.jpg"/>'
+    u'<img src="/static/thumbnails/123123123123.jpg"/>'
     """
 
     prefix = '/assets/'
@@ -474,13 +453,9 @@ def thumbnail_big_images(html):
 
     for img in soup.find_all('img'):
         url = img['src']
-        path = url[len(prefix):]
-
-        # check if the image can have a thumbnail
-        if url.startswith(prefix) and 'thumbnails' in \
-                                      memoized.static_url_for_thumbnail(path):
-            # use the thumbnail instead of the original image
-            img['src'] = '/thumbnails/%s' % path
+        if url.startswith(prefix):
+            path = url[len(prefix):]
+            img['src'] = memoized.static_url_for_thumbnail(path)
 
     return unicode(soup)
 
@@ -602,20 +577,6 @@ def asset(path):
         return redirect(memoized.static_url_for_asset(path))
     else:
         return HTTP_404
-
-
-@app.route('/thumbnails/<path:path>')
-def thumbnail(path):
-    # fail fast
-    if path not in memoized.asset_relative_paths():
-        return
-
-    # allow only thumbnails of jpgs and pngs
-    if not any(path.endswith(x) for x in ['.jpg', '.png']):
-        return '418', 418
-
-    # redirect to thumbnail
-    return redirect(memoized.static_url_for_thumbnail(path))
 
 
 @app.route('/<path:path>')

@@ -13,7 +13,7 @@ of tweaking it produces beautiful forms, some of which look
 three-dimensional:
 
 
-![](catastrophe@max-height.png)
+<img alt="" class="max-height" src="catastrophe@max-height.png"/>
 
 *The results of applying "divide edges" and "zigzag" procedures multiple
 times.  Most rows show the same algorithm applied to a triangle, square,
