@@ -23,7 +23,7 @@ I didn't write about Checkers on the blog in the last months.  A few
 interesting things popped up during development that I hope to write up
 after the launch.  I made some important changes in my personal life too:
 a month ago I moved to a new apartment, left my job, and bought a [5k
-iMac](/posts/setup-5k-imac).  Yeah.  In the last two weeks of funemployment,
+iMac](/posts/5k-imac).  Yeah.  In the last two weeks of funemployment,
 I began getting Glitchy Checkers ready for the release: adding sound, the
 "About" screen, playing the game with friends, making last tweaks, creating
 the website, etc.
