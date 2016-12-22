@@ -176,7 +176,7 @@ class memoized(object):
         social_image_url = None
         relative_path = '%s/social.jpg' % filename[:-len('.md')]
         if relative_path in memoized.asset_relative_paths():
-            social_image_url = '/thumbnails/' + relative_path
+            social_image_url = memoized.static_url_for_asset(relative_path)
 
         # use first image as social image
         if social_image_url is None:
@@ -185,12 +185,8 @@ class memoized(object):
                 social_image_url = img['src']
                 break
 
-        # add domain and set social image
-        if social_image_url:
-            if social_image_url.startswith('/'):
-                social_image_url = 'http://narf.pl' + social_image_url
-
-            ctx['social_image_url'] = social_image_url
+        # set social image
+        ctx['social_image_url'] = social_image_url
 
         # render final html
         html = render_template('post.html', **ctx)
