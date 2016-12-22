@@ -426,7 +426,7 @@ def resolve_static_urls(html):
 
     soup = BeautifulSoup(html)
 
-    for attr in ['href', 'src']:
+    for attr in ['href', 'src', 'content']:
         predicate = lambda tag: tag.has_attr(attr)
         for tag in soup.find_all(predicate):
             for (prefix, get_url) in [
