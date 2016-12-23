@@ -76,7 +76,7 @@ with currying and custom operators in [tweaks][] and [`mutate`][mutate],
 big `enum`-based [state machines][], closure-based generic memoization,
 etc.
 
-  [tweaks]: http://narf.pl/posts/checkers-development-panel
+  [tweaks]: /posts/checkers-development-panel
   [mutate]: https://github.com/narfdotpl/doodles/blob/master/doodles/mutate.swift
   [state machines]: https://github.com/macoscope/SwiftyStateMachine
 
