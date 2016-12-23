@@ -144,8 +144,8 @@ class memoized(object):
     def rendered_index():
         return antimap('index.html', [
             render_template,
-            partial(resolve_asset_urls, 'index.md'),  # dirty hack!
-            resolve_static_urls,
+            partial(resolve_local_urls, 'index.md'),  # dirty hack!
+            resolve_asset_urls,
         ])
 
     def rendered_post(filename):
@@ -158,7 +158,7 @@ class memoized(object):
             wrap_images_in_figures_instead_of_paragraphs,
             center_figure_captions,
             turn_mp4_images_to_videos,
-            partial(resolve_asset_urls, filename),
+            partial(resolve_local_urls, filename),
             wrap_images_in_links,
             thumbnail_big_images,
             add_footnote_links,
@@ -191,7 +191,7 @@ class memoized(object):
         html = render_template('post.html', **ctx)
         return antimap(html, [
             add_title_text_to_post_links,
-            resolve_static_urls,
+            resolve_asset_urls,
         ])
 
     def rendered_posts():
@@ -202,7 +202,7 @@ class memoized(object):
             selected_posts=memoized.selected_posts(),
             posts_by_year=groupby(posts, get_year))
 
-        return resolve_static_urls(html)
+        return resolve_asset_urls(html)
 
     def selected_posts():
         selected_slugs = [
@@ -367,9 +367,9 @@ def filnames_in_directory(directory):
     return []
 
 
-def resolve_asset_urls(filename, html):
+def resolve_local_urls(filename, html):
     """
-    >>> resolve_asset_urls('foo.md', '<a href="bar.jpg">baz</a>')
+    >>> resolve_local_urls('foo.md', '<a href="bar.jpg">baz</a>')
     u'<a href="asset:foo/bar.jpg">baz</a>'
     """
 
@@ -400,9 +400,9 @@ def resolve_asset_urls(filename, html):
     return unicode(soup)
 
 
-def resolve_static_urls(html):
+def resolve_asset_urls(html):
     """
-    >>> resolve_static_urls('<img src="asset:foo.jpg"/>')
+    >>> resolve_asset_urls('<img src="asset:foo.jpg"/>')
     u'<img src="http://static.narf.pl/main/assets/foo.jpg?123456789"/>'
     """
 
