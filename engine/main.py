@@ -482,8 +482,8 @@ def turn_mp4_images_to_videos(html):
 
 def wrap_images_in_figures_instead_of_paragraphs(html):
     """
-    >>> wrap_images_in_figures_instead_of_paragraphs('<p><img src="/assets/foo.jpg"/></p>')
-    u'<figure><img src="/assets/foo.jpg"/></figure>'
+    >>> wrap_images_in_figures_instead_of_paragraphs('<p><img src="foo.jpg"/></p>')
+    u'<figure><img src="foo.jpg"/></figure>'
     """
 
     soup = BeautifulSoup(html)
@@ -503,8 +503,8 @@ def wrap_images_in_figures_instead_of_paragraphs(html):
 
 def wrap_images_in_links(html):
     """
-    >>> wrap_images_in_links('<img src="/assets/foo.jpg"/>')
-    u'<a href="/assets/foo.jpg"><img src="/assets/foo.jpg"/></a>'
+    >>> wrap_images_in_links('<img src="foo.jpg"/>')
+    u'<a href="foo.jpg"><img src="foo.jpg"/></a>'
     """
 
     soup = BeautifulSoup(html)
@@ -571,14 +571,6 @@ def feed():
     return response
 
 
-@app.route('/assets/<path:path>')
-def asset(path):
-    if path in memoized.asset_relative_paths():
-        return redirect(memoized.static_url_for_asset(path))
-    else:
-        return HTTP_404
-
-
 @app.route('/<path:path>')
 def redirect_from_old_path(path):
     # DSL-ish
@@ -594,7 +586,7 @@ def redirect_from_old_path(path):
     ]):
         url = 'http://lab.narf.pl/' + path
     else:
-        suspense = 'http://narf.pl/assets/5k-imac/suspense_accent_1.mp3'
+        suspense = memoized.static_url_for_asset('5k-imac/suspense_accent_1.mp3')
         url, permanent = {
             '/feed.xml': ('/feed', permanent),
             '/plain.txt': ('/posts/plain-text', permanent),
