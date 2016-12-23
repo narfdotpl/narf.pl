@@ -78,7 +78,7 @@
     {% with
         title="Maciej Konieczny (narf)",
         description="Hi, my name is Maciej.  Some know me as narf.  I create software.",
-        image_url="/assets/index/self.jpg"
+        image_url="asset:index/self.jpg"
     %}
         <meta property="og:title" content="{{ title}}"/>
         <meta property="og:type" content="website"/>
@@ -123,7 +123,7 @@
         {% for (title, link, image) in [
             ("Glitchy Checkers", "http://glitchycheckers.com/", "glitchy-checkers.png"),
             ("Sketchy procedures", "/posts/sketchy-procedures", "sketchy-procedures.jpg"),
-            ("Anxious Timer", "/posts/anxious-timer", "/assets/anxious-timer/anxious-timer.png"),
+            ("Anxious Timer", "/posts/anxious-timer", "asset:anxious-timer/anxious-timer.png"),
             ("Impact of music streaming on my listening habits", "/posts/music-streaming", "spotify.png"),
             ("Summer of Creative Coding", "/posts/summer-of-creative-coding", "summer-of-creative-coding.jpg"),
             ("SwiftyStateMachine", "https://github.com/macoscope/SwiftyStateMachine", "state-machine.png"),
@@ -131,7 +131,7 @@
             <article>
                 <a href="{{ link }}">
                     <figure>
-                        <img src="{% if not image.startswith("/") %}links/{% endif %}{{ image }}">
+                        <img src="{% if not image.startswith("asset:") %}links/{% endif %}{{ image }}">
 
                         <div class="overlay">
                             <h1 class="balance-text">{{ title }}</h1>

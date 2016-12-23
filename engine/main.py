@@ -370,7 +370,7 @@ def filnames_in_directory(directory):
 def resolve_asset_urls(filename, html):
     """
     >>> resolve_asset_urls('foo.md', '<a href="bar.jpg">baz</a>')
-    u'<a href="/assets/foo/bar.jpg">baz</a>'
+    u'<a href="asset:foo/bar.jpg">baz</a>'
     """
 
     slug = filename[:-len('.md')]
@@ -382,9 +382,10 @@ def resolve_asset_urls(filename, html):
         except KeyError:
             return
 
+        blacklist = ['/', '#', 'mailto:', settings.ASSET_PREFIX]
         if not ('//' in url or
-                any(url.startswith(x) for x in ['/', '#', 'mailto:'])):
-            tag[key] = '/assets/%s/%s' % (slug, url)
+                any(url.startswith(x) for x in blacklist)):
+            tag[key] = '%s%s/%s' % (settings.ASSET_PREFIX, slug, url)
 
     for tag_name, key in [
         ('a', 'href'),
@@ -401,12 +402,12 @@ def resolve_asset_urls(filename, html):
 
 def resolve_static_urls(html):
     """
-    >>> resolve_static_urls('<img src="/assets/foo.jpg"/>')
+    >>> resolve_static_urls('<img src="asset:foo.jpg"/>')
     u'<img src="http://static.narf.pl/main/assets/foo.jpg?123456789"/>'
     """
 
     soup = BeautifulSoup(html)
-    prefix = '/assets/'
+    prefix = settings.ASSET_PREFIX
     get_url = memoized.static_url_for_asset
 
     for attr in ['href', 'src', 'content']:
@@ -444,11 +445,11 @@ def stupify(s):
 
 def thumbnail_big_images(html):
     """
-    >>> thumbnail_big_images('<img src="/assets/foo.jpg"/>')
+    >>> thumbnail_big_images('<img src="asset:foo.jpg"/>')
     u'<img src="/static/thumbnails/123123123123.jpg"/>'
     """
 
-    prefix = '/assets/'
+    prefix = settings.ASSET_PREFIX
     soup = BeautifulSoup(html)
 
     for img in soup.find_all('img'):
