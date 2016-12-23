@@ -5,7 +5,7 @@ from __future__ import absolute_import, division
 from os import walk
 from os.path import dirname, join, realpath
 
-from fabric.api import cd, env, lcd, local, quiet, run, task
+from fabric.api import cd, env, hosts, lcd, local, quiet, run, task
 
 
 CURRENT_DIR = dirname(realpath(__file__))
@@ -94,6 +94,7 @@ def restart():
     run('restart-app main')
 
 
+@hosts('')
 @task
 def test():
     'Test differences in rendering.'
