@@ -4,6 +4,7 @@
 from __future__ import absolute_import, division
 from os import walk
 from os.path import dirname, join, realpath
+from sys import stdout
 
 from fabric.api import cd, env, hosts, lcd, local, quiet, run, task
 
@@ -105,6 +106,8 @@ def test():
     with lcd(TESTS_DIR):
         def curl(path):
             local('curl http://localhost:5000%s >> %s' % (path, output))
+            stdout.write('.')
+            stdout.flush()
 
         with quiet():
             local('echo > ' + output)
@@ -118,6 +121,9 @@ def test():
                     if not filename.endswith('.md'): continue
 
                     curl('/posts/%s' % filename[:-len('.md')])
+
+            stdout.write('\n')
+            stdout.flush()
 
         local('git diff --no-index -- %s %s' % (reference, output))
 
