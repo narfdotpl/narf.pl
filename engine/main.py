@@ -175,7 +175,7 @@ class memoized(object):
         social_image_url = None
         relative_path = '%s/social.jpg' % filename[:-len('.md')]
         if relative_path in memoized.asset_relative_paths():
-            social_image_url = memoized.static_url_for_asset(relative_path)
+            social_image_url = static_url.for_asset(relative_path)
 
         # use first image as social image
         if social_image_url is None:
@@ -218,19 +218,25 @@ class memoized(object):
 
         return filter(predicate, memoized.public_posts())
 
-    def static_url():
+
+class static_url(object):
+
+    @staticmethod
+    def base():
         if app.debug:
             return '/static'
         else:
             return 'http://cdn.narf.pl/main'
 
-    def static_url_for_asset(path):
+    @staticmethod
+    def for_asset(path):
         # 'a/b/c' → '/static/assets/a/b/c?sdfsdfsdf'
         mtime = getmtime(join(settings.ASSETS_DIR, path))
-        base = memoized.static_url()
+        base = static_url.base()
         return '%s/assets/%s?%s' % (base, path, get_hash(mtime))
 
-    def static_url_for_thumbnail(path):
+    @staticmethod
+    def for_thumbnail(path):
         # 'a/b/c.jpg' → '/static/thumbnails/sdfsdfsdf.jpg'
 
         # get asset data
@@ -249,13 +255,13 @@ class memoized(object):
 
         # don't scale small images
         if width <= max_width and height <= max_height:
-            return memoized.static_url_for_asset(path)
+            return static_url.for_asset(path)
 
         # create hashed filename
         filename = '%s.jpg' % get_hash('%s:%f:%d:%d' % \
                                        (path, mtime, max_width, max_height))
         thumbnail_path = join(settings.THUMBNAILS_DIR, filename)
-        base = memoized.static_url()
+        base = static_url.base()
         url = '%s/thumbnails/%s' % (base, filename)
 
         # create thumbnail if it doesn't exist
@@ -408,7 +414,7 @@ def resolve_asset_urls(html):
 
     soup = BeautifulSoup(html)
     prefix = settings.ASSET_PREFIX
-    get_url = memoized.static_url_for_asset
+    get_url = static_url.for_asset
 
     for attr in ['href', 'src', 'content']:
         predicate = lambda tag: tag.has_attr(attr)
@@ -456,7 +462,7 @@ def thumbnail_big_images(html):
         url = img['src']
         if url.startswith(prefix):
             path = url[len(prefix):]
-            img['src'] = memoized.static_url_for_thumbnail(path)
+            img['src'] = static_url.for_thumbnail(path)
 
     return unicode(soup)
 
@@ -587,7 +593,7 @@ def redirect_from_old_path(path):
     ]):
         url = 'http://lab.narf.pl/' + path
     else:
-        suspense = memoized.static_url_for_asset('5k-imac/suspense_accent_1.mp3')
+        suspense = static_url.for_asset('5k-imac/suspense_accent_1.mp3')
         url, permanent = {
             '/feed.xml': ('/feed', permanent),
             '/plain.txt': ('/posts/plain-text', permanent),
@@ -596,15 +602,15 @@ def redirect_from_old_path(path):
             '/cv': ('https://www.linkedin.com/in/narfdotpl', not permanent),
 
             '/have-seen':
-                (memoized.static_url_for_asset('index/urls/have-seen.jpg'),
+                (static_url.for_asset('index/urls/have-seen.jpg'),
                  not permanent),
 
             '/js':
-                (memoized.static_url_for_asset('index/urls/ancient-aliens-javascript.jpg'),
+                (static_url.for_asset('index/urls/ancient-aliens-javascript.jpg'),
                  not permanent),
 
             '/key':
-                (memoized.static_url_for_asset('index/id_rsa.pub'),
+                (static_url.for_asset('index/id_rsa.pub'),
                  not permanent),
 
             '/liczba':
