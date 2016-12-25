@@ -261,8 +261,7 @@ class static_url(object):
         filename = '%s.jpg' % get_hash('%s:%f:%d:%d' % \
                                        (path, mtime, max_width, max_height))
         thumbnail_path = join(settings.THUMBNAILS_DIR, filename)
-        base = static_url.base()
-        url = '%s/thumbnails/%s' % (base, filename)
+        url = '%s/thumbnails/%s' % (static_url.base(), filename)
 
         # create thumbnail if it doesn't exist
         if not exists(thumbnail_path):
@@ -414,7 +413,6 @@ def resolve_asset_urls(html):
 
     soup = BeautifulSoup(html)
     prefix = settings.ASSET_PREFIX
-    get_url = static_url.for_asset
 
     for attr in ['href', 'src', 'content']:
         predicate = lambda tag: tag.has_attr(attr)
@@ -422,7 +420,7 @@ def resolve_asset_urls(html):
             url = tag[attr]
             if url.startswith(prefix):
                 path = url[len(prefix):]
-                tag[attr] = get_url(path)
+                tag[attr] = static_url.for_asset(path)
 
     return unicode(soup)
 
