@@ -52,6 +52,27 @@
             width: 100%;
             height: 100%;
         }
+
+
+        ul.gallery {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        ul.gallery li {
+            max-width: 338px;
+            margin: 0 2px 4px;
+        }
+
+        @media (max-width: 679px) {
+            ul.gallery li {
+                max-width: 375px;
+                margin: 0 0 2px;
+            }
+        }
     </style>
 {% endblock %}
 

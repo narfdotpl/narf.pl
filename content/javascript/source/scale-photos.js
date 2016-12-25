@@ -1,15 +1,25 @@
 $(function () {
-    var $figures = $('figure')
+    for (const [selector, maxWidth, offset] of [
+        ['figure', 1024, 0],
+        ['ul.gallery', 1024, -2],
+    ]) {
+        const $el = $(selector)
 
-    var adjustFigureMargins = function () {
-        var width = $(window).width()
-        var margin = Math.max(-192, Math.min(-12, -((width - 640) / 2)))
+        const adjustMargins = function () {
+            const contentWidth = 640
+            const getMargin = (width) => (contentWidth - width) / 2
 
-        $figures.css('margin-left',  margin + 'px')
-        $figures.css('margin-right', margin + 'px')
+            const width = $(window).width()
+            const minMargin = getMargin(maxWidth)
+            const maxMargin = -12
+            const margin = Math.max(minMargin, Math.min(maxMargin, getMargin(width))) + offset;
+
+            $el.css('margin-left',  margin + 'px')
+            $el.css('margin-right', margin + 'px')
+        }
+
+        adjustMargins()
+
+        $(window).resize(adjustMargins)
     }
-
-    adjustFigureMargins()
-
-    $(window).resize(adjustFigureMargins)
 })

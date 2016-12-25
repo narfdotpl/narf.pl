@@ -160,6 +160,7 @@ class memoized(object):
             center_figure_captions,
             turn_mp4_images_to_videos,
             partial(resolve_local_urls, filename),
+            transform_image_lists_to_galleries,
             wrap_images_in_links,
             thumbnail_big_images,
             add_footnote_links,
@@ -456,6 +457,21 @@ def thumbnail_big_images(soup):
             data = img.attrs.pop('data', None)
             kwargs = json.loads(data) if data else {}
             img['src'] = static_url.for_thumbnail(path, **kwargs)
+
+
+@soup
+def transform_image_lists_to_galleries(soup):
+    for ul in soup.find_all('ul'):
+        lis = ul.find_all('li')
+        lis_children = [list(li.children) for li in lis]
+        is_gallery = all(
+            len(children) == 1 and children[0].name == 'img'
+            for children in lis_children)
+
+        if is_gallery:
+            ul['class'] = 'gallery'
+            for img in ul.find_all('img'):
+                img['data'] = '{"max_width": %d}' % (375 * 2)
 
 
 @soup
