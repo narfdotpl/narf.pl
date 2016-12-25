@@ -275,6 +275,15 @@ def antimap(x, functions):
     return x
 
 
+def soup(func):
+    def wrapper(html, *args, **kwargs):
+        soup = BeautifulSoup(html)
+        func(soup, *args, **kwargs)
+        return unicode(soup)
+
+    return wrapper
+
+
 def add_footnote_links(html):
     # replace all "[numbers]" with "<sup>" links
     pattern = re.compile(r'([^\s])\[(\d+)\]([^\w])')
@@ -292,9 +301,9 @@ def add_footnote_links(html):
     return html
 
 
-def add_title_text_to_post_links(html):
+@soup
+def add_title_text_to_post_links(soup):
     prefixes = ['/posts', 'http://narf.pl/posts']
-    soup = BeautifulSoup(html)
 
     for link in soup.find_all('a'):
         url = link.get('href', '')
@@ -307,12 +316,9 @@ def add_title_text_to_post_links(html):
                     link['title'] = post['title']
                     break
 
-    return unicode(soup)
 
-
-def center_figure_captions(html):
-    soup = BeautifulSoup(html)
-
+@soup
+def center_figure_captions(soup):
     for figure in soup.find_all('figure'):
         # get next paragraph
         p = figure.find_next_sibling('p')
@@ -327,11 +333,9 @@ def center_figure_captions(html):
         # center paragraph
         p['class'] = 'narrow centered'
 
-    return unicode(soup)
 
-
-def link_headers_and_render_table_of_contents(html):
-    soup = BeautifulSoup(html)
+@soup
+def link_headers_and_render_table_of_contents(soup):
     headers = []  # `(title, id)` pairs
 
     for h2 in soup.find_all('h2'):
@@ -350,8 +354,6 @@ def link_headers_and_render_table_of_contents(html):
         p = tag.parent
         html = render_template('table-of-contents.html', headers=headers)
         p.replace_with(BeautifulSoup(html))
-
-    return unicode(soup)
 
 
 def get_hash(x):
@@ -398,13 +400,13 @@ def resolve_local_urls(filename, html):
     return unicode(soup)
 
 
-def resolve_asset_urls(html):
+@soup
+def resolve_asset_urls(soup):
     """
     >>> resolve_asset_urls('<img src="asset:foo.jpg"/>')
     u'<img src="http://static.narf.pl/main/assets/foo.jpg?123456789"/>'
     """
 
-    soup = BeautifulSoup(html)
     prefix = settings.ASSET_PREFIX
 
     for attr in ['href', 'src', 'content']:
@@ -414,8 +416,6 @@ def resolve_asset_urls(html):
             if url.startswith(prefix):
                 path = url[len(prefix):]
                 tag[attr] = static_url.for_asset(path)
-
-    return unicode(soup)
 
 
 slugify_regex = re.compile(r'[^\w-]')
@@ -440,14 +440,14 @@ def stupify(s):
     return stupify_regex.sub('', s.lower())
 
 
-def thumbnail_big_images(html):
+@soup
+def thumbnail_big_images(soup):
     """
     >>> thumbnail_big_images('<img src="asset:foo.jpg"/>')
     u'<img src="/static/thumbnails/123123123123.jpg"/>'
     """
 
     prefix = settings.ASSET_PREFIX
-    soup = BeautifulSoup(html)
 
     for img in soup.find_all('img'):
         url = img['src']
@@ -457,16 +457,13 @@ def thumbnail_big_images(html):
             kwargs = json.loads(data) if data else {}
             img['src'] = static_url.for_thumbnail(path, **kwargs)
 
-    return unicode(soup)
 
-
-def turn_mp4_images_to_videos(html):
+@soup
+def turn_mp4_images_to_videos(soup):
     """
     >>> turn_mp4_images_to_videos('<img src="foo.mp4"/>')
     u'<video src="foo.mp4" controls autoplay loop></video>'
     """
-
-    soup = BeautifulSoup(html)
 
     for img in soup.find_all('img'):
         src = img['src']
@@ -477,16 +474,13 @@ def turn_mp4_images_to_videos(html):
                 autoplay='autoplay',
                 loop='loop'))
 
-    return unicode(soup)
 
-
-def wrap_images_in_figures_instead_of_paragraphs(html):
+@soup
+def wrap_images_in_figures_instead_of_paragraphs(soup):
     """
     >>> wrap_images_in_figures_instead_of_paragraphs('<p><img src="foo.jpg"/></p>')
     u'<figure><img src="foo.jpg"/></figure>'
     """
-
-    soup = BeautifulSoup(html)
 
     for img in soup.find_all('img'):
         # get parent paragraph
@@ -498,24 +492,19 @@ def wrap_images_in_figures_instead_of_paragraphs(html):
         if parent and parent.name == 'p':
             parent.name = 'figure'
 
-    return unicode(soup)
 
-
-def wrap_images_in_links(html):
+@soup
+def wrap_images_in_links(soup):
     """
     >>> wrap_images_in_links('<img src="foo.jpg"/>')
     u'<a href="foo.jpg"><img src="foo.jpg"/></a>'
     """
-
-    soup = BeautifulSoup(html)
 
     for img in soup.find_all('img'):
         if not (img.parent and img.parent.name == 'a'):
             a = soup.new_tag('a')
             a['href'] = img['src']
             a.append(img.replace_with(a))
-
-    return unicode(soup)
 
 
 @app.template_filter('typo')
