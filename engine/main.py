@@ -5,6 +5,7 @@ from __future__ import division
 from functools import partial
 from hashlib import md5
 from itertools import groupby
+import json
 from os import walk
 from os.path import exists, getmtime, join
 import re
@@ -236,7 +237,7 @@ class static_url(object):
         return '%s/assets/%s?%s' % (base, path, get_hash(mtime))
 
     @staticmethod
-    def for_thumbnail(path):
+    def for_thumbnail(path, max_width=1024*2, max_height=780*2):
         # 'a/b/c.jpg' → '/static/thumbnails/sdfsdfsdf.jpg'
 
         # get asset data
@@ -244,14 +245,6 @@ class static_url(object):
         mtime = getmtime(asset_path)
         image = Image.open(asset_path)
         width, height = image.size
-
-        # set size limits
-        max_width = 1024 * 2
-        max_height = 780 * 2
-
-        # ignore max height for selected images
-        if '@max-height' in path:
-            max_height = height
 
         # don't scale small images
         if width <= max_width and height <= max_height:
@@ -460,7 +453,9 @@ def thumbnail_big_images(html):
         url = img['src']
         if url.startswith(prefix):
             path = url[len(prefix):]
-            img['src'] = static_url.for_thumbnail(path)
+            data = img.attrs.pop('data', None)
+            kwargs = json.loads(data) if data else {}
+            img['src'] = static_url.for_thumbnail(path, **kwargs)
 
     return unicode(soup)
 
