@@ -208,6 +208,7 @@ class memoized(object):
 
     def selected_posts():
         selected_slugs = [
+            'checkers-skull',
             'bytebeat',
             'lenses-in-swift',
             '5k-imac',
