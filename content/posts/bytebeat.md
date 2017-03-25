@@ -3,11 +3,12 @@
 Bytebeat: live-coding sound waves
 =================================
 
-This weekend I [stumbled upon](https://martyn.pw/) bytebeat, a
-mind-blowing way of creating music, where you don't use instruments or
-notes.  Instead, you create mathematical formulas for the amplitude of
-the sound wave *(sic!)*.  It's an amazing, exciting idea: you do away
-with musical abstractions and directly describe *the movement of air*.
+This weekend I [stumbled upon](https://martyn.me/projects/bytebeats/)
+bytebeat, a mind-blowing way of creating music, where you don't use
+instruments or notes.  Instead, you create mathematical formulas for
+the amplitude of the sound wave *(sic!)*.  It's an amazing, exciting
+idea: you do away with musical abstractions and directly describe *the
+movement of air*.
 
 What makes it even more captivating is the fact that those formulas can
 be very short.  They can be one-line programs.
