@@ -216,6 +216,9 @@ Questions
 ---------
 
 That's all folks!  If you have any questions, don't hesitate to ask me
-on Twitter, via email, or in person.  Cheers.
+on Twitter, via email, or in person.  You can also discuss this post
+[on the procedural generation subreddit][Reddit].  Cheers.
+
+  [Reddit]: https://www.reddit.com/r/proceduralgeneration/comments/63e66h/procedural_graphics_trees_and_circuit_boards/
 
 *Thanks to Tomek Falkiewicz for reading drafts of this.*
