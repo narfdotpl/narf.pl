@@ -68,6 +68,11 @@ class memoized(object):
                 'summer-of-creative-coding',
                 'procedural-trees',
             ]),
+
+            PostCollectionRecipe("Visualization series", slugs=[
+                'music-streaming',
+                'spiral',
+            ]),
         ]
 
         posts = sorted(memoized.public_posts(), key=lambda x: x['date'])
