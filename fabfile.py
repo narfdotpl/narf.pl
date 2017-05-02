@@ -128,6 +128,17 @@ def test():
         local('git diff --no-index -- %s %s' % (reference, output))
 
 
+@hosts('')
+@task
+def test_accept():
+    'Accept test results.'
+
+    with lcd(TESTS_DIR):
+        local('rm {reference} || true; mv {output} {reference}'.format(**{
+            'reference': 'reference.txt',
+            'output': 'output.txt',
+        }))
+
 @task
 def visit():
     'Visit http://narf.pl/.'
