@@ -36,13 +36,14 @@ mass is inside it so that the robot won't fall off. The movement can be
 stopped at any time and the robot will be stable.
 
 In the future I want to experiment with dynamically stable movement so
-that the robot could move faster and more smoothly. I didn't do it now
-because I don't have the infrastructure to simulate gravitation and
-ground collisions in a way that won't interfere with my movement logic
-yet -- what you see is an animation, there's no gravity. I also don't
-know the final dimensions or weight distributions of the robot because I
-haven't built it yet. (But once I do I will be able to immediately test
-the moves you've seen above, so it made sense to prepare them first.)
+that the robot could move faster and with more grace. I didn't work on
+it now because I don't have the infrastructure to simulate gravitation
+and ground collisions in a way that won't interfere with my movement
+logic yet -- what you see is an animation not a simulation, there's no
+gravity. I also don't know the final dimensions or weight distribution
+of the robot because I haven't built it yet. (But once I do I will be
+able to immediately test the moves you've seen above, so it made sense
+to prepare them first.)
 
 I modeled the skeleton in Blender and implemented the animation as a
 Python plugin for Blender. In Python I set the location of the tip
