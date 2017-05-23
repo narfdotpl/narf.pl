@@ -2,6 +2,7 @@
 # encoding: utf-8
 
 from __future__ import division
+from collections import OrderedDict
 from functools import partial
 from hashlib import md5
 from itertools import groupby
@@ -125,7 +126,7 @@ class memoized(object):
             partial(sorted, key=lambda x: x['date'], reverse=True),
         ])
 
-    def rendered_feed():
+    def feed_entries():
         # get entries from YAML
         path = join(settings.CONTENT_DIR, 'feed.yaml')
         with open(path) as f:
@@ -144,9 +145,35 @@ class memoized(object):
             e['updated'] = '%s:00+01:00' % e['time'].replace(' ', 'T')
 
         # sort entries by update time
-        entries = sorted(entries, reverse=True, key=lambda e: e['updated'])
+        return sorted(entries, reverse=True, key=lambda e: e['updated'])
 
-        return render_template('feed.xml', entries=entries)
+    def rendered_feed():
+        return render_template('feed.xml', entries=memoized.feed_entries())
+
+    def rendered_json_feed():
+        # `OrderedDict` makes things quite ugly but the result is nicer...
+        feed = OrderedDict([
+            ('version', 'https://jsonfeed.org/version/1'),
+            ('title', 'narf.pl'),
+            ('home_page_url', 'http://narf.pl/'),
+            ('feed_url', 'http://narf.pl/feed.json'),
+            ('author', OrderedDict([
+                ('name', 'Maciej Konieczny'),
+                ('url', 'http://narf.pl/'),
+            ])),
+            ('items', [
+                OrderedDict([
+                    ('title', e['title']),
+                    ('content_html', e.get('body') or 'goto <a href="{link}">{link}</a>'.format(**e)),
+                    ('date_published', e['updated']),
+                    ('url', e['link']),
+                    ('id', e.get('uuid') or e['link']),
+                ])
+                for e in memoized.feed_entries()
+            ]),
+        ])
+
+        return json.dumps(feed, indent=4)
 
     def rendered_index():
         return antimap('index.html', [
@@ -581,6 +608,13 @@ def draft(slug):
 def feed():
     response = make_response(memoized.rendered_feed())
     response.mimetype = 'application/atom+xml'
+    return response
+
+
+@app.route('/feed.json')
+def feed_json():
+    response = make_response(memoized.rendered_json_feed())
+    response.mimetype = 'application/json'
     return response
 
 

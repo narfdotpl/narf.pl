@@ -113,6 +113,7 @@ def test():
             local('echo > ' + output)
             curl('/')
             curl('/feed')
+            curl('/feed.json')
             curl('/posts')
 
             for root, dirnames, filenames in walk(POSTS_DIR):
@@ -144,4 +145,3 @@ def visit():
     'Visit http://narf.pl/.'
 
     local('open http://narf.pl/')
-    local('open http://narf.pl/feed')
