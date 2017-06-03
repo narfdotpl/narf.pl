@@ -108,6 +108,10 @@
 
         {% include "footer-icons.html" %}
 
+        {% if "checkers" not in content.lower() %}
+            {% include "footer-checkers-plug.html" %}
+        {% endif %}
+
         {% if collection %}
             <p id="collection-trigger" style="display: none">
                 <a href="#">More&hellip;</a>
