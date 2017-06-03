@@ -18,7 +18,7 @@ except ImportError:
 
 from bs4 import BeautifulSoup
 from flask import (Flask, Markup, make_response, redirect, render_template,
-    request)
+                   render_template_string, request)
 from markdown import markdown as render_markdown
 import typogrify.filters
 import yaml
@@ -188,6 +188,7 @@ class memoized(object):
 
         # render and process markdown
         ctx['content'] = antimap(ctx['remaining_markdown'], [
+            render_template_string,
             render_markdown,
             wrap_images_in_figures_instead_of_paragraphs,
             center_figure_captions,

@@ -3,15 +3,9 @@
 Barcelona
 =========
 
-![](1.jpg)
-
-![](2.jpg)
-
-![](3.jpg)
-
-![](4.jpg)
-
-![](5.jpg)
+{% for i in range(1, 6) %}
+![]({{ i }}.jpg)
+{% endfor %}
 
 <p class="centered">
     2013-09-01 &ndash; 2013-09-10<br/>
