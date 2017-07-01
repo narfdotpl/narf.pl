@@ -75,6 +75,11 @@ class memoized(object):
                 'music-streaming',
                 'spiral',
             ]),
+
+            PostCollectionRecipe("Robotics series", slugs=[
+                'robot-movement',
+                '12-angry-servos',
+            ]),
         ]
 
         posts = sorted(memoized.public_posts(), key=lambda x: x['date'])
