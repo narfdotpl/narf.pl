@@ -8,11 +8,7 @@ it a hundred times, and combined it with two speeds: the original one and
 slower by 1%. This way the slower knocking shifts with respect to the
 original.
 
-<figure>
-    <div class="video-wrapper">
-        <iframe src="//www.youtube.com/embed/Kn7s8z6ACmo" frameborder="0" allowfullscreen></iframe>
-    </div>
-</figure>
+{{ youtube_iframe('Kn7s8z6ACmo') }}
 
 It's simultaneously obvious and magical that a rhythm layered on itself
 with some shift gives a new rhythm that is sometimes pleasing to the

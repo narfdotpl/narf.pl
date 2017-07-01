@@ -15,11 +15,7 @@ improvements.
 Preview
 -------
 
-<figure>
-    <div class="video-wrapper">
-        <iframe src="//www.youtube.com/embed/4zVyG373sNo" frameborder="0" allowfullscreen></iframe>
-    </div>
-</figure>
+{{ youtube_iframe('4zVyG373sNo') }}
 
 
 Fact sheet

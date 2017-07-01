@@ -186,10 +186,11 @@ class memoized(object):
     def rendered_post(filename):
         # get post data
         ctx = memoized.post_data(filename)
+        ctx['youtube_iframe'] = make_youtube_iframe
 
         # render and process markdown
         ctx['content'] = antimap(ctx['remaining_markdown'], [
-            render_template_string,
+            lambda template: render_template_string(template, **ctx),
             render_markdown,
             wrap_images_in_figures_instead_of_paragraphs,
             center_figure_captions,
@@ -558,6 +559,16 @@ def wrap_images_in_links(soup):
             a = soup.new_tag('a')
             a['href'] = img['src']
             a.append(img.replace_with(a))
+
+
+def make_youtube_iframe(video_id):
+    return """
+<figure>
+    <div class="video-wrapper">
+        <iframe src="//www.youtube.com/embed/{video_id}" frameborder="0" allowfullscreen></iframe>
+    </div>
+</figure>
+"""[1:-1].format(video_id=video_id)
 
 
 @app.template_filter('typo')

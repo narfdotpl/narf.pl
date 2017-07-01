@@ -3,11 +3,7 @@
 Checkers: Development panel with tweaks
 =======================================
 
-<figure>
-    <div class="video-wrapper">
-        <iframe src="//www.youtube.com/embed/IVBQ9l7Sm0E" frameborder="0" allowfullscreen></iframe>
-    </div>
-</figure>
+{{ youtube_iframe('IVBQ9l7Sm0E') }}
 
 I created a development panel for my game.  It has two purposes:
 

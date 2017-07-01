@@ -27,17 +27,9 @@ right time if you want them to sound good.
 Here are two tracks I composed (discovered?).  I recorded them live
 using QuickTime and [Soundflower][]:
 
-<figure>
-    <div class="video-wrapper">
-        <iframe src="//www.youtube.com/embed/vTuYtBeWwP0" frameborder="0" allowfullscreen></iframe>
-    </div>
-</figure>
+{{ youtube_iframe('vTuYtBeWwP0') }}
 
-<figure>
-    <div class="video-wrapper">
-        <iframe src="//www.youtube.com/embed/iADlXMXKhv4" frameborder="0" allowfullscreen></iframe>
-    </div>
-</figure>
+{{ youtube_iframe('iADlXMXKhv4') }}
 
 I had a great time playing those but I have to admit that after a few
 hours of experimentation with bytebeat the initial excitement started
@@ -71,11 +63,7 @@ Cortini][blindoldfreak]:
   [updated]: https://medium.com/@naive_sound/glitch-beyond-the-bytebeat-603478a03686
   [blindoldfreak]: https://youtu.be/SFtnTmJ2YPg
 
-<figure>
-    <div class="video-wrapper">
-        <iframe src="//www.youtube.com/embed/-qnqK5OiNq8" frameborder="0" allowfullscreen></iframe>
-    </div>
-</figure>
+{{ youtube_iframe('-qnqK5OiNq8') }}
 
 
 Update • 2016-07-24
@@ -83,8 +71,4 @@ Update • 2016-07-24
 
 More drone experiments:
 
-<figure>
-    <div class="video-wrapper">
-        <iframe src="//www.youtube.com/embed/oo9kadxlZ1E" frameborder="0" allowfullscreen></iframe>
-    </div>
-</figure>
+{{ youtube_iframe('oo9kadxlZ1E') }}

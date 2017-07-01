@@ -15,11 +15,7 @@ shot well during the night).  I was lucky enough to capture a moonrise,
 direct sunlight, neighbours on the roof, a few planes, various types of
 clouds...  I'm amazed how well it came out.
 
-<figure>
-    <div class="video-wrapper">
-        <iframe src="//www.youtube.com/embed/8B95dgImNck" frameborder="0" allowfullscreen></iframe>
-    </div>
-</figure>
+{{ youtube_iframe('8B95dgImNck') }}
 
 All camera settings are automatic and apart from cropping and resizing
 I didn't do any post-processing.

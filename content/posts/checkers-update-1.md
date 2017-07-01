@@ -5,11 +5,7 @@ Checkers: Update 1
 
 Let's open with half a minute of unedited gameplay footage.
 
-<figure>
-    <div class="video-wrapper">
-        <iframe src="//www.youtube.com/embed/-WltJzujyk8" frameborder="0" allowfullscreen></iframe>
-    </div>
-</figure>
+{{ youtube_iframe('-WltJzujyk8') }}
 
 I'm happy with how things look and work at this stage, although I'm sure
 I'll spend a lot of time polishing everything.  In particular, I expect
