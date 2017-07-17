@@ -79,6 +79,7 @@ class memoized(object):
             PostCollectionRecipe("Robotics series", slugs=[
                 'robot-movement',
                 '12-angry-servos',
+                'prusa',
             ]),
         ]
 
