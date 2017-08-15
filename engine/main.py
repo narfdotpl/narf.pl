@@ -81,6 +81,7 @@ class memoized(object):
                 'robot-movement',
                 '12-angry-servos',
                 'prusa',
+                'leg-test',
             ]),
         ]
 
