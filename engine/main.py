@@ -661,6 +661,7 @@ def redirect_from_old_path(path):
             '/quit.txt': ('/posts/quit-delicious', permanent),
 
             '/cv': ('https://www.linkedin.com/in/narfdotpl', not permanent),
+            '/blog': ('/posts', not permanent),
 
             '/have-seen':
                 (static_url.for_asset('index/urls/have-seen.jpg'),
