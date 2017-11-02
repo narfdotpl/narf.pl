@@ -82,6 +82,7 @@ class memoized(object):
                 '12-angry-servos',
                 'prusa',
                 'leg-test',
+                'its-alive',
             ]),
         ]
 
@@ -697,6 +698,7 @@ def redirect_from_old_path(path):
             '/suspens':  (suspense, not permanent),
 
             '/newsletter': ('http://eepurl.com/baKQjf', not permanent),
+            '/nf1': ('/posts/its-alive', not permanent),
         }.get('/' + path, (None, None))
 
     # match latest post
