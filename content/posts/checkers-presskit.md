@@ -12,6 +12,13 @@ player mode, time limit, translation for five languages, and various
 improvements.
 
 
+Update • 2018-05-16
+-------------------
+
+The game is no longer in the App Store because I didn't renew my
+membership (it's 429 PLN per year).
+
+
 Preview
 -------
 
