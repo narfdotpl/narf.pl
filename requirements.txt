@@ -1,9 +1,9 @@
-Fabric==1.6.1
-Flask==0.9
-Markdown==2.3.1
-PIL==1.1.7
-PyYAML==3.10
+Fabric==1.14.1
+Flask==1.0.2
+Markdown==2.6.11
+Pillow==5.4.1
+PyYAML==3.13
 beautifulsoup4==4.3.1
 flup==1.0.2
-smartypants==1.6.0.3
-typogrify==2.0.0
+smartypants==1.8.6
+typogrify==2.0.7

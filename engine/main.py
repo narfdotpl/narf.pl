@@ -307,6 +307,11 @@ class static_url(object):
         # create thumbnail if it doesn't exist
         if not exists(thumbnail_path):
             image.thumbnail((max_width, max_height), Image.ANTIALIAS)
+
+            # remove alpha channel from PNGs
+            if image.mode == 'RGBA':
+                image = image.convert('RGB')
+
             image.save(thumbnail_path, "JPEG", quality=95)
 
         return url
@@ -571,13 +576,13 @@ def wrap_images_in_links(soup):
 
 
 def make_youtube_iframe(video_id):
-    return """
+    return Markup("""
 <figure>
     <div class="video-wrapper">
         <iframe src="//www.youtube.com/embed/{video_id}" frameborder="0" allowfullscreen></iframe>
     </div>
 </figure>
-"""[1:-1].format(video_id=video_id)
+"""[1:-1].format(video_id=video_id))
 
 
 @app.template_filter('typo')
