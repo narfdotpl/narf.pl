@@ -211,7 +211,7 @@ redundant by a built-in feature of Xcode 7.3.
   [Xcode]: https://developer.apple.com/xcode/
   [Xcode download]: https://developer.apple.com/downloads/
   [Xcode Solarized]: https://github.com/ArtSabintsev/Solarized-Dark-for-Xcode
-  [Glitchy Checkers]: http://GlitchyCheckers.com/
+  [Glitchy Checkers]: /checkers
   [XVim]: https://github.com/XVimProject/XVim
   [Fuzzy Autocomplete]: https://github.com/FuzzyAutocomplete/FuzzyAutocompletePlugin
 

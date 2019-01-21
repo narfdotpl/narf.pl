@@ -678,6 +678,7 @@ def redirect_from_old_path(path):
 
             '/cv': ('https://www.linkedin.com/in/narfdotpl', not permanent),
             '/blog': ('/posts', not permanent),
+            '/checkers': ('/posts/checkers-presskit', not permanent),
 
             '/have-seen':
                 (static_url.for_asset('index/urls/have-seen.jpg'),

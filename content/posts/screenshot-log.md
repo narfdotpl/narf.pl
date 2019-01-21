@@ -35,6 +35,6 @@ images that look compelling. Below are my favourite three.
 ![](2017-01-03.png)
 
 
-## [Xcode](http://glitchycheckers.com/)
+## [Xcode](/checkers)
 
 ![](2016-08-17.png)

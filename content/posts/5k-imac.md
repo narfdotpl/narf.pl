@@ -23,7 +23,7 @@ I wanted a fast computer with a big, high resolution screen for a long time.  Wh
 
 I decided to go with the top-of-the-line model because I wanted to have The Best Mac They Make™, and also because I plan to use it as my main machine for at least four years.  It's how long I kept my Air and, before that, a white MacBook.  I wanted the best CPU because I use my machine for software development: I recently released an iPad game called [Glitchy Checkers][]. Go buy it! ;)
 
-  [Glitchy Checkers]: http://GlitchyCheckers.com
+  [Glitchy Checkers]: /checkers
 
 The iMac I configured is "maxed-out" with a "star": I chose the fastest CPU and the best GPU, but settled for the smallest SSD (256&nbsp;GB) because I don't use much "disk" space (I was *almost* fine with 128 gigs in the Air).  I also ordered it with only 8 GB of RAM and swapped the memory myself for 32&nbsp;GB of Kingston HyperX Impact RAM [from Allegro][allegro], which saved me over 500&nbsp;USD.  (RAM is the only thing a user can change themself.  Without removing the front glass, that is.)
 

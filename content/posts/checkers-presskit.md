@@ -16,7 +16,10 @@ Update • 2018-05-16
 -------------------
 
 The game is no longer in the App Store because I didn't renew my
-membership (it's 429 PLN per year).
+membership (it's 429 PLN per year). I summarized my thoughts in
+[a post][skull] I wrote after the release.
+
+  [skull]: /posts/checkers-skull
 
 
 Preview

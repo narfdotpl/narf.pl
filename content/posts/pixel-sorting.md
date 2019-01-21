@@ -11,7 +11,7 @@ a look at search results:
 
 [![](search.jpg)][search]
 
-  [Glitchy Checkers]: http://glitchycheckers.com/
+  [Glitchy Checkers]: /checkers
   [GITS]: https://www.youtube.com/watch?v=q7Tm73m0VZs
   [search]: https://duckduckgo.com/?q=pixel+sorting&t=h_&ia=images&iax=1
 

@@ -8,7 +8,7 @@ Glitchy Checkers and I'm about to release it! Woo-hoo!  I'd love it to
 be on the App Store before Christmas.
 
 I started making a website for the game at
-[GlitchyCheckers.com](http://glitchycheckers.com/).  I also created a
+[GlitchyCheckers.com](/checkers).  I also created a
 Twitter profile at [@GlitchyCheckers](https://twitter.com/GlitchyCheckers)
 and a [Facebook page](https://www.facebook.com/GlitchyCheckers), so you
 can follow, retweet, share, and like everything. ;)  If you want to get

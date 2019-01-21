@@ -129,7 +129,7 @@ It reads better, from left to right with a subject in the first position, but I 
 
 Now, I really like `|>`, the application operator.  I really, *really* like it.  There are many situations where it makes code much more readable.  It allows to rewrite `g(f(x))` as `x |> f |> g`, which can be extremely useful, depending on the importance, number, and actual names of your `f`s and `g`s.  I shipped an iPad game called [Glitchy Checkers][] where I used this operator 191 times.  (Mostly because of my [tweaks][] system, but not exclusively.  I used Rob Rix' implementation from [Prelude][].)
 
-  [Glitchy Checkers]: http://GlitchyCheckers.com/
+  [Glitchy Checkers]: /checkers
   [Prelude]: https://github.com/robrix/Prelude
   [tweaks]: /posts/checkers-development-panel
 

@@ -5,4 +5,4 @@ Shattered Polygons
 
 ![](polygons.png)
 
-*This became [Glitchy Checkers](http://GlitchyCheckers.com).*
+*This became [Glitchy Checkers](/checkers).*

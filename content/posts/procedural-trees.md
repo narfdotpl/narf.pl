@@ -53,7 +53,7 @@ fragments:
 *Screenshots from [Glitchy Checkers][].  Procedurally broken pieces on
 the left, glitchy shader on the right.*
 
-  [Glitchy Checkers]: http://GlitchyCheckers.com
+  [Glitchy Checkers]: /checkers
 
 
 Before settling on the "screen malfunction glitch" I considered many

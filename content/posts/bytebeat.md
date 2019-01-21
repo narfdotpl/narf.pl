@@ -48,7 +48,7 @@ Make some n͍ͧ͋o̜̖̾ỉ̅͡s᷀ͧ̅e̳͠͠!
   [article]: https://medium.com/@naive_sound/glitch-a-noisy-fusion-of-math-and-music-6a9b24e7f5b5
   [synthesizer]: http://naivesound.com/glitch/#t
   [Soundflower]: https://github.com/mattingalls/Soundflower/releases/
-  [Glitchy Checkers]: http://GlitchyCheckers.com/
+  [Glitchy Checkers]: /checkers
   [Sonic Pi]: https://www.youtube.com/watch?v=TK1mBqKvIyU
 
 
