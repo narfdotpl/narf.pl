@@ -72,6 +72,7 @@ class memoized(object):
             ]),
 
             PostCollectionRecipe("Visualization series", slugs=[
+                'hots-duration',
                 'music-streaming',
                 'spiral',
                 'screenshot-log',

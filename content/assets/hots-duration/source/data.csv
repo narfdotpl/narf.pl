@@ -1,0 +1,415 @@
+time,version,after_xp_changes,mode,duration,replay
+1541271194,2.39.2,False,QM,1106.6875,Tomb of the Spider Queen.StormReplay
+1541272730,2.39.2,False,TL,992.4375,Battlefield of Eternity.StormReplay
+1541274350,2.39.2,False,TL,1235.4375,Towers of Doom.StormReplay
+1541275825,2.39.2,False,TL,950.1875,Sky Temple.StormReplay
+1541281315,2.39.2,False,QM,1315.625,Dragon Shire.StormReplay
+1541283156,2.39.2,False,QM,1682.8125,Battlefield of Eternity (2).StormReplay
+1541284063,2.39.2,False,QM,729.75,Sky Temple (2).StormReplay
+1541285532,2.39.2,False,QM,1281.25,Tomb of the Spider Queen (2).StormReplay
+1541286597,2.39.2,False,QM,901.75,Warhead Junction.StormReplay
+1541322555,2.39.2,False,QM,1042.6875,Blackheart's Bay.StormReplay
+1541324042,2.39.2,False,QM,1277.25,Garden of Terror.StormReplay
+1541325891,2.39.2,False,QM,1660.0,Alterac Pass.StormReplay
+1541326970,2.39.2,False,QM,865.0,Towers of Doom (2).StormReplay
+1541328627,2.39.2,False,QM,1489.9375,Tomb of the Spider Queen (3).StormReplay
+1541330649,2.39.2,False,QM,1445.75,Hanamura Temple.StormReplay
+1541331743,2.39.2,False,QM,932.0,Warhead Junction (2).StormReplay
+1541337813,2.39.2,False,QM,1063.125,Sky Temple (3).StormReplay
+1541339063,2.39.2,False,QM,1071.375,Blackheart's Bay (2).StormReplay
+1541340101,2.39.2,False,QM,825.9375,Battlefield of Eternity (3).StormReplay
+1541348353,2.39.2,False,QM,1270.6875,Infernal Shrines.StormReplay
+1541350363,2.39.2,False,QM,1608.375,Alterac Pass (2).StormReplay
+1541351914,2.39.2,False,QM,1052.75,Sky Temple (4).StormReplay
+1541445611,2.39.2,False,QM,1366.1875,Cursed Hollow (2).StormReplay
+1541535491,2.39.2,False,QM,727.0625,Volskaya Foundry.StormReplay
+1541537082,2.39.2,False,QM,1405.75,Towers of Doom (3).StormReplay
+1541538934,2.39.2,False,QM,993.9375,Sky Temple (6).StormReplay
+1541540448,2.39.2,False,QM,1294.0,Warhead Junction (3).StormReplay
+1541542186,2.39.2,False,QM,1453.25,Volskaya Foundry (2).StormReplay
+1541543590,2.39.2,False,QM,1220.375,Hanamura Temple (2).StormReplay
+1541545135,2.39.2,False,QM,1326.9375,Cursed Hollow (3).StormReplay
+1541546251,2.39.2,False,QM,967.3125,Infernal Shrines (2).StormReplay
+1541615313,2.39.2,False,QM,1082.375,Braxis Holdout (2).StormReplay
+1541616589,2.39.2,False,QM,1102.8125,Warhead Junction (4).StormReplay
+1541617835,2.39.2,False,QM,1017.625,Sky Temple (7).StormReplay
+1541628270,2.39.2,False,QM,914.5,Infernal Shrines (4).StormReplay
+1541629713,2.39.2,False,QM,1311.75,Volskaya Foundry (3).StormReplay
+1541709449,2.39.2,False,QM,1286.75,Infernal Shrines (5).StormReplay
+1541710880,2.39.2,False,QM,1283.875,Blackheart's Bay (3).StormReplay
+1541712706,2.39.2,False,QM,1356.3125,Tomb of the Spider Queen (4).StormReplay
+1541714233,2.39.2,False,QM,1359.1875,Cursed Hollow (4).StormReplay
+1541715219,2.39.2,False,QM,748.875,Towers of Doom (4).StormReplay
+1541716665,2.39.2,False,QM,1244.875,Hanamura Temple (3).StormReplay
+1541718260,2.39.2,False,QM,1354.625,Warhead Junction (5).StormReplay
+1541718941,2.39.2,False,QM,539.75,Tomb of the Spider Queen (5).StormReplay
+1541720603,2.39.2,False,QM,1396.0,Cursed Hollow (5).StormReplay
+1541949647,2.39.2,False,QM,1062.75,Cursed Hollow (7).StormReplay
+1541950821,2.39.2,False,QM,909.5,Tomb of the Spider Queen (6).StormReplay
+1541952718,2.39.2,False,QM,1732.5,Garden of Terror (2).StormReplay
+1542048924,2.39.2,False,TL,968.75,Tomb of the Spider Queen (7).StormReplay
+1542050484,2.39.2,False,TL,1158.4375,Volskaya Foundry (4).StormReplay
+1542052701,2.39.2,False,TL,1175.5625,Battlefield of Eternity (5).StormReplay
+1542054604,2.39.2,False,TL,1252.125,Sky Temple (9).StormReplay
+1542056306,2.39.2,False,TL,1191.375,Dragon Shire (4).StormReplay
+1542057906,2.39.2,False,TL,1193.8125,Braxis Holdout (4).StormReplay
+1542059982,2.39.2,False,TL,1333.6875,Towers of Doom (6).StormReplay
+1542137840,2.39.2,False,QM,1299.125,Alterac Pass (5).StormReplay
+1542139734,2.39.2,False,TL,1208.3125,Alterac Pass (6).StormReplay
+1542141299,2.39.2,False,TL,646.3125,Battlefield of Eternity (6).StormReplay
+1542143155,2.39.2,False,TL,1413.375,Cursed Hollow (8).StormReplay
+1542228472,2.40.0,False,QM,1321.875,Alterac Pass (9).StormReplay
+1542230252,2.40.0,False,QM,1402.3125,Hanamura Temple (4).StormReplay
+1542231536,2.40.0,False,QM,1022.125,Dragon Shire (5).StormReplay
+1542233156,2.40.0,False,QM,1447.375,Braxis Holdout (5).StormReplay
+1542234323,2.40.0,False,QM,971.0,Towers of Doom (7).StormReplay
+1542236311,2.40.0,False,QM,1488.5625,Alterac Pass (10).StormReplay
+1542301276,2.40.0,False,QM,1285.0,Sky Temple (11).StormReplay
+1542302924,2.40.0,False,QM,1418.75,Braxis Holdout (6).StormReplay
+1542314031,2.40.0,False,QM,1290.4375,Alterac Pass (11).StormReplay
+1542315280,2.40.0,False,QM,983.875,Dragon Shire (6).StormReplay
+1542316802,2.40.0,False,QM,1211.125,Sky Temple (12).StormReplay
+1542318156,2.40.0,False,QM,1090.875,Hanamura Temple (5).StormReplay
+1542319469,2.40.0,False,QM,1136.875,Infernal Shrines (7).StormReplay
+1542321128,2.40.0,False,QM,1365.6875,Alterac Pass (12).StormReplay
+1542322417,2.40.0,False,QM,1121.125,Braxis Holdout (7).StormReplay
+1542323806,2.40.0,False,QM,893.875,Battlefield of Eternity (7).StormReplay
+1542483331,2.40.0,False,TL,1124.3125,Tomb of the Spider Queen (11).StormReplay
+1542484927,2.40.0,False,TL,1205.9375,Dragon Shire (8).StormReplay
+1542486370,2.40.0,False,TL,973.125,Infernal Shrines (8).StormReplay
+1542488802,2.40.0,False,TL,1467.3125,Cursed Hollow (11).StormReplay
+1542490190,2.40.0,False,TL,985.3125,Towers of Doom (8).StormReplay
+1542491974,2.40.0,False,TL,1415.9375,Volskaya Foundry (6).StormReplay
+1542493286,2.40.0,False,TL,978.875,Dragon Shire (9).StormReplay
+1542494875,2.40.0,False,TL,1103.0625,Battlefield of Eternity (8).StormReplay
+1542545476,2.40.0,False,TL,795.4375,Braxis Holdout (8).StormReplay
+1542546905,2.40.0,False,TL,963.3125,Infernal Shrines (9).StormReplay
+1542548428,2.40.0,False,TL,1072.4375,Towers of Doom (10).StormReplay
+1542550068,2.40.0,False,TL,1180.5625,Alterac Pass (14).StormReplay
+1542552008,2.40.0,False,QM,1322.5,Cursed Hollow (14).StormReplay
+1542646647,2.40.0,False,QM,829.5625,Dragon Shire (11).StormReplay
+1542647931,2.40.0,False,QM,1088.625,Hanamura Temple (6).StormReplay
+1542649227,2.40.0,False,QM,1069.4375,Infernal Shrines (10).StormReplay
+1542650701,2.40.0,False,QM,1313.25,Cursed Hollow (15).StormReplay
+1542652316,2.40.0,False,QM,853.75,Towers of Doom (11).StormReplay
+1542653746,2.40.0,False,QM,1277.75,Warhead Junction (7).StormReplay
+1542655184,2.40.0,False,QM,1250.0625,Braxis Holdout (9).StormReplay
+1542656716,2.40.0,False,QM,1363.75,Volskaya Foundry (7).StormReplay
+1542657954,2.40.0,False,TL,709.4375,Cursed Hollow (16).StormReplay
+1542659661,2.40.0,False,TL,1342.0625,Sky Temple (14).StormReplay
+1542661562,2.40.0,False,TL,1224.6875,Infernal Shrines (11).StormReplay
+1542663171,2.40.0,False,TL,1143.4375,Dragon Shire (12).StormReplay
+1542664941,2.40.0,False,TL,1261.1875,Volskaya Foundry (8).StormReplay
+1542747250,2.40.0,False,QM,1225.9375,Sky Temple (15).StormReplay
+1542748870,2.40.0,False,QM,1332.5,Blackheart's Bay (4).StormReplay
+1542750156,2.40.0,False,QM,1007.25,Tomb of the Spider Queen (12).StormReplay
+1542751552,2.40.0,False,QM,1003.25,Battlefield of Eternity (9).StormReplay
+1542906325,2.40.0,False,QM,1477.875,Hanamura Temple (7).StormReplay
+1542907771,2.40.0,False,QM,1346.5,Infernal Shrines (12).StormReplay
+1542909267,2.40.0,False,QM,1261.375,Alterac Pass (17).StormReplay
+1542910536,2.40.0,False,QM,1045.5625,Dragon Shire (14).StormReplay
+1542911773,2.40.0,False,QM,1098.5,Braxis Holdout (12).StormReplay
+1542913005,2.40.0,False,QM,990.6875,Towers of Doom (12).StormReplay
+1542919056,2.40.0,False,QM,1263.875,Battlefield of Eternity (10).StormReplay
+1542920002,2.40.0,False,QM,738.875,Tomb of the Spider Queen (13).StormReplay
+1542921227,2.40.0,False,QM,1052.75,Alterac Pass (18).StormReplay
+1542923385,2.40.0,False,QM,1759.5625,Infernal Shrines (13).StormReplay
+1542924500,2.40.0,False,QM,919.4375,Cursed Hollow (17).StormReplay
+1542925554,2.40.0,False,QM,861.0,Sky Temple (16).StormReplay
+1543090950,2.40.0,False,TL,1237.25,Sky Temple (17).StormReplay
+1543092263,2.40.0,False,TL,944.375,Tomb of the Spider Queen (14).StormReplay
+1543094261,2.40.0,False,TL,1596.6875,Dragon Shire (16).StormReplay
+1543095551,2.40.0,False,QM,1074.6875,Garden of Terror (6).StormReplay
+1543099092,2.40.0,False,QM,1317.5625,Battlefield of Eternity (11).StormReplay
+1543100489,2.40.0,False,QM,1183.0625,Tomb of the Spider Queen (15).StormReplay
+1543101693,2.40.0,False,QM,998.9375,Cursed Hollow (18).StormReplay
+1543103011,2.40.0,False,QM,1121.3125,Dragon Shire (17).StormReplay
+1543104439,2.40.0,False,QM,1225.75,Sky Temple (18).StormReplay
+1543255731,2.40.0,False,QM,1098.1875,Garden of Terror (7).StormReplay
+1543257357,2.40.0,False,QM,1404.125,Towers of Doom (13).StormReplay
+1543265715,2.40.0,False,TL,1416.5,Battlefield of Eternity (12).StormReplay
+1543267537,2.40.0,False,TL,1431.0625,Braxis Holdout (13).StormReplay
+1543268913,2.40.0,False,QM,1139.5,Hanamura Temple (9).StormReplay
+1543271173,2.40.0,False,QM,2068.75,Tomb of the Spider Queen (16).StormReplay
+1543353338,2.40.0,False,QM,1378.125,Garden of Terror (8).StormReplay
+1543354562,2.40.0,False,QM,835.5,Sky Temple (20).StormReplay
+1543355815,2.40.0,False,QM,1005.3125,Tomb of the Spider Queen (17).StormReplay
+1543519360,2.40.1,False,QM,1208.4375,Warhead Junction (9).StormReplay
+1543522213,2.40.1,False,TL,1499.4375,Tomb of the Spider Queen (19).StormReplay
+1543524293,2.40.1,False,TL,1588.875,Volskaya Foundry (10).StormReplay
+1543525664,2.40.1,False,TL,924.625,Cursed Hollow (20).StormReplay
+1543526933,2.40.1,False,TL,886.1875,Dragon Shire (19).StormReplay
+1543600073,2.40.1,False,TL,1705.25,Alterac Pass (19).StormReplay
+1543601762,2.40.1,False,TL,1215.0,Dragon Shire (20).StormReplay
+1543603317,2.40.1,False,TL,1109.6875,Sky Temple (21).StormReplay
+1543605616,2.40.1,False,TL,631.375,Alterac Pass (20).StormReplay
+1543607261,2.40.1,False,TL,1197.3125,Braxis Holdout (14).StormReplay
+1543608799,2.40.1,False,TL,1048.8125,Dragon Shire (21).StormReplay
+1543610567,2.40.1,False,TL,1272.0,Sky Temple (22).StormReplay
+1543612432,2.40.1,False,TL,1195.9375,Infernal Shrines (16).StormReplay
+1543613771,2.40.1,False,TL,899.3125,Battlefield of Eternity (16).StormReplay
+1543616465,2.40.1,False,QM,1011.0,Garden of Terror (9).StormReplay
+1543618427,2.40.1,False,TL,1427.8125,Towers of Doom (14).StormReplay
+1543619641,2.40.1,False,TL,804.0,Dragon Shire (22).StormReplay
+1543620987,2.40.1,False,TL,894.5,Cursed Hollow (22).StormReplay
+1543622771,2.40.1,False,TL,1403.75,Alterac Pass (21).StormReplay
+1543624307,2.40.1,False,TL,1080.25,Braxis Holdout (15).StormReplay
+1543659630,2.40.1,False,QM,1134.875,Cursed Hollow (23).StormReplay
+1543661463,2.40.1,False,QM,1348.3125,Tomb of the Spider Queen (20).StormReplay
+1543662818,2.40.1,False,QM,1191.9375,Dragon Shire (23).StormReplay
+1543664379,2.40.1,False,QM,1369.625,Blackheart's Bay (6).StormReplay
+1543666295,2.40.1,False,QM,1580.3125,Braxis Holdout (16).StormReplay
+1543673683,2.40.1,False,QM,1062.75,Towers of Doom (16).StormReplay
+1543674964,2.40.1,False,QM,1061.5625,Tomb of the Spider Queen (21).StormReplay
+1543676425,2.40.1,False,QM,1306.3125,Volskaya Foundry (12).StormReplay
+1543677920,2.40.1,False,QM,1073.9375,Infernal Shrines (17).StormReplay
+1543858214,2.40.1,False,QM,961.875,Braxis Holdout (17).StormReplay
+1543862395,2.40.1,False,QM,1211.125,Braxis Holdout (18).StormReplay
+1543864299,2.40.1,False,QM,1589.375,Cursed Hollow (24).StormReplay
+1543865602,2.40.1,False,QM,1117.1875,Towers of Doom (17).StormReplay
+1543867233,2.40.1,False,TL,1197.375,Sky Temple (24).StormReplay
+1543869361,2.40.1,False,TL,1618.6875,Volskaya Foundry (13).StormReplay
+1543870661,2.40.1,False,TL,882.375,Towers of Doom (18).StormReplay
+1543872379,2.40.1,False,TL,1329.5625,Dragon Shire (24).StormReplay
+1543874176,2.40.1,False,TL,1311.9375,Braxis Holdout (19).StormReplay
+1543875414,2.40.1,False,QM,896.25,Blackheart's Bay (7).StormReplay
+1543877080,2.40.1,False,QM,1249.5,Volskaya Foundry (14).StormReplay
+1543879046,2.40.1,False,QM,1072.6875,Dragon Shire (25).StormReplay
+1543880181,2.40.1,False,QM,913.6875,Tomb of the Spider Queen (22).StormReplay
+1543949367,2.40.1,False,QM,1571.0,Garden of Terror (10).StormReplay
+1543956763,2.40.1,False,QM,888.3125,Braxis Holdout (21).StormReplay
+1543958252,2.40.1,False,QM,1145.875,Towers of Doom (19).StormReplay
+1543959464,2.40.1,False,QM,1001.0,Blackheart's Bay (8).StormReplay
+1543960908,2.40.1,False,QM,1304.1875,Volskaya Foundry (15).StormReplay
+1544132095,2.40.1,False,QM,838.3125,Braxis Holdout (22).StormReplay
+1544133637,2.40.1,False,QM,1067.5625,Tomb of the Spider Queen (24).StormReplay
+1544135032,2.40.1,False,QM,1252.4375,Infernal Shrines (19).StormReplay
+1544216643,2.40.1,False,QM,1007.5,Hanamura Temple (10).StormReplay
+1544218253,2.40.1,False,QM,1026.0,Alterac Pass (22).StormReplay
+1544219338,2.40.1,False,QM,810.375,Dragon Shire (27).StormReplay
+1544221306,2.40.1,False,QM,1573.0,Garden of Terror (11).StormReplay
+1544223191,2.40.1,False,QM,1329.8125,Warhead Junction (12).StormReplay
+1544224919,2.40.1,False,QM,1126.4375,Cursed Hollow (26).StormReplay
+1544226723,2.40.1,False,QM,1181.6875,Dragon Shire (28).StormReplay
+1544227954,2.40.1,False,QM,1088.5,Sky Temple (25).StormReplay
+1544229580,2.40.1,False,QM,1350.5,Alterac Pass (23).StormReplay
+1544231212,2.40.1,False,QM,1326.125,Tomb of the Spider Queen (26).StormReplay
+1544472037,2.40.1,False,QM,930.1875,Alterac Pass (25).StormReplay
+1544473873,2.40.1,False,TL,1177.875,Sky Temple (28).StormReplay
+1544475657,2.40.1,False,TL,1329.875,Dragon Shire (29).StormReplay
+1544477600,2.40.1,False,TL,1503.375,Braxis Holdout (23).StormReplay
+1544479115,2.40.1,False,TL,997.75,Tomb of the Spider Queen (28).StormReplay
+1544480476,2.40.1,False,TL,879.625,Towers of Doom (21).StormReplay
+1544482152,2.40.1,False,TL,1167.75,Infernal Shrines (22).StormReplay
+1544483801,2.40.1,False,QM,1104.75,Tomb of the Spider Queen (29).StormReplay
+1544485511,2.40.1,False,QM,1057.8125,Garden of Terror (12).StormReplay
+1544637862,2.41.0,True,QM,984.375,Alterac Pass (26).StormReplay
+1544639771,2.41.0,True,QM,1655.3125,Blackheart's Bay (10).StormReplay
+1544640914,2.41.0,True,QM,894.8125,Sky Temple (29).StormReplay
+1544642134,2.41.0,True,QM,931.5625,Warhead Junction (13).StormReplay
+1544643302,2.41.0,True,QM,958.9375,Battlefield of Eternity (19).StormReplay
+1544644683,2.41.0,True,QM,1197.875,Blackheart's Bay (11).StormReplay
+1544648015,2.41.0,True,QM,1078.3125,Hanamura Temple (11).StormReplay
+1544649493,2.41.0,True,QM,1262.4375,Sky Temple (30).StormReplay
+1544650639,2.41.0,True,QM,811.0,Garden of Terror (13).StormReplay
+1544652313,2.41.0,True,QM,1261.75,Dragon Shire (30).StormReplay
+1544653702,2.41.0,True,QM,1181.875,Infernal Shrines (23).StormReplay
+1544655305,2.41.0,True,QM,882.3125,Warhead Junction (14).StormReplay
+1544817279,2.41.1,True,QM,1072.4375,Hanamura Temple (12).StormReplay
+1544818553,2.41.1,True,QM,924.8125,Towers of Doom (22).StormReplay
+1544819799,2.41.1,True,QM,1087.8125,Cursed Hollow (27).StormReplay
+1544831381,2.41.1,True,QM,806.0625,Tomb of the Spider Queen (30).StormReplay
+1544832687,2.41.1,True,QM,1158.4375,Garden of Terror (14).StormReplay
+1544833841,2.41.1,True,QM,963.0,Battlefield of Eternity (20).StormReplay
+1544835994,2.41.1,True,QM,1944.6875,Dragon Shire (31).StormReplay
+1544837379,2.41.1,True,QM,1078.8125,Alterac Pass (29).StormReplay
+1544873224,2.41.1,True,QM,848.125,Towers of Doom (23).StormReplay
+1544874928,2.41.1,True,QM,1060.875,Hanamura Temple (14).StormReplay
+1544876381,2.41.1,True,QM,780.75,Blackheart's Bay (14).StormReplay
+1544882509,2.41.1,True,QM,867.9375,Battlefield of Eternity (21).StormReplay
+1544884522,2.41.1,True,QM,1229.25,Infernal Shrines (24).StormReplay
+1544886252,2.41.1,True,QM,963.0625,Sky Temple (32).StormReplay
+1544888211,2.41.1,True,QM,1204.0,Blackheart's Bay (15).StormReplay
+1545080244,2.41.1,True,TL,768.875,Braxis Holdout (25).StormReplay
+1545081887,2.41.1,True,TL,1116.375,Tomb of the Spider Queen (31).StormReplay
+1545084024,2.41.1,True,TL,1645.3125,Alterac Pass (30).StormReplay
+1545085292,2.41.1,True,TL,894.875,Battlefield of Eternity (22).StormReplay
+1545086784,2.41.1,True,QM,1300.6875,Battlefield of Eternity (23).StormReplay
+1545088399,2.41.1,True,QM,1313.3125,Towers of Doom (24).StormReplay
+1545155192,2.41.1,True,QM,1133.8125,Garden of Terror (16).StormReplay
+1545158822,2.41.1,True,QM,895.8125,Tomb of the Spider Queen (32).StormReplay
+1545160213,2.41.1,True,QM,1135.5,Volskaya Foundry (17).StormReplay
+1545161642,2.41.1,True,QM,1238.375,Blackheart's Bay (16).StormReplay
+1545163456,2.41.1,True,QM,1522.625,Dragon Shire (33).StormReplay
+1545165090,2.41.1,True,QM,1349.75,Sky Temple (35).StormReplay
+1545166405,2.41.1,True,QM,1012.1875,Tomb of the Spider Queen (33).StormReplay
+1545167482,2.41.1,True,QM,875.875,Garden of Terror (17).StormReplay
+1545251878,2.41.2,True,TL,924.0,Volskaya Foundry (18).StormReplay
+1545253444,2.41.2,True,TL,1119.5625,Sky Temple (36).StormReplay
+1545255036,2.41.2,True,TL,1156.75,Cursed Hollow (29).StormReplay
+1545256533,2.41.2,True,TL,1083.625,Tomb of the Spider Queen (34).StormReplay
+1545412369,2.41.2,True,QM,952.3125,Braxis Holdout (27).StormReplay
+1545413476,2.41.2,True,QM,947.0,Cursed Hollow (30).StormReplay
+1545414596,2.41.2,True,QM,961.3125,Battlefield of Eternity (25).StormReplay
+1545416094,2.41.2,True,QM,1147.625,Sky Temple (38).StormReplay
+1545417877,2.41.2,True,QM,1656.625,Alterac Pass (33).StormReplay
+1545419368,2.41.2,True,QM,1340.5,Garden of Terror (18).StormReplay
+1545420499,2.41.2,True,QM,830.0,Battlefield of Eternity (26).StormReplay
+1545421687,2.41.2,True,QM,1019.625,Braxis Holdout (28).StormReplay
+1545422870,2.41.2,True,QM,894.25,Cursed Hollow (31).StormReplay
+1545424410,2.41.2,True,QM,1360.9375,Garden of Terror (19).StormReplay
+1545425569,2.41.2,True,QM,960.375,Blackheart's Bay (18).StormReplay
+1545580665,2.41.2,True,QM,1235.875,Warhead Junction (15).StormReplay
+1545582318,2.41.2,True,QM,1274.8125,Dragon Shire (34).StormReplay
+1545584473,2.41.2,True,QM,1404.6875,Garden of Terror (20).StormReplay
+1545585809,2.41.2,True,QM,1139.6875,Sky Temple (39).StormReplay
+1545587319,2.41.2,True,QM,1327.6875,Blackheart's Bay (19).StormReplay
+1545588771,2.41.2,True,QM,1257.4375,Dragon Shire (35).StormReplay
+1545589855,2.41.2,True,QM,903.875,Garden of Terror (21).StormReplay
+1545598098,2.41.2,True,QM,1030.625,Cursed Hollow (32).StormReplay
+1545599594,2.41.2,True,QM,1332.5,Alterac Pass (34).StormReplay
+1545601195,2.41.2,True,QM,1443.5625,Tomb of the Spider Queen (35).StormReplay
+1545602568,2.41.2,True,QM,1178.0625,Braxis Holdout (29).StormReplay
+1545603944,2.41.2,True,QM,1032.75,Battlefield of Eternity (27).StormReplay
+1545605840,2.41.2,True,QM,1730.0,Cursed Hollow (33).StormReplay
+1545607741,2.41.2,True,QM,1736.3125,Alterac Pass (35).StormReplay
+1545609348,2.41.2,True,QM,1406.6875,Hanamura Temple (15).StormReplay
+1545610793,2.41.2,True,QM,1277.25,Blackheart's Bay (20).StormReplay
+1546627269,2.41.2,True,QM,1022.375,Battlefield of Eternity (28).StormReplay
+1546637621,2.41.2,True,QM,1139.0625,Tomb of the Spider Queen (37).StormReplay
+1546639214,2.41.2,True,QM,1435.5,Garden of Terror (23).StormReplay
+1546640598,2.41.2,True,QM,1157.0,Infernal Shrines (25).StormReplay
+1546642517,2.41.2,True,QM,1731.5,Dragon Shire (37).StormReplay
+1546643660,2.41.2,True,QM,984.4375,Sky Temple (40).StormReplay
+1546644786,2.41.2,True,QM,964.625,Alterac Pass (38).StormReplay
+1546647060,2.41.2,True,QM,2134.6875,Infernal Shrines (26).StormReplay
+1546648186,2.41.2,True,QM,936.375,Volskaya Foundry (19).StormReplay
+1546685883,2.41.2,True,QM,1273.9375,Braxis Holdout (30).StormReplay
+1546687632,2.41.2,True,QM,1582.875,Alterac Pass (39).StormReplay
+1546689508,2.41.2,True,QM,934.0,Garden of Terror (24).StormReplay
+1546690257,2.41.2,True,QM,585.25,Battlefield of Eternity (29).StormReplay
+1546692206,2.41.2,True,TL,1407.8125,Towers of Doom (29).StormReplay
+1546693719,2.41.2,True,TL,1057.25,Infernal Shrines (27).StormReplay
+1546694847,2.41.2,True,TL,720.375,Cursed Hollow (34).StormReplay
+1546707767,2.41.2,True,TL,1074.6875,Dragon Shire (38).StormReplay
+1546710123,2.41.2,True,TL,1861.5,Infernal Shrines (28).StormReplay
+1546711387,2.41.2,True,TL,733.5625,Braxis Holdout (31).StormReplay
+1546712906,2.41.2,True,TL,1095.125,Cursed Hollow (35).StormReplay
+1546714440,2.41.2,True,TL,1062.5,Sky Temple (42).StormReplay
+1546779602,2.41.2,True,TL,2268.6875,Volskaya Foundry (20).StormReplay
+1546781127,2.41.2,True,TL,1100.875,Towers of Doom (30).StormReplay
+1546889377,2.41.2,True,TL,1065.75,Braxis Holdout (32).StormReplay
+1546890985,2.41.2,True,TL,1162.5,Towers of Doom (31).StormReplay
+1546892613,2.41.2,True,TL,1192.875,Infernal Shrines (29).StormReplay
+1546894449,2.41.2,True,TL,1316.8125,Tomb of the Spider Queen (39).StormReplay
+1546981837,2.41.2,True,TL,1323.5625,Braxis Holdout (33).StormReplay
+1546983872,2.41.2,True,TL,1444.8125,Tomb of the Spider Queen (40).StormReplay
+1546985472,2.41.2,True,TL,852.0625,Battlefield of Eternity (31).StormReplay
+1547065681,2.42.0,True,QM,913.8125,Sky Temple (43).StormReplay
+1547067157,2.42.0,True,QM,939.8125,Tomb of the Spider Queen (41).StormReplay
+1547068404,2.42.0,True,QM,1044.3125,Towers of Doom (32).StormReplay
+1547069703,2.42.0,True,QM,1182.5,Blackheart's Bay (22).StormReplay
+1547070749,2.42.0,True,QM,872.0625,Warhead Junction (17).StormReplay
+1547072298,2.42.0,True,QM,1381.125,Dragon Shire (40).StormReplay
+1547143235,2.42.0,True,QM,1429.5,Hanamura Temple (18).StormReplay
+1547144341,2.42.0,True,QM,930.125,Braxis Holdout (34).StormReplay
+1547146150,2.42.0,True,QM,1654.5625,Infernal Shrines (30).StormReplay
+1547151089,2.42.0,True,QM,1650.875,Sky Temple (44).StormReplay
+1547152203,2.42.0,True,QM,942.0625,Infernal Shrines (31).StormReplay
+1547153578,2.42.0,True,QM,1243.75,Garden of Terror (26).StormReplay
+1547154682,2.42.0,True,QM,898.4375,Blackheart's Bay (24).StormReplay
+1547230601,2.42.0,True,QM,1543.375,Alterac Pass (43).StormReplay
+1547231817,2.42.0,True,QM,1059.0625,Cursed Hollow (37).StormReplay
+1547233199,2.42.0,True,QM,1251.75,Sky Temple (45).StormReplay
+1547236487,2.42.0,True,QM,1109.25,Tomb of the Spider Queen (42).StormReplay
+1547237570,2.42.0,True,QM,856.5,Towers of Doom (34).StormReplay
+1547238861,2.42.0,True,QM,1110.375,Blackheart's Bay (25).StormReplay
+1547240030,2.42.0,True,QM,868.125,Infernal Shrines (32).StormReplay
+1547241615,2.42.0,True,QM,1416.25,Dragon Shire (42).StormReplay
+1547243101,2.42.0,True,QM,1317.375,Tomb of the Spider Queen (43).StormReplay
+1547379082,2.42.0,True,QM,1564.0,Volskaya Foundry (21).StormReplay
+1547380455,2.42.0,True,QM,1144.75,Cursed Hollow (38).StormReplay
+1547381668,2.42.0,True,QM,1057.8125,Tomb of the Spider Queen (44).StormReplay
+1547382862,2.42.0,True,QM,1016.3125,Infernal Shrines (33).StormReplay
+1547384307,2.42.0,True,QM,1132.875,Sky Temple (46).StormReplay
+1547385680,2.42.0,True,QM,1198.8125,Garden of Terror (27).StormReplay
+1547387040,2.42.0,True,QM,1131.75,Blackheart's Bay (26).StormReplay
+1547388446,2.42.0,True,QM,1206.5,Infernal Shrines (34).StormReplay
+1547389722,2.42.0,True,QM,1014.1875,Cursed Hollow (39).StormReplay
+1547390907,2.42.0,True,QM,982.5,Garden of Terror (28).StormReplay
+1547392111,2.42.0,True,QM,1070.3125,Alterac Pass (44).StormReplay
+1547492564,2.42.0,True,QM,884.25,Sky Temple (47).StormReplay
+1547493199,2.42.0,True,QM,470.8125,Garden of Terror (29).StormReplay
+1547494595,2.42.0,True,QM,1225.3125,Dragon Shire (43).StormReplay
+1547495900,2.42.0,True,QM,1173.1875,Blackheart's Bay (27).StormReplay
+1547496905,2.42.0,True,QM,769.125,Towers of Doom (35).StormReplay
+1547498778,2.42.0,True,QM,1705.5625,Tomb of the Spider Queen (45).StormReplay
+1547500101,2.42.0,True,QM,1179.1875,Garden of Terror (30).StormReplay
+1547501584,2.42.0,True,QM,1349.5,Alterac Pass (45).StormReplay
+1547502694,2.42.0,True,QM,928.125,Battlefield of Eternity (33).StormReplay
+1547504269,2.42.0,True,QM,1420.5625,Tomb of the Spider Queen (46).StormReplay
+1547580037,2.42.0,True,QM,1063.9375,Garden of Terror (32).StormReplay
+1547581464,2.42.0,True,QM,1254.0,Sky Temple (48).StormReplay
+1547583740,2.42.0,True,QM,1601.5625,Hanamura Temple (20).StormReplay
+1547584897,2.42.0,True,QM,933.0,Infernal Shrines (35).StormReplay
+1547585780,2.42.0,True,QM,665.4375,Cursed Hollow (40).StormReplay
+1547587172,2.42.0,True,QM,1269.0625,Garden of Terror (33).StormReplay
+1547588320,2.42.0,True,QM,979.125,Hanamura Temple (21).StormReplay
+1547589381,2.42.0,True,QM,919.75,Warhead Junction (18).StormReplay
+1547590668,2.42.0,True,QM,1115.625,Sky Temple (49).StormReplay
+1547833657,2.42.0,True,QM,902.9375,Sky Temple (51).StormReplay
+1547836384,2.42.0,True,TL,1251.5,Towers of Doom (36).StormReplay
+1547838216,2.42.0,True,TL,1104.1875,Braxis Holdout (35).StormReplay
+1547839565,2.42.0,True,TL,541.9375,Tomb of the Spider Queen (47).StormReplay
+1547841177,2.42.0,True,TL,1271.5625,Dragon Shire (44).StormReplay
+1547843512,2.42.0,True,TL,898.8125,Infernal Shrines (36).StormReplay
+1547844583,2.42.0,True,TL,616.9375,Cursed Hollow (41).StormReplay
+1547846188,2.42.0,True,TL,1165.0625,Braxis Holdout (36).StormReplay
+1547847917,2.42.0,True,TL,920.6875,Battlefield of Eternity (35).StormReplay
+1547849550,2.42.0,True,TL,1153.625,Tomb of the Spider Queen (48).StormReplay
+1547850966,2.42.0,True,TL,973.75,Cursed Hollow (42).StormReplay
+1547852531,2.42.0,True,TL,1068.9375,Dragon Shire (45).StormReplay
+1547896107,2.42.0,True,QM,1174.75,Garden of Terror (34).StormReplay
+1547897750,2.42.0,True,QM,1448.9375,Tomb of the Spider Queen (50).StormReplay
+1548100064,2.42.0,True,TL,857.6875,Towers of Doom (38).StormReplay
+1548101526,2.42.0,True,TL,814.1875,Tomb of the Spider Queen (51).StormReplay
+1548102991,2.42.0,True,TL,1011.0625,Sky Temple (52).StormReplay
+1548104086,2.42.0,True,TL,634.0,Cursed Hollow (44).StormReplay
+1548105860,2.42.0,True,TL,1267.125,Dragon Shire (46).StormReplay
+1548107315,2.42.0,True,TL,1066.875,Tomb of the Spider Queen (52).StormReplay
+1548108736,2.42.0,True,TL,972.0625,Infernal Shrines (37).StormReplay
+1548185614,2.42.0,True,TL,1111.3125,Braxis Holdout (38).StormReplay
+1548187619,2.42.0,True,TL,1186.3125,Alterac Pass (46).StormReplay
+1548188990,2.42.0,True,TL,925.6875,Tomb of the Spider Queen (53).StormReplay
+1548190379,2.42.0,True,TL,917.5625,Cursed Hollow (45).StormReplay
+1548191907,2.42.0,True,TL,1072.75,Towers of Doom (39).StormReplay
+1548269435,2.42.0,True,QM,1228.9375,Cursed Hollow (47).StormReplay
+1548271775,2.42.1,True,TL,924.6875,Sky Temple (54).StormReplay
+1548273049,2.42.1,True,TL,813.25,Dragon Shire (47).StormReplay
+1548275405,2.42.1,True,TL,1953.1875,Tomb of the Spider Queen (54).StormReplay
+1548276797,2.42.1,True,TL,918.6875,Cursed Hollow (48).StormReplay
+1548278164,2.42.1,True,QM,1160.625,Blackheart's Bay (28).StormReplay
+1548279870,2.42.1,True,QM,1508.9375,Braxis Holdout (41).StormReplay
+1548436742,2.42.1,True,QM,951.75,Infernal Shrines (38).StormReplay
+1548437867,2.42.1,True,QM,911.0625,Sky Temple (56).StormReplay
+1548439240,2.42.1,True,QM,1222.625,Garden of Terror (36).StormReplay
+1548440371,2.42.1,True,QM,930.875,Dragon Shire (49).StormReplay
+1548441870,2.42.1,True,QM,1335.875,Alterac Pass (49).StormReplay
+1548442846,2.42.1,True,QM,674.625,Hanamura Temple (25).StormReplay
+1548444181,2.42.1,True,QM,1112.25,Battlefield of Eternity (37).StormReplay
+1548446030,2.42.1,True,QM,1717.375,Tomb of the Spider Queen (55).StormReplay
+1548599485,2.42.1,True,QM,1180.4375,Cursed Hollow (50).StormReplay
+1548600490,2.42.1,True,QM,863.4375,Alterac Pass (50).StormReplay
+1548615514,2.42.1,True,TL,1835.125,Infernal Shrines (39).StormReplay
+1548617320,2.42.1,True,TL,1296.125,Dragon Shire (50).StormReplay
+1548708213,2.42.1,True,QM,1810.9375,Infernal Shrines (40).StormReplay
+1548709375,2.42.1,True,QM,973.6875,Hanamura Temple (26).StormReplay
+1548710969,2.42.1,True,QM,1429.6875,Garden of Terror (37).StormReplay
+1548712523,2.42.1,True,QM,1404.3125,Blackheart's Bay (29).StormReplay
+1548791800,2.42.1,True,QM,1157.4375,Cursed Hollow (51).StormReplay
+1548793758,2.42.1,True,TL,1478.3125,Volskaya Foundry (24).StormReplay
+1548795386,2.42.1,True,TL,1113.125,Braxis Holdout (42).StormReplay
+1548876356,2.42.1,True,QM,1744.875,Dragon Shire (51).StormReplay
+1548878557,2.42.1,True,TL,1297.4375,Sky Temple (58).StormReplay
+1548880274,2.42.1,True,TL,1248.0,Infernal Shrines (41).StormReplay
+1548881868,2.42.1,True,TL,1141.125,Dragon Shire (52).StormReplay

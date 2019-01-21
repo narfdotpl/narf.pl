@@ -1,0 +1,47 @@
+<?xml version="1.0" standalone="no"?>
+<svg width="512.0" height="512.0" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<polygon fill="hsla(0, 0%, 100%, 1)" points="0 0 512.0 0 512.0 512.0 0 512.0" />
+<polygon fill="rgba(33, 113, 181, 1)" points="37.9 460.8 60.660000000000004 460.8 60.660000000000004 460.8 37.9 460.8" />
+<polygon fill="rgba(33, 113, 181, 1)" points="59.660000000000004 460.8 82.42000000000002 460.8 82.42000000000002 460.8 59.660000000000004 460.8" />
+<polygon fill="rgba(33, 113, 181, 1)" points="81.42000000000002 460.8 104.18 460.8 104.18 460.8 81.42000000000002 460.8" />
+<polygon fill="rgba(33, 113, 181, 1)" points="103.18 460.8 125.94000000000003 460.8 125.94000000000003 460.8 103.18 460.8" />
+<polygon fill="rgba(33, 113, 181, 1)" points="124.94000000000003 460.8 147.70000000000002 460.8 147.70000000000002 460.8 124.94000000000003 460.8" />
+<polygon fill="rgba(33, 113, 181, 1)" points="146.70000000000002 460.8 169.46 460.8 169.46 420.8 146.70000000000002 420.8" />
+<polygon fill="rgba(33, 113, 181, 1)" points="168.46 460.8 191.22 460.8 191.22 434.1333333333333 168.46 434.1333333333333" />
+<polygon fill="rgba(33, 113, 181, 1)" points="190.22 460.8 212.98000000000005 460.8 212.98000000000005 354.1333333333333 190.22 354.1333333333333" />
+<polygon fill="rgba(33, 113, 181, 1)" points="211.98000000000005 460.8 234.74000000000004 460.8 234.74000000000004 340.8 211.98000000000005 340.8" />
+<polygon fill="rgba(33, 113, 181, 1)" points="233.74000000000004 460.8 256.5 460.8 256.5 260.8 233.74000000000004 260.8" />
+<polygon fill="rgba(33, 113, 181, 1)" points="255.5 460.8 278.26000000000005 460.8 278.26000000000005 327.4666666666667 255.5 327.4666666666667" />
+<polygon fill="rgba(33, 113, 181, 1)" points="277.26000000000005 460.8 300.02 460.8 300.02 327.4666666666667 277.26000000000005 327.4666666666667" />
+<polygon fill="rgba(33, 113, 181, 1)" points="299.02 460.8 321.78000000000003 460.8 321.78000000000003 420.8 299.02 420.8" />
+<polygon fill="rgba(33, 113, 181, 1)" points="320.78000000000003 460.8 343.53999999999996 460.8 343.53999999999996 420.8 320.78000000000003 420.8" />
+<polygon fill="rgba(33, 113, 181, 1)" points="342.53999999999996 460.8 365.3 460.8 365.3 447.4666666666667 342.53999999999996 447.4666666666667" />
+<polygon fill="rgba(33, 113, 181, 1)" points="364.3 460.8 387.06000000000006 460.8 387.06000000000006 460.8 364.3 460.8" />
+<polygon fill="rgba(33, 113, 181, 1)" points="386.06000000000006 460.8 408.82 460.8 408.82 460.8 386.06000000000006 460.8" />
+<polygon fill="rgba(33, 113, 181, 1)" points="407.82 460.8 430.58000000000004 460.8 430.58000000000004 460.8 407.82 460.8" />
+<polygon fill="rgba(33, 113, 181, 1)" points="429.58000000000004 460.8 452.34 460.8 452.34 460.8 429.58000000000004 460.8" />
+<polygon fill="rgba(33, 113, 181, 1)" points="451.34 460.8 474.1 460.8 474.1 460.8 451.34 460.8" />
+<polyline fill="transparent" points="37.9 460.8 474.1 460.8" stroke="rgba(40, 40, 40, 1)" stroke-linecap="butt" stroke-width="2" />
+<polyline fill="transparent" points="38.4 460.8 38.4 455.8" stroke="rgba(40, 40, 40, 1)" stroke-linecap="butt" stroke-width="1" />
+<polyline fill="transparent" points="60.160000000000004 460.8 60.160000000000004 455.8" stroke="rgba(40, 40, 40, 1)" stroke-linecap="butt" stroke-width="1" />
+<polyline fill="transparent" points="81.92000000000002 460.8 81.92000000000002 455.8" stroke="rgba(40, 40, 40, 1)" stroke-linecap="butt" stroke-width="1" />
+<polyline fill="transparent" points="103.68 460.8 103.68 455.8" stroke="rgba(40, 40, 40, 1)" stroke-linecap="butt" stroke-width="1" />
+<polyline fill="transparent" points="125.44000000000003 460.8 125.44000000000003 455.8" stroke="rgba(40, 40, 40, 1)" stroke-linecap="butt" stroke-width="1" />
+<polyline fill="transparent" points="147.20000000000002 460.8 147.20000000000002 455.8" stroke="rgba(40, 40, 40, 1)" stroke-linecap="butt" stroke-width="1" />
+<polyline fill="transparent" points="168.96 460.8 168.96 455.8" stroke="rgba(40, 40, 40, 1)" stroke-linecap="butt" stroke-width="1" />
+<polyline fill="transparent" points="190.72 460.8 190.72 455.8" stroke="rgba(40, 40, 40, 1)" stroke-linecap="butt" stroke-width="1" />
+<polyline fill="transparent" points="212.48000000000005 460.8 212.48000000000005 455.8" stroke="rgba(40, 40, 40, 1)" stroke-linecap="butt" stroke-width="1" />
+<polyline fill="transparent" points="234.24000000000004 460.8 234.24000000000004 455.8" stroke="rgba(40, 40, 40, 1)" stroke-linecap="butt" stroke-width="1" />
+<polyline fill="transparent" points="256.0 460.8 256.0 455.8" stroke="rgba(40, 40, 40, 1)" stroke-linecap="butt" stroke-width="1" />
+<polyline fill="transparent" points="277.76000000000005 460.8 277.76000000000005 455.8" stroke="rgba(40, 40, 40, 1)" stroke-linecap="butt" stroke-width="1" />
+<polyline fill="transparent" points="299.52 460.8 299.52 455.8" stroke="rgba(40, 40, 40, 1)" stroke-linecap="butt" stroke-width="1" />
+<polyline fill="transparent" points="321.28000000000003 460.8 321.28000000000003 455.8" stroke="rgba(40, 40, 40, 1)" stroke-linecap="butt" stroke-width="1" />
+<polyline fill="transparent" points="343.03999999999996 460.8 343.03999999999996 455.8" stroke="rgba(40, 40, 40, 1)" stroke-linecap="butt" stroke-width="1" />
+<polyline fill="transparent" points="364.8 460.8 364.8 455.8" stroke="rgba(40, 40, 40, 1)" stroke-linecap="butt" stroke-width="1" />
+<polyline fill="transparent" points="386.56000000000006 460.8 386.56000000000006 455.8" stroke="rgba(40, 40, 40, 1)" stroke-linecap="butt" stroke-width="1" />
+<polyline fill="transparent" points="408.32 460.8 408.32 455.8" stroke="rgba(40, 40, 40, 1)" stroke-linecap="butt" stroke-width="1" />
+<polyline fill="transparent" points="430.08000000000004 460.8 430.08000000000004 455.8" stroke="rgba(40, 40, 40, 1)" stroke-linecap="butt" stroke-width="1" />
+<polyline fill="transparent" points="451.84 460.8 451.84 455.8" stroke="rgba(40, 40, 40, 1)" stroke-linecap="butt" stroke-width="1" />
+<polyline fill="transparent" points="473.6 460.8 473.6 455.8" stroke="rgba(40, 40, 40, 1)" stroke-linecap="butt" stroke-width="1" />
+<polyline fill="transparent" points="253.4556666666667 204.8 253.4556666666667 460.8" stroke="rgba(40, 40, 40, 1)" stroke-linecap="butt" stroke-width="1.25" />
+</svg>
