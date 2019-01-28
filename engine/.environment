@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-
-VENV=$HOME/.virtualenvs/main
-
-export PATH=$VENV/bin:$PATH
-export PYTHONPATH=$VENV/lib/python2.7/site-packages
-export PIP_DOWNLOAD_CACHE=$HOME/.pip/download-cache
