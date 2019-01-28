@@ -272,10 +272,7 @@ class static_url(object):
 
     @staticmethod
     def base():
-        if app.debug:
-            return '/static'
-        else:
-            return 'http://cdn.narf.pl/main'
+        return '/static'
 
     @staticmethod
     def for_asset(path):
