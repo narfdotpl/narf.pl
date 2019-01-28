@@ -16,44 +16,14 @@ ENGINE_DIR = join(REPO_DIR, 'engine')
 TESTS_DIR = join(REPO_DIR, 'tests')
 POSTS_DIR = join(CONTENT_DIR, 'posts')
 
-REMOTE_APP_DIR = '~/narf.pl/main'
-
-
-env.hosts = ['narf@narf.megiteam.pl']
-
-
-@task
-def checkout(branch=None):
-    'Checkout branch in production. Use current branch by default.'
-
-    if branch is None:
-        branches = local('git branch', capture=True).split('\n')
-        predicate = lambda s: s.startswith('*')
-        branch = filter(predicate, branches)[0].lstrip('*').strip()
-
-    with cd(REMOTE_APP_DIR):
-        run('git checkout %s' % branch)
 
 
 @task
 def deploy():
     'Update production with latest changes.'
-    # aka test, push, pull, checkout, pull, install, restart, visit
 
     test()
-
-    local('git push private')
-
-    with cd(REMOTE_APP_DIR):
-        run('git pull')
-
-    checkout()
-
-    with cd(REMOTE_APP_DIR):
-        run('git pull')
-        run('source engine/.environment && pip install -r requirements.txt')
-
-    restart()
+    local('git push --force-with-lease dokku HEAD:master')
     visit()
 
 
@@ -80,13 +50,6 @@ def publish():
 
     deploy()
     local('git push public')
-
-
-@task
-def restart():
-    'Restart production.'
-
-    run('restart-app main')
 
 
 @hosts('')
