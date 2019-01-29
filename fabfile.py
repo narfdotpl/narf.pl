@@ -61,15 +61,9 @@ def deploy():
 def dev():
     'Run development sever.'
 
-    # symlink static directory
+    local('open http://localhost:5000/')
+
     with lcd(ENGINE_DIR):
-        local('rm -rf static; true')
-        local('ln -s {_,}static')
-
-        # open browser
-        local('open http://localhost:5000/')
-
-        # run server
         local('python main.py')
 
 
