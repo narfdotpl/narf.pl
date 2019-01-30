@@ -6,7 +6,7 @@ from os import walk
 from os.path import dirname, join, realpath
 from sys import stdout
 
-from fabric.api import cd, env, hosts, lcd, local, quiet, run, task
+from fabric.api import cd, hosts, lcd, local, quiet, run, task
 
 
 CURRENT_DIR = dirname(realpath(__file__))
