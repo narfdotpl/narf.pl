@@ -8,7 +8,7 @@ from hashlib import md5
 from itertools import groupby
 import json
 from os import walk
-from os.path import exists, getmtime, join
+from os.path import exists, join
 import re
 
 try:
@@ -280,9 +280,9 @@ class static_url(object):
     @staticmethod
     def for_asset(path):
         # 'a/b/c' → '/static/assets/a/b/c?sdfsdfsdf'
-        mtime = getmtime(join(settings.ASSETS_DIR, path))
+        full_path = join(settings.ASSETS_DIR, path)
         base = static_url.base()
-        return '%s/assets/%s?%s' % (base, path, get_hash(mtime))
+        return '%s/assets/%s?%s' % (base, path, get_file_hash(full_path))
 
     @staticmethod
     def for_thumbnail(path, max_width=1024*2, max_height=780*2):
@@ -290,7 +290,6 @@ class static_url(object):
 
         # get asset data
         asset_path = join(settings.ASSETS_DIR, path)
-        mtime = getmtime(asset_path)
         image = Image.open(asset_path)
         width, height = image.size
 
@@ -299,8 +298,9 @@ class static_url(object):
             return static_url.for_asset(path)
 
         # create hashed filename
-        filename = '%s.jpg' % get_hash('%s:%f:%d:%d' % \
-                                       (path, mtime, max_width, max_height))
+        asset_hash = get_file_hash(asset_path)
+        filename = '%s.jpg' % get_hash('%s:%d:%d' % \
+                                       (asset_hash, max_width, max_height))
         thumbnail_path = join(settings.THUMBNAILS_DIR, filename)
         url = '%s/thumbnails/%s' % (static_url.base(), filename)
 
@@ -411,6 +411,19 @@ def link_headers_and_render_table_of_contents(soup):
 
 def get_hash(x):
     return md5(str(x)).hexdigest()
+
+
+def get_file_hash(path):
+    hasher = md5()
+
+    with open(path, 'rb') as f:
+        while True:
+            data = f.read(128 * 1024)
+            if not data:
+                break
+            hasher.update(data)
+
+    return hasher.hexdigest()
 
 
 def filnames_in_directory(directory):
