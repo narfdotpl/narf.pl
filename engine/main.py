@@ -220,9 +220,11 @@ class memoized(object):
 
         # get dedicated social image
         social_image_url = None
-        relative_path = '%s/social.jpg' % filename[:-len('.md')]
-        if relative_path in memoized.asset_relative_paths():
-            social_image_url = static_url.for_asset(relative_path)
+        for extension in ['jpg', 'png']:
+            relative_path = '%s/social.%s' % (filename[:-len('.md')],extension)
+            if relative_path in memoized.asset_relative_paths():
+                social_image_url = static_url.for_asset(relative_path)
+                break
 
         # use first image as social image
         if social_image_url is None:
