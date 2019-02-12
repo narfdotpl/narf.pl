@@ -110,8 +110,4 @@ in a dictionary.  But no.  To get the duration in seconds you have to:
 
 ---
 
-*You can discuss this post on [Reddit][].*
-
 *Thanks to jhgrng, plasticbag, and sabr for reading drafts of this.*
-
-  [Reddit]: https://www.reddit.com/r/heroesofthestorm/comments/apqwe2/hots_games_after_xp_changes_seem_longer_but/
