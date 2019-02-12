@@ -19,7 +19,7 @@
                 {% if entry.body %}
                     {{ entry.body }}
                 {% else %}
-                    goto &lt;a href="{{ entry.link }}"&gt;{{ entry.link }}&lt;/a&gt;
+                    visit &lt;a href="{{ entry.link }}"&gt;{{ entry.link }}&lt;/a&gt;
                 {% endif %}
             </content>
         </entry>

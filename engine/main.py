@@ -175,7 +175,7 @@ class memoized(object):
             ('items', [
                 OrderedDict([
                     ('title', e['title']),
-                    ('content_html', e.get('body') or 'goto <a href="{link}">{link}</a>'.format(**e)),
+                    ('content_html', e.get('body') or 'visit <a href="{link}">{link}</a>'.format(**e)),
                     ('date_published', e['updated']),
                     ('url', e['link']),
                     ('id', e.get('uuid') or e['link']),
