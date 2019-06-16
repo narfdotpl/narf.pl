@@ -50,7 +50,7 @@ applying different sorts in sequence, and reordering entire groups of
 pixels (e.g. 128x32 areas).  Here are my results:
 
 {% for i in range(1, 17) %}
-<figure class="figure4608">
+<figure class="full-width" style="margin-bottom: 1px">
     <img data='{"max_width": 4608, "max_height": 2048}' src="triptychs/{{ i }}.jpg"/>
 </figure>
 {% endfor %}
