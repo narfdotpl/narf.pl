@@ -69,6 +69,7 @@ class memoized(object):
                 'summer-of-creative-coding',
                 'procedural-trees',
                 'pixel-sorting',
+                'spaghetti-trees',
             ]),
 
             PostCollectionRecipe("Visualization series", slugs=[
