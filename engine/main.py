@@ -53,6 +53,7 @@ class memoized(object):
     def black_css_slugs():
         return [
             'spaghetti-trees',
+            'sunflower',
         ]
 
     def collections():
@@ -75,6 +76,7 @@ class memoized(object):
                 'procedural-trees',
                 'pixel-sorting',
                 'spaghetti-trees',
+                'sunflower',
             ]),
 
             PostCollectionRecipe("Visualization series", slugs=[
@@ -745,4 +747,4 @@ def redirect_from_old_path(path):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
