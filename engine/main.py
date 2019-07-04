@@ -50,6 +50,11 @@ class memoized(object):
 
         return paths
 
+    def black_css_slugs():
+        return [
+            'spaghetti-trees',
+        ]
+
     def collections():
         recipes = [
             PostCollectionRecipe("Checkers series",
@@ -126,6 +131,7 @@ class memoized(object):
             'stupified_slug': stupify(slug),
             'path': path,
             'url': 'http://narf.pl%s' % path,
+            'uses_black_css': slug in memoized.black_css_slugs(),
         }
 
     def post_filenames():
