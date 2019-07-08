@@ -26,7 +26,8 @@ might've been, though:
 
 ![](sunflower.jpg)
 
-<br/>
+*<br/>(I like the [details].)*
 
   [spaghetti]: /posts/spaghetti-trees
   [bug]: https://www.instagram.com/p/BzeP8SPnSq3/
+  [details]: https://www.instagram.com/p/BziSzZZnc81/
