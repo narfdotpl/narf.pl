@@ -1,7 +1,7 @@
 Fabric==1.14.1
 Flask==1.0.2
 Markdown==2.6.11
-Pillow==5.4.1
+Pillow==6.2.0
 PyYAML==3.13
 beautifulsoup4==4.3.1
 smartypants==1.8.6
