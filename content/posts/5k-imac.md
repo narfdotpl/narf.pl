@@ -101,7 +101,7 @@ The one thing that bothers me is that I can't get used to full-size left- and ri
 
 They make me miss the up-arrow: I put my index finger on the left key, ring finger on the right key, and instead of the up-arrow, I hit the shift with my middle finger.  It wouldn't be much of a problem if I didn't have it remapped to be more useful than just shift (TODO: blog about my custom keyboard mappings).
 
-A testament to how good the Magic Keyboard is might be the fact that I own a mechanical [Das Keyboard][] with Cherry MX Blue switches, the clicky ones, but it lives in the closet.  Das Keyboard is more comfortable to type on (and more satisfying!), but it has a thick cable and is huge: it forces me to put the mouse too far to the right.  It is also annoying to move around when I want to put a piece of paper or an iPad in front of me.  Last but not least, the love of my life throws various items at me when she hears the mechanical keyboard noise...  Using the Magic Keyboard is much safer.
+A testament to how good the Magic Keyboard is might be the fact that I own a mechanical [Das Keyboard][] with Cherry MX Blue switches, the clicky ones, but it lives in the closet.  Das Keyboard is more comfortable to type on (and more satisfying!), but it has a thick cable and is huge: it forces me to put the mouse too far to the right.  It is also annoying to move around when I want to put a piece of paper or an iPad in front of me.
 
   [Das Keyboard]: http://www.daskeyboard.com/model-s-professional/
 

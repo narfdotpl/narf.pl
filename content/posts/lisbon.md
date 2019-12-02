@@ -3,7 +3,7 @@
 Lisbon
 ======
 
-{% for i in range(1, 9) %}
+{% for i in range(1, 7) %}
 ![]({{ i }}.jpg)
 {% endfor %}
 
