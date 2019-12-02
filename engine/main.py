@@ -704,23 +704,7 @@ def redirect_from_old_path(path):
                 (static_url.for_asset('index/id_rsa.pub'),
                  not permanent),
 
-            '/liczba':
-                ('http://www.youtube.com/watch?v=Gc31UQ-C6dw',
-                 not permanent),
-
-            '/liczba-nie-ilosc':
-                ('http://www.youtube.com/watch?v=Gc31UQ-C6dw',
-                 not permanent),
-
             '/now': ('/posts/anxious-timer', not permanent),
-
-            '/pie-chart':
-                ('https://twitter.com/maxcroser/status/676563118512840704',
-                 not permanent),
-
-            '/samo-sie-nie-zrobi':
-                ('http://www.youtube.com/watch?v=xOUjIr70XgQ',
-                 not permanent),
 
             '/suspense': (suspense, not permanent),
             '/suspens':  (suspense, not permanent),
