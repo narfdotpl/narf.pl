@@ -54,6 +54,7 @@ class memoized(object):
         return [
             'spaghetti-trees',
             'sunflower',
+            'drzwi',
         ]
 
     def collections():
@@ -77,6 +78,7 @@ class memoized(object):
                 'pixel-sorting',
                 'spaghetti-trees',
                 'sunflower',
+                'drzwi',
             ]),
 
             PostCollectionRecipe("Visualization series", slugs=[
