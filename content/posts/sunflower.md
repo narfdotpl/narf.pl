@@ -5,8 +5,6 @@ Sunflower
 
 ![](sunflower.mp4)
 
-<br/>
-
 This is the conclusion to the thought I had about a golden
 sunflower/turbine/radiator. I made it in Python and Blender, after
 adding support for surfaces to my [metal spaghetti tree][spaghetti]
@@ -26,7 +24,7 @@ might've been, though:
 
 ![](sunflower.jpg)
 
-*<br/>(I like the [details].)*
+*(I like the [details].)*
 
   [spaghetti]: /posts/spaghetti-trees
   [bug]: https://www.instagram.com/p/BzeP8SPnSq3/

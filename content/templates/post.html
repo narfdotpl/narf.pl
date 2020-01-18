@@ -4,6 +4,13 @@
 {% block title %}{{ title|typo }}{% endblock %}
 
 
+{% if uses_black_css %}
+    {% block css %}
+        <link rel="stylesheet" href="asset:index/naif-black.min.css"/>
+    {% endblock %}
+{% endif %}
+
+
 {% block extra_head %}
     <meta property="og:url" content="{{ url }}"/>
     <meta property="og:title" content="{{ title|typo }}"/>
@@ -23,10 +30,6 @@
     <meta name="twitter:site" content="@narfdotpl"/>
     <meta name="twitter:creator" content="@narfdotpl"/>
     <meta name="twitter:title" content="{{ title|typo }}"/>
-
-    {% if uses_black_css %}
-        <link rel="stylesheet" href="asset:index/naif-black.min.css"/>
-    {% endif %}
 
     <link rel="stylesheet" href="asset:index/highlight/styles/github.css"/>
     <link rel="stylesheet" href="asset:index/gallery/magnific-popup.css"/>

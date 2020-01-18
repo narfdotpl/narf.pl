@@ -30,7 +30,11 @@
         <title>{% block title %}Maciej Konieczny (narf){% endblock %}</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link href="asset:index/naif.min.css" rel="stylesheet"/>
+
+        {% block css %}
+            <link href="asset:index/naif.min.css" rel="stylesheet"/>
+        {% endblock %}
+
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet"/>
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700" rel="stylesheet"/>
 
