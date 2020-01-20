@@ -4,13 +4,6 @@
 {% block title %}{{ title|typo }}{% endblock %}
 
 
-{% if uses_black_css %}
-    {% block css %}
-        <link rel="stylesheet" href="asset:index/naif-black.min.css"/>
-    {% endblock %}
-{% endif %}
-
-
 {% block extra_head %}
     <meta property="og:url" content="{{ url }}"/>
     <meta property="og:title" content="{{ title|typo }}"/>
