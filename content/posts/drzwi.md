@@ -11,7 +11,7 @@ projects](/posts/sunflower). If you prefer you can watch it [on
 YouTube](https://www.youtube.com/watch?v=XyJIIzdtcIQ) but the quality
 is worse there.
 
-I'm not a fan of descriptions that tell you what you should see/feel,
+I'm not a fan of descriptions that tell you what you should see or feel,
 but I can tell you that in the dream I opened a door in a dimly lit
 narrow apartment and walked down an underground corridor that slowly
 became more abstract as I noticed I'm no longer walking but falling.
