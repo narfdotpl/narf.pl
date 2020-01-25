@@ -53,7 +53,7 @@ To wrap this one up, here's me working on the thing:
 
 ![](wip2.gif)
 
-And here are a few frames rendered in 5k:
+And here are a few frames rendered in 5k that I posted [on Instagram](https://www.instagram.com/p/B721h4BnOKc/):
 
 ![](frames/0339.jpg)
 ![](frames/0500.jpg)
