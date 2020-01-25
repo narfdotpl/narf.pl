@@ -7,7 +7,9 @@ Drzwi
 
 *Drzwi* is an animation based on a dream I had recently. I
 created it procedurally in Python and Blender, like my [previous
-projects](/posts/sunflower).
+projects](/posts/sunflower). If you prefer you can watch it [on
+YouTube](https://www.youtube.com/watch?v=XyJIIzdtcIQ) but the quality
+is worse there.
 
 I'm not a fan of descriptions that tell you what you should see/feel,
 but I can tell you that in the dream I opened a door in a dimly lit
