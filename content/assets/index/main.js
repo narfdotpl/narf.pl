@@ -40,7 +40,6 @@ $(function () {
 
             const width = Math.min(windowWidth, maxWidth);
             const margin = getMargin(width);
-            console.log(windowWidth, maxWidth, width, margin);
 
             $el.css('margin-left',  margin + 'px')
             $el.css('margin-right', margin + 'px')
