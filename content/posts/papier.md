@@ -10,6 +10,9 @@ scattering, etc.  As usual, most of the things didn't work out (for
 example I ended up using a very simple diffuse material with no SSS) but
 overall this was a productive exercise.
 
+(Refresh the page if images are not full-width. I'll track this bug
+later.)
+
 <figure class="full-width">
     <img data='{"max_width": 5120, "max_height": 2880}' src="triptych1.jpg"/>
 </figure>
