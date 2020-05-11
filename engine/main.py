@@ -79,6 +79,7 @@ class memoized(object):
                 'spaghetti-trees',
                 'sunflower',
                 'drzwi',
+                'papier',
             ]),
 
             PostCollectionRecipe("Visualization series", slugs=[
