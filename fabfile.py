@@ -39,7 +39,7 @@ def dev():
 
 @task
 def js():
-    'Compile CoffeeScript.'
+    'Generate main JavaScript file.'
 
     with lcd(join(CONTENT_DIR, 'javascript')):
         local('./generate-main-js')

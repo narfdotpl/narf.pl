@@ -1,4 +1,4 @@
-$(function () {
+$(window).on("load", function () {
     for (let [selector, maxWidth, offset] of [
         ['figure:not(.full-width)', 1024, 0],
         ['figure.full-width', 0, 0],
