@@ -4,7 +4,7 @@ Papier
 ======
 
 Here are a few snapshots from my recent explorations around the theme
-of paper.  My goal was to to "make something white" and play with
+of paper.  My goal was to "make something white" and play with
 gravitational fields, flow fields, spirals, depth of field, subsurface
 scattering, etc.  As usual, most of the things didn't work out (for
 example I ended up using a very simple diffuse material with no SSS) but
