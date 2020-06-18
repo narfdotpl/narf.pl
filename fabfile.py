@@ -24,6 +24,7 @@ def deploy():
 
     test()
     local('git push --force-with-lease dokku HEAD:master')
+    local("ssh dokku -t 'rm -rf /tmp/dokku_git.*'")
     visit()
 
 
