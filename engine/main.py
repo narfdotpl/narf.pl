@@ -275,7 +275,6 @@ class memoized(object):
             '5k-imac',
             'checkers-explosion-bug',
             'music-streaming',
-            'pegasus',
         ]
 
         predicate = lambda post: post['slug'] in selected_slugs
