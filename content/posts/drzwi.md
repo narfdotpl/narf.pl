@@ -19,7 +19,7 @@ became more abstract as I noticed I'm no longer walking but falling.
 To make this project I had to extend my tools with ability to move
 the camera and change material properties in Blender. Turns out, it's
 hard to get camera movement and timing right. I suspect it's difficult
-in the real life as well, but I felt it very strongly when working on
+in the real world as well, but I felt it very strongly when working on
 it in code: tweaking timing, curves, and noise of different movements
 by tenths of a second makes the difference between a shot that feels
 movie-like and something that looks completely artificial. In the end I
@@ -49,7 +49,7 @@ I don't track time but the whole project took a few weekends from start
 to finish. And about a week (*sic!*) to render in the final quality in
 1080p60. (Aren't you a fan of fan noise?)
 
-To wrap this one up, here's me working on the thing:
+To wrap this post up, here's me working on the thing:
 
 ![](wip2.gif)
 
