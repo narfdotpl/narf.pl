@@ -188,7 +188,7 @@ Technical notes
   application.  (I didn't use the command line to run it, I just
   pressed ⌘R in Xcode.)
 - If I were to start this project today, I would use [p5.js][] because it
-  would be faster to get something on the screen at start iterating.
+  would be faster to get something on the screen and start iterating.
 - In the beginning I spent many hours not knowing how to tackle path growth.
   I split the code into models and renderers. I created an ASCII renderer
   and started writing navigation unit tests using ASCII diagrams (I also
