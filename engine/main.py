@@ -80,6 +80,7 @@ class memoized(object):
                 'sunflower',
                 'drzwi',
                 'papier',
+                'kostka',
             ]),
 
             PostCollectionRecipe("Visualization series", slugs=[
