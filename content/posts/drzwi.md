@@ -3,18 +3,19 @@
 Drzwi
 =====
 
-![](drzwi.mp4)
+![](drzwi-sound.mp4)
 
-*Drzwi* is an animation based on a dream I had recently. I
-created it procedurally in Python and Blender, like my [previous
-projects](/posts/sunflower). If you prefer you can watch it [on
-YouTube](https://www.youtube.com/watch?v=XyJIIzdtcIQ) but the quality
-is worse there.
+*Drzwi* is an animation based on a dream I had recently.
 
 I'm not a fan of descriptions that tell you what you should see or feel,
 but I can tell you that in the dream I opened a door in a dimly lit
 narrow apartment and walked down an underground corridor that slowly
 became more abstract as I noticed I'm no longer walking but falling.
+
+I created this animation procedurally in Python and Blender. A few
+months after making the video I created audio, also procedurally,
+in Python and VCV Rack. I wrote about it in a [separate
+post](/posts/drzwi-vcv).
 
 To make this project I had to extend my tools with ability to move
 the camera and change material properties in Blender. Turns out, it's

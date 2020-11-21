@@ -81,6 +81,7 @@ class memoized(object):
                 'drzwi',
                 'papier',
                 'kostka',
+                'drzwi-vcv',
             ]),
 
             PostCollectionRecipe("Visualization series", slugs=[
