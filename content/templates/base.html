@@ -87,6 +87,7 @@
 
             .icons {
                 letter-spacing: 0.5ex;
+                animation: toggle-icons 16s ease-in-out 0s infinite;
             }
 
             .icons a       { color: #aaa; }
@@ -94,6 +95,45 @@
 
             .footer.icons a       { color: #ccc; }
             .footer.icons a:hover { color: #444; }
+
+            .stars-container {
+                position: relative;
+            }
+
+            .stars {
+                position: absolute;
+                z-index: -1;
+
+                /* css way of saying "center" */
+                left: 0;
+                right: 0;
+                top: 0.25em;
+                bottom: 0;
+                margin: auto;
+                text-align: center;
+
+                width: 10ex;
+
+                color: #bbb;
+                opacity: 0;
+                animation: toggle-stars 16s ease-in-out 0s infinite;
+            }
+
+            @keyframes toggle-stars {
+                  0% { opacity: 0; }
+                 63% { opacity: 0; }
+                 75% { opacity: 1; }
+                 88% { opacity: 1; }
+                100% { opacity: 0; }
+            }
+
+            @keyframes toggle-icons {
+                  0% { opacity: 1; }
+                 63% { opacity: 1; }
+                 75% { opacity: 0; }
+                 88% { opacity: 0; }
+                100% { opacity: 1; }
+            }
         </style>
 
         <link href="/feed" rel="alternate" title="Feed (Atom)" type="application/atom+xml"/>
