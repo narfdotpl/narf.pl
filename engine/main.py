@@ -55,6 +55,7 @@ class memoized(object):
             'spaghetti-trees',
             'sunflower',
             'drzwi',
+            'cellular-automata-explosion',
         ]
 
     def collections():
@@ -82,6 +83,7 @@ class memoized(object):
                 'papier',
                 'kostka',
                 'drzwi-vcv',
+                'cellular-automata-explosion',
             ]),
 
             PostCollectionRecipe("Visualization series", slugs=[
