@@ -1,4 +1,5 @@
-2014-05-20
+date: 2014-05-20
+collection: Setup series
 
 Menu bar
 ========

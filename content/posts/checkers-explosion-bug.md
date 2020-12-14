@@ -1,4 +1,5 @@
-2015-07-28
+date: 2015-07-28
+collection: Checkers series
 
 Checkers: Explosion bug
 =======================

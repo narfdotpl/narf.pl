@@ -1,4 +1,5 @@
-2017-05-02
+date: 2017-05-02
+collection: Visualization series
 
 The spiral of personal transportation
 =====================================

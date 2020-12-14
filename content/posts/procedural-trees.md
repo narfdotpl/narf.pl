@@ -1,4 +1,5 @@
-2017-04-04
+date: 2017-04-04
+collection: Procedural series
 
 Procedural graphics: trees and circuit boards
 =============================================

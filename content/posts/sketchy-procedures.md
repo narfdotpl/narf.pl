@@ -1,4 +1,5 @@
-2016-03-20
+date: 2016-03-20
+collection: Procedural series
 
 Sketchy procedures lead to a beautiful catastrophe
 ==================================================

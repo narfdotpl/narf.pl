@@ -1,4 +1,5 @@
-2015-01-25
+date: 2015-01-25
+collection: Checkers series
 
 Checkers: Update 1
 ==================

@@ -1,4 +1,5 @@
 date: 2019-07-05
+collection: Procedural series
 theme: black
 
 Sunflower

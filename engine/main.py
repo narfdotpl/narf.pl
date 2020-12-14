@@ -26,7 +26,6 @@ import typogrify.filters
 import yaml
 
 from memoize import MetaMemoize
-from post_collection import PostCollectionRecipe
 import settings
 
 
@@ -53,51 +52,20 @@ class memoized(object):
         return paths
 
     def collections():
-        recipes = [
-            PostCollectionRecipe("Checkers series",
-                predicate=lambda post: 'checkers' in post['slug']),
-
-            PostCollectionRecipe("Setup series", slugs=[
-                'menu-bar',
-                '5k-imac',
-                'mac-software',
-            ]),
-
-            PostCollectionRecipe("Procedural series", slugs=[
-                'shattered-polygons',
-                'sketchy-procedures',
-                'xero',
-                'bytebeat',
-                'summer-of-creative-coding',
-                'procedural-trees',
-                'pixel-sorting',
-                'spaghetti-trees',
-                'sunflower',
-                'drzwi',
-                'papier',
-                'kostka',
-                'drzwi-vcv',
-                'cellular-automata-explosion',
-            ]),
-
-            PostCollectionRecipe("Visualization series", slugs=[
-                'hots-duration',
-                'music-streaming',
-                'spiral',
-                'screenshot-log',
-            ]),
-
-            PostCollectionRecipe("Robotics series", slugs=[
-                'robot-movement',
-                '12-angry-servos',
-                'prusa',
-                'leg-test',
-                'its-alive',
-            ]),
-        ]
-
+        collections_by_name = {}
         posts = sorted(memoized.public_posts(), key=lambda x: x['date'])
-        return [r.collection_with_posts(posts) for r in recipes]
+
+        for post in posts:
+            name = post['collection_name']
+            if name is None:
+                continue
+
+            if name not in collections_by_name:
+                collections_by_name[name] = PostCollection(name)
+
+            collections_by_name[name].posts.append(post)
+
+        return collections_by_name.values()
 
     def draft_filenames():
         return filnames_in_directory(settings.DRAFTS_DIR)
@@ -138,6 +106,7 @@ class memoized(object):
             'path': path,
             'url': 'http://narf.pl%s' % path,
             'uses_black_css': header.theme == 'black',
+            'collection_name': header.collection_name,
         }
 
     def post_filenames():
@@ -228,7 +197,7 @@ class memoized(object):
 
         # add collection info
         for collection in memoized.collections():
-            if collection.contains_post(ctx):
+            if collection.name == ctx['collection_name']:
                 ctx['collection'] = collection
                 break
 
@@ -342,7 +311,13 @@ class Header(object):
 
         self.date = date
         self.theme = d.get('theme', 'default')
-        # self.collection_name = None
+        self.collection_name = d.get('collection')
+
+
+class PostCollection(object):
+    def __init__(self, name, posts=None):
+        self.name = name
+        self.posts = posts or []
 
 
 def antimap(x, functions):

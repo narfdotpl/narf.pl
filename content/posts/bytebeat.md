@@ -1,4 +1,5 @@
-2016-05-03
+date: 2016-05-03
+collection: Procedural series
 
 Bytebeat: live-coding sound waves
 =================================

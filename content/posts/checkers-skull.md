@@ -1,4 +1,5 @@
-2017-03-09
+date: 2017-03-09
+collection: Checkers series
 
 Glitchy Checkers :skull:
 ========================

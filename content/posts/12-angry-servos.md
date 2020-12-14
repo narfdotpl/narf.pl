@@ -1,4 +1,5 @@
-2017-07-02
+date: 2017-07-02
+collection: Robotics series
 
 12 angry servos
 ===============

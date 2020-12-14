@@ -1,4 +1,5 @@
-2016-04-24
+date: 2016-04-24
+collection: Procedural series
 
 Procedural photocopier textures
 ===============================

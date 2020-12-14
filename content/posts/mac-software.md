@@ -1,4 +1,5 @@
-2016-01-31
+date: 2016-01-31
+collection: Setup series
 
 Mac software
 ============

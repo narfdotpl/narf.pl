@@ -1,4 +1,5 @@
-2015-08-20
+date: 2015-08-20
+collection: Checkers series
 
 Checkers: Swift 1.2 to 2.0 transition in numbers and impressions
 ================================================================

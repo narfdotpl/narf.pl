@@ -1,4 +1,5 @@
-2015-01-06
+date: 2015-01-06
+collection: Checkers series
 
 Checkers: Teaser
 ================

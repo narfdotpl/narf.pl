@@ -1,4 +1,5 @@
-2017-06-13
+date: 2017-06-13
+collection: Procedural series
 
 Pixel sorting study
 ===================

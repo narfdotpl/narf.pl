@@ -1,4 +1,5 @@
-2015-12-16
+date: 2015-12-16
+collection: Checkers series
 
 Glitchy Checkers: Release
 =========================

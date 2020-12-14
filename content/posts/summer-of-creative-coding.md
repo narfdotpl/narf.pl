@@ -1,4 +1,5 @@
-2016-09-22
+date: 2016-09-22
+collection: Procedural series
 
 Summer of Creative Coding
 =========================

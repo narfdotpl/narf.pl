@@ -1,4 +1,5 @@
-2013-09-19
+date: 2013-09-19
+collection: Procedural series
 
 Shattered Polygons
 ==================
