@@ -9,6 +9,8 @@ from itertools import groupby
 import json
 from os import walk
 from os.path import exists, join
+
+import datetime
 import re
 
 try:
@@ -49,14 +51,6 @@ class memoized(object):
                     paths.append(join(dir_, filename))
 
         return paths
-
-    def black_css_slugs():
-        return [
-            'spaghetti-trees',
-            'sunflower',
-            'drzwi',
-            'cellular-automata-explosion',
-        ]
 
     def collections():
         recipes = [
@@ -125,6 +119,9 @@ class memoized(object):
         with open(join(directory, filename)) as f:
             sections = f.read().decode('utf8').split(separator)
 
+        # parse YAML header
+        header = Header(sections[0])
+
         # get data from sections
         slug = filename[:-len('.md')]
         title = title_prefix + sections[1].rstrip('=').rstrip('\n')
@@ -132,7 +129,7 @@ class memoized(object):
         return {
             'is_draft': is_draft,
             'is_hidden': memoized.is_hidden(filename),
-            'date': sections[0],
+            'date': header.date,
             'title': title,
             'stupified_title': stupify(title),
             'remaining_markdown': separator.join(sections[2:]),
@@ -140,7 +137,7 @@ class memoized(object):
             'stupified_slug': stupify(slug),
             'path': path,
             'url': 'http://narf.pl%s' % path,
-            'uses_black_css': slug in memoized.black_css_slugs(),
+            'uses_black_css': header.theme == 'black',
         }
 
     def post_filenames():
@@ -330,6 +327,22 @@ class static_url(object):
             image.save(thumbnail_path, "JPEG", quality=95)
 
         return url
+
+
+class Header(object):
+    def __init__(self, section):
+        d = yaml.load(section)
+        if not isinstance(d, dict):
+            d = {'date': section}
+
+        # the system so far was using date strings, so...
+        date = d['date']
+        if isinstance(date, datetime.date):
+            date = date.isoformat()
+
+        self.date = date
+        self.theme = d.get('theme', 'default')
+        # self.collection_name = None
 
 
 def antimap(x, functions):

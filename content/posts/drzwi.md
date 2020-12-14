@@ -1,4 +1,5 @@
-2020-01-25
+date: 2020-01-25
+theme: black
 
 Drzwi
 =====

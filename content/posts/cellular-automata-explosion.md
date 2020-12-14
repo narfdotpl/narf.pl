@@ -1,4 +1,5 @@
-2020-12-09
+date: 2020-12-09
+theme: black
 
 Cellular automata: explosion
 ============================
