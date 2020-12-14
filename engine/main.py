@@ -107,6 +107,7 @@ class memoized(object):
             'url': 'http://narf.pl%s' % path,
             'uses_black_css': header.theme == 'black',
             'collection_name': header.collection_name,
+            'is_selected': header.is_selected,
         }
 
     def post_filenames():
@@ -231,25 +232,10 @@ class memoized(object):
         get_year = lambda x: x['date'].split('-')[0]
 
         html = render_template('posts.html',
-            selected_posts=memoized.selected_posts(),
+            selected_posts=[p for p in posts if p['is_selected']],
             posts_by_year=groupby(posts, get_year))
 
         return resolve_asset_urls(html)
-
-    def selected_posts():
-        selected_slugs = [
-            'procedural-trees',
-            'checkers-skull',
-            'bytebeat',
-            'lenses-in-swift',
-            '5k-imac',
-            'checkers-explosion-bug',
-            'music-streaming',
-        ]
-
-        predicate = lambda post: post['slug'] in selected_slugs
-
-        return filter(predicate, memoized.public_posts())
 
 
 class static_url(object):
@@ -312,6 +298,7 @@ class Header(object):
         self.date = date
         self.theme = d.get('theme', 'default')
         self.collection_name = d.get('collection')
+        self.is_selected = d.get('is_selected', False)
 
 
 class PostCollection(object):
