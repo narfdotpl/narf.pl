@@ -34,8 +34,8 @@ I cut the footage into three parts and connected them with two fade
 transitions to make the video more dynamic and create a seamless
 loop. Otherwise the animation is straight from Unity with #nofilter. ;)
 
-As it's often the case, I think I like individual details more then the
-entire piece:
+As it's often the case, I think I like individual details more than the
+whole thing:
 
 <figure class="full-width" style="margin-bottom: 1px">
     <img data='{"max_width": 3043, "max_height": 1350}' src="9x16.jpg"/>
