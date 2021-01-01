@@ -5,7 +5,7 @@ theme: black
 Roy Batty
 =========
 
-![](tears-in-rain.mp4)
+![](tears-in-rain-with-sound.mp4)
 
 *"All those moments will be lost in time..."*
 
@@ -16,8 +16,9 @@ Technical notes
 ---------------
 
 * 40000 "[birds][boids]"
-* compute shader
-* no post-processing
 * 2020 frames
+* compute shader in Unity
+* [Lekko][] piano in Ableton
 
   [boids]: https://www.red3d.com/cwr/boids/
+  [Lekko]: https://feltinstruments.com/Lekko
