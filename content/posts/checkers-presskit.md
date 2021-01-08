@@ -1,5 +1,5 @@
 date: 2017-01-29
-collection: Checkers series
+collections: [checkers]
 
 Glitchy Checkers 2.0: Press Kit
 ===============================

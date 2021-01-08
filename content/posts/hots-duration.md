@@ -1,5 +1,5 @@
 date: 2019-02-12
-collection: Visualization series
+collections: [visualization]
 
 HotS: impact of XP changes on match duration
 ============================================

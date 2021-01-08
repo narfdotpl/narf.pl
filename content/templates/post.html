@@ -107,21 +107,23 @@
 
         {% include "footer-icons.html" %}
 
-        {% if collection %}
+        {% if collections %}
             <p id="collection-trigger" style="display: none">
                 <a href="#">More&hellip;</a>
             </p>
 
             <div id="collection">
-                <h2>{{ collection.name }}</h2>
+                {% for collection in collections %}
+                    <h2>{{ collection.name }}</h2>
 
-                <ul>
-                    {% for post in collection.posts|reverse %}
-                        <li {% if post.path == path %}style="opacity: 0.5"{% endif %}>
-                            <a href="{{ post.path }}">{{ post.title }}</a>
-                        </li>
-                    {% endfor %}
-                </ul>
+                    <ul>
+                        {% for post in collection.posts|reverse %}
+                            <li {% if post.path == path %}style="opacity: 0.5"{% endif %}>
+                                <a href="{{ post.path }}">{{ post.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endfor %}
             </div>
         {% else %}
             <br class="hidden-elsewhere"/>

@@ -1,5 +1,5 @@
 date: 2019-06-18
-collection: Procedural series
+collections: [procedural]
 theme: black
 
 Metal spaghetti trees

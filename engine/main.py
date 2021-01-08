@@ -52,20 +52,17 @@ class memoized(object):
         return paths
 
     def collections():
-        collections_by_name = {}
+        collections_by_id = {}
         posts = sorted(memoized.public_posts(), key=lambda x: x['date'])
 
         for post in posts:
-            name = post['collection_name']
-            if name is None:
-                continue
+            for id in post['collection_ids']:
+                if id not in collections_by_id:
+                    collections_by_id[id] = PostCollection(id)
 
-            if name not in collections_by_name:
-                collections_by_name[name] = PostCollection(name)
+                collections_by_id[id].posts.append(post)
 
-            collections_by_name[name].posts.append(post)
-
-        return collections_by_name.values()
+        return collections_by_id.values()
 
     def draft_filenames():
         return filnames_in_directory(settings.DRAFTS_DIR)
@@ -106,7 +103,7 @@ class memoized(object):
             'path': path,
             'url': 'http://narf.pl%s' % path,
             'uses_black_css': header.theme == 'black',
-            'collection_name': header.collection_name,
+            'collection_ids': header.collection_ids,
             'is_selected': header.is_selected,
         }
 
@@ -196,11 +193,9 @@ class memoized(object):
             link_headers_and_render_table_of_contents,
         ])
 
-        # add collection info
-        for collection in memoized.collections():
-            if collection.name == ctx['collection_name']:
-                ctx['collection'] = collection
-                break
+        # add collections
+        by_id = {c.id: c for c in memoized.collections()}
+        ctx['collections'] = [by_id[id] for id in ctx['collection_ids']]
 
         # get dedicated social image
         social_image_url = None
@@ -297,13 +292,14 @@ class Header(object):
 
         self.date = date
         self.theme = d.get('theme', 'default')
-        self.collection_name = d.get('collection')
+        self.collection_ids = d.get('collections', [])
         self.is_selected = d.get('is_selected', False)
 
 
 class PostCollection(object):
-    def __init__(self, name, posts=None):
-        self.name = name
+    def __init__(self, id, name=None, posts=None):
+        self.id = id
+        self.name = name or id.title() + ' series'
         self.posts = posts or []
 
 

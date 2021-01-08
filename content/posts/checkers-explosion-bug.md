@@ -1,5 +1,5 @@
 date: 2015-07-28
-collection: Checkers series
+collections: [checkers]
 is_selected: true
 
 Checkers: Explosion bug

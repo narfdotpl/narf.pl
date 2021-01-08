@@ -1,5 +1,5 @@
 date: 2020-01-25
-collection: Procedural series
+collections: [procedural]
 theme: black
 
 Drzwi

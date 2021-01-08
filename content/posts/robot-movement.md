@@ -1,5 +1,5 @@
 date: 2017-04-23
-collection: Robotics series
+collections: [robotics]
 
 Quadruped robot movement
 ========================

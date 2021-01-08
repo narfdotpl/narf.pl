@@ -1,5 +1,5 @@
 date: 2020-09-14
-collection: Procedural series
+collections: [procedural]
 
 Kostka
 ======

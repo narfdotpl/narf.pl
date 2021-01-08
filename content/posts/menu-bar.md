@@ -1,5 +1,5 @@
 date: 2014-05-20
-collection: Setup series
+collections: [setup]
 
 Menu bar
 ========

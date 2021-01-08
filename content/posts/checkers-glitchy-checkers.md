@@ -1,5 +1,5 @@
 date: 2015-12-03
-collection: Checkers series
+collections: [checkers]
 
 Checkers, Glitchy Checkers
 ==========================

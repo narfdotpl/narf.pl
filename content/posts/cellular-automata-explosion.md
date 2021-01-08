@@ -1,5 +1,5 @@
 date: 2020-12-09
-collection: Procedural series
+collections: [procedural]
 theme: black
 
 Cellular automata: explosion

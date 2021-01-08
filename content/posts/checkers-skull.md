@@ -1,5 +1,5 @@
 date: 2017-03-09
-collection: Checkers series
+collections: [checkers]
 is_selected: true
 
 Glitchy Checkers :skull:

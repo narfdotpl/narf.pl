@@ -1,5 +1,5 @@
 date: 2013-09-19
-collection: Procedural series
+collections: [procedural]
 
 Shattered Polygons
 ==================

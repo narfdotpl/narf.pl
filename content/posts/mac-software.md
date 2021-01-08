@@ -1,5 +1,5 @@
 date: 2016-01-31
-collection: Setup series
+collections: [setup]
 
 Mac software
 ============

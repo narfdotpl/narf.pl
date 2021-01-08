@@ -1,5 +1,5 @@
 date: 2015-04-21
-collection: Visualization series
+collections: [visualization]
 is_selected: true
 
 Impact of music streaming on my listening habits

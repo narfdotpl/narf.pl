@@ -1,5 +1,5 @@
 date: 2017-11-02
-collection: Robotics series
+collections: [robotics]
 
 It's alive
 ==========

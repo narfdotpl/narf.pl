@@ -1,5 +1,5 @@
 date: 2017-04-04
-collection: Procedural series
+collections: [procedural]
 is_selected: true
 
 Procedural graphics: trees and circuit boards

@@ -1,5 +1,5 @@
 date: 2015-01-06
-collection: Checkers series
+collections: [checkers]
 
 Checkers: Teaser
 ================

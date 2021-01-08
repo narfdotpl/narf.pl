@@ -1,5 +1,5 @@
 date: 2017-08-15
-collection: Robotics series
+collections: [robotics]
 
 Leg test
 ========

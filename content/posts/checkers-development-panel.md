@@ -1,5 +1,5 @@
 date: 2015-06-03
-collection: Checkers series
+collections: [checkers]
 
 Checkers: Development panel with tweaks
 =======================================

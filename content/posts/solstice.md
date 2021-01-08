@@ -1,5 +1,5 @@
 date: 2020-12-21
-collection: Procedural series
+collections: [procedural]
 theme: black
 
 Solstice

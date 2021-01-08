@@ -1,5 +1,5 @@
 date: 2015-01-25
-collection: Checkers series
+collections: [checkers]
 
 Checkers: Update 1
 ==================

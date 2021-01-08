@@ -1,5 +1,5 @@
 date: 2020-12-31
-collection: Procedural series
+collections: [procedural]
 theme: black
 
 Roy Batty

@@ -1,5 +1,5 @@
 date: 2020-05-11
-collection: Procedural series
+collections: [procedural]
 
 Papier
 ======
