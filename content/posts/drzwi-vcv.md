@@ -1,5 +1,5 @@
 date: 2020-11-21
-collections: [procedural]
+collections: [sound, procedural]
 
 VCV Rack sound design/simulation
 ================================

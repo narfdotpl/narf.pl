@@ -1,4 +1,5 @@
-2017-04-24
+date: 2017-04-24
+collections: [sound]
 
 Looped knocking
 ===============
