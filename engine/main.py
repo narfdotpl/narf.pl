@@ -270,8 +270,8 @@ class static_url(object):
         if not exists(thumbnail_path):
             image.thumbnail((max_width, max_height), Image.ANTIALIAS)
 
-            # remove alpha channel from PNGs
-            if image.mode == 'RGBA':
+            # deal with PNGs
+            if image.mode != 'RGB':
                 image = image.convert('RGB')
 
             image.save(thumbnail_path, "JPEG", quality=95)

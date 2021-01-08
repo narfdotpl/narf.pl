@@ -1,4 +1,5 @@
-2013-11-09
+date: 2013-11-09
+collections: [autoportrait]
 
 Autoportrait
 ============
