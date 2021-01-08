@@ -1,4 +1,5 @@
-2017-10-04
+date: 2017-10-04
+collections: [robotics]
 
 Prusa i3 MK2S pen plotter
 =========================
