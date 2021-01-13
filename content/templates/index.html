@@ -3,12 +3,25 @@
 
 {% block extra_head %}
     <style>
-        .introduction {
-            max-width: 490px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 20px;
-            padding-right: 20px;
+        #main-wrapper {
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+        h1 {
+            font-weight: normal;
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-top: 100px;  /* 100 = 4 * 25 */
+            margin-bottom: 100px;
+        }
+
+        @media (max-width: 532px) {
+            h1 {
+                font-size: 18px;
+                margin-top: 72px;  /* 72 = 4 * 18 */
+                margin-bottom: 72px;
+            }
         }
 
 
@@ -50,7 +63,7 @@
 
     {% with
         title="Maciej Konieczny (narf)",
-        description="I create software. This is my blog.",
+        description="I’m Maciej Konieczny — a software creator living in Warsaw, Poland. This is my blog.",
         image_url="asset:recursive-poster/recursive-poster.jpg"
     %}
         <meta property="og:title" content="{{ title }}"/>
@@ -71,16 +84,10 @@
 
 {% block body %}
     <div id="main-wrapper" class="centered legible">
-        <header>
-            <h1>Maciej Konieczny</h1>
-        </header>
-
-        <p class="introduction">
-            I&nbsp;create software.
-            This is my <a href="/posts">blog</a>.
-        </p>
-
-        <br/>
+        <h1>
+            I’m <b>Maciej Konieczny</b> — a software creator<br/>
+            living in Warsaw, Poland. This is my <a href="/posts">blog</a>.
+        </h1>
 
         {% for (title, link, image) in [
             ("Roy Batty", "/posts/tears-in-rain", "tears-in-rain.jpg"),
