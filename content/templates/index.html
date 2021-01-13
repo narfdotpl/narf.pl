@@ -8,7 +8,7 @@
             margin-top: 0;
         }
 
-        h1 {
+        header h1 {
             font-weight: normal;
             padding-top: 0;
             padding-bottom: 0;
@@ -17,7 +17,7 @@
         }
 
         @media (max-width: 532px) {
-            h1 {
+            header h1 {
                 font-size: 18px;
                 margin-top: 72px;  /* 72 = 4 * 18 */
                 margin-bottom: 72px;
@@ -84,10 +84,12 @@
 
 {% block body %}
     <div id="main-wrapper" class="centered legible">
-        <h1>
-            I’m <b>Maciej Konieczny</b> — a software creator<br/>
-            living in Warsaw, Poland. This is my <a href="/posts">blog</a>.
-        </h1>
+        <header>
+            <h1>
+                I’m <b>Maciej Konieczny</b> — a software creator<br/>
+                living in Warsaw, Poland. This is my <a href="/posts">blog</a>.
+            </h1>
+        </header>
 
         {% for (title, link, image) in [
             ("Roy Batty", "/posts/tears-in-rain", "tears-in-rain.jpg"),
