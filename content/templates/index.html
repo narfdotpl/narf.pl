@@ -5,7 +5,9 @@
     <style>
         #main-wrapper {
             padding-top: 0;
+            padding-bottom: 0;
             margin-top: 0;
+            margin-bottom: 0;
         }
 
         header h1 {
@@ -22,6 +24,12 @@
                 margin-top: 72px;  /* 72 = 4 * 18 */
                 margin-bottom: 72px;
             }
+        }
+
+
+        footer {
+            margin-top: 52px;
+            margin-bottom: 52px;
         }
 
 
@@ -124,10 +132,7 @@
             </article>
         {% endfor %}
 
-        <br/>
-        <br/>
-
-        <div class="stars-container">
+        <footer class="stars-container">
             <p class="icons">
                 <a title="Instagram" href="https://www.instagram.com/narfdotpl/"><i class="fa fa-lg fa-instagram"></i></a>
                 <a title="Twitter" href="http://twitter.com/narfdotpl"><i class="fa fa-lg fa-twitter"></i></a>
@@ -139,9 +144,6 @@
             <p class="stars">
                 ***** ***
             </p>
-        </div>
-
-        <br class="hidden-elsewhere"/>
-
+        </footer>
     </div>
 {% endblock %}
