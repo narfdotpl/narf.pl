@@ -26,6 +26,11 @@
             }
         }
 
+        @media (min-width: 376px) {
+            .only-small-phones {
+                display: none;
+            }
+        }
 
         footer {
             margin-top: 52px;
@@ -94,8 +99,10 @@
     <div id="main-wrapper" class="centered legible">
         <header>
             <h1>
-                I’m <b>Maciej Konieczny</b> — a software creator<br/>
-                living in Warsaw, Poland. This is my <a href="/posts">blog</a>.
+                I’m <b>Maciej Konieczny</b><br class="only-small-phones"/>
+                — a software creator<br/>
+                living in Warsaw, Poland.<br class="only-small-phones"/>
+                This is my <a href="/posts">blog</a>.
             </h1>
         </header>
 
