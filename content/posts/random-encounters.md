@@ -12,8 +12,8 @@ you can watch this video on [YouTube][], [Twitter][], [Instagram][],
 and you can download it [as an mp4][mp4].)
 
   [YouTube]: https://youtu.be/Scl-zeKo7I4
-  [Twitter]: #TODO
-  [Instagram]: #TODO
+  [Twitter]: https://twitter.com/narfdotpl/status/1364852433193734145
+  [Instagram]: https://www.instagram.com/p/CLtU-5EnWte/
   [mp4]: random-encounters.mp4
 
 A few months ago I started [dabbling][GarageBand] in procedural
