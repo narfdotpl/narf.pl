@@ -685,6 +685,7 @@ def redirect_from_old_path(path):
             '/newsletter': ('http://eepurl.com/baKQjf', not permanent),
             '/nf1': ('/posts/its-alive', not permanent),
             '/cringe': ('https://www.youtube.com/watch?v=hk3Qh8O1pb8', not permanent),
+            '/nft': ('/posts/optimism', not permanent),
         }.get('/' + path, (None, None))
 
     # match latest post
