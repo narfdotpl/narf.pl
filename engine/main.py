@@ -677,10 +677,6 @@ def redirect_from_old_path(path):
                 (static_url.for_asset('index/urls/ancient-aliens-javascript.jpg'),
                  not permanent),
 
-            '/key':
-                (static_url.for_asset('index/id_rsa.pub'),
-                 not permanent),
-
             '/now': ('/posts/anxious-timer', not permanent),
 
             '/suspense': (suspense, not permanent),
