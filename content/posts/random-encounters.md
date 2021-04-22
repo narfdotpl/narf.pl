@@ -19,12 +19,13 @@ and you can download it [as an mp4][mp4].)
 A few months ago I started [dabbling][GarageBand] in procedural
 music. Recently I gave it another shot and created the first
 piece/sketch that I'm happy to share here. I called it
-"Random&nbsp;encounters" because of euclidean polyrhythms (how fancy)
+"Random&nbsp;encounters" because of euclidean rhythm [polymeters][]
 that form its foundation. These rhythms are loops of different lengths,
 therefore when any one of them repeats, it meets the others at different
 points.
 
   [GarageBand]: https://twitter.com/narfdotpl/status/1335203623110840320
+  [polymeters]: https://www.youtube.com/watch?v=htbRx2jgF-E
 
 I made this track in [Orca][], an esoteric programming language
 and live-coding environment. I connected it to Ableton Live where
