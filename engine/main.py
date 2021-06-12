@@ -687,6 +687,7 @@ def redirect_from_old_path(path):
             '/cringe': ('https://www.youtube.com/watch?v=hk3Qh8O1pb8', not permanent),
             '/nft': ('/posts/optimism', not permanent),
             '/1d': ('https://monthly.com/p/xPzL6t', not permanent),
+            '/ld': ('https://monthly.com/p/xPzL6t', not permanent),
         }.get('/' + path, (None, None))
 
     # match latest post
