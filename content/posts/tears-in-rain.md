@@ -9,16 +9,10 @@ Roy Batty
 
 *"All those moments will be lost in time..."*
 
-<br/>
-
-
-Technical notes
----------------
-
-* 40000 "[birds][boids]"
-* 2020 frames
-* compute shader in Unity
-* [Lekko][] piano in Ableton
+<br/>On the last day of 2020, it felt right to publish this animation,
+comprised of 2020 frames. It’s a compute shader that I created in Unity,
+using 40,000 "[birds][boids]". After I was done with visuals, I made the
+music using the [Lekko][] piano and Ableton Live.
 
   [boids]: https://www.red3d.com/cwr/boids/
   [Lekko]: https://feltinstruments.com/Lekko
