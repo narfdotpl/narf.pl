@@ -13,6 +13,7 @@ CURRENT_DIR = dirname(realpath(__file__))
 REPO_DIR = CURRENT_DIR
 CONTENT_DIR = join(REPO_DIR, 'content')
 ENGINE_DIR = join(REPO_DIR, 'engine')
+LOGS_DIR = join(REPO_DIR, 'logs')
 TESTS_DIR = join(REPO_DIR, 'tests')
 POSTS_DIR = join(CONTENT_DIR, 'posts')
 
@@ -23,6 +24,7 @@ def deploy():
     'Update production with latest changes.'
 
     test()
+    logs_fetch()
     local('git push --force-with-lease dokku HEAD:master')
     local("ssh dokku -t 'rm -rf /tmp/dokku_git.*'")
     visit()
@@ -44,6 +46,20 @@ def js():
 
     with lcd(join(CONTENT_DIR, 'javascript')):
         local('./generate-main-js')
+
+
+@task
+def logs_fetch():
+    # logs start at the last deployment
+    with lcd(LOGS_DIR):
+        local("ssh dokku -t 'docker logs $(cat /home/dokku/narf.pl/CONTAINER.web.1)' | gzip > $(date +%Y-%m-%d_%H%M).txt.gz")
+
+
+@task
+def logs_show():
+    with lcd(LOGS_DIR):
+        local("gunzip -c $(ls *.txt.gz) | ag -v 'GET /static' | goaccess -o html > index.html && open index.html")
+
 
 @task
 def publish():
