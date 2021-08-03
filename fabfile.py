@@ -18,6 +18,14 @@ TESTS_DIR = join(REPO_DIR, 'tests')
 POSTS_DIR = join(CONTENT_DIR, 'posts')
 
 
+def get_post_paths():
+    for root, dirnames, filenames in walk(POSTS_DIR):
+        for filename in sorted(filenames):
+            if filename.startswith('.'): continue
+            if not filename.endswith('.md'): continue
+
+            yield '/posts/%s' % filename[:-len('.md')]
+
 
 @task
 def deploy():
@@ -90,12 +98,8 @@ def test():
             curl('/feed.json')
             curl('/posts')
 
-            for root, dirnames, filenames in walk(POSTS_DIR):
-                for filename in sorted(filenames):
-                    if filename.startswith('.'): continue
-                    if not filename.endswith('.md'): continue
-
-                    curl('/posts/%s' % filename[:-len('.md')])
+            for path in get_post_paths():
+                curl(path)
 
             stdout.write('\n')
             stdout.flush()
