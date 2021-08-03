@@ -34,8 +34,9 @@ def deploy():
     test()
     logs_fetch()
     local('git push --force-with-lease dokku HEAD:master')
-    local("ssh dokku -t 'rm -rf /tmp/dokku_git.*'")
     visit()
+    local("ssh dokku -t 'rm -rf /tmp/dokku_git.*'")
+    populate_cache()
 
 
 @task
@@ -67,6 +68,14 @@ def logs_fetch():
 def logs_show():
     with lcd(LOGS_DIR):
         local("gunzip -c $(ls *.txt.gz) | ag -v 'GET /static' | goaccess -o html > index.html && open index.html")
+
+
+@task
+def populate_cache():
+    'Populate cache in production.'
+
+    for path in get_post_paths():
+        local('curl http://narf.pl%s > /dev/null' % path)
 
 
 @task
