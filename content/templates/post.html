@@ -36,7 +36,7 @@
         {% endif %}
 
         @media (min-width: 428px) {
-            header br { display: none; }
+            header .br { display: none; }
         }
         @media (max-width: 427px) {
             header .middot { display: none; }
@@ -112,7 +112,7 @@
             </address>
 
             <span class="middot">&middot;</span>
-            <br/>
+            <br class="br"/>
 
             <time pubdate datetime="{{ date }}" class="published">{{ date }}</time>
         </header>
