@@ -28,6 +28,21 @@
     <link rel="stylesheet" href="asset:index/gallery/magnific-popup.css"/>
 
     <style>
+        {% if not uses_black_css %}
+            header .middot {
+                margin-left: 0.5ex;
+                margin-right: 0.4ex;
+            }
+        {% endif %}
+
+        @media (min-width: 428px) {
+            header br { display: none; }
+        }
+        @media (max-width: 427px) {
+            header .middot { display: none; }
+        }
+
+
         pre {
             padding-left: 0;
             padding-right: 0;
@@ -96,7 +111,8 @@
                 <a href="/" class="fn">narf</a>
             </address>
 
-            &middot;
+            <span class="middot">&middot;</span>
+            <br/>
 
             <time pubdate datetime="{{ date }}" class="published">{{ date }}</time>
         </header>
