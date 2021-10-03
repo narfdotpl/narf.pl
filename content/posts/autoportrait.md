@@ -8,6 +8,6 @@ Autoportrait
 
 <p class="centered">
     <br/>
-    <a href="http://www.123dapp.com/catch">123D Catch</a>,
-    <a href="http://www.123dapp.com/catch">MeshLab</a>
+    <a href="https://www.autodesk.com/solutions/123d-apps">123D Catch</a>,
+    <a href="https://www.meshlab.net">MeshLab</a>
 </p>
