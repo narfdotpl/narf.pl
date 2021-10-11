@@ -2,8 +2,8 @@ date: 2019-06-18
 collections: [procedural]
 theme: black
 
-Metal spaghetti trees
-=====================
+Metal trees
+===========
 
 For quite some time I've been revisiting the idea of procedurally
 creating images of stylized trees.  I went through a number of

@@ -9,8 +9,7 @@ Sunflower
 
 This is the conclusion to the thought I had about a golden
 sunflower/turbine/radiator. I made it in Python and Blender, after
-adding support for surfaces to my [metal spaghetti tree][spaghetti]
-generator.
+adding support for surfaces to my [metal trees][] generator.
 
 Projects like this are my favourite: ones where I can go from idea to
 completion in one sitting.  (With small [adventures][bug] along the way.)
@@ -28,6 +27,6 @@ might've been, though:
 
 *(I like the [details].)*
 
-  [spaghetti]: /posts/spaghetti-trees
+  [metal trees]: /posts/metal-trees
   [bug]: https://www.instagram.com/p/BzeP8SPnSq3/
   [details]: https://www.instagram.com/p/BziSzZZnc81/

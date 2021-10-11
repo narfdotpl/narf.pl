@@ -612,6 +612,9 @@ def posts():
 
 @app.route('/posts/<path:slug>')
 def post(slug):
+    if slug == 'spaghetti-trees':
+        return redirect('/posts/metal-trees', 301)
+
     filename = slug + '.md'
     if filename in memoized.post_filenames():
         return memoized.rendered_post(filename)
