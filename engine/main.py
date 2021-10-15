@@ -578,7 +578,7 @@ def make_youtube_iframe(video_id):
     return Markup("""
 <figure>
     <div class="video-wrapper">
-        <iframe src="//www.youtube.com/embed/{video_id}" frameborder="0" allowfullscreen></iframe>
+        <iframe src="//www.youtube-nocookie.com/embed/{video_id}" frameborder="0" allowfullscreen></iframe>
     </div>
 </figure>
 """[1:-1].format(video_id=video_id))
