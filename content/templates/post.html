@@ -40,8 +40,15 @@
 {% block body %}
     {# https://www.readability.com/developers/guidelines #}
     <article id="main-wrapper" class="hentry">
-
         <header class="centered narrow legible">
+            {% if slug not in ["escapism"] %}
+                <hr/>
+                <p>
+                    <i>pssst… I’ve released a <a href="/posts/escapism">music album</a></i>
+                </p>
+                <hr/>
+            {% endif %}
+
             <h1 class="entry-title balance-text">{{ title|typo }}</h1>
 
             <address class="inlined byline author vcard">
