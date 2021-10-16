@@ -3,7 +3,7 @@
 
 from __future__ import division
 from collections import OrderedDict
-from functools import partial
+from functools import partial, wraps
 from hashlib import md5
 from itertools import groupby
 import json
@@ -315,6 +315,7 @@ def antimap(x, functions):
 
 
 def soup(func):
+    @wraps(func)
     def wrapper(html, *args, **kwargs):
         soup = BeautifulSoup(html)
         func(soup, *args, **kwargs)
@@ -455,8 +456,8 @@ def resolve_local_urls(filename, html):
 @soup
 def resolve_asset_urls(soup):
     """
-    >>> resolve_asset_urls('<img src="asset:foo.jpg"/>')
-    u'<img src="http://static.narf.pl/main/assets/foo.jpg?123456789"/>'
+    >>> resolve_asset_urls('<img src="asset:index/naif.min.css"/>')
+    u'<img src="/static/assets/index/naif.min.css?436df1d347d14cd4c259ed31eeced027"/>'
     """
 
     prefix = settings.ASSET_PREFIX
@@ -495,8 +496,8 @@ def stupify(s):
 @soup
 def thumbnail_big_images(soup):
     """
-    >>> thumbnail_big_images('<img src="asset:foo.jpg"/>')
-    u'<img src="/static/thumbnails/123123123123.jpg"/>'
+    >>> thumbnail_big_images('<img src="asset:solstice/9x16.jpg"/>')
+    u'<img src="/static/thumbnails/6147dce0b47c1320b53744e890dd56b8.jpg"/>'
     """
 
     prefix = settings.ASSET_PREFIX
@@ -529,7 +530,7 @@ def transform_image_lists_to_galleries(soup):
 def turn_mp4_images_to_videos(soup):
     """
     >>> turn_mp4_images_to_videos('<img src="foo.mp4"/>')
-    u'<video src="foo.mp4" controls autoplay loop></video>'
+    u'<video autoplay="autoplay" controls="controls" loop="loop" src="foo.mp4"></video>'
     """
 
     for img in soup.find_all('img'):
@@ -711,4 +712,7 @@ def redirect_from_old_path(path):
 
 
 if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
+
     app.run(debug=True, host='0.0.0.0')
