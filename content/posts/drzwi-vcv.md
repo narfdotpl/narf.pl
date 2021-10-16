@@ -1,5 +1,6 @@
 date: 2020-11-21
 collections: [sound, procedural]
+theme: black
 
 VCV Rack sound design/simulation
 ================================
