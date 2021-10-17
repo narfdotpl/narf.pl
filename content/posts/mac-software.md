@@ -26,7 +26,7 @@ System augmentation
 installing f.lux is arguably the best thing you can do for yourself.
 What this app does is it basically makes your screen orange at night, which
 makes it much easier to look at.  It should also be easier for you to fall
-asleep when you finally get to bed.  (À&nbsp;propos: iOS 9.3 will introduce
+asleep when you finally get to bed.  (À propos: iOS 9.3 will introduce
 a f.lux-like feature called Night Shift.  Until then, I use [GammaThingy][]
 on iOS 9.2.)
 
@@ -41,7 +41,7 @@ Don't send me "thank you" emails.  You're welcome.
 
 
 [SteerMouse][].  I use SteerMouse to disable mouse acceleration (which
-is super annoying when you're playing, say, [Quake&nbsp;3](/posts/cpma)) and
+is super annoying when you're playing, say, [Quake 3](/posts/cpma)) and
 to assign useful functions to "extra" buttons of my mouse.  I have a
 Logitech G400 and I use thumb buttons to switch between spaces.
 

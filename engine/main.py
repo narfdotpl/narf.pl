@@ -19,6 +19,7 @@ except ImportError:
     from PIL import Image
 
 from bs4 import BeautifulSoup
+from bs4.element import NavigableString
 from flask import (Flask, Markup, make_response, redirect, render_template,
                    render_template_string, request)
 from markdown import markdown as render_markdown
@@ -191,6 +192,7 @@ class memoized(object):
             thumbnail_big_images,
             add_footnote_links,
             link_headers_and_render_table_of_contents,
+            add_non_breaking_spaces,
         ])
 
         # add collections
@@ -314,12 +316,16 @@ def antimap(x, functions):
     return x
 
 
+def soup_to_unicode(soup):
+    return soup.encode('utf8', formatter='html').decode('utf8')
+
+
 def soup(func):
     @wraps(func)
     def wrapper(html, *args, **kwargs):
         soup = BeautifulSoup(html)
         func(soup, *args, **kwargs)
-        return unicode(soup)
+        return soup_to_unicode(soup)
 
     return wrapper
 
@@ -339,6 +345,81 @@ def add_footnote_links(html):
         html = '<a name="footnotes"><hr/></a>'.join(html.rsplit('<hr/>', 1))
 
     return html
+
+
+class patterns:
+    os_x = re.compile(r'([\W^])OS X', re.UNICODE)
+    single_character = re.compile(r"(([^'\w]|^)\w) (\w)", re.UNICODE)
+    number_with_unit = re.compile(r'((\W|^)\d+(\.\d+)?) (\w)', re.UNICODE)
+    version = re.compile(r'(\w) (\d+(\.\d+)*)', re.UNICODE)
+
+
+def add_nbsp(s, nbsp='&nbsp;'):
+    """
+    >>> add_nbsp(u'on OS X, and')
+    u'on OS&nbsp;X, and'
+
+    >>> add_nbsp(u'''"I won't use Swift"''')
+    u'"I&nbsp;won\\'t use Swift"'
+
+    >>> add_nbsp(u'To do so, I created a play count graph')
+    u'To do so, I&nbsp;created a&nbsp;play count graph'
+
+    >>> add_nbsp(u'Quake 3')
+    u'Quake&nbsp;3'
+
+    >>> add_nbsp(u'only 8 GB of RAM')
+    u'only&nbsp;8&nbsp;GB of RAM'
+
+    >>> add_nbsp(u'took ~1.5 h and resulted in')
+    u'took ~1.5&nbsp;h&nbsp;and resulted in'
+
+    >>> add_nbsp(u'A B C D')
+    u'A&nbsp;B&nbsp;C&nbsp;D'
+
+    >>> add_nbsp(u'(A propos: iOS 9.3 will introduce a f.lux-like feature called Night Shift)')
+    u'(A&nbsp;propos: iOS&nbsp;9.3&nbsp;will introduce a&nbsp;f.lux-like feature called Night Shift)'
+
+    >>> add_nbsp(u'Logitech G400 mouse')
+    u'Logitech G400 mouse'
+    """
+
+    # OS X as a special case
+    s = patterns.os_x.sub(r'\1OS'+nbsp+r'X', s)
+
+    # a single character should always be connected to the next word, e.g. "I am"
+    # run multiple times to account for situations like "A B C D"
+    while True:
+        new_s = patterns.single_character.sub(r'\1'+nbsp+r'\3', s)
+        if new_s == s:
+            break
+        else:
+            s = new_s
+
+    # number should be connected to the next word, e.g. "8 GB"
+    s = patterns.number_with_unit.sub(r'\1'+nbsp+r'\4', s)
+
+    # version should be connected to the previous word, e.g. "Quake 3"
+    s = patterns.version.sub(r'\1'+nbsp+r'\2', s)
+
+    return s
+
+
+def add_non_breaking_spaces(html):
+    soup = BeautifulSoup(html, 'html.parser')
+    add_non_breaking_spaces_recursive(soup)
+
+    return soup_to_unicode(soup)
+
+
+def add_non_breaking_spaces_recursive(soup):
+    if isinstance(soup, NavigableString):
+        text = unicode(soup)
+        new_text = add_nbsp(text, nbsp=u'\xa0')
+        soup.replace_with(new_text)
+    else:
+        for element in soup.contents:
+            add_non_breaking_spaces_recursive(element)
 
 
 @soup

@@ -12,7 +12,7 @@ In this post I outline the process and give some stats about the
 conversion, partly to document the experience of making such a
 transition in a "real project", and partly to have something to show
 besides the [look of disapproval][] the next time I hear someone say
-"I&nbsp;won't use Swift, because each time a new Xcode comes out, you
+"I won't use Swift, because each time a new Xcode comes out, you
 have to rewrite *everything*"...
 
   [glitch]: https://instagram.com/p/6ZJleoF8fp/
@@ -102,7 +102,7 @@ or even worse, run-time bugs.
 In my case, the "firewall is trying to set my desk on fire when I
 launch Xcode 7" issue was [fixed][heat] by removing Xcode from a list
 in firewall options.  (And restarting.  Restarting helps.  I habitually
-delete Derived Data and restart everything within the 3&nbsp;meter
+delete Derived Data and restart everything within the 3 meter
 radius to fix Xcode issues of all kind, beta or not...)
 
   [heat]: https://twitter.com/narfdotpl/status/631598385980678145
@@ -258,7 +258,7 @@ code, ~60 files, and ~70 types, automatic conversion affected ~1.5% of
 the codebase.  Manual tweaks/cleanup touched similar amount of code.
 Together they took ~30 minutes.
 
-Refactoring to adopt new language features took ~1.5&nbsp;h and resulted
+Refactoring to adopt new language features took ~1.5 h and resulted
 in ~2% less code.  The change in the number of lines of code was mostly
 due to my use of [`enum`s with descriptions][state machines], though.
 

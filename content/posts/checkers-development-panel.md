@@ -433,7 +433,7 @@ in a few places (especially around the 5:15 mark).
   [Hyperlapse]: https://hyperlapse.instagram.com/
 
 I created the slides you see in the video in the [Deckset][] app, on
-OS&nbsp;X, and presented them in the Dropbox app.  Before putting the
+OS X, and presented them in the Dropbox app.  Before putting the
 slides in Dropbox, I exported them to PDF and converted that PDF into a
 series of PNGs, using [ImageMagick][]:
 

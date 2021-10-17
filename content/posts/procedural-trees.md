@@ -8,7 +8,7 @@ Procedural graphics: trees and circuit boards
 A year ago I started playing with procedural graphics -- a way of
 creating images where you write a program that does the drawing for
 you.  Initially I wanted to make images that would look like insides of
-a computer.  I&nbsp;ended up creating animations of circuit-board-like
+a computer.  I ended up creating animations of circuit-board-like
 trees.
 
 In this post I share my thoughts about creating images indirectly,
@@ -97,7 +97,7 @@ never cross. Some of them end and spawn other, shorter paths. They are
 all independent in a sense that they don't coordinate, but their growth
 is limited by the available space: they live on a grid and they can't
 take a place that is already taken. They avoid collisions but can look
-only two steps ahead and take only 45° turns. I&nbsp;programmed them to
+only two steps ahead and take only 45° turns. I programmed them to
 keep moving in a given direction with a small chance of making a random
 turn on each step.
 

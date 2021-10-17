@@ -10,7 +10,7 @@ feelings. The good thing about shipping is that now I don't think about
 this project. It was a recurring obsession and it made me unhappy. I
 feel like it was ages ago.
 
-19 people bought the new version. It costs 0.99&nbsp;EUR as a first time
+19 people bought the new version. It costs 0.99 EUR as a first time
 purchase and it's a free update if you bought the iPad version earlier.
 
 It was nice to receive congratulations from friends and colleagues after

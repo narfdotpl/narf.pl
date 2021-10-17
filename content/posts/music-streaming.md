@@ -108,7 +108,7 @@ Play count
 ----------
 
 This "I listen more" feeling was the first thing I wanted to verify
-against data.  To do so, I&nbsp;created a play count graph and colored
+against data.  To do so, I created a play count graph and colored
 old and new tracks differently.  Let's take a look:
 
 ![](play-count.png)
@@ -132,7 +132,7 @@ Encouraged by the initial results and curious if the strong "Spotify
 effect" I felt could be more visible (or rather: puzzled that it's
 not as visible), I decided to look at the data from different angles
 and investigate the number of unique tracks and the number of artists
-I&nbsp;listened to.
+I listened to.
 
 
 Tracks

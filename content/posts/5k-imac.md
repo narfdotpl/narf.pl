@@ -27,7 +27,7 @@ I decided to go with the top-of-the-line model because I wanted to have The Best
 
   [Glitchy Checkers]: /checkers
 
-The iMac I configured is "maxed-out" with a "star": I chose the fastest CPU and the best GPU, but settled for the smallest SSD (256&nbsp;GB) because I don't use much "disk" space (I was *almost* fine with 128 gigs in the Air).  I also ordered it with only 8 GB of RAM and swapped the memory myself for 32&nbsp;GB of Kingston HyperX Impact RAM [from Allegro][allegro], which saved me over 500&nbsp;USD.  (RAM is the only thing a user can change themself.  Without removing the front glass, that is.)
+The iMac I configured is "maxed-out" with a "star": I chose the fastest CPU and the best GPU, but settled for the smallest SSD (256 GB) because I don't use much "disk" space (I was *almost* fine with 128 gigs in the Air).  I also ordered it with only 8 GB of RAM and swapped the memory myself for 32 GB of Kingston HyperX Impact RAM [from Allegro][allegro], which saved me over 500 USD.  (RAM is the only thing a user can change themself.  Without removing the front glass, that is.)
 
   [allegro]: http://allegro.pl/kingston-hyperx-impact-sodimm-ddr3l-16gb-1866mhz-i5730717173.html
 
@@ -58,7 +58,7 @@ The screen is absolutely gorgeous.  The resolution is fantastic.  Finally a desk
 
 I can, however, judge the screen size.  27" 16:9 is very good.  Regular desktops should be this size.  I previously used a 23" 16:9 screen at home and a 24" 16:10 one at work, and the iMac is definitely an improvement.  But.  But!  It doesn't seem *huge*, doesn't seem *pro*.  It's merely *reasonable*.
 
-This is a minor complaint and it doesn't even qualify as a "problem".  I&nbsp;probably won't be connecting a second display because of it.  The fact is, I just feel a bit hungry.  I see unrealised potential.  Could the iMac have a 5k 30" 16:10 screen?  It would make the pixel density a little bit lower, but would the 8% drop from 218 PPI to 201 PPI be perceivable?  Probably not, but there are more important aspects of the new iMac worth discussing, like ergonomics.
+This is a minor complaint and it doesn't even qualify as a "problem".  I probably won't be connecting a second display because of it.  The fact is, I just feel a bit hungry.  I see unrealised potential.  Could the iMac have a 5k 30" 16:10 screen?  It would make the pixel density a little bit lower, but would the 8% drop from 218 PPI to 201 PPI be perceivable?  Probably not, but there are more important aspects of the new iMac worth discussing, like ergonomics.
 
 
 Design: beauty, ergonomics, practicality

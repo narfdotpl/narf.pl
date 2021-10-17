@@ -61,7 +61,7 @@ Superformula
 ------------
 
 After watching a Coding Rainbow video about [2D supershapes][supershapes],
-I&nbsp;made this loop:
+I made this loop:
 
 ![](superformula.gif)
 
@@ -112,7 +112,7 @@ L-systems
 
 On vacation
 I was reading [The Algorithmic Beauty of Plants][abop]
-(link to a&nbsp;17&nbsp;MB PDF)
+(link to a 17 MB PDF)
 on an iPad.
 I struggled to simulate the presented systems in my head. I wanted to see them in action, see what they do step by step.
 A friend created an LTE hotspot for me and I downloaded the [Pythonista][] app.
