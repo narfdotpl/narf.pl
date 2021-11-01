@@ -59,7 +59,12 @@ class memoized(object):
         for post in posts:
             for id in post['collection_ids']:
                 if id not in collections_by_id:
-                    collections_by_id[id] = PostCollection(id)
+                    if id == 'sound':
+                        collection = PostCollection(id, name='Music and sound series')
+                    else:
+                        collection = PostCollection(id)
+
+                    collections_by_id[id] = collection
 
                 collections_by_id[id].posts.append(post)
 
