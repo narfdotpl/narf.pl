@@ -1,5 +1,5 @@
 date: 2021-02-25
-collections: [procedural, sound]
+collections: [music, procedural]
 theme: black
 
 Random encounters

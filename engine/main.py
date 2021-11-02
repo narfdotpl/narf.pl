@@ -59,12 +59,7 @@ class memoized(object):
         for post in posts:
             for id in post['collection_ids']:
                 if id not in collections_by_id:
-                    if id == 'sound':
-                        collection = PostCollection(id, name='Music and sound series')
-                    else:
-                        collection = PostCollection(id)
-
-                    collections_by_id[id] = collection
+                    collections_by_id[id] = PostCollection(id)
 
                 collections_by_id[id].posts.append(post)
 
@@ -297,16 +292,26 @@ class Header(object):
         if isinstance(date, datetime.date):
             date = date.isoformat()
 
+        def change_ids(id):
+            if id in ['music', 'sound']:
+                return 'music and sound'
+            else:
+                return id
+
         self.date = date
         self.theme = d.get('theme', 'default')
-        self.collection_ids = d.get('collections', [])
+        self.collection_ids = map(change_ids, d.get('collections', []))
         self.is_selected = d.get('is_selected', False)
 
 
 class PostCollection(object):
     def __init__(self, id, name=None, posts=None):
+        if name is None:
+            words = id.split(' ')
+            name = ' '.join([words[0].title()] + words[1:]) + ' series'
+
         self.id = id
-        self.name = name or id.title() + ' series'
+        self.name = name
         self.posts = posts or []
 
 

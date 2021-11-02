@@ -1,5 +1,5 @@
 date: 2020-12-31
-collections: [procedural, sound]
+collections: [procedural, music]
 theme: black
 
 Roy Batty

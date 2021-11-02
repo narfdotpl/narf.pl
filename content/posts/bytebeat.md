@@ -1,5 +1,5 @@
 date: 2016-05-03
-collections: [sound, procedural]
+collections: [music, procedural]
 is_selected: true
 
 Bytebeat: live-coding sound waves
