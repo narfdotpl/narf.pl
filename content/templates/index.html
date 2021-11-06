@@ -67,10 +67,15 @@
         }
 
         /* http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/ */
-        .overlay h1 {
+        .overlay .content {
             position: relative;
             top: 50%;
             transform: translateY(-50%);
+        }
+
+        .overlay .subtitle {
+            color: #999;
+            font-style: italic;
         }
     </style>
 
@@ -107,26 +112,26 @@
             </h1>
         </header>
 
-        {% for (title, link, image) in [
-            ("Random encounters", "/posts/random-encounters", "random-encounters.jpg"),
-            ("Roy Batty", "/posts/tears-in-rain", "tears-in-rain.jpg"),
-            ("Solstice", "/posts/solstice", "solstice.jpg"),
-            ("Cellular automata: explosion", "/posts/cellular-automata-explosion", "cellular-automata-explosion.jpg"),
-            ("Papier", "/posts/papier", "papier.jpg"),
-            ("Drzwi", "/posts/drzwi", "drzwi.jpg"),
-            ("Sunflower", "/posts/sunflower", "sunflower.jpg"),
-            ("Metal trees", "/posts/metal-trees", "metal-trees.jpg"),
-            ("NF1 robot", "/nf1", "nf1.jpg"),
-            ("Glitchy Checkers", "/posts/checkers-presskit", "glitchy-checkers.png"),
-            ("Pixel sorting study", "/posts/pixel-sorting", "pixel-sorting.jpg"),
-            ("Procedural graphics: trees and circuit boards", "/posts/procedural-trees", "procedural-trees.png"),
-            ("Quadruped robot movement", "/posts/robot-movement", "robot-movement.jpg"),
-            ("Summer of Creative Coding", "/posts/summer-of-creative-coding", "summer-of-creative-coding.jpg"),
-            ("Sketchy procedures", "/posts/sketchy-procedures", "sketchy-procedures.png"),
-            ("The spiral of personal transportation", "/posts/spiral", "spiral.png"),
-            ("Impact of music streaming on my listening habits", "/posts/music-streaming", "spotify.png"),
-            ("Anxious Timer", "/posts/anxious-timer", "asset:anxious-timer/anxious-timer.png"),
-            ("SwiftyStateMachine", "https://github.com/macoscope/SwiftyStateMachine", "state-machine.png"),
+        {% for (title, subtitle, link, image) in [
+            ("Random encounters", "piano track", "/posts/random-encounters", "random-encounters.jpg"),
+            ("Roy Batty", "animation", "/posts/tears-in-rain", "tears-in-rain.jpg"),
+            ("Solstice", "animation", "/posts/solstice", "solstice.jpg"),
+            ("Cellular automata: explosion", "animation", "/posts/cellular-automata-explosion", "cellular-automata-explosion.jpg"),
+            ("Papier", "graphics", "/posts/papier", "papier.jpg"),
+            ("Drzwi", "animation", "/posts/drzwi", "drzwi.jpg"),
+            ("Sunflower", "animation", "/posts/sunflower", "sunflower.jpg"),
+            ("Metal trees", "graphics", "/posts/metal-trees", "metal-trees.jpg"),
+            ("NF1 robot", "four-legged spider", "/nf1", "nf1.jpg"),
+            ("Glitchy Checkers", "iOS game", "/posts/checkers-presskit", "glitchy-checkers.png"),
+            ("Pixel sorting study", "exploration of pixel sorting", "/posts/pixel-sorting", "pixel-sorting.jpg"),
+            ("Procedural graphics: trees and circuit boards", "graphics and animations", "/posts/procedural-trees", "procedural-trees.png"),
+            ("Quadruped robot movement", "movement simulation", "/posts/robot-movement", "robot-movement.jpg"),
+            ("Summer of Creative Coding", "graphics and animations", "/posts/summer-of-creative-coding", "summer-of-creative-coding.jpg"),
+            ("Sketchy procedures", "graphics", "/posts/sketchy-procedures", "sketchy-procedures.png"),
+            ("The spiral of personal transportation", "data visualization", "/posts/spiral", "spiral.png"),
+            ("Impact of music streaming on my listening habits", "data visualization", "/posts/music-streaming", "spotify.png"),
+            ("Anxious Timer", "iOS app", "/posts/anxious-timer", "asset:anxious-timer/anxious-timer.png"),
+            ("SwiftyStateMachine", "µframework", "https://github.com/macoscope/SwiftyStateMachine", "state-machine.png"),
         ] %}
             <article>
                 <a href="{{ link }}">
@@ -134,7 +139,13 @@
                         <img src="{% if not image.startswith("asset:") %}links/{% endif %}{{ image }}">
 
                         <div class="overlay">
-                            <h1 class="balance-text">{{ title }}</h1>
+                            <div class="content">
+                                <h1 class="balance-text">{{ title }}</h1>
+
+                                {% if subtitle %}
+                                    <p class="subtitle">{{ subtitle }}</p>
+                                {% endif %}
+                            </div>
                         </div>
                     </figure>
                 </a>
