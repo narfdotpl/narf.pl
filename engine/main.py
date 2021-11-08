@@ -547,8 +547,8 @@ def resolve_local_urls(filename, html):
 @soup
 def resolve_asset_urls(soup):
     """
-    >>> resolve_asset_urls('<img src="asset:index/naif.min.css"/>')
-    u'<img src="/static/assets/index/naif.min.css?436df1d347d14cd4c259ed31eeced027"/>'
+    >>> resolve_asset_urls('<img src="asset:index/css/naif.min.css"/>')
+    u'<img src="/static/assets/index/css/naif.min.css?436df1d347d14cd4c259ed31eeced027"/>'
     """
 
     prefix = settings.ASSET_PREFIX

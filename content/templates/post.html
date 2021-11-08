@@ -13,7 +13,6 @@
         <meta property="og:image" content="{{ social_image_url }}"/>
     {% endif %}
 
-
     {% if social_image_url %}
         <meta name="twitter:card" content="summary_large_image"/>
         <meta name="twitter:image" content="{{ social_image_url }}"/>
@@ -26,67 +25,9 @@
 
     <link rel="stylesheet" href="asset:index/highlight/styles/github.css"/>
     <link rel="stylesheet" href="asset:index/gallery/magnific-popup.css"/>
+    <link rel="stylesheet" href="asset:index/css/post.css"/>
 
     <style>
-        header .middot {
-            margin-left: 0.5ex;
-            margin-right: 0.4ex;
-        }
-
-        @media (min-width: 428px) {
-            header .br { display: none; }
-        }
-        @media (max-width: 427px) {
-            header .middot { display: none; }
-        }
-
-
-        pre {
-            padding-left: 0;
-            padding-right: 0;
-        }
-
-        .video-wrapper {
-            float: none;
-            clear: both;
-
-            width: 100%;
-            height: 0;
-            position: relative;
-
-            padding-bottom: 56.25%;  /* 16:9 */
-            margin-bottom: 1.4em;
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-
-        ul.gallery {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        ul.gallery li {
-            max-width: 338px;
-            margin: 0 2px 4px;
-        }
-
-        @media (max-width: 679px) {
-            ul.gallery li {
-                max-width: 375px;
-                margin: 0 0 2px;
-            }
-        }
-
         {% if slug == "spiral" %}
             figure {
                 margin-bottom: 1px;

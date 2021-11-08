@@ -1,0 +1,58 @@
+header .middot {
+    margin-left: 0.5ex;
+    margin-right: 0.4ex;
+}
+
+@media (min-width: 428px) {
+    header .br { display: none; }
+}
+@media (max-width: 427px) {
+    header .middot { display: none; }
+}
+
+
+pre {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.video-wrapper {
+    float: none;
+    clear: both;
+
+    width: 100%;
+    height: 0;
+    position: relative;
+
+    padding-bottom: 56.25%;  /* 16:9 */
+    margin-bottom: 1.4em;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+ul.gallery {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+ul.gallery li {
+    max-width: 338px;
+    margin: 0 2px 4px;
+}
+
+@media (max-width: 679px) {
+    ul.gallery li {
+        max-width: 375px;
+        margin: 0 0 2px;
+    }
+}

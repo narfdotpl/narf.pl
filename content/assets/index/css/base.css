@@ -1,0 +1,93 @@
+video {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+img, video {
+    max-height: 100%;
+}
+
+figure {
+    margin: 0 -192px 28px;
+}
+
+img, video {
+    max-height: 780px;
+}
+
+.full-width img, .full-width video {
+    max-height: initial;
+}
+
+.max-height-initial {
+    max-height: initial;
+}
+
+@media (max-width: 1024px) {
+    figure {
+        margin: 0 -12px 28px;
+    }
+}
+
+.balance-text {
+    text-wrap: balanced;
+}
+
+@media (min-width: 512px) {
+    .posts {
+        margin-left: 44px
+    }
+}
+
+.icons {
+    letter-spacing: 0.5ex;
+    animation: toggle-icons 16s ease-in-out 0s infinite;
+}
+
+.icons a       { color: #aaa; }
+.icons a:hover { color: #333; }
+
+.footer.icons a       { color: #ccc; }
+.footer.icons a:hover { color: #444; }
+
+.stars-container {
+    position: relative;
+}
+
+.stars {
+    position: absolute;
+    z-index: -1;
+
+    /* css way of saying "center" */
+    left: 0;
+    right: 0;
+    top: 0.25em;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+
+    width: 10ex;
+
+    color: #bbb;
+    opacity: 0;
+    animation: toggle-stars 16s ease-in-out 0s infinite;
+}
+
+@keyframes toggle-stars {
+      0% { opacity: 0; }
+     63% { opacity: 0; }
+     75% { opacity: 1; }
+     88% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes toggle-icons {
+      0% { opacity: 1; }
+     63% { opacity: 1; }
+     75% { opacity: 0; }
+     88% { opacity: 0; }
+    100% { opacity: 1; }
+}
