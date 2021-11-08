@@ -8,18 +8,22 @@ $(function () {
     $trigger.find('a').click(function (event) {
         event.preventDefault();
 
-        $trigger.hide();
+        var el = document.documentElement;
+        var x = el.scrollLeft;
+        var yStart = el.scrollTop;
 
-        $window = $(window);
-        var x = $window.scrollLeft();
-        var yStart = $window.scrollTop();
-        var yDelta = 0;
+        // don't scroll past the trigger
+        var trigger = $trigger[0];
+        var triggerBox = trigger.getBoundingClientRect();
+        var yMax = yStart + triggerBox.top;
+
+        $trigger.hide();
 
         $collection.fadeIn({
             duration: 300,
             progress: function (_, progress) {
-                yDelta = yDelta || (document.body.scrollHeight - $window.height() - yStart);
-                window.scrollTo(x, yStart + progress * yDelta);
+                var yEnd = Math.min(yMax, el.scrollHeight - el.clientHeight);
+                window.scrollTo(x, yStart + progress * (yEnd - yStart));
             }
         });
     });
