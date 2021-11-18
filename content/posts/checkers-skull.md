@@ -1,5 +1,5 @@
 date: 2017-03-09
-collections: [checkers]
+collections: [checkers, thoughts]
 is_selected: true
 
 Glitchy Checkers :skull:
