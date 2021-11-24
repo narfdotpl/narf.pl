@@ -27,4 +27,7 @@ Cheers,<br/>narf
 
 <br/>PS In the coming days, I will be sharing some behind the scenes details about *Escapism* in [Instagram][] Stories. Be sure to follow me there, if you're interested in process and tools.
 
+PPS I have also posted a rather lengthy thread on [Twitter][] about other aspects of the project.
+
   [Instagram]: https://www.instagram.com/narfdotpl/
+  [Twitter]: https://twitter.com/narfdotpl/status/1463764311575310339
