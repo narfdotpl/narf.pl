@@ -57,9 +57,9 @@ figure {
     transition-timing-function: ease;
 }
 
-.overlay:hover {
-    opacity: 1;
-}
+.overlay:hover      { opacity: 1; }
+.overlay.touchstart { opacity: 1; }
+.overlay.touchend   { opacity: 0; }
 
 /* http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/ */
 .overlay .content {
