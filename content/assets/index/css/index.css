@@ -21,17 +21,10 @@ header h1 {
     }
 }
 
-@media (min-width: 376px) {
-    .only-small-phones {
-        display: none;
-    }
-}
-
 footer {
     margin-top: 52px;
     margin-bottom: 52px;
 }
-
 
 figure {
     position: relative;
