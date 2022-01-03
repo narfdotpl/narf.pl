@@ -1,12 +1,13 @@
 $(function () {
     var $web2 = $('#web2');
     var $trigger = $('#web2-trigger');
-    var cls = 'hidden';
 
-    $web2.addClass(cls);
+    $trigger.removeClass('hidden');
+    $web2.hide();
 
-    $trigger.click(function (event) {
+    $trigger.find('a').click(function (event) {
         event.preventDefault();
-        $web2.toggleClass(cls);
+        $trigger.hide();
+        $web2.fadeIn(500);
     });
 });
