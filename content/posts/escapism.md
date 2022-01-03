@@ -7,7 +7,7 @@ Escapism
 
 {{ youtube_iframe('8nnQtcT8aS8') }}
 
-I'm excited to announce that today I have released a short music album titled *Escapism*. You can listen to it on:
+I'm excited to announce that I have released a short music album titled *Escapism*. You can listen to it on:
 
 - [Bandcamp](https://narfdotpl.bandcamp.com/album/escapism), where you can also buy it
 - [Spotify](https://open.spotify.com/album/1O3Hl28AuRnaBhk6mOWLWK)
