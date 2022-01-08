@@ -90,7 +90,8 @@ class memoized(object):
         # get data from sections
         slug = filename[:-len('.md')]
         title = title_prefix + sections[1].rstrip('=').rstrip('\n')
-        path = '/posts/%s' % slug
+        path = ('/music/' if header.music_release else '/posts/') + slug
+
         return {
             'is_draft': is_draft,
             'is_hidden': memoized.is_hidden(filename),
@@ -453,7 +454,10 @@ def add_non_breaking_spaces_recursive(soup):
 
 @soup
 def add_title_text_to_post_links(soup):
-    prefixes = ['/posts', 'http://narf.pl/posts']
+    prefixes = [root + path
+        for root in ['', 'http://narf.pl']
+        for path in ['/posts', '/music']
+    ]
 
     for link in soup.find_all('a'):
         url = link.get('href', '')
@@ -736,14 +740,22 @@ def posts():
     return memoized.rendered_posts()
 
 
-@app.route('/posts/<path:slug>')
-def post(slug):
+@app.route('/<any(posts, music):container>/<path:slug>')
+def post(container, slug):
     if slug == 'spaghetti-trees':
         return redirect('/posts/metal-trees', 301)
 
+    path = '/' + container + '/' + slug
     filename = slug + '.md'
+
     if filename in memoized.post_filenames():
-        return memoized.rendered_post(filename)
+        # redirect to proper container
+        post = memoized.post_data(filename)
+        expected_path = post['path']
+        if path != expected_path:
+            return redirect(expected_path)
+        else:
+            return memoized.rendered_post(filename)
     else:
         return memoized.rendered_404()
 
