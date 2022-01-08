@@ -103,6 +103,7 @@ def test():
         with quiet():
             local('echo > ' + output)
             curl('/')
+            curl('/404')
             curl('/feed')
             curl('/feed.json')
             curl('/posts')

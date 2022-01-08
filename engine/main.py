@@ -30,7 +30,6 @@ from memoize import MetaMemoize
 import settings
 
 
-HTTP_404 = '404', 404
 app = Flask(__name__)
 
 
@@ -166,6 +165,12 @@ class memoized(object):
         ])
 
         return json.dumps(feed, indent=4)
+
+    def rendered_404():
+        html = render_template('404.html')
+        html = resolve_asset_urls(html)
+
+        return (html, 404)
 
     def rendered_index():
         return antimap('index.html', [
@@ -711,7 +716,7 @@ def post(slug):
     if filename in memoized.post_filenames():
         return memoized.rendered_post(filename)
     else:
-        return HTTP_404
+        return memoized.rendered_404()
 
 
 @app.route('/drafts/<path:slug>')
@@ -722,7 +727,7 @@ def draft(slug):
     elif filename in memoized.draft_filenames():
         return memoized.rendered_post(filename)
     else:
-        return HTTP_404
+        return memoized.rendered_404()
 
 
 @app.route('/feed')
@@ -799,7 +804,7 @@ def redirect_from_old_path(path):
     if url:
         return redirect(url, 301 if permanent else 302)
     else:
-        return HTTP_404
+        return memoized.rendered_404()
 
 
 if __name__ == '__main__':

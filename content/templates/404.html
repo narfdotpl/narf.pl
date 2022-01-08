@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+
+{% block title %}404{% endblock %}
+
+
+{% block body %}
+    <div id="main-wrapper" class="narrow legible centered">
+        <header class="centered">
+            <h1>HTTP 404: not found</h1>
+        </header>
+
+        <p>
+            <blockquote style="text-align: left; font-style: italic;">
+                The requested resource could not be found but may be available in the future.
+                Subsequent requests by the client are permissible.
+            </blockquote>
+        </p>
+
+        <p>
+            visit the <a href="/">home page</a>
+        </p>
+
+        {% include "footer-icons.html" %}
+    </div>
+{% endblock %}
