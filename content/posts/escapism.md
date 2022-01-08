@@ -1,5 +1,6 @@
 date: 2021-11-25
 collections: [music]
+music_release: debut EP
 theme: black
 
 Escapism

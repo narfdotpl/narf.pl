@@ -105,6 +105,7 @@ class memoized(object):
             'uses_black_css': header.theme == 'black',
             'collection_ids': header.collection_ids,
             'is_selected': header.is_selected,
+            'music_release': header.music_release,
         }
 
     def post_filenames():
@@ -231,11 +232,23 @@ class memoized(object):
 
     def rendered_posts():
         posts = memoized.public_posts()
-        get_year = lambda x: x['date'].split('-')[0]
-
+        get_year = lambda post: year_filter(post['date'])
         html = render_template('posts.html',
             selected_posts=[p for p in posts if p['is_selected']],
-            posts_by_year=groupby(posts, get_year))
+            posts_by_year=groupby(posts, get_year),
+        )
+
+        return resolve_asset_urls(html)
+
+    def rendered_music():
+        posts = memoized.public_posts()
+        releases = [p for p in posts if p['music_release']]
+        other_posts = [p for p in posts if 'music and sound' in p['collection_ids'] and p not in releases]
+
+        html = render_template('music.html',
+            releases=releases,
+            other_posts=other_posts,
+        )
 
         return resolve_asset_urls(html)
 
@@ -307,6 +320,7 @@ class Header(object):
         self.theme = d.get('theme', 'default')
         self.collection_ids = map(change_ids, d.get('collections', []))
         self.is_selected = d.get('is_selected', False)
+        self.music_release = d.get('music_release')
 
 
 class PostCollection(object):
@@ -690,6 +704,16 @@ def typo_filter(text):
     return Markup(text)
 
 
+@app.template_filter('year')
+def year_filter(text):
+    """
+    >>> year_filter('2022-01-08')
+    '2022'
+    """
+
+    return text.split('-')[0]
+
+
 @app.before_request
 def strip_trailing_slash():
     path = request.path
@@ -700,6 +724,11 @@ def strip_trailing_slash():
 @app.route('/')
 def index():
     return memoized.rendered_index()
+
+
+@app.route('/music')
+def music():
+    return memoized.rendered_music()
 
 
 @app.route('/posts')

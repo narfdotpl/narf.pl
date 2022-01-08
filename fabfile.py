@@ -106,6 +106,7 @@ def test():
             curl('/404')
             curl('/feed')
             curl('/feed.json')
+            curl('/music')
             curl('/posts')
 
             for path in get_post_paths():

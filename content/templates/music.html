@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+
+{% block title %}narf’s music{% endblock %}
+
+
+{% block extra_head %}
+    <link rel="stylesheet" href="asset:index/css/music.css"/>
+{% endblock %}
+
+
+{% block body %}
+    <section id="main-wrapper" class="legible narrow">
+        <header class="centered">
+            <h1><a href="/">narf</a><span class="apostrophe">’</span>s music</h1>
+        </header>
+
+        <p class="centered">
+            <i>
+                I think it’s best for the music to speak for itself, but this page looks better with at least two lines of text&nbsp;here.
+            </i>
+        </p>
+
+        <section>
+            {% for post in releases %}
+                <article>
+                    <h2><a href="{{ post.path }}">{{ post.title }}</a></h2>
+
+                    <p>
+                        {{ post.music_release }} · {{ post.date|year }}
+                    </p>
+
+                    <figure>
+                        <a href="{{ post.path }}">
+                            <img src="asset:{{ post.slug }}/social.jpg">
+                        </a>
+                    </figure>
+                </article>
+            {% endfor %}
+        </section>
+
+        <section>
+            <h2>Other music and sound posts</h2>
+
+            <ul>
+                {% for post in other_posts %}
+                    <li><a class="balance-text" href="{{ post.path }}">{{ post.title|typo }}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        {% include "footer-icons.html" %}
+        <br class="hidden-elsewhere"/>
+    </section>
+{% endblock %}
