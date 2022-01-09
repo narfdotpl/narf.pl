@@ -1,5 +1,6 @@
 date: 2016-08-18
 collections: [thoughts]
+is_selected: true
 
 65daysofstatic's soundtrack to No Man's Sky
 ===========================================
