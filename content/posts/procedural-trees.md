@@ -1,6 +1,9 @@
 date: 2017-04-04
 collections: [procedural]
 is_selected: true
+index:
+  subtitle: graphics and animations
+  sorting_key: 2017-06-12
 
 Procedural graphics: trees and circuit boards
 =============================================

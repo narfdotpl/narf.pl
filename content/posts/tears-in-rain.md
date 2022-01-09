@@ -1,6 +1,8 @@
 date: 2020-12-31
 collections: [procedural, music]
 theme: black
+index:
+  subtitle: animation
 
 Roy Batty
 =========

@@ -1,6 +1,8 @@
 date: 2020-12-21
 collections: [procedural]
 theme: black
+index:
+  subtitle: animation
 
 Solstice
 ========

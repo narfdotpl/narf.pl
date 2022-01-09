@@ -1,5 +1,9 @@
 date: 2017-01-29
 collections: [checkers]
+index:
+  title: Glitchy Checkers
+  subtitle: iOS game
+  sorting_key: 2017-06-14
 
 Glitchy Checkers 2.0: Press Kit
 ===============================

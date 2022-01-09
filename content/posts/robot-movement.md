@@ -1,5 +1,7 @@
 date: 2017-04-23
 collections: [robotics]
+index:
+  subtitle: movement simulation
 
 Quadruped robot movement
 ========================

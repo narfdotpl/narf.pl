@@ -1,6 +1,9 @@
 date: 2015-04-21
 collections: [visualization]
 is_selected: true
+index:
+  subtitle: data visualization
+  sorting_key: 2016-03-18
 
 Impact of music streaming on my listening habits
 ================================================

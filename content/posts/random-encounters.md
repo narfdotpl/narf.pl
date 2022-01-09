@@ -2,6 +2,8 @@ date: 2021-02-25
 collections: [music, procedural]
 music_release: piano track
 theme: black
+index:
+  subtitle: piano track
 
 Random encounters
 =================

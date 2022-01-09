@@ -1,5 +1,8 @@
 date: 2017-11-02
 collections: [robotics]
+index:
+  title: NF1 robot
+  subtitle: four-legged spider
 
 It's alive
 ==========

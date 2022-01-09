@@ -1,5 +1,8 @@
 date: 2016-03-20
 collections: [procedural]
+index:
+  title: Sketchy procedures
+  subtitle: graphics
 
 Sketchy procedures lead to a beautiful catastrophe
 ==================================================

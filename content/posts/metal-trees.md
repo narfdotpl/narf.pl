@@ -1,6 +1,8 @@
 date: 2019-06-18
 collections: [procedural]
 theme: black
+index:
+  subtitle: graphics
 
 Metal trees
 ===========

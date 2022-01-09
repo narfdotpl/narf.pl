@@ -1,4 +1,7 @@
-2016-01-30
+date: 2016-01-30
+index:
+  subtitle: iOS app
+  image: anxious-timer.png
 
 Anxious Timer
 =============

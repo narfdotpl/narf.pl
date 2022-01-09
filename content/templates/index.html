@@ -48,40 +48,16 @@
             </h1>
         </header>
 
-        {% for (title, subtitle, link, image) in [
-            ("Escapism", "music album", "/music/escapism", "escapism.jpg"),
-            ("Random encounters", "piano track", "/posts/random-encounters", "random-encounters.jpg"),
-            ("Roy Batty", "animation", "/posts/tears-in-rain", "tears-in-rain.jpg"),
-            ("Solstice", "animation", "/posts/solstice", "solstice.jpg"),
-            ("Cellular automata: explosion", "animation", "/posts/cellular-automata-explosion", "cellular-automata-explosion.jpg"),
-            ("Papier", "graphics", "/posts/papier", "papier.jpg"),
-            ("Drzwi", "animation", "/posts/drzwi", "drzwi.jpg"),
-            ("Sunflower", "animation", "/posts/sunflower", "sunflower.jpg"),
-            ("Metal trees", "graphics", "/posts/metal-trees", "metal-trees.jpg"),
-            ("NF1 robot", "four-legged spider", "/nf1", "nf1.jpg"),
-            ("Glitchy Checkers", "iOS game", "/posts/checkers-presskit", "glitchy-checkers.png"),
-            ("Pixel sorting study", "exploration of pixel sorting", "/posts/pixel-sorting", "pixel-sorting.jpg"),
-            ("Procedural graphics: trees and circuit boards", "graphics and animations", "/posts/procedural-trees", "procedural-trees.png"),
-            ("Quadruped robot movement", "movement simulation", "/posts/robot-movement", "robot-movement.jpg"),
-            ("Summer of Creative Coding", "graphics and animations", "/posts/summer-of-creative-coding", "summer-of-creative-coding.jpg"),
-            ("Sketchy procedures", "graphics", "/posts/sketchy-procedures", "sketchy-procedures.png"),
-            ("The spiral of personal transportation", "data visualization", "/posts/spiral", "spiral.png"),
-            ("Impact of music streaming on my listening habits", "data visualization", "/posts/music-streaming", "spotify.png"),
-            ("Anxious Timer", "iOS app", "/posts/anxious-timer", "asset:anxious-timer/anxious-timer.png"),
-            ("SwiftyStateMachine", "µframework", "https://github.com/macoscope/SwiftyStateMachine", "state-machine.png"),
-        ] %}
+        {% for entry in entries %}
             <article>
-                <a href="{{ link }}">
+                <a href="{{ entry.url }}">
                     <figure>
-                        <img src="{% if not image.startswith("asset:") %}links/{% endif %}{{ image }}">
+                        <img src="{{ entry.image }}">
 
                         <div class="overlay">
                             <div class="content">
-                                <h1 class="balance-text">{{ title }}</h1>
-
-                                {% if subtitle %}
-                                    <p class="subtitle">{{ subtitle }}</p>
-                                {% endif %}
+                                <h1 class="balance-text">{{ entry.title }}</h1>
+                                <p class="subtitle">{{ entry.subtitle }}</p>
                             </div>
                         </div>
                     </figure>

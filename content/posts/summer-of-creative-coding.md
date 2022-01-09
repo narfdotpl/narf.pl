@@ -1,5 +1,7 @@
 date: 2016-09-22
 collections: [procedural]
+index:
+  subtitle: graphics and animations
 
 Summer of Creative Coding
 =========================

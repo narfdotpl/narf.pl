@@ -107,6 +107,7 @@ class memoized(object):
             'collection_ids': header.collection_ids,
             'is_selected': header.is_selected,
             'music_release': header.music_release,
+            'index_config': header.index_config,
         }
 
     def post_filenames():
@@ -175,9 +176,43 @@ class memoized(object):
         return (html, 404)
 
     def rendered_index():
-        return antimap('index.html', [
-            render_template,
-            partial(resolve_local_urls, 'index.md'),  # dirty hack!
+        entries = []
+
+        for post in memoized.public_posts():
+            config = post['index_config']
+            if config is None:
+                continue
+
+            image_url = None
+            for filename in filter(None, [config.get('image'), 'index.jpg', 'index.png']):
+                relative_path = post['slug'] + '/' + filename
+                if relative_path in memoized.asset_relative_paths():
+                    image_url = static_url.for_asset(relative_path)
+                    break
+
+            entries.append({
+                'title': config.get('title', post['title']),
+                'subtitle': config['subtitle'],
+                'url': post['path'],
+                'image': image_url,
+                'sorting_key': config.get('sorting_key', post['date']),
+            })
+
+        entries.append({
+            'title': 'SwiftyStateMachine',
+            'subtitle': u'µframework',
+            'url': 'https://github.com/macoscope/SwiftyStateMachine',
+            'image': static_url.for_asset('index/links/state-machine.png'),
+            'sorting_key': '2015-03-23',
+        })
+
+        date_to_str = lambda x: x.isoformat() if isinstance(x, datetime.date) else x
+        entries = reversed(sorted(entries, key=lambda e: date_to_str(e['sorting_key'])))
+
+        html = render_template('index.html', entries=entries)
+
+        return antimap(html, [
+            partial(resolve_local_urls, 'index.md'),  # dirty hack!  TODO: can we remove this?
             resolve_asset_urls,
         ])
 
@@ -322,6 +357,7 @@ class Header(object):
         self.collection_ids = map(change_ids, d.get('collections', []))
         self.is_selected = d.get('is_selected', False)
         self.music_release = d.get('music_release')
+        self.index_config = d.get('index')
 
 
 class PostCollection(object):

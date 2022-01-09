@@ -1,6 +1,8 @@
 date: 2020-01-25
 collections: [procedural, sound]
 theme: black
+index:
+  subtitle: animation
 
 Drzwi
 =====

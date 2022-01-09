@@ -1,6 +1,8 @@
 date: 2019-07-05
 collections: [procedural]
 theme: black
+index:
+  subtitle: animation
 
 Sunflower
 =========

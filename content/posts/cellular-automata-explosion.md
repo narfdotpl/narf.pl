@@ -1,6 +1,8 @@
 date: 2020-12-09
 collections: [procedural]
 theme: black
+index:
+  subtitle: animation
 
 Cellular automata: explosion
 ============================

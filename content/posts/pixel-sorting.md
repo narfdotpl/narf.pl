@@ -1,5 +1,7 @@
 date: 2017-06-13
 collections: [procedural]
+index:
+  subtitle: exploration of pixel sorting
 
 Pixel sorting study
 ===================
