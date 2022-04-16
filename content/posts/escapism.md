@@ -1,9 +1,11 @@
 date: 2021-11-25
 collections: [music]
-music_release: debut EP
 theme: black
 index:
   subtitle: music album
+music:
+  section: releases
+  subtitle: debut EP
 
 Escapism
 ========

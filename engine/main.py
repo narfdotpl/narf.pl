@@ -90,7 +90,7 @@ class memoized(object):
         # get data from sections
         slug = filename[:-len('.md')]
         title = title_prefix + sections[1].rstrip('=').rstrip('\n')
-        path = ('/music/' if header.music_release else '/posts/') + slug
+        path = ('/music/' if header.is_music_release else '/posts/') + slug
 
         return {
             'is_draft': is_draft,
@@ -106,7 +106,7 @@ class memoized(object):
             'uses_black_css': header.theme == 'black',
             'collection_ids': header.collection_ids,
             'is_selected': header.is_selected,
-            'music_release': header.music_release,
+            'music': header.music,
             'index_config': header.index_config,
         }
 
@@ -175,7 +175,7 @@ class memoized(object):
 
         return (html, 404)
 
-    def rendered_index():
+    def index_entries():
         entries = []
 
         for post in memoized.public_posts():
@@ -196,6 +196,7 @@ class memoized(object):
                 'url': post['path'],
                 'image': image_url,
                 'sorting_key': config.get('sorting_key', post['date']),
+                'post': post,
             })
 
         entries.append({
@@ -204,11 +205,16 @@ class memoized(object):
             'url': 'https://github.com/macoscope/SwiftyStateMachine',
             'image': static_url.for_asset('index/links/state-machine.png'),
             'sorting_key': '2015-03-23',
+            'post': None,
         })
 
         date_to_str = lambda x: x.isoformat() if isinstance(x, datetime.date) else x
         entries = reversed(sorted(entries, key=lambda e: date_to_str(e['sorting_key'])))
 
+        return entries
+
+    def rendered_index():
+        entries = memoized.index_entries()
         html = render_template('index.html', entries=entries)
 
         return antimap(html, [
@@ -277,13 +283,31 @@ class memoized(object):
         return resolve_asset_urls(html)
 
     def rendered_music():
-        posts = memoized.public_posts()
-        releases = [p for p in posts if p['music_release']]
-        other_posts = [p for p in posts if 'music and sound' in p['collection_ids'] and p not in releases]
+        section_titles = ['Releases', 'Soundtracks']
+        sections = [{'title': title, 'entries': []} for title in section_titles]
+        for section in sections:
+            for entry in memoized.index_entries():
+                music = (entry['post'] or {}).get('music')
+                if music and music['section'] == section['title'].lower():
+                    entry = entry.copy()
+                    entry['subtitle'] = music.get('subtitle', entry['subtitle'])
+                    section['entries'].append(entry)
+
+        posts_in_sections = []
+        for section in sections:
+            for entry in section['entries']:
+                posts_in_sections.append(entry['post'])
+
+        all_posts = memoized.public_posts()
+        other_music_posts = [
+            p for p in all_posts
+            if 'music and sound' in p['collection_ids']
+            and p not in posts_in_sections
+        ]
 
         html = render_template('music.html',
-            releases=releases,
-            other_posts=other_posts,
+            sections=sections,
+            other_posts=other_music_posts,
         )
 
         return resolve_asset_urls(html)
@@ -356,8 +380,10 @@ class Header(object):
         self.theme = d.get('theme', 'default')
         self.collection_ids = map(change_ids, d.get('collections', []))
         self.is_selected = d.get('is_selected', False)
-        self.music_release = d.get('music_release')
         self.index_config = d.get('index')
+
+        self.music = d.get('music')
+        self.is_music_release = (self.music or {}).get('section') == 'releases'
 
 
 class PostCollection(object):

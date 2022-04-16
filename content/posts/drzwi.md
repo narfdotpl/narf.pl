@@ -3,6 +3,8 @@ collections: [procedural, sound]
 theme: black
 index:
   subtitle: animation
+music:
+  section: soundtracks
 
 Drzwi
 =====

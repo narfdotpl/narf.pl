@@ -1,45 +1,62 @@
 {% extends "base.html" %}
 
 
-{% block title %}narf’s music{% endblock %}
+{% block title %}Music{% endblock %}
 
 
 {% block extra_head %}
     <link rel="stylesheet" href="asset:index/css/music.css"/>
+    <link rel="stylesheet" href="asset:index/css/index-entries.css"/>
 {% endblock %}
 
 
 {% block body %}
-    <section id="main-wrapper" class="legible narrow">
-        <header class="centered">
-            <h1><a href="/">narf</a><span class="apostrophe">’</span>s music</h1>
+    <div id="main-wrapper" class="legible">
+        <header class="narrow">
+            <h1 class="centered">Music</h1>
         </header>
 
-        <p class="centered">
-            <i>
-                I think it’s best for the music to speak for itself, but this page looks better with at least two lines of text&nbsp;here.
-            </i>
-        </p>
-
-        <section>
-            {% for post in releases %}
-                <article>
-                    <h2><a href="{{ post.path }}">{{ post.title }}</a></h2>
-
-                    <p>
-                        {{ post.music_release }} · {{ post.date|year }}
-                    </p>
-
-                    <figure>
-                        <a href="{{ post.path }}">
-                            <img src="asset:{{ post.slug }}/social.jpg">
-                        </a>
-                    </figure>
-                </article>
-            {% endfor %}
+        <section class="narrow">
+            <p>
+                I publish music as standalone releases and I&nbsp;create soundtracks for my animations.
+                I&nbsp;started this journey at the end of 2020.
+                I’m&nbsp;curious to see where it will take me.
+            </p>
+            <p>
+                To get a sense of what I make, listen to my debut EP <a href="escapism"><i>Escapism</i></a>.
+                I think it captures my sensibilities well and includes many things that I’m interested in:
+                distortion, industrial, cinematic, procedural, synth, glitch, electronic, metal, piano, cello, noise…
+            </p>
+            <p>
+                — <a href="/">Maciej Konieczny</a>
+                aka <a href="/">narf</a>
+            </p>
         </section>
 
-        <section>
+        {% for section in sections %}
+            <section>
+                <h2 class="narrow">{{ section.title }}</h2>
+
+                {% for entry in section.entries %}
+                    <article>
+                        <a href="{{ entry.url }}">
+                            <figure>
+                                <img src="{{ entry.image }}">
+
+                                <div class="overlay">
+                                    <div class="centered content">
+                                        <h1 class="balance-text">{{ entry.title }}</h1>
+                                        <p class="subtitle">{{ entry.subtitle }}</p>
+                                    </div>
+                                </div>
+                            </figure>
+                        </a>
+                    </article>
+                {% endfor %}
+            </section>
+        {% endfor %}
+
+        <section class="narrow">
             <h2>Other music and sound posts</h2>
 
             <ul>
@@ -51,5 +68,5 @@
 
         {% include "footer-icons.html" %}
         <br class="hidden-elsewhere"/>
-    </section>
+    </div>
 {% endblock %}

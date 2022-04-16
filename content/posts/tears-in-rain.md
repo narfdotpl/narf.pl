@@ -3,6 +3,8 @@ collections: [procedural, music]
 theme: black
 index:
   subtitle: animation
+music:
+  section: soundtracks
 
 Roy Batty
 =========
