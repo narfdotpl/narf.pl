@@ -15,9 +15,9 @@ header h1 {
 
 @media (max-width: 532px) {
     header h1 {
-        font-size: 1em;
-        margin-top: 57px;  /* 57 ~= 3 * 18.9 */
-        margin-bottom: 57px;
+        font-size: 1.19em;
+        margin-top: 80px;
+        margin-bottom: 80px;
     }
 }
 
