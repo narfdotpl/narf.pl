@@ -209,7 +209,7 @@ class memoized(object):
         })
 
         date_to_str = lambda x: x.isoformat() if isinstance(x, datetime.date) else x
-        entries = reversed(sorted(entries, key=lambda e: date_to_str(e['sorting_key'])))
+        entries = list(reversed(sorted(entries, key=lambda e: date_to_str(e['sorting_key']))))
 
         return entries
 
