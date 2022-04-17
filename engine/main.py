@@ -7,7 +7,7 @@ from functools import partial, wraps
 from hashlib import md5
 from itertools import groupby
 import json
-from os import walk
+from os import environ, walk
 from os.path import exists, join
 
 import datetime
@@ -215,7 +215,7 @@ class memoized(object):
 
     def rendered_index():
         entries = memoized.index_entries()
-        html = render_template('index.html', entries=entries)
+        html = render_template('index.html', entries=entries, debug=app.debug)
 
         return antimap(html, [
             partial(resolve_local_urls, 'index.md'),  # dirty hack!  TODO: can we remove this?
@@ -914,4 +914,9 @@ if __name__ == '__main__':
     import doctest
     doctest.testmod()
 
-    app.run(debug=True, host='0.0.0.0')
+    app.run(
+        # `debug=True` is the default when running locally,
+        # but can be set to false using env var
+        debug=environ.get('DEBUG', '').lower() not in ['false', '0', 'off'],
+        host='0.0.0.0',
+    )
