@@ -1,8 +1,8 @@
 date: 2016-01-31
 collections: [setup]
 
-Mac software
-============
+Mac software: 2016
+==================
 
 Hello and welcome to the second episode of My New Computer!
 Previously [I was complaining][iMac] about how great the new iMac is.
