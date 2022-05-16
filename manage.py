@@ -47,7 +47,7 @@ def deploy():
 def runserver():
     'Run development sever.'
 
-    system('open http://localhost:5000/')
+    system('open http://localhost:8000/')
     system('cd "%s"; python main.py' % ENGINE_DIR)
 
 
@@ -93,7 +93,7 @@ def test():
     output = join(TESTS_DIR, 'output.txt')
 
     def curl(path):
-        system('curl http://localhost:5000%s 2> /dev/null >> "%s"' \
+        system('curl http://localhost:8000%s 2> /dev/null >> "%s"' \
               % (path, output))
         stdout.write('.')
         stdout.flush()

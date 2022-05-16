@@ -18,7 +18,7 @@ try:
 except ImportError:
     from PIL import Image
 
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup as BS
 from bs4.element import NavigableString
 from flask import (Flask, Markup, make_response, redirect, render_template,
                    render_template_string, request)
@@ -31,6 +31,10 @@ import settings
 
 
 app = Flask(__name__)
+
+
+def BeautifulSoup(*args, **kwargs):
+    return BS(*args, features='html.parser', **kwargs)
 
 
 class memoized(object):
@@ -498,7 +502,7 @@ def add_nbsp(s, nbsp='&nbsp;'):
 
 
 def add_non_breaking_spaces(html):
-    soup = BeautifulSoup(html, 'html.parser')
+    soup = BeautifulSoup(html)
     add_non_breaking_spaces_recursive(soup)
 
     return soup_to_unicode(soup)
@@ -919,4 +923,5 @@ if __name__ == '__main__':
         # but can be set to false using env var
         debug=environ.get('DEBUG', '').lower() not in ['false', '0', 'off'],
         host='0.0.0.0',
+        port=8000,
     )
