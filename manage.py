@@ -47,7 +47,7 @@ def deploy():
 def runserver():
     'Run development sever.'
 
-    system('open http://localhost:8000/')
+    system('f() { sleep 0.2; open http://localhost:8000; }; f &')
     system('cd "%s"; python main.py' % ENGINE_DIR)
 
 
