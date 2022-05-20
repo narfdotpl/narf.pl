@@ -37,9 +37,7 @@ def BeautifulSoup(*args, **kwargs):
     return BS(*args, features='html.parser', **kwargs)
 
 
-class memoized(object):
-    __metaclass__ = MetaMemoize
-
+class memoized(metaclass=MetaMemoize):
     def asset_relative_paths():
         """
         Paths relative to ASSETS_DIR.
@@ -382,7 +380,7 @@ class Header(object):
 
         self.date = date
         self.theme = d.get('theme', 'default')
-        self.collection_ids = map(change_ids, d.get('collections', []))
+        self.collection_ids = list(map(change_ids, d.get('collections', [])))
         self.is_selected = d.get('is_selected', False)
         self.index_config = d.get('index')
 
@@ -390,7 +388,7 @@ class Header(object):
         self.is_music_release = (self.music or {}).get('section') == 'releases'
 
 
-class PostCollection(object):
+class PostCollection:
     def __init__(self, id, name=None, posts=None):
         if name is None:
             words = id.split(' ')
@@ -399,6 +397,9 @@ class PostCollection(object):
         self.id = id
         self.name = name
         self.posts = posts or []
+
+    def __repr__(self):
+        return self.name
 
 
 def antimap(x, functions):

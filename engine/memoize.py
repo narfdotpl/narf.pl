@@ -15,7 +15,7 @@ class MetaMemoize(type):
 
     def __new__(cls, class_name, base_classes, attributes_dict):
         # go through class atributes
-        for k, v in attributes_dict.iteritems():
+        for k, v in attributes_dict.items():
             # skip magic attributes
             if k.startswith('__'):
                 continue
