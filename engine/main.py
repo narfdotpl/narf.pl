@@ -86,7 +86,7 @@ class memoized(object):
         # get post split into sections
         separator = '\n\n'
         with open(join(directory, filename)) as f:
-            sections = f.read().decode('utf8').split(separator)
+            sections = f.read().split(separator)
 
         # parse YAML header
         header = Header(sections[0])
@@ -128,7 +128,7 @@ class memoized(object):
         # get entries from YAML
         path = join(settings.CONTENT_DIR, 'feed.yaml')
         with open(path) as f:
-            entries = yaml.load(f)
+            entries = yaml.load(f, yaml.Loader)
 
         # add posts
         for post in memoized.public_posts():
@@ -205,7 +205,7 @@ class memoized(object):
 
         entries.append({
             'title': 'SwiftyStateMachine',
-            'subtitle': u'µframework',
+            'subtitle': 'µframework',
             'url': 'https://github.com/macoscope/SwiftyStateMachine',
             'image': static_url.for_asset('index/links/state-machine.png'),
             'sorting_key': '2015-03-23',
@@ -365,7 +365,7 @@ class static_url(object):
 
 class Header(object):
     def __init__(self, section):
-        d = yaml.load(section)
+        d = yaml.load(section, yaml.Loader)
         if not isinstance(d, dict):
             d = {'date': section}
 
@@ -452,32 +452,32 @@ class patterns:
 
 def add_nbsp(s, nbsp='&nbsp;'):
     """
-    >>> add_nbsp(u'on OS X, and')
-    u'on OS&nbsp;X, and'
+    >>> add_nbsp('on OS X, and')
+    'on OS&nbsp;X, and'
 
-    >>> add_nbsp(u'''"I won't use Swift"''')
-    u'"I&nbsp;won\\'t use Swift"'
+    >>> add_nbsp('''"I won't use Swift"''')
+    '"I&nbsp;won\\'t use Swift"'
 
-    >>> add_nbsp(u'To do so, I created a play count graph')
-    u'To do so, I&nbsp;created a&nbsp;play count graph'
+    >>> add_nbsp('To do so, I created a play count graph')
+    'To do so, I&nbsp;created a&nbsp;play count graph'
 
-    >>> add_nbsp(u'Quake 3')
-    u'Quake&nbsp;3'
+    >>> add_nbsp('Quake 3')
+    'Quake&nbsp;3'
 
-    >>> add_nbsp(u'only 8 GB of RAM')
-    u'only&nbsp;8&nbsp;GB of RAM'
+    >>> add_nbsp('only 8 GB of RAM')
+    'only&nbsp;8&nbsp;GB of RAM'
 
-    >>> add_nbsp(u'took ~1.5 h and resulted in')
-    u'took ~1.5&nbsp;h&nbsp;and resulted in'
+    >>> add_nbsp('took ~1.5 h and resulted in')
+    'took ~1.5&nbsp;h&nbsp;and resulted in'
 
-    >>> add_nbsp(u'A B C D')
-    u'A&nbsp;B&nbsp;C&nbsp;D'
+    >>> add_nbsp('A B C D')
+    'A&nbsp;B&nbsp;C&nbsp;D'
 
-    >>> add_nbsp(u'(A propos: iOS 9.3 will introduce a f.lux-like feature called Night Shift)')
-    u'(A&nbsp;propos: iOS&nbsp;9.3&nbsp;will introduce a&nbsp;f.lux-like feature called Night Shift)'
+    >>> add_nbsp('(A propos: iOS 9.3 will introduce a f.lux-like feature called Night Shift)')
+    '(A&nbsp;propos: iOS&nbsp;9.3&nbsp;will introduce a&nbsp;f.lux-like feature called Night Shift)'
 
-    >>> add_nbsp(u'Logitech G400 mouse')
-    u'Logitech G400 mouse'
+    >>> add_nbsp('Logitech G400 mouse')
+    'Logitech G400 mouse'
     """
 
     # OS X as a special case
@@ -510,8 +510,8 @@ def add_non_breaking_spaces(html):
 
 def add_non_breaking_spaces_recursive(soup):
     if isinstance(soup, NavigableString):
-        text = unicode(soup)
-        new_text = add_nbsp(text, nbsp=u'\xa0')
+        text = str(soup)
+        new_text = add_nbsp(text, nbsp='\xa0')
         soup.replace_with(new_text)
     else:
         for element in soup.contents:
@@ -577,7 +577,7 @@ def link_headers_and_render_table_of_contents(soup):
 
 
 def get_hash(x):
-    return md5(str(x)).hexdigest()
+    return md5(str(x).encode('utf8')).hexdigest()
 
 
 def get_file_hash(path):
@@ -603,7 +603,7 @@ def filnames_in_directory(directory):
 def resolve_local_urls(filename, html):
     """
     >>> resolve_local_urls('foo.md', '<a href="bar.jpg">baz</a>')
-    u'<a href="asset:foo/bar.jpg">baz</a>'
+    '<a href="asset:foo/bar.jpg">baz</a>'
     """
 
     slug = filename[:-len('.md')]
@@ -630,14 +630,14 @@ def resolve_local_urls(filename, html):
         for tag in soup.find_all(tag_name):
             change_url(tag, key)
 
-    return unicode(soup)
+    return str(soup)
 
 
 @soup
 def resolve_asset_urls(soup):
     """
     >>> resolve_asset_urls('<img src="asset:index/css/naif.min.css"/>')
-    u'<img src="/static/assets/index/css/naif.min.css?436df1d347d14cd4c259ed31eeced027"/>'
+    '<img src="/static/assets/index/css/naif.min.css?436df1d347d14cd4c259ed31eeced027"/>'
     """
 
     prefix = settings.ASSET_PREFIX
@@ -677,7 +677,7 @@ def stupify(s):
 def thumbnail_big_images(soup):
     """
     >>> thumbnail_big_images('<img src="asset:solstice/9x16.jpg"/>')
-    u'<img src="/static/thumbnails/6147dce0b47c1320b53744e890dd56b8.jpg"/>'
+    '<img src="/static/thumbnails/6147dce0b47c1320b53744e890dd56b8.jpg"/>'
     """
 
     prefix = settings.ASSET_PREFIX
@@ -710,7 +710,7 @@ def transform_image_lists_to_galleries(soup):
 def turn_mp4_images_to_videos(soup):
     """
     >>> turn_mp4_images_to_videos('<img src="foo.mp4"/>')
-    u'<video autoplay="autoplay" controls="controls" loop="loop" src="foo.mp4"></video>'
+    '<video autoplay="autoplay" controls="controls" loop="loop" src="foo.mp4"></video>'
     """
 
     for img in soup.find_all('img'):
@@ -727,7 +727,7 @@ def turn_mp4_images_to_videos(soup):
 def wrap_images_in_figures_instead_of_paragraphs(soup):
     """
     >>> wrap_images_in_figures_instead_of_paragraphs('<p><img src="foo.jpg"/></p>')
-    u'<figure><img src="foo.jpg"/></figure>'
+    '<figure><img src="foo.jpg"/></figure>'
     """
 
     for img in soup.find_all('img'):
@@ -745,7 +745,7 @@ def wrap_images_in_figures_instead_of_paragraphs(soup):
 def wrap_images_in_links(soup):
     """
     >>> wrap_images_in_links('<img src="foo.jpg"/>')
-    u'<a href="foo.jpg"><img src="foo.jpg"/></a>'
+    '<a href="foo.jpg"><img src="foo.jpg"/></a>'
     """
 
     for img in soup.find_all('img'):
