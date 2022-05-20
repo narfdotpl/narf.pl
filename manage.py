@@ -95,6 +95,7 @@ def test():
     def curl(path):
         system('curl http://localhost:8000%s 2> /dev/null | sed \'s/ *$//\' >> "%s"' \
               % (path, output))
+        system(f'echo >> "{output}"')
         stdout.write('.')
         stdout.flush()
 
