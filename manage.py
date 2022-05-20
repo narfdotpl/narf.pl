@@ -93,7 +93,7 @@ def test():
     output = join(TESTS_DIR, 'output.txt')
 
     def curl(path):
-        system('curl http://localhost:8000%s 2> /dev/null >> "%s"' \
+        system('curl http://localhost:8000%s 2> /dev/null | sed \'s/ *$//\' >> "%s"' \
               % (path, output))
         stdout.write('.')
         stdout.flush()
