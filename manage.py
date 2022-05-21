@@ -6,7 +6,7 @@ from pathlib import Path
 from sys import argv, stdout
 
 
-CURRENT_DIR = Path(__file__).absolute().parent()
+CURRENT_DIR = Path(__file__).absolute().parent
 REPO_DIR = CURRENT_DIR
 CONTENT_DIR = REPO_DIR / 'content'
 LOGS_DIR = REPO_DIR / 'logs'
@@ -27,7 +27,8 @@ def get_post_paths():
             if filename.startswith('.'): continue
             if not filename.endswith('.md'): continue
 
-            yield '/posts/%s' % filename[:-len('.md')]
+            slug = filename[:-len('.md')]
+            yield f'/posts/{slug}'
 
 
 @task
@@ -53,18 +54,19 @@ def runserver():
 def js():
     'Generate main JavaScript file.'
 
-    system('cd "%s"; ./generate-main-js' % (CONTENT_DIR / 'javascript'))
+    js_dir = CONTENT_DIR / 'javascript'
+    system(f'cd "{js_dir}"; ./generate-main-js')
 
 
 @task
 def logs_fetch():
     # logs start at the last deployment
-    system("ssh dokku -t 'docker logs $(cat /home/dokku/narf.pl/CONTAINER.web.1)' | gzip > \"{dir}/$(date +%Y-%m-%d_%H%M).txt.gz\"".format(dir=LOGS_DIR))
+    system(f"ssh dokku -t 'docker logs $(cat /home/dokku/narf.pl/CONTAINER.web.1)' | gzip > \"{LOGS_DIR}/$(date +%Y-%m-%d_%H%M).txt.gz\"")
 
 
 @task
 def logs_show():
-    system("cd \"%s\"; gunzip -c $(ls *.txt.gz) | ag -v 'GET /static' | goaccess -o html > index.html && open index.html" % LOGS_DIR)
+    system(f"cd \"{LOGS_DIR}\"; gunzip -c $(ls *.txt.gz) | ag -v 'GET /static' | goaccess -o html > index.html && open index.html")
 
 
 @task
@@ -72,7 +74,7 @@ def populate_cache():
     'Populate cache in production.'
 
     for path in get_post_paths():
-        system('curl http://narf.pl%s > /dev/null' % path)
+        system(f'curl http://narf.pl{path} > /dev/null')
 
 
 @task
@@ -91,8 +93,7 @@ def test():
     output = TESTS_DIR / 'output.txt'
 
     def curl(path):
-        system('curl http://localhost:8000%s 2> /dev/null | sed \'s/ *$//\' >> "%s"' \
-              % (path, output))
+        system(f'curl http://localhost:8000{path} 2> /dev/null | sed \'s/ *$//\' >> "{output}"')
         system(f'echo >> "{output}"')
         stdout.write('.')
         stdout.flush()
@@ -111,17 +112,16 @@ def test():
     stdout.write('\n')
     stdout.flush()
 
-    system('git diff --no-index -- "%s" "%s"' % (reference, output))
+    system(f'git diff --no-index -- "{reference}" "{output}"')
 
 
 @task
 def test_accept():
     'Accept test results.'
 
-    system('rm "{reference}" || true; mv "{output}" "{reference}"'.format(**{
-        'reference': TESTS_DIR / 'reference.txt',
-        'output': TESTS_DIR / 'output.txt',
-    }))
+    reference = TESTS_DIR / 'reference.txt'
+    output = TESTS_DIR / 'output.txt'
+    system(f'rm "{reference}" || true; mv "{output}" "{reference}"')
 
 @task
 def visit():
