@@ -39,7 +39,6 @@ def deploy():
     logs_fetch()
     system('git push --force-with-lease dokku HEAD:master')
     visit()
-    system("ssh dokku -t 'rm -rf /tmp/dokku_git.*'")
     populate_cache()
 
 
