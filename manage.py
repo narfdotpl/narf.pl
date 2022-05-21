@@ -9,7 +9,6 @@ from sys import argv, stdout
 CURRENT_DIR = dirname(realpath(__file__))
 REPO_DIR = CURRENT_DIR
 CONTENT_DIR = join(REPO_DIR, 'content')
-ENGINE_DIR = join(REPO_DIR, 'engine')
 LOGS_DIR = join(REPO_DIR, 'logs')
 TESTS_DIR = join(REPO_DIR, 'tests')
 POSTS_DIR = join(CONTENT_DIR, 'posts')
@@ -47,7 +46,7 @@ def runserver():
     'Run development sever.'
 
     system('f() { sleep 0.2; open http://localhost:8000; }; f &')
-    system('cd "%s"; python main.py' % ENGINE_DIR)
+    system('cd "%s"; PYTHONPATH="${PYTHONPATH}:$(pwd)" python engine/main.py' % REPO_DIR)
 
 
 @task

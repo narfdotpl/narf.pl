@@ -26,8 +26,8 @@ from markdown import markdown as render_markdown
 import typogrify.filters
 import yaml
 
-from memoize import MetaMemoize
-import settings
+from engine import settings
+from engine.memoize import MetaMemoize
 
 
 app = Flask(__name__)
