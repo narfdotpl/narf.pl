@@ -3,7 +3,7 @@
 
 from os import walk, system
 from pathlib import Path
-from sys import argv, stdout
+from sys import argv
 
 
 CURRENT_DIR = Path(__file__).absolute().parent
@@ -29,6 +29,18 @@ def get_post_paths():
 
             slug = filename[:-len('.md')]
             yield f'/posts/{slug}'
+
+
+def get_all_paths():
+    yield from [
+        '/',
+        '/404',
+        '/feed',
+        '/feed.json',
+        '/music',
+        '/posts',
+    ]
+    yield from get_post_paths()
 
 
 @task
@@ -73,8 +85,11 @@ def logs_show():
 def populate_cache():
     'Populate cache in production.'
 
-    for path in get_post_paths():
-        system(f'curl http://narf.pl{path} > /dev/null')
+    for path in get_all_paths():
+        system(f'curl http://narf.pl{path} > /dev/null 2>&1')
+        print('.', end='', flush=True)
+
+    print()
 
 
 @task
@@ -95,22 +110,13 @@ def test():
     def curl(path):
         system(f'curl http://localhost:8000{path} 2> /dev/null | sed \'s/ *$//\' >> "{output}"')
         system(f'echo >> "{output}"')
-        stdout.write('.')
-        stdout.flush()
+        print('.', end='', flush=True)
 
     system(f'echo > "{output}"')
-    curl('/')
-    curl('/404')
-    curl('/feed')
-    curl('/feed.json')
-    curl('/music')
-    curl('/posts')
-
-    for path in get_post_paths():
+    for path in get_all_paths():
         curl(path)
 
-    stdout.write('\n')
-    stdout.flush()
+    print()
 
     system(f'git diff --no-index -- "{reference}" "{output}"')
 
@@ -122,6 +128,7 @@ def test_accept():
     reference = TESTS_DIR / 'reference.txt'
     output = TESTS_DIR / 'output.txt'
     system(f'rm "{reference}" || true; mv "{output}" "{reference}"')
+
 
 @task
 def visit():
