@@ -2,16 +2,16 @@
 # encoding: utf-8
 
 from os import walk, system
-from os.path import dirname, join, realpath
+from pathlib import Path
 from sys import argv, stdout
 
 
-CURRENT_DIR = dirname(realpath(__file__))
+CURRENT_DIR = Path(__file__).absolute().parent()
 REPO_DIR = CURRENT_DIR
-CONTENT_DIR = join(REPO_DIR, 'content')
-LOGS_DIR = join(REPO_DIR, 'logs')
-TESTS_DIR = join(REPO_DIR, 'tests')
-POSTS_DIR = join(CONTENT_DIR, 'posts')
+CONTENT_DIR = REPO_DIR / 'content'
+LOGS_DIR = REPO_DIR / 'logs'
+TESTS_DIR = REPO_DIR / 'tests'
+POSTS_DIR = CONTENT_DIR / 'posts'
 
 TASKS = {}
 
@@ -53,7 +53,7 @@ def runserver():
 def js():
     'Generate main JavaScript file.'
 
-    system('cd "%s"; ./generate-main-js' % join(CONTENT_DIR, 'javascript'))
+    system('cd "%s"; ./generate-main-js' % (CONTENT_DIR / 'javascript'))
 
 
 @task
@@ -87,8 +87,8 @@ def publish():
 def test():
     'Test differences in rendering.'
 
-    reference = join(TESTS_DIR, 'reference.txt')
-    output = join(TESTS_DIR, 'output.txt')
+    reference = TESTS_DIR / 'reference.txt'
+    output = TESTS_DIR / 'output.txt'
 
     def curl(path):
         system('curl http://localhost:8000%s 2> /dev/null | sed \'s/ *$//\' >> "%s"' \
@@ -97,7 +97,7 @@ def test():
         stdout.write('.')
         stdout.flush()
 
-    system('echo > ' + output)
+    system(f'echo > "{output}"')
     curl('/')
     curl('/404')
     curl('/feed')
@@ -119,8 +119,8 @@ def test_accept():
     'Accept test results.'
 
     system('rm "{reference}" || true; mv "{output}" "{reference}"'.format(**{
-        'reference': join(TESTS_DIR, 'reference.txt'),
-        'output': join(TESTS_DIR, 'output.txt'),
+        'reference': TESTS_DIR / 'reference.txt',
+        'output': TESTS_DIR / 'output.txt',
     }))
 
 @task
