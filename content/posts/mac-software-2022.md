@@ -44,10 +44,15 @@ at home:
     - [text editing](xcode/text-editing.png)
     - install [One Dark theme](https://github.com/bojan/xcode-one-dark)
     - increase the font size to 20
+    - change the background color to be the same as in MacVim and VS Code
     - remove the "Print..." key binding
     - remap "Open Quickly..." to ⌘P
     - remove "Move Paragraph Backward/Forward"
     - remap "Move Line Up/Down (Source Code)" to ⌥↑, ⌥↓
+    - remove "Duplicate"
+    - remap "Show Debug Area" to ⌘D
+    - enable Vim mode: help › search › "vim"
+    - disable minimap: help › search › "minimap"
 
 This is not a complete list of everything I use or tweak, but it's a solid
 starting point that gets me 80–90% of the way there.
