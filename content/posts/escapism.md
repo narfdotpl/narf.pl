@@ -36,3 +36,8 @@ PPS I have also posted a rather lengthy thread on [Twitter][] about other aspect
 
   [Instagram]: https://www.instagram.com/narfdotpl/
   [Twitter]: https://twitter.com/narfdotpl/status/1463764311575310339
+
+
+PPPS Here's one of the notes I posted on Instagram:
+
+> Finally, "Conclusion", the last track on the EP. It is actually a processed old recording of "Passage". I slowed it down, twice, creating a version at 12.5% speed and a version at 25% speed. Then I cut, mixed, and layered them on top of each other. The result is a radio message you hear in your head as you slowly run out of oxygen, drifting motionlessly in the harsh light of the local sun, tethered to what remains of the hull of your space habitat.
