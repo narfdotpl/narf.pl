@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-from os import walk, system
+from os import system, walk
 from pathlib import Path
 from sys import argv
-
 
 CURRENT_DIR = Path(__file__).absolute().parent
 REPO_DIR = CURRENT_DIR
@@ -86,7 +85,7 @@ def populate_cache():
     'Populate cache in production.'
 
     for path in get_all_paths():
-        system(f'curl http://narf.pl{path} > /dev/null 2>&1')
+        system(f'curl -L http://narf.pl{path} > /dev/null 2>&1')
         print('.', end='', flush=True)
 
     print()
@@ -108,7 +107,7 @@ def test():
     output = TESTS_DIR / 'output.txt'
 
     def curl(path):
-        system(f'curl http://localhost:8000{path} 2> /dev/null | sed \'s/ *$//\' >> "{output}"')
+        system(f'curl -L http://localhost:8000{path} 2> /dev/null | sed \'s/ *$//\' >> "{output}"')
         system(f'echo >> "{output}"')
         print('.', end='', flush=True)
 
