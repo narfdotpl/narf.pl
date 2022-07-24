@@ -217,7 +217,8 @@ class memoized(metaclass=MetaMemoize):
 
     def rendered_index():
         entries = memoized.index_entries()
-        html = render_template('index.html', entries=entries, debug=app.debug)
+        html = render_template('index.html', entries=entries, debug=app.debug) \
+            .replace('~', '&nbsp;')
 
         return antimap(html, [
             partial(resolve_local_urls, 'index.md'),  # dirty hack!  TODO: can we remove this?
