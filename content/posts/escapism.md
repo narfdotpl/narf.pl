@@ -26,8 +26,6 @@ When it comes to genres, I *think* the album overall can be classified as indust
 
 Thanks for taking a listen. Please share this album with people who might enjoy it.
 
-"Human music. I like it."
-
 Cheers,<br/>narf
 
 <br/>PS In the coming days, I will be sharing some behind the scenes details about *Escapism* in [Instagram][] Stories. Be sure to follow me there, if you're interested in process and tools.
