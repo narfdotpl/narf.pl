@@ -47,7 +47,11 @@ I'm looking forward to building more with these tools. Subscribe to my
 Elsewhere on the web
 --------------------
 
-Discuss this project on TODO (updating soon).
+Discuss this project on [Reddit][], [Instagram][], and [Twitter][].
+
+  [Reddit]: https://www.reddit.com/r/proceduralgeneration/comments/wvgrwa/aurora_computer_hallucination/
+  [Twitter]: https://twitter.com/narfdotpl/status/1561957033506652160
+  [Instagram]: https://www.instagram.com/p/Chl1_MjoDQC/
 
 
 Stills
