@@ -108,6 +108,7 @@ class memoized(metaclass=MetaMemoize):
             'uses_black_css': header.theme == 'black',
             'collection_ids': header.collection_ids,
             'is_selected': header.is_selected,
+            'is_music_release': header.is_music_release,
             'music': header.music,
             'index_config': header.index_config,
         }

@@ -71,7 +71,11 @@
 
         {% include "footer-icons.html" %}
 
-        {% if collections %}
+        {% if is_music_release %}
+            <p>
+                <a href="/music">More music&hellip;</a>
+            </p>
+        {% elif collections %}
             <p id="collection-trigger" style="display: none">
                 <a href="#">More&hellip;</a>
             </p>
