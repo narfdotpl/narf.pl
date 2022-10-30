@@ -1,14 +1,16 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-from __future__ import division
+from __future__ import annotations
 from collections import OrderedDict
+from dataclasses import asdict, dataclass, field
 from functools import partial, wraps
 from hashlib import md5
 from itertools import groupby
 import json
 from os import environ, walk
 from os.path import exists, join
+from typing import Any, Optional
 
 import datetime
 import re
@@ -87,17 +89,16 @@ class memoized(metaclass=MetaMemoize):
             sections = f.read().split(separator)
 
         # parse YAML header
-        header = Header(sections[0])
+        header = Header.from_section(sections[0]).to_dict()
 
         # get data from sections
         slug = filename[:-len('.md')]
         title = title_prefix + sections[1].rstrip('=').rstrip('\n')
-        path = ('/music/' if header.is_music_release else '/posts/') + slug
+        path = ('/music/' if header['is_music_release'] else '/posts/') + slug
 
         return {
             'is_draft': is_draft,
             'is_hidden': memoized.is_hidden(filename),
-            'date': header.date,
             'title': title,
             'stupified_title': stupify(title),
             'remaining_markdown': separator.join(sections[2:]),
@@ -105,12 +106,7 @@ class memoized(metaclass=MetaMemoize):
             'stupified_slug': stupify(slug),
             'path': path,
             'url': 'http://narf.pl%s' % path,
-            'uses_black_css': header.theme == 'black',
-            'collection_ids': header.collection_ids,
-            'is_selected': header.is_selected,
-            'is_music_release': header.is_music_release,
-            'music': header.music,
-            'index_config': header.index_config,
+            **header,
         }
 
     def post_filenames():
@@ -183,7 +179,7 @@ class memoized(metaclass=MetaMemoize):
 
         for post in memoized.public_posts():
             config = post['index_config']
-            if config is None:
+            if not config:
                 continue
 
             image_url = None
@@ -363,16 +359,30 @@ class static_url(object):
         return url
 
 
-class Header(object):
-    def __init__(self, section):
+@dataclass
+class Header:
+    date: str
+    theme: str = 'default'
+    collection_ids: list[str] = field(default_factory=list)
+    index_config: dict[str, Any] = field(default_factory=dict)
+    music: dict[str, Any] = field(default_factory=dict)
+    is_selected: bool = False
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self) | {
+            'is_music_release': self.music.get('section') == 'releases',
+            'uses_black_css': self.theme == 'black',
+        }
+
+    @staticmethod
+    def from_section(section) -> Header:
         d = yaml.load(section, yaml.Loader)
         if not isinstance(d, dict):
             d = {'date': section}
 
         # the system so far was using date strings, so...
-        date = d['date']
-        if isinstance(date, datetime.date):
-            date = date.isoformat()
+        if isinstance(d['date'], datetime.date):
+            d['date'] = d['date'].isoformat()
 
         def change_ids(id):
             if id in ['music', 'sound']:
@@ -380,14 +390,10 @@ class Header(object):
             else:
                 return id
 
-        self.date = date
-        self.theme = d.get('theme', 'default')
-        self.collection_ids = list(map(change_ids, d.get('collections', [])))
-        self.is_selected = d.get('is_selected', False)
-        self.index_config = d.get('index')
+        d['collection_ids'] = list(map(change_ids, d.pop('collections', [])))
+        d['index_config'] = d.pop('index', {})
 
-        self.music = d.get('music')
-        self.is_music_release = (self.music or {}).get('section') == 'releases'
+        return Header(**d)
 
 
 class PostCollection:
