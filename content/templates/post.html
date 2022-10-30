@@ -41,10 +41,10 @@
     {# https://www.readability.com/developers/guidelines #}
     <article id="main-wrapper" class="hentry">
         <header class="centered narrow legible">
-            {% if slug not in ["escapism"] %}
+            {% if promoted_post %}
                 <hr/>
                 <p>
-                    <i>Psst! I’ve released a <a href="/music/escapism">music album</a>!</i>
+                    <i>Psst! Check out <a href="{{ promoted_post.path }}">{{ promoted_post.title }}</a>, my latest {{ promoted_post.index_config.subtitle }}!</i>
                 </p>
                 <hr/>
             {% endif %}

@@ -119,6 +119,11 @@ class memoized(metaclass=MetaMemoize):
             partial(sorted, key=lambda x: x['date'], reverse=True),
         ])
 
+    def promoted_post():
+        for post in memoized.public_posts():
+            if post['is_promoted']:
+                return post
+
     def feed_entries():
         # get entries from YAML
         path = join(settings.CONTENT_DIR, 'feed.yaml')
@@ -224,7 +229,15 @@ class memoized(metaclass=MetaMemoize):
 
     def rendered_post(filename):
         # get post data
-        ctx = memoized.post_data(filename)
+        post = memoized.post_data(filename)
+        ctx = post
+
+        # add promoted post
+        promoted_post = memoized.promoted_post()
+        if promoted_post and promoted_post != post:
+            ctx['promoted_post'] = promoted_post
+
+        # inject youtube function
         ctx['youtube_iframe'] = make_youtube_iframe
 
         # render and process markdown
@@ -366,6 +379,7 @@ class Header:
     collection_ids: list[str] = field(default_factory=list)
     index_config: dict[str, Any] = field(default_factory=dict)
     music: dict[str, Any] = field(default_factory=dict)
+    is_promoted: bool = False
     is_selected: bool = False
 
     def to_dict(self) -> dict[str, Any]:

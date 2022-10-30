@@ -6,6 +6,7 @@ index:
 music:
   section: releases
   subtitle: debut EP
+is_promoted: true
 
 Escapism
 ========
