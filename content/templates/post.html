@@ -42,11 +42,16 @@
     <article id="main-wrapper" class="hentry">
         <header class="centered narrow legible">
             {% if promoted_post %}
-                <hr/>
-                <p>
-                    <i>Psst! Check out <a href="{{ promoted_post.path }}">{{ promoted_post.title }}</a>, my latest {{ promoted_post.index_config.subtitle }}!</i>
-                </p>
-                <hr/>
+                {% with p = promoted_post %}
+                    <hr/>
+                    <p>
+                        <i>
+                            Psst! Check out <a href="{{ p.path }}">{{ p.title|typo }}</a>,
+                            {{ ("my&nbsp;latest&nbsp;" + p.index_config.subtitle)|typo }}!
+                        </i>
+                    </p>
+                    <hr/>
+                {% endwith %}
             {% endif %}
 
             <h1 class="entry-title balance-text">{{ title|typo }}</h1>
