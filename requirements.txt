@@ -1,6 +1,6 @@
 Flask==2.1.2
 Markdown==3.3.7
-Pillow==9.1.1
+Pillow==9.3.0
 PyYAML==6.0
 beautifulsoup4==4.11.1
 smartypants==2.0.1
