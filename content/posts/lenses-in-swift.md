@@ -1,5 +1,4 @@
-date: 2016-01-12
-is_selected: true
+2016-01-12
 
 Lenses in Swift, or how to change parts of immutable objects
 ============================================================

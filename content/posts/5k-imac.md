@@ -1,6 +1,5 @@
 date: 2016-01-06
 collections: [setup]
-is_selected: true
 
 Grumpy review of the late 2015 5k iMac
 ======================================
