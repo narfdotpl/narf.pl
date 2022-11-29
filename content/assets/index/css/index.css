@@ -23,5 +23,11 @@ header h1 {
 
 footer {
     margin-top: 52px;
-    margin-bottom: 52px;
+    margin-bottom: 78px;
+}
+
+@media (max-width: 532px) {
+    footer {
+        margin-bottom: 52px;
+    }
 }
