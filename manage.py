@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-from os import system, walk
+from os import system as os_system, walk
 from pathlib import Path
 from sys import argv
 
@@ -13,6 +13,16 @@ TESTS_DIR = REPO_DIR / 'tests'
 POSTS_DIR = CONTENT_DIR / 'posts'
 
 TASKS = {}
+
+
+def system(command):
+    """
+    Run a shell command and exit if it fails.
+    """
+
+    result = os_system(command)
+    if result > 0:
+        exit(1)
 
 
 def task(func):
@@ -101,10 +111,13 @@ def publish():
 
 @task
 def test():
-    'Test differences in rendering.'
+    'Run Python tests and test differences in rendering.'
 
     reference = TESTS_DIR / 'reference.txt'
     output = TESTS_DIR / 'output.txt'
+
+    # run doctests
+    system('cd "%s"; PYTHONPATH="${PYTHONPATH}:$(pwd)" python engine/main.py test' % REPO_DIR)
 
     def curl(path):
         system(f'curl -L http://localhost:8000{path} 2> /dev/null | sed \'s/ *$//\' >> "{output}"')

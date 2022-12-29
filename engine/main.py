@@ -14,6 +14,7 @@ from typing import Any, Optional
 
 import datetime
 import re
+import sys
 
 try:
     import Image
@@ -935,8 +936,10 @@ def redirect_from_old_path(path):
 
 
 if __name__ == '__main__':
-    import doctest
-    doctest.testmod()
+    if sys.argv[-1] == 'test':
+        import doctest
+        results = doctest.testmod()
+        exit(results.failed)
 
     app.run(
         # `debug=True` is the default when running locally,
