@@ -101,10 +101,8 @@ class memoized(metaclass=MetaMemoize):
             'is_draft': is_draft,
             'is_hidden': memoized.is_hidden(filename),
             'title': title,
-            'stupified_title': stupify(title),
             'remaining_markdown': separator.join(sections[2:]),
             'slug': slug,
-            'stupified_slug': stupify(slug),
             'path': path,
             'url': 'http://narf.pl%s' % path,
             **header,
@@ -939,13 +937,13 @@ def unmatched_path_to_post_url(path):
     'http://narf.pl/posts/aurora'
 
     >>> unmatched_path_to_post_url('e')
-    'http://narf.pl/posts/mac-software-2022'
+    'http://narf.pl/music/escapism'
 
     >>> unmatched_path_to_post_url('r')
-    'http://narf.pl/posts/aurora'
+    'http://narf.pl/music/random-encounters'
 
     >>> unmatched_path_to_post_url('o')
-    'http://narf.pl/posts/aurora'
+    'http://narf.pl/posts/optimism'
 
     >>> unmatched_path_to_post_url('rain')
     'http://narf.pl/posts/tears-in-rain'
@@ -956,16 +954,29 @@ def unmatched_path_to_post_url(path):
     >>> unmatched_path_to_post_url('sol')
     'http://narf.pl/posts/solstice'
 
+    >>> unmatched_path_to_post_url('skull')
+    'http://narf.pl/posts/checkers-skull'
+
+    >>> unmatched_path_to_post_url('track')
+    'http://narf.pl/posts/65dos-no-mans-sky'
+
     >>> unmatched_path_to_post_url('p')
-    'http://narf.pl/music/escapism'
+    'http://narf.pl/posts/papier'
     """
 
+    posts = memoized.public_posts()
     s = stupify(path)
-    for post in memoized.public_posts():
-        if s in post['stupified_title'] or \
-           s in post['stupified_slug']:
-            url = post['url']
-            return url
+
+    # check prefixes
+    for post in posts:
+        for word in post['title'].lower().split() + post['slug'].split('-'):
+            if word.startswith(s):
+                return post['url']
+
+    # check inside words
+    for post in posts:
+        if s in stupify(post['title']) or s in stupify(post['slug']):
+            return post['url']
 
 
 if __name__ == '__main__':
