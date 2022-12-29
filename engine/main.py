@@ -920,19 +920,52 @@ def redirect_from_old_path(path):
 
     # match latest post
     if not url:
-        s = stupify(path)
-        for post in memoized.public_posts():
-            if s in post['stupified_title'] or \
-               s in post['stupified_slug']:
-                url = post['url']
-                permanent = False
-                break
+        url = unmatched_path_to_post_url(path)
+        permanent = False
 
     # 301, 302, or 404
     if url:
         return redirect(url, 301 if permanent else 302)
     else:
         return memoized.rendered_404()
+
+
+def unmatched_path_to_post_url(path):
+    """
+    >>> unmatched_path_to_post_url('esc')
+    'http://narf.pl/music/escapism'
+
+    >>> unmatched_path_to_post_url('a')
+    'http://narf.pl/posts/aurora'
+
+    >>> unmatched_path_to_post_url('e')
+    'http://narf.pl/posts/mac-software-2022'
+
+    >>> unmatched_path_to_post_url('r')
+    'http://narf.pl/posts/aurora'
+
+    >>> unmatched_path_to_post_url('o')
+    'http://narf.pl/posts/aurora'
+
+    >>> unmatched_path_to_post_url('rain')
+    'http://narf.pl/posts/tears-in-rain'
+
+    >>> unmatched_path_to_post_url('tree')
+    'http://narf.pl/posts/metal-trees'
+
+    >>> unmatched_path_to_post_url('sol')
+    'http://narf.pl/posts/solstice'
+
+    >>> unmatched_path_to_post_url('p')
+    'http://narf.pl/music/escapism'
+    """
+
+    s = stupify(path)
+    for post in memoized.public_posts():
+        if s in post['stupified_title'] or \
+           s in post['stupified_slug']:
+            url = post['url']
+            return url
 
 
 if __name__ == '__main__':

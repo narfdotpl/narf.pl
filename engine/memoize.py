@@ -25,6 +25,16 @@ class MetaMemoize(type):
         return type.__new__(cls, class_name, base_classes, attributes_dict)
 
 
+def is_debug():
+    """
+    Returns `True` if debug mode is on.
+    """
+    try:
+        return current_app.debug
+    except RuntimeError:
+        return True
+
+
 def memoize(func):
     """
     Decorator for methods in the `Memoized` class.
@@ -37,7 +47,7 @@ def memoize(func):
 
         # get memoized result or compute and memoize it
         key = args
-        if key in dct and not current_app.debug:
+        if key in dct and not is_debug():
             result = dct[key]
         else:
             result = func(*args)
