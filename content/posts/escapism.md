@@ -33,7 +33,7 @@ Cheers,<br/>narf
 
 PPS I have also posted a rather lengthy thread on [Twitter][] about other aspects of the project.
 
-  [Instagram]: https://www.instagram.com/narfdotpl/
+  [Instagram]: {{ profiles.instagram.url }}
   [Twitter]: https://twitter.com/narfdotpl/status/1463764311575310339
 
 

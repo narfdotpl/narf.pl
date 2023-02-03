@@ -40,12 +40,12 @@
                 This is my <a href="/posts">blog</a>.
                 <span id="web2-trigger" class="hidden">I am also <a href="#">elsewhere</a> on the web.</span>
                 <span id="web2">
-                    I also have a~<a href="http://links.narf.pl/">link blog</a>
-                    and I~am on~<a href="https://vis.social/@narf">Mastodon</a>,
-                    <a href="https://www.instagram.com/narfdotpl/">Instagram</a>,
-                    <a href="https://narfdotpl.bandcamp.com/">Bandcamp</a>,
-                    <a href="http://www.last.fm/user/narfdotpl">Last.fm</a>, and
-                    <a href="https://github.com/narfdotpl">GitHub</a>~too.<br/><br/>
+                    I also have a~<a href="http://links.narf.pl/">link blog</a> and I~am
+                    {% for p in profiles.values() %}
+                        {% if loop.last %}and{% endif %}
+                        {% if loop.first %}on~{% endif %}<a href="{{ p.url }}">{{ p.name }}</a>{% if loop.last %}~too.{% else %},{% endif %}
+                    {% endfor %}
+                    <br/><br/>
                 </span>
                 If~you want to get in touch, <a href="mailto:hello@narf.pl">email</a>~is~best.
             </h1>
@@ -70,11 +70,10 @@
 
         <footer>
             <p class="icons">
-                <a title="Mastodon" href="https://vis.social/@narf"><i class="fab fa-lg fa-mastodon"></i></a>
-                <a title="Instagram" href="https://www.instagram.com/narfdotpl/"><i class="fab fa-lg fa-instagram"></i></a>
-                <a title="Bandcamp" href="https://narfdotpl.bandcamp.com/"><i class="fab fa-lg fa-bandcamp"></i></a>
-                <a title="Last.fm" href="http://www.last.fm/user/narfdotpl"><i class="fab fa-lg fa-lastfm"></i></a>
-                <a title="GitHub" href="https://github.com/narfdotpl"><i class="fab fa-lg fa-github"></i></a>
+                {% for p in profiles.values() %}
+                    <a title="{{ p.name }}" href="{{ p.url }}"><i class="{{ p.icon_class }}"></i></a>
+                {% endfor %}
+
                 <a title="RSS feed" href="/feed"><i class="fas fa-rss"></i></a>
             </p>
         </footer>

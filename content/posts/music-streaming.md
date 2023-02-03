@@ -21,7 +21,7 @@ I focus on the latter and use graphs of [my Last.fm data][Last.fm] to
 
   [Spotify]: http://en.wikipedia.org/wiki/Spotify
   [playlists]: https://github.com/narfdotpl/playlists
-  [Last.fm]: http://www.last.fm/user/narfdotpl
+  [Last.fm]: {{ profiles.lastfm.url }}
   [disinformation]: https://visualisingadvocacy.org/blog/disinformation-visualization-how-lie-datavis
 
 

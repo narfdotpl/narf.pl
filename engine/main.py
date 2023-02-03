@@ -23,7 +23,7 @@ except ImportError:
 
 from bs4 import BeautifulSoup as BS
 from bs4.element import NavigableString
-from flask import (Flask, Markup, make_response, redirect, render_template,
+from flask import (Flask, Markup, make_response, redirect, render_template as original_render_template,
                    render_template_string, request)
 from markdown import markdown as render_markdown
 import typogrify.filters
@@ -31,6 +31,7 @@ import yaml
 
 from engine import settings
 from engine.memoize import MetaMemoize
+from engine.profiles import profiles
 
 
 app = Flask(__name__)
@@ -38,6 +39,10 @@ app = Flask(__name__)
 
 def BeautifulSoup(*args, **kwargs):
     return BS(*args, features='html.parser', **kwargs)
+
+
+def render_template(*args, **kwargs):
+    return original_render_template(*args, **(memoized.base_context() | kwargs))
 
 
 class memoized(metaclass=MetaMemoize):
@@ -55,6 +60,11 @@ class memoized(metaclass=MetaMemoize):
                     paths.append(join(dir_, filename))
 
         return paths
+
+    def base_context():
+        return {
+            'profiles': profiles,
+        }
 
     def collections():
         collections_by_id = {}
@@ -229,7 +239,7 @@ class memoized(metaclass=MetaMemoize):
     def rendered_post(filename):
         # get post data
         post = memoized.post_data(filename)
-        ctx = post
+        ctx = memoized.base_context() | post
 
         # add promoted post
         promoted_post = memoized.promoted_post()
