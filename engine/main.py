@@ -222,8 +222,8 @@ class memoized(metaclass=MetaMemoize):
             .replace('~', '&nbsp;')
 
         return antimap(html, [
-            partial(resolve_local_urls, 'index.md'),  # dirty hack!  TODO: can we remove this?
             resolve_asset_urls,
+            lambda html: html.replace('Czesc', 'Cześć'),  # dirty hack for `soup.encode(formatter='html')`
         ])
 
     def rendered_post(filename):
