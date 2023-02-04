@@ -233,7 +233,6 @@ class memoized(metaclass=MetaMemoize):
 
         return antimap(html, [
             resolve_asset_urls,
-            lambda html: html.replace('Czesc', 'Cześć'),  # dirty hack for `soup.encode(formatter='html')`
         ])
 
     def rendered_post(filename):
