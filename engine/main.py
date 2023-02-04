@@ -64,6 +64,7 @@ class memoized(metaclass=MetaMemoize):
     def base_context():
         return {
             'profiles': profiles,
+            'promoted_post': memoized.promoted_post(),
         }
 
     def collections():
@@ -239,11 +240,6 @@ class memoized(metaclass=MetaMemoize):
         # get post data
         post = memoized.post_data(filename)
         ctx = memoized.base_context() | post
-
-        # add promoted post
-        promoted_post = memoized.promoted_post()
-        if promoted_post and promoted_post != post:
-            ctx['promoted_post'] = promoted_post
 
         # inject youtube function
         ctx['youtube_iframe'] = make_youtube_iframe
