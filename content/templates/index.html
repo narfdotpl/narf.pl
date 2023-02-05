@@ -47,17 +47,7 @@
                     {% endfor %}
                     <br/><br/>
                 </span>
-
                 If~you want to get in touch, <a href="mailto:hello@narf.pl">email</a>~is~best.
-
-                {% if promoted_post %}
-                    <br/><br/>
-                    {% with p = promoted_post %}
-                        Check out <a href="{{ p.path }}"><i>{{ p.title|typo }}</i></a>,
-                        my~latest {{ p.index_config.subtitle|typo }},
-                        and~other works below.
-                    {% endwith %}
-                {% endif %}
             </h1>
         </header>
 

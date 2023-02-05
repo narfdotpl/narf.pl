@@ -41,7 +41,7 @@
     {# https://www.readability.com/developers/guidelines #}
     <article id="main-wrapper" class="hentry">
         <header class="centered narrow legible">
-            {% if not is_promoted and promoted_post %}
+            {% if promoted_post %}
                 {% with p = promoted_post %}
                     <hr/>
                     <p>
