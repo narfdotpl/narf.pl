@@ -43,7 +43,7 @@
                     I also have a~<a href="http://links.narf.pl/">link blog</a> and I~am
                     {% for p in profiles.values() %}
                         {% if loop.last %}and{% endif %}
-                        {% if loop.first %}on~{% endif %}<a href="{{ p.url }}">{{ p.name }}</a>{% if loop.last %}~too.{% else %},{% endif %}
+                        {% if loop.first %}on~{% endif %}<a href="{{ p.url }}" rel="me">{{ p.name }}</a>{% if loop.last %}~too.{% else %},{% endif %}
                     {% endfor %}
                     <br/><br/>
                 </span>
@@ -71,7 +71,7 @@
         <footer>
             <p class="icons">
                 {% for p in profiles.values() %}
-                    <a title="{{ p.name }}" href="{{ p.url }}"><i class="{{ p.icon_class }}"></i></a>
+                    <a title="{{ p.name }}" href="{{ p.url }}" rel="me"><i class="{{ p.icon_class }}"></i></a>
                 {% endfor %}
 
                 <a title="RSS feed" href="/feed"><i class="fas fa-rss"></i></a>
