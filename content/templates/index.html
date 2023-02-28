@@ -5,17 +5,11 @@
     <link rel="stylesheet" href="asset:index/css/index.css"/>
     <link rel="stylesheet" href="asset:index/css/index-entries.css"/>
 
-    {% with
-        title="Maciej Konieczny aka narf",
-        description="I create software, make procedural graphics, and compose music in Warsaw, Poland.",
-        image_url=entries[0].image
-    %}
-        <meta property="og:title" content="{{ title }}"/>
-        <meta property="og:type" content="website"/>
-        <meta property="og:url" content="http://narf.pl/"/>
-        <meta property="og:image" content="{{ image_url }}"/>
-        <meta property="og:description" content="{{ description }}"/>
-    {% endwith %}
+    <meta property="og:url" content="http://narf.pl/"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Maciej Konieczny aka narf"/>
+    <meta property="og:description" content="I create software, make procedural graphics, and compose music in Warsaw, Poland."/>
+    <meta property="og:image" content="{{ entries[0].image }}"/>
 {% endblock %}
 
 
