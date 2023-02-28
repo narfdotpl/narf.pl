@@ -304,14 +304,22 @@ class memoized(metaclass=MetaMemoize):
         return resolve_asset_urls(html)
 
     def rendered_music():
+        latest_entry = None
         section_titles = ['Releases', 'Soundtracks']
         sections = [{'title': title, 'entries': []} for title in section_titles]
         for section in sections:
             for entry in memoized.index_entries():
                 music = (entry['post'] or {}).get('music')
-                if music and music['section'] == section['title'].lower():
-                    entry = entry.copy()
-                    entry['subtitle'] = music.get('subtitle', entry['subtitle'])
+                if not music:
+                    continue
+
+                entry = entry.copy()
+                entry['subtitle'] = music.get('subtitle', entry['subtitle'])
+
+                if latest_entry is None:
+                    latest_entry = entry
+
+                if music['section'] == section['title'].lower():
                     section['entries'].append(entry)
 
         posts_in_sections = []
@@ -329,6 +337,7 @@ class memoized(metaclass=MetaMemoize):
         html = render_template('music.html',
             sections=sections,
             other_posts=other_music_posts,
+            latest_entry=latest_entry,
         )
 
         return resolve_asset_urls(html)

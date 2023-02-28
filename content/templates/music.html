@@ -7,6 +7,12 @@
 {% block extra_head %}
     <link rel="stylesheet" href="asset:index/css/music.css"/>
     <link rel="stylesheet" href="asset:index/css/index-entries.css"/>
+
+    <meta property="og:url" content="http://narf.pl/music"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Music by Maciej Konieczny aka narf"/>
+    <meta property="og:description" content="I publish music as standalone releases and I create soundtracks for my animations. Check out &quot;{{ latest_entry.title }}&quot;, my latest {{ latest_entry.subtitle }}!"/>
+    <meta property="og:image" content="{{ latest_entry.image }}"/>
 {% endblock %}
 
 
