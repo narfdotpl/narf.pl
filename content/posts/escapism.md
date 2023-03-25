@@ -7,7 +7,6 @@ music:
   section: releases
   subtitle: debut EP
 description: My debut album.
-promo_text: Psst! Listen to {link}, my~debut~album.
 
 Escapism
 ========
