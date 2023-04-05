@@ -981,10 +981,18 @@ def unmatched_path_to_post_url(path):
 
     >>> unmatched_path_to_post_url('p')
     'http://narf.pl/posts/papier'
+
+    >>> unmatched_path_to_post_url('drzwi')
+    'http://narf.pl/posts/drzwi'
     """
 
     posts = memoized.public_posts()
     s = stupify(path)
+
+    # check exact match
+    for post in posts:
+        if post['slug'] == s:
+            return post['url']
 
     # check prefixes
     for post in posts:
