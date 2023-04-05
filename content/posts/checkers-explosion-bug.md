@@ -1,6 +1,7 @@
 date: 2015-07-28
 collections: [checkers]
 is_selected: true
+description: I had a funny bug.
 
 Checkers: Explosion bug
 =======================

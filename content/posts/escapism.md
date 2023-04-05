@@ -7,6 +7,7 @@ music:
   section: releases
   subtitle: debut EP
 is_promoted: true
+description: I have released a music album.
 
 Escapism
 ========

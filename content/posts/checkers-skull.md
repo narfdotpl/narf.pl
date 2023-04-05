@@ -1,6 +1,7 @@
 date: 2017-03-09
 collections: [checkers, thoughts]
 is_selected: true
+description: I have mixed feelings.
 
 Glitchy Checkers :skull:
 ========================

@@ -1,5 +1,6 @@
 date: 2022-06-09
 collections: [setup]
+description: What I install and in what order to feel at home.
 
 Mac software: 2022
 ==================

@@ -392,6 +392,7 @@ class static_url(object):
 @dataclass
 class Header:
     date: str
+    description: Optional[str] = None
     theme: str = 'default'
     collection_ids: list[str] = field(default_factory=list)
     index_config: dict[str, Any] = field(default_factory=dict)

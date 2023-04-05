@@ -8,6 +8,9 @@
     <meta property="og:url" content="{{ url }}"/>
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="{{ title }}"/>
+    {% if description %}
+        <meta property="og:description" content="{{ description }}"/>
+    {% endif %}
     <meta property="article:published_time" content="{{ date }}"/>
     {% if social_image_url %}
         <meta property="og:image" content="{{ social_image_url }}"/>

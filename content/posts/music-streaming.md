@@ -4,6 +4,7 @@ is_selected: true
 index:
   subtitle: data visualization
   sorting_key: 2016-03-18
+description: It has changed the way I listen to music.
 
 Impact of music streaming on my listening habits
 ================================================

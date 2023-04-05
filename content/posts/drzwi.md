@@ -5,6 +5,7 @@ index:
   subtitle: animation
 music:
   section: soundtracks
+description: Drzwi is an animation based on a dream I had.
 
 Drzwi
 =====
