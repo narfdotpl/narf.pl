@@ -23,9 +23,10 @@ except ImportError:
 
 from bs4 import BeautifulSoup as BS
 from bs4.element import NavigableString
-from flask import (Flask, Markup, make_response, redirect, render_template as original_render_template,
+from flask import (Flask, make_response, redirect, render_template as original_render_template,
                    render_template_string, request)
 from markdown import markdown as render_markdown
+from markupsafe import Markup
 import typogrify.filters
 import yaml
 
