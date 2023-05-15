@@ -5,7 +5,7 @@ index:
   subtitle: computer hallucination
 music:
   section: soundtracks
-description: Aurora is a computer hallucination created with custom software.
+description: A computer hallucination created with custom software.
 
 Aurora
 ======
