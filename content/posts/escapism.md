@@ -6,7 +6,7 @@ index:
 music:
   section: releases
   subtitle: debut EP
-is_promoted: true
+promo_text: my debut album.
 description: My debut album.
 
 Escapism

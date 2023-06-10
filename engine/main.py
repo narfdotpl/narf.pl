@@ -398,13 +398,14 @@ class Header:
     collection_ids: list[str] = field(default_factory=list)
     index_config: dict[str, Any] = field(default_factory=dict)
     music: dict[str, Any] = field(default_factory=dict)
-    is_promoted: bool = False
+    promo_text: Optional[str] = None
     is_selected: bool = False
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self) | {
             'is_music_release': self.music.get('section') == 'releases',
             'uses_black_css': self.theme == 'black',
+            'is_promoted': bool(self.promo_text),
         }
 
     @staticmethod
