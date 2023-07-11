@@ -6,8 +6,8 @@ index:
 music:
   section: releases
   subtitle: debut EP
-promo_text: my debut album.
 description: My debut album.
+promo_text: Psst! Listen to {link}, my~debut~album.
 
 Escapism
 ========

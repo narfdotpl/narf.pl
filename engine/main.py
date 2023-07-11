@@ -391,6 +391,12 @@ class static_url(object):
 
 
 @dataclass
+class PromoText:
+    prefix: str
+    suffix: str
+
+
+@dataclass
 class Header:
     date: str
     description: Optional[str] = None
@@ -398,7 +404,7 @@ class Header:
     collection_ids: list[str] = field(default_factory=list)
     index_config: dict[str, Any] = field(default_factory=dict)
     music: dict[str, Any] = field(default_factory=dict)
-    promo_text: Optional[str] = None
+    promo_text: Optional[PromoText] = None
     is_selected: bool = False
 
     def to_dict(self) -> dict[str, Any]:
@@ -426,6 +432,9 @@ class Header:
 
         d['collection_ids'] = list(map(change_ids, d.pop('collections', [])))
         d['index_config'] = d.pop('index', {})
+
+        if s := d.pop('promo_text', None):
+            d['promo_text'] = PromoText(*Markup(s.replace('~', '&nbsp;')).split('{link}'))
 
         return Header(**d)
 

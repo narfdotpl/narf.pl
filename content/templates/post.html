@@ -43,8 +43,7 @@
                     <hr/>
                     <p>
                         <i>
-                            Psst! Check out <a href="{{ p.path }}">{{ p.title|typo }}</a>,
-                            {{ p.promo_text|typo }}
+                            {{ p.promo_text.prefix }}<a href="{{ p.path }}">{{ p.title|typo }}</a>{{ p.promo_text.suffix }}
                         </i>
                     </p>
                     <hr/>
