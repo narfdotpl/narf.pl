@@ -10,13 +10,20 @@ header h1 {
     padding-top: 0;
     padding-bottom: 0;
     margin-top: 150px;  /* 150 = 6 * 25 */
-    margin-bottom: 150px;
+}
+
+.image-links {
+    margin-top: 150px;
 }
 
 @media (max-width: 532px) {
     header h1 {
         font-size: 1.19em;
         margin: 50px 10px;
+    }
+
+    .image-links {
+        margin-top: 10px;
     }
 }
 

@@ -245,6 +245,28 @@ class memoized(metaclass=MetaMemoize):
             resolve_asset_urls,
         ])
 
+    def rendered_about():
+        with open(join(settings.CONTENT_DIR, 'about.md')) as f:
+            markdown = f.read()
+
+        ctx = memoized.base_context() | {
+            'entries': memoized.index_entries(),
+        }
+
+        # render and process markdown
+        ctx['about'] = antimap(markdown, [
+            lambda template: render_template_string(template, **ctx),
+            render_markdown,
+            add_non_breaking_spaces,
+        ])
+
+        # render final html
+        html = render_template('index.html', **ctx).replace('~', '&nbsp;')
+        return antimap(html, [
+            add_title_text_to_post_links,
+            resolve_asset_urls,
+        ])
+
     def rendered_post(filename):
         # get post data
         post = memoized.post_data(filename)
@@ -867,6 +889,11 @@ def index():
     return memoized.rendered_index()
 
 
+@app.route('/about')
+def about():
+    return memoized.rendered_about()
+
+
 @app.route('/music')
 def music():
     return memoized.rendered_music()
@@ -943,7 +970,8 @@ def redirect_from_old_path(path):
             '/plain.txt': ('/posts/plain-text', permanent),
             '/quit.txt': ('/posts/quit-delicious', permanent),
 
-            '/cv': ('https://www.linkedin.com/in/narfdotpl', not permanent),
+            '/cv': ('/about', not permanent),
+            '/resume': ('/about', not permanent),
             '/blog': ('/posts', not permanent),
             '/checkers': ('/posts/checkers-presskit', not permanent),
 

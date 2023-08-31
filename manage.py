@@ -46,6 +46,7 @@ def get_all_paths():
         '/404',
         '/feed',
         '/feed.json',
+        '/about',
         '/music',
         '/posts',
     ]
