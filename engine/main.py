@@ -139,17 +139,24 @@ class memoized(metaclass=MetaMemoize):
         with open(path) as f:
             entries = yaml.load(f, yaml.Loader)
 
+        default_body = 'visit <a href="{link}">{link}</a>'
+
         # add posts
         for post in memoized.public_posts():
-            entries.append({
+            entry = {
                 'title': post['title'],
                 'time': '%s 00:00' % post['date'],
                 'link': post['url'],
-            })
+            }
+
+            if description := post['description']:
+                entry['body'] = f'{description}<br/><br/>{default_body.format(**entry)}'
+
+            entries.append(entry)
 
         for e in entries:
             # add body
-            e['body'] = e.get('body') or 'visit <a href="{link}">{link}</a>'.format(**e)
+            e['body'] = e.get('body') or default_body.format(**e)
 
             # set "updated" field (ISO 8601) in a retarded manner
             e['updated'] = '%s:00+01:00' % e['time'].replace(' ', 'T')
