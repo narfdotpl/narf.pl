@@ -2,7 +2,6 @@
 # encoding: utf-8
 
 from __future__ import annotations
-from collections import OrderedDict
 from dataclasses import asdict, dataclass, field
 from functools import partial, wraps
 from hashlib import md5
@@ -159,27 +158,26 @@ class memoized(metaclass=MetaMemoize):
         return render_template('feed.xml', entries=memoized.feed_entries())
 
     def rendered_json_feed():
-        # `OrderedDict` makes things quite ugly but the result is nicer...
-        feed = OrderedDict([
-            ('version', 'https://jsonfeed.org/version/1'),
-            ('title', 'narf.pl'),
-            ('home_page_url', 'http://narf.pl/'),
-            ('feed_url', 'http://narf.pl/feed.json'),
-            ('author', OrderedDict([
-                ('name', 'Maciej Konieczny'),
-                ('url', 'http://narf.pl/'),
-            ])),
-            ('items', [
-                OrderedDict([
-                    ('title', e['title']),
-                    ('content_html', e.get('body') or 'visit <a href="{link}">{link}</a>'.format(**e)),
-                    ('date_published', e['updated']),
-                    ('url', e['link']),
-                    ('id', e.get('uuid') or e['link']),
-                ])
+        feed = {
+            'version': 'https://jsonfeed.org/version/1',
+            'title': 'narf.pl',
+            'home_page_url': 'http://narf.pl/',
+            'feed_url': 'http://narf.pl/feed.json',
+            'author': {
+                'name': 'Maciej Konieczny',
+                'url': 'http://narf.pl/',
+            },
+            'items': [
+                {
+                    'title': e['title'],
+                    'content_html': e.get('body') or 'visit <a href="{link}">{link}</a>'.format(**e),
+                    'date_published': e['updated'],
+                    'url': e['link'],
+                    'id': e.get('uuid') or e['link'],
+                }
                 for e in memoized.feed_entries()
-            ]),
-        ])
+            ],
+        }
 
         return json.dumps(feed, indent=4)
 
