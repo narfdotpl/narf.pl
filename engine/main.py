@@ -147,8 +147,11 @@ class memoized(metaclass=MetaMemoize):
                 'link': post['url'],
             })
 
-        # set "updated" field (ISO 8601) in a retarded manner
         for e in entries:
+            # add body
+            e['body'] = e.get('body') or 'visit <a href="{link}">{link}</a>'.format(**e)
+
+            # set "updated" field (ISO 8601) in a retarded manner
             e['updated'] = '%s:00+01:00' % e['time'].replace(' ', 'T')
 
         # sort entries by update time
@@ -170,7 +173,7 @@ class memoized(metaclass=MetaMemoize):
             'items': [
                 {
                     'title': e['title'],
-                    'content_html': e.get('body') or 'visit <a href="{link}">{link}</a>'.format(**e),
+                    'content_html': e['body'],
                     'date_published': e['updated'],
                     'url': e['link'],
                     'id': e.get('uuid') or e['link'],

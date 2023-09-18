@@ -16,11 +16,7 @@
             <id>{% if entry.uuid %}urn:uuid:{{ entry.uuid }}{% else %}{{ entry.link }}{% endif %}</id>
             <updated>{{ entry.updated }}</updated>
             <content type="html">
-                {% if entry.body %}
-                    {{ entry.body }}
-                {% else %}
-                    visit &lt;a href="{{ entry.link }}"&gt;{{ entry.link }}&lt;/a&gt;
-                {% endif %}
+                {{ entry.body }}
             </content>
         </entry>
     {% endfor %}
