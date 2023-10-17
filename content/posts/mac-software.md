@@ -51,12 +51,13 @@ Logitech G400 and I use thumb buttons to switch between spaces.
 
 
 [Karabiner][] and [Seil][] govern my custom keyboard mappings.  This is
-a topic for a whole other post (TODO: blog about custom keyboard mappings),
+a topic for a whole other post (TODO: blog about custom keyboard mappings; 2023 update: [welp][Corne]),
 but I can give you a taste by saying that I often hold caps lock down with
 my left pinky, or that the space bar on my keyboard acts as shift.
 
   [Karabiner]: https://pqrs.org/osx/karabiner/
   [Seil]: https://pqrs.org/osx/karabiner/seil.html.en
+  [Corne]: https://github.com/narfdotpl/zmk-config
 
 
 [Slate][] is the window manager I use.  I can't really recommend it as
