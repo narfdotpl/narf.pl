@@ -99,24 +99,3 @@
         {% endif %}
     </article>
 {% endblock %}
-
-
-{% block extra_js %}
-    {# draft alert #}
-    {% if is_draft %}
-        <script>
-            (function () {
-                var endsWith = function (string, suffix) {
-                    return string.indexOf(suffix, string.length - suffix.length) !== -1
-                }
-
-                $(document).on('click', 'a', function (event) {
-                    if (endsWith(this.href, '/TODO')) {
-                        alert('TODO: ' + this.text)
-                        return false
-                    }
-                })
-            })()
-        </script>
-    {% endif %}
-{% endblock %}
