@@ -387,7 +387,7 @@ class static_url(object):
 
         # create thumbnail if it doesn't exist
         if not exists(thumbnail_path):
-            image.thumbnail((max_width, max_height), Image.ANTIALIAS)
+            image.thumbnail((max_width, max_height), Image.LANCZOS)
 
             # deal with PNGs
             if image.mode != 'RGB':
