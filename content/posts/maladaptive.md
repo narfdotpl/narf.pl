@@ -22,7 +22,7 @@ Sleep well, stranger.
 
 <br/>
 
-Here's "Maladaptive", a late night vignette.
+Here's *Maladaptive*, a late night vignette.
 
 I wanted the bass of this track to feel like a warm blanket during a long winter night. A hug for the ears. And also like the rumbling inside a spaceship traveling through a wormhole... for days with no comms, calmly falling down the hyperspace.
 
@@ -30,4 +30,4 @@ While I played the music by hand, the video is all code. The fungus in the Petri
 
   [Sage Jenson]: https://www.sagejenson.com
 
-To be notified about my next projects, follow me on [Instagram](https://www.instagram.com/p/Cxqxt-6o30q/) and [Mastodon](https://vis.social/@narf/111133297835113428) and subscribe to my [RSS feed](/feed).
+Follow me on [Instagram](https://www.instagram.com/p/Cxqxt-6o30q/) and [Mastodon](https://vis.social/@narf/111133297835113428) and subscribe to my [RSS feed](/feed) to be notified about my future projects.
