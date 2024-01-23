@@ -936,6 +936,10 @@ def redirect_from_old_path(path):
             '/blog': ('/posts', not permanent),
             '/checkers': ('/posts/checkers-presskit', not permanent),
 
+            '/fe':
+                (static_url.for_asset('index/urls/goose-frontend.png'),
+                 not permanent),
+
             '/have-seen':
                 (static_url.for_asset('index/urls/have-seen.jpg'),
                  not permanent),
