@@ -315,9 +315,9 @@ class memoized(metaclass=MetaMemoize):
 
         posts_by_year.sort(key=lambda t: -t[0])
 
+        selected_posts = [p for p in posts if p['is_selected']]
         html = render_template('posts.html',
-            selected_posts=[p for p in posts if p['is_selected']],
-            posts_by_year=posts_by_year,
+            sections=[('Selected', selected_posts)] + posts_by_year,
         )
 
         return resolve_asset_urls(html)
