@@ -304,10 +304,20 @@ class memoized(metaclass=MetaMemoize):
 
     def rendered_posts():
         posts = memoized.public_posts()
-        get_year = lambda post: year_filter(post['date'])
+        get_year = lambda post: int(year_filter(post['date']))
+        posts_by_year = [(y, list(ps)) for (y, ps) in groupby(posts, get_year)]
+
+        # add empty lists for silent years
+        years = {y for (y, _) in posts_by_year}
+        silent_years = set(range(min(years), max(years))) - years
+        for year in silent_years:
+            posts_by_year.append((year, []))
+
+        posts_by_year.sort(key=lambda t: -t[0])
+
         html = render_template('posts.html',
             selected_posts=[p for p in posts if p['is_selected']],
-            posts_by_year=groupby(posts, get_year),
+            posts_by_year=posts_by_year,
         )
 
         return resolve_asset_urls(html)
