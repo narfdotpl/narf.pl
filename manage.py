@@ -58,7 +58,7 @@ def deploy():
 
     test()
     logs_fetch()
-    system('git push --force-with-lease dokku HEAD:master')
+    system('git push --force dokku HEAD:master')
     visit()
     populate_cache()
 
