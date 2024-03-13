@@ -63,6 +63,7 @@ class memoized(metaclass=MetaMemoize):
 
     def base_context():
         return {
+            'email': 'hello@narf.pl',
             'profiles': profiles,
         }
 
