@@ -30,7 +30,7 @@
                 <span id="web2-trigger" class="hidden">I am also <a href="#">elsewhere</a> on the web.</span>
                 <span id="web2">
                     I also have a~<a href="http://links.narf.pl/">link blog</a> and I~am
-                    {% for p in profiles.values() %}
+                    {% for p in profiles.values() if not p.hidden %}
                         {% if loop.last %}and{% endif %}
                         {% if loop.first %}on~{% endif %}<a href="{{ p.url }}" rel="me">{{ p.name }}</a>{% if loop.last %}~too.{% else %},{% endif %}
                     {% endfor %}
@@ -59,7 +59,7 @@
 
         <footer>
             <p class="icons">
-                {% for p in profiles.values() %}
+                {% for p in profiles.values() if not p.hidden %}
                     <a title="{{ p.name }}" href="{{ p.url }}" rel="me"><i class="{{ p.icon_class }}"></i></a>
                 {% endfor %}
 
