@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+
+{% block extra_head %}
+    <link rel="stylesheet" href="asset:index/css/index.css"/>
+
+    <meta property="og:url" content="http://narf.pl/"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Maciej Konieczny aka narf"/>
+    <meta property="og:description" content="I create software, make procedural graphics, and compose music."/>
+
+    <style>
+        header h1 {
+            margin-bottom: 0;
+        }
+    </style>
+{% endblock %}
+
+
+{% block body %}
+    <div id="main-wrapper" class="legible">
+        <header>
+            <h1 align="left">
+                I am <b>Maciej Konieczny</b> aka~<b>narf</b> —<br/>
+                a code artist living in Warsaw.
+            </h1>
+        </header>
+
+        <div class="entry-content">
+            {{ about|typo }}
+        </div>
+
+        <footer>
+            <p class="centered footer icons">
+                <a title="Home page" href="/"><i class="fas fa-home"></i></a>
+                <a title="RSS feed" href="/feed"><i class="fas fa-rss"></i></a>
+            </p>
+        </footer>
+    </div>
+{% endblock %}

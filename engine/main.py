@@ -249,9 +249,7 @@ class memoized(metaclass=MetaMemoize):
         with open(join(settings.CONTENT_DIR, 'about.md')) as f:
             markdown = f.read()
 
-        ctx = memoized.base_context() | {
-            'entries': memoized.index_entries(),
-        }
+        ctx = memoized.base_context()
 
         # render and process markdown
         ctx['about'] = antimap(markdown, [
@@ -261,7 +259,7 @@ class memoized(metaclass=MetaMemoize):
         ])
 
         # render final html
-        html = render_template('index.html', **ctx).replace('~', '&nbsp;')
+        html = render_template('about.html', **ctx).replace('~', '&nbsp;')
         return antimap(html, [
             add_title_text_to_post_links,
             resolve_asset_urls,

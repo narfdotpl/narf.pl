@@ -19,9 +19,7 @@
         <header>
             <h1 align="left">
                 I am <b>Maciej Konieczny</b> aka~<b>narf</b> —<br/>
-                a code artist
-                living in Warsaw.
-            {% if not about %}
+                a code artist living in Warsaw.
                 <br/>
                 <br/>
                 I create software,
@@ -41,17 +39,9 @@
                     <br/><br/>
                 </span>
                 If~you want to get in touch, <a href="mailto:{{ email }}">email</a>~is~best.
-            {% endif %}
             </h1>
         </header>
 
-        {% if about %}
-            <div class="entry-content" style="text-align: left;">
-                {{ about|typo }}
-            </div>
-        {% endif %}
-
-        <div class="image-links">
         {% for entry in entries %}
             <article>
                 <a href="{{ entry.url }}">
@@ -68,7 +58,6 @@
                 </a>
             </article>
         {% endfor %}
-        </div>
 
         <footer>
             <p class="icons">
