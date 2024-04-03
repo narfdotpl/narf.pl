@@ -17,3 +17,18 @@ pip install -r requirements.txt
 
 ./manage.py runserver
 ```
+
+
+## Running on [Render](https://render.com)
+
+#### build command
+
+    pip install -r requirements.txt
+
+#### start command
+
+    gunicorn engine.main:app --workers=2
+
+#### Python version
+
+specified using `PYTHON_VERSION` environment variable

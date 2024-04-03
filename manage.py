@@ -59,9 +59,9 @@ def deploy():
 
     test()
     logs_fetch()
-    system('git push --force dokku HEAD:master')
+    system('git push --force private HEAD:master')
     visit()
-    populate_cache()
+    system('open https://dashboard.render.com')
 
 
 @task
@@ -82,24 +82,15 @@ def js():
 
 @task
 def logs_fetch():
+    # TODO: get logs from Render
+    pass
     # logs start at the last deployment
-    system(f"ssh dokku -t 'docker logs $(cat /home/dokku/narf.pl/CONTAINER.web.1)' | gzip > \"{LOGS_DIR}/$(date +%Y-%m-%d_%H%M).txt.gz\"")
+    # system(f"ssh dokku -t 'docker logs $(cat /home/dokku/narf.pl/CONTAINER.web.1)' | gzip > \"{LOGS_DIR}/$(date +%Y-%m-%d_%H%M).txt.gz\"")
 
 
 @task
 def logs_show():
     system(f"cd \"{LOGS_DIR}\"; gunzip -c $(ls *.txt.gz) | ag -v 'GET /static' | goaccess -o html > index.html && open index.html")
-
-
-@task
-def populate_cache():
-    'Populate cache in production.'
-
-    for path in get_all_paths():
-        system(f'curl -L http://narf.pl{path} > /dev/null 2>&1')
-        print('.', end='', flush=True)
-
-    print()
 
 
 @task
