@@ -1,4 +1,4 @@
-# [narf.pl](http://narf.pl)
+# [narf.pl](https://narf.pl)
 
 ## Running locally
 

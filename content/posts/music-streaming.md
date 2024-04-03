@@ -51,7 +51,7 @@ already like.
 This is how the landscape looks like, when music streaming enters the
 scene.
 
-  [podcasts]: http://links.narf.pl/tags/podcast
+  [podcasts]: https://links.narf.pl/tags/podcast
 
 
 Spotify

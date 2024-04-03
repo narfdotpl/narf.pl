@@ -17,7 +17,7 @@ Live long and self-host.
   [Delicious]: http://delicious.com/
   [Pinboard]: http://pinboard.in/
   [Trivium]: http://chneukirchen.org/trivium/
-  [link blog]: http://links.narf.pl/
+  [link blog]: https://links.narf.pl/
   [Flask]: http://flask.pocoo.org/
   [pjax]: https://github.com/defunkt/jquery-pjax
   [source]: https://github.com/narfdotpl/links

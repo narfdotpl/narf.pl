@@ -125,7 +125,7 @@ people.  In his free time Maciej experiments with game development
 and procedural graphics.  He blogs at [narf.pl][narf] and tweets at
 [@narfdotpl](http://twitter.com/narfdotpl).
 
-  [narf]: http://narf.pl/
+  [narf]: https://narf.pl/
 
 
 Contact information

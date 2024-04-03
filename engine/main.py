@@ -115,7 +115,7 @@ class memoized(metaclass=MetaMemoize):
             'remaining_markdown': separator.join(sections[2:]),
             'slug': slug,
             'path': path,
-            'url': 'http://narf.pl%s' % path,
+            'url': 'https://narf.pl%s' % path,
             **header,
         }
 
@@ -172,11 +172,11 @@ class memoized(metaclass=MetaMemoize):
         feed = {
             'version': 'https://jsonfeed.org/version/1',
             'title': 'narf.pl',
-            'home_page_url': 'http://narf.pl/',
-            'feed_url': 'http://narf.pl/feed.json',
+            'home_page_url': 'https://narf.pl/',
+            'feed_url': 'https://narf.pl/feed.json',
             'author': {
                 'name': 'Maciej Konieczny',
-                'url': 'http://narf.pl/',
+                'url': 'https://narf.pl/',
             },
             'items': [
                 {
@@ -612,7 +612,7 @@ def add_non_breaking_spaces_recursive(soup):
 @soup
 def add_title_text_to_post_links(soup):
     prefixes = [root + path
-        for root in ['', 'http://narf.pl']
+        for root in ['', 'https://narf.pl']
         for path in ['/posts', '/music']
     ]
 
@@ -1010,40 +1010,40 @@ def redirect_from_old_path(path):
 def unmatched_path_to_post_url(path):
     """
     >>> unmatched_path_to_post_url('esc')
-    'http://narf.pl/music/escapism'
+    'https://narf.pl/music/escapism'
 
     >>> unmatched_path_to_post_url('a')
-    'http://narf.pl/posts/aurora'
+    'https://narf.pl/posts/aurora'
 
     >>> unmatched_path_to_post_url('e')
-    'http://narf.pl/music/escapism'
+    'https://narf.pl/music/escapism'
 
     >>> unmatched_path_to_post_url('r')
-    'http://narf.pl/music/random-encounters'
+    'https://narf.pl/music/random-encounters'
 
     >>> unmatched_path_to_post_url('o')
-    'http://narf.pl/posts/time'
+    'https://narf.pl/posts/time'
 
     >>> unmatched_path_to_post_url('rain')
-    'http://narf.pl/posts/tears-in-rain'
+    'https://narf.pl/posts/tears-in-rain'
 
     >>> unmatched_path_to_post_url('tree')
-    'http://narf.pl/posts/metal-trees'
+    'https://narf.pl/posts/metal-trees'
 
     >>> unmatched_path_to_post_url('sol')
-    'http://narf.pl/posts/solstice'
+    'https://narf.pl/posts/solstice'
 
     >>> unmatched_path_to_post_url('skull')
-    'http://narf.pl/posts/checkers-skull'
+    'https://narf.pl/posts/checkers-skull'
 
     >>> unmatched_path_to_post_url('track')
-    'http://narf.pl/posts/65dos-no-mans-sky'
+    'https://narf.pl/posts/65dos-no-mans-sky'
 
     >>> unmatched_path_to_post_url('p')
-    'http://narf.pl/posts/papier'
+    'https://narf.pl/posts/papier'
 
     >>> unmatched_path_to_post_url('drzwi')
-    'http://narf.pl/posts/drzwi'
+    'https://narf.pl/posts/drzwi'
     """
 
     posts = memoized.public_posts()

@@ -27,7 +27,7 @@ Have a nice day!
 
   [email]: mailto:{{ email }}
   [blog]: /posts
-  [link blog]: http://links.narf.pl/
+  [link blog]: https://links.narf.pl/
 
 {% for p in profiles.values() %}
   [{{ p.name }}]: {{ p.url }}

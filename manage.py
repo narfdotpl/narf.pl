@@ -136,9 +136,9 @@ def test_accept():
 
 @task
 def visit():
-    'Visit http://narf.pl/.'
+    'Visit https://narf.pl/.'
 
-    system('open http://narf.pl/')
+    system('open https://narf.pl/')
 
 
 if __name__ == '__main__':

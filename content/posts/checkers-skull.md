@@ -40,5 +40,5 @@ any other activities that feel like work.  Regarding future endeavours,
 I plan to not confuse things one does for pleasure with things one does
 for money.
 
-  [Press Kit]: http://narf.pl/posts/checkers-presskit
+  [Press Kit]: https://narf.pl/posts/checkers-presskit
   [Extra Credits]: https://www.youtube.com/watch?v=m4p7T9O_tqg

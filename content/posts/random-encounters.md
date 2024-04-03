@@ -37,7 +37,7 @@ and live-coding environment. I connected it to Ableton Live where
 it controls a few copies of the [Lekko][] piano and one virtual
 bass guitar.
 
-  [Orca]: http://links.narf.pl/2020-10-27
+  [Orca]: https://links.narf.pl/2020-10-27
   [Lekko]: https://feltinstruments.com/Lekko
 
 I like the layers of contrast that are at play here:

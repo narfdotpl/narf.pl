@@ -118,4 +118,4 @@ judged by others.
 If you'd like to read or watch more about No Man's Sky, I gather
 interesting materials about it on my [link blog][].
 
-  [link blog]: http://links.narf.pl/tags/no-mans-sky
+  [link blog]: https://links.narf.pl/tags/no-mans-sky
