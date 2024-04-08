@@ -6,7 +6,6 @@ index:
 music:
   section: releases
 description: Sleep well, stranger.
-promo_text: Psst! Watch {link}, my~new~simulation.
 
 Maladaptive
 ===========
