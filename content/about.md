@@ -13,7 +13,7 @@ For the last five+ years, I've been working remotely with [Ro][], a health tech 
 
 Before you go, check out my [personal projects](/) and feel free to browse the rest of my [blog][]. When it comes to other online presence, I also have a~[link blog][] and I am on{% for p in profiles.values() %}{% if loop.last %} and{% endif %} [{{ p.name }}][]{% if loop.last %} too.{% else %},{% endif %}{% endfor %}
 
-Have a nice day!
+Cheers! :hattip:
 
   [music]: /music
   [game]: /checkers
