@@ -7,7 +7,7 @@ Mac software: 2022
 
 *[updated][] in the spring of 2024*
 
-  [updated]: https://github.com/narfdotpl/narf.pl/commit/TODO
+  [updated]: https://github.com/narfdotpl/narf.pl/commit/0bdf6a7100fd9ed239ec56d15e65c882be330751c
 
 In May I've set up three different Macs (don't ask) starting from a clean
 latest macOS installation. Here's what I do and install, and in what order,
