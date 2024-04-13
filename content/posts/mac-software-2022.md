@@ -1,21 +1,29 @@
 date: 2022-06-09
 collections: [setup]
-description: What I install and in what order to feel at home.
+description: What I install, and in what order, to feel at home.
 
 Mac software: 2022
 ==================
 
-In May I've set up three different Macs (don't ask) starting from a clean
-macOS Monterey installation. Here's what I install and in what order to feel
-at home:
+*[updated][] in the spring of 2024*
 
+  [updated]: https://github.com/narfdotpl/narf.pl/commit/TODO
+
+In May I've set up three different Macs (don't ask) starting from a clean
+latest macOS installation. Here's what I do and install, and in what order,
+to feel at home:
+
+1. update the OS
+1. if this is a laptop, enable "tap to click" in trackpad settings
+1. if this is a laptop, enable Touch ID
 1. [Things](https://culturedcode.com/things/)
 1. [Spotify](https://www.spotify.com/us/download/mac/)
 1. [SteerMouse](https://plentycom.jp/en/steermouse/download.php)
     - configure [buttons](steermouse/buttons.png)
     - configure [sensitivity](steermouse/sensitivity.png)
+    - enter license
 1. tweak macOS settings
-    - remove everything from the Dock
+    - remove everything from the dock
     - download [wallpaper](/static/assets/pixel-sorting/wallpaper/flipped.jpg) from the [pixel sorting](/posts/pixel-sorting) post
     - configure dock and menu bar
         - [dock](macos/dock.png)
@@ -24,18 +32,25 @@ at home:
     - disable [autocorrection](macos/keyboard.png)
     - configure [spaces](macos/spaces.png)
     - configure [hot corners](macos/hot-corners.png)
+    - add Stage Manager shortcut in keyboard shortcuts
+    - disable "click wallpaper to reveal desktop"
     - configure Finder
     - configure Safari:
         - [general](safari/general.png)
         - [tabs](safari/tabs.png)
         - [advanced](safari/advanced.png)
+        - search -- DuckDuckGo
+    - open a video call, click on the camera button in the menu bar, and disable reactions
 1. [Fira Code](https://github.com/tonsky/FiraCode/wiki/Installing)
 1. [MacVim](https://macvim-dev.github.io/macvim/)
 1. [iTerm](https://iterm2.com/)
+1. copy `~/.zsh_history` from another Mac
 1. generate a [new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+    - go through "configure SSO" for this key on GitHub
+1. [Homebrew](https://brew.sh)
+1. copy Quake 3 sounds (used in git aliases) from another Mac
 1. [dotfiles](https://github.com/narfdotpl/dotfiles)
     - configure [iTerm](iterm.png)
-1. [Karabiner](https://karabiner-elements.pqrs.org)
 1. [Hammerspoon](https://www.hammerspoon.org)
 1. [Visual Studio Code](https://code.visualstudio.com)
     - ⇧⌘P sync settings using GitHub
