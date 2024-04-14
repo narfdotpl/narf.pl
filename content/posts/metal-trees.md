@@ -28,12 +28,12 @@ contrasted against unnatural precision.
 
 {% for i in range(1, 8) %}
 <figure class="full-width">
-    <img data='{"max_width": 3240, "max_height": 1920}' src="triptychs/{{ i }}.png"/>
+    <img data='{"resize": false}' src="triptychs/{{ i }}.png"/>
 </figure>
 
 {% if i == 5 %}
 <figure class="full-width">
-    <img data='{"max_width": 3240, "max_height": 2778}' src="big.png"/>
+    <img data='{"resize": false}' src="big.png"/>
 </figure>
 {% endif %}
 

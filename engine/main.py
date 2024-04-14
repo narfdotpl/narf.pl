@@ -397,8 +397,11 @@ class static_url(object):
         return '%s/assets/%s?%s' % (base, path, get_file_hash(full_path))
 
     @staticmethod
-    def for_thumbnail(path, max_width=1024*2, max_height=780*2):
+    def for_thumbnail(path, resize=True, max_width=1024*2, max_height=780*2):
         # 'a/b/c.jpg' → '/static/thumbnails/sdfsdfsdf.jpg'
+
+        if not resize:
+            return static_url.for_asset(path)
 
         # get asset data
         asset_path = join(settings.ASSETS_DIR, path)

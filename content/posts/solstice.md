@@ -40,5 +40,5 @@ As it's often the case, I think I like individual details more than the
 whole thing:
 
 <figure class="full-width" style="margin-bottom: 1px">
-    <img data='{"max_width": 3043, "max_height": 1350}' src="9x16.jpg"/>
+    <img data='{"resize": false}' src="9x16.jpg"/>
 </figure>
