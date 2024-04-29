@@ -262,6 +262,9 @@ class memoized(metaclass=MetaMemoize):
         html = render_template('about.html', **ctx).replace('~', '&nbsp;')
         return antimap(html, [
             add_title_text_to_post_links,
+            wrap_images_in_figures_instead_of_paragraphs,
+            partial(resolve_local_urls, 'about.md'),
+            wrap_images_in_links,
             resolve_asset_urls,
         ])
 
