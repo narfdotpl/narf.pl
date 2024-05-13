@@ -2,12 +2,12 @@ date: 2022-06-09
 collections: [setup]
 description: What I install, and in what order, to feel at home.
 
-Mac software: 2022
-==================
+Mac software: 2022+
+===================
 
-*[updated][] in the spring of 2024*
+*I [update][] this post when I set up new machines.*
 
-  [updated]: https://github.com/narfdotpl/narf.pl/commit/0bdf6a7100fd9ed239ec56d15e65c882be330751
+  [update]: https://github.com/narfdotpl/narf.pl/commits/master/content/posts/mac-software-2022.md
 
 In May I've set up three different Macs (don't ask) starting from a clean
 latest macOS installation. Here's what I do and install, and in what order,
@@ -16,6 +16,7 @@ to feel at home:
 1. update the OS
 1. if this is a laptop, enable "tap to click" in trackpad settings
 1. if this is a laptop, enable Touch ID
+1. if this is a personal Mac, sign in with Apple ID
 1. [Things](https://culturedcode.com/things/)
 1. [Spotify](https://www.spotify.com/us/download/mac/)
 1. [SteerMouse](https://plentycom.jp/en/steermouse/download.php)
@@ -44,13 +45,18 @@ to feel at home:
 1. [Fira Code](https://github.com/tonsky/FiraCode/wiki/Installing)
 1. [MacVim](https://macvim-dev.github.io/macvim/)
 1. [iTerm](https://iterm2.com/)
-1. copy `~/.zsh_history` from another Mac
+1. copy files from another Mac:
+   - `~/.zsh_history`
+   - Quake 3 sounds (used in git aliases)
 1. generate a [new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
     - go through "configure SSO" for this key on GitHub
 1. [Homebrew](https://brew.sh)
-1. copy Quake 3 sounds (used in git aliases) from another Mac
 1. [dotfiles](https://github.com/narfdotpl/dotfiles)
+    - `m + : ln -s ~/dotfiles/home .`
     - configure [iTerm](iterm.png)
+    - close iTerm
+    - open Terminal (not iTerm)
+    - `h : g rh`
 1. [Hammerspoon](https://www.hammerspoon.org)
 1. [Visual Studio Code](https://code.visualstudio.com)
     - ⇧⌘P sync settings using GitHub
