@@ -46,8 +46,8 @@ to feel at home:
 1. [MacVim](https://macvim-dev.github.io/macvim/)
 1. [iTerm](https://iterm2.com/)
 1. copy files from another Mac:
-   - `~/.zsh_history`
-   - Quake 3 sounds (used in git aliases)
+    - `~/.zsh_history`
+    - Quake 3 sounds (used in git aliases)
 1. generate a [new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
     - go through "configure SSO" for this key on GitHub
 1. [Homebrew](https://brew.sh)
