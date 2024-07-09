@@ -18,23 +18,25 @@ to feel at home:
 1. if this is a laptop, enable Touch ID
 1. if this is a personal Mac, sign in with Apple ID
 1. [Things](https://culturedcode.com/things/)
+    - configure desktop widgets
 1. [Spotify](https://www.spotify.com/us/download/mac/)
 1. [SteerMouse](https://plentycom.jp/en/steermouse/download.php)
     - configure [buttons](steermouse/buttons.png)
     - configure [sensitivity](steermouse/sensitivity.png)
     - enter license
 1. tweak macOS settings
-    - remove everything from the dock
+    - enable [night shift](macos/night-shift.png)
     - download [wallpaper](/static/assets/pixel-sorting/wallpaper/flipped.jpg) from the [pixel sorting](/posts/pixel-sorting) post
+    - remove everything from the dock
     - configure dock and menu bar
         - [dock](macos/dock.png)
         - [clock](macos/clock.png)
         - [spotlight](macos/spotlight.png)
-    - disable [autocorrection](macos/keyboard.png)
-    - configure [spaces](macos/spaces.png)
     - configure [hot corners](macos/hot-corners.png)
-    - add Stage Manager shortcut in keyboard shortcuts
+    - configure [spaces](macos/spaces.png)
     - disable "click wallpaper to reveal desktop"
+    - disable [autocorrection](macos/keyboard.png)
+    - add Stage Manager shortcut in keyboard shortcuts
     - configure Finder
     - configure Safari:
         - [general](safari/general.png)
@@ -60,6 +62,7 @@ to feel at home:
 1. [Hammerspoon](https://www.hammerspoon.org)
 1. [Visual Studio Code](https://code.visualstudio.com)
     - ⇧⌘P sync settings using GitHub
+1. [Bun](https://bun.sh)
 1. [VLC](https://www.videolan.org/vlc/)
 1. Xcode
     - [general](xcode/general.png)
