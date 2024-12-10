@@ -1,7 +1,7 @@
 ![](16-9.jpg)
 
 I create software, make procedural graphics, and compose [music][].
-I'm an experienced engineer and I like making cool stuff, so if my taste resonates with you, let's build something great together! Email me at [{{ email }}][email].
+I'm an experienced engineer and I like making cool stuff, so if my taste resonates with you, let's build something great together! Email me at {{ email_tag }}.
 
 That's the tldr ^ (turns out, it's bloody difficult to write an /about page for your own website). For my professional history, check out my [LinkedIn][] or continue reading.
 
@@ -13,7 +13,7 @@ I enjoy working on projects requiring a holistic/multidisciplinary approach and 
 
 For the last six years, I've been working remotely with [Ro][], a health tech startup focused on goal-oriented healthcare, headquartered in New York. I joined Ro as the fourth engineer focused on Python backend services. I've been a part of many teams as I've witnessed the company grow 15x: from dozens to hundreds of people and a $7B valuation.  Over the years, I have worked on many aspects of our systems, touching applications for patients, doctors, and pharmacists.  Some of the highlights include a data-change tracking microframework, that I've built on top of Django, and my tenure in the mobile team. These days, I work mostly on the backend and on the native iOS app for patients.
 
-Before you go, check out my [personal projects](/) and feel free to browse the rest of my [blog][]. When it comes to other online presence, I also have a~[link blog][] and I am on{% for p in profiles.values() %}{% if loop.last %} and{% endif %} [{{ p.name }}][]{% if loop.last %} too.{% else %},{% endif %}{% endfor %} My email is [{{ email }}][email].
+Before you go, check out my [personal projects](/) and feel free to browse the rest of my [blog][]. When it comes to other online presence, I also have a~[link blog][] and I am on{% for p in profiles.values() %}{% if loop.last %} and{% endif %} [{{ p.name }}][]{% if loop.last %} too.{% else %},{% endif %}{% endfor %} My email is {{ email_tag }}.
 
 Cheers!
 
@@ -28,7 +28,6 @@ Cheers!
 
   [Ro]: https://ro.co
 
-  [email]: mailto:{{ email }}
   [blog]: /posts
   [link blog]: https://links.narf.pl/
 

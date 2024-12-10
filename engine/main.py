@@ -62,8 +62,10 @@ class memoized(metaclass=MetaMemoize):
         return paths
 
     def base_context():
+        email = 'hello@narf.pl'
         return {
-            'email': 'hello@narf.pl',
+            'email': email,
+            'email_tag': Markup(f'<a href="mailto:{email}">{email}</a>'),
             'profiles': profiles,
         }
 
