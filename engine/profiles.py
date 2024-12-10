@@ -1,5 +1,6 @@
 from __future__ import annotations
 from dataclasses import dataclass
+from markupsafe import Markup
 
 
 @dataclass
@@ -7,6 +8,7 @@ class Profile:
     name: str
     id: str
     url: str
+    tag: str
     handle: str
     icon_class: str
     hidden: bool
@@ -14,10 +16,12 @@ class Profile:
     @classmethod
     def make(cls, name: str, url: str, handle: str = '@narfdotpl', hidden: bool = False) -> Profile:
         id = name.replace('.', '').lower()
+        tag = Markup(f'<a href="{url}" rel="me">{name}</a>')
         return Profile(
             name=name,
             id=id,
             url=url,
+            tag=tag,
             handle=handle,
             icon_class=f'fab fa-lg fa-{id}',
             hidden=hidden,

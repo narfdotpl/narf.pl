@@ -34,7 +34,7 @@
                     I also have a~<a href="https://links.narf.pl/">link blog</a> and I~am
                     {% for p in profiles.values() if not p.hidden %}
                         {% if loop.last %}and{% endif %}
-                        {% if loop.first %}on~{% endif %}<a href="{{ p.url }}" rel="me">{{ p.name }}</a>{% if loop.last %}~too.{% else %},{% endif %}
+                        {% if loop.first %}on~{% endif %}{{ p.tag }}{% if loop.last %}~too.{% else %},{% endif %}
                     {% endfor %}
                     <br/><br/>
                 </span>
