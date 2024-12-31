@@ -1048,7 +1048,7 @@ def unmatched_path_to_post_url(path):
     'https://narf.pl/posts/65dos-no-mans-sky'
 
     >>> unmatched_path_to_post_url('p')
-    'https://narf.pl/posts/phototropism'
+    'https://narf.pl/posts/new-chapter'
 
     >>> unmatched_path_to_post_url('drzwi')
     'https://narf.pl/posts/drzwi'
