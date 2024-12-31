@@ -31,6 +31,7 @@ class Profile:
 profiles = {p.id: p for p in [
     Profile.make('Mastodon', 'https://vis.social/@narf', '@narf@vis.social'),
     Profile.make('Instagram', 'https://www.instagram.com/narfdotpl/'),
+    Profile.make('Threads', 'https://www.threads.net/@narfdotpl'),
     Profile.make('LinkedIn', 'https://www.linkedin.com/in/narfdotpl/', hidden=True),
     Profile.make('Bandcamp', 'https://narfdotpl.bandcamp.com/'),
     Profile.make('Spotify', 'https://open.spotify.com/artist/54VsVeo4UsHNvTXN5wz9kR'),
