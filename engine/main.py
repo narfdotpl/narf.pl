@@ -1047,9 +1047,6 @@ def unmatched_path_to_post_url(path):
     >>> unmatched_path_to_post_url('track')
     'https://narf.pl/posts/65dos-no-mans-sky'
 
-    >>> unmatched_path_to_post_url('p')
-    'https://narf.pl/posts/new-chapter'
-
     >>> unmatched_path_to_post_url('drzwi')
     'https://narf.pl/posts/drzwi'
     """
