@@ -1,6 +1,6 @@
 date: 2024-12-31
 description: I bought a pen plotter.
-collections: [plotter, procedural]
+collections: [pen plotter, procedural]
 
 Pen plotter (new chapter?)
 ==========================
