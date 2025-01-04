@@ -1,6 +1,6 @@
 date: 2025-01-01
 description: Based on the "vertical or horizontal lines only" prompt.
-collections: [plotter]
+collections: [plotter, procedural]
 
 Genuary 1: procedural New York
 ==============================
