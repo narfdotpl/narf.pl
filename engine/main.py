@@ -330,7 +330,7 @@ class memoized(metaclass=MetaMemoize):
 
     def rendered_posts():
         posts = memoized.public_posts()
-        get_year = lambda post: int(year_filter(post['date']))
+        get_year = lambda post: 2025 if post['slug'] == 'new-chapter' else int(year_filter(post['date']))
         posts_by_year = [(y, list(ps)) for (y, ps) in groupby(posts, get_year)]
 
         # add empty lists for silent years
