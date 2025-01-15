@@ -1,33 +1,46 @@
 {% extends "base.html" %}
 
 
-{% block title %}posts{% endblock %}
+{% block title %}Posts{% endblock %}
 
 
 {% block body %}
     <section id="main-wrapper" class="narrow legible">
-
         <header class="centered">
-            <h1>posts</h1>
-
-            <address class="inlined author">
-                written by <a href="/" class="fn">Maciej Konieczny</a><br/>
-                (I also have a <a href="https://links.narf.pl">link blog</a>)
-            </address>
+            <h1>Posts</h1>
         </header>
 
+        <section>
+            <p>
+                I write about various things of interest.
+                All posts on my site are listed here.
+
+                <a href="/music">Music</a>
+                posts are also on their dedicated page.
+
+                In addition to that, I&nbsp;have a <a href="https://links.narf.pl">link blog</a>,
+                which is a separate site.
+            </p>
+            <p>
+                — <a href="/">Maciej Konieczny</a>
+                aka <a href="/">narf</a>
+
+                <br/>&nbsp;
+            </p>
+        </section>
+
         {% for title, posts in sections %}
-            <section class="narrow">
-                <h3 class="centered">{{ title }}</h3>
+            <section>
+                <h2>{{ title }}</h2>
 
                 {% if posts %}
-                    <ul class="posts">
+                    <ul>
                         {% for post in posts %}
                             <li><a class="balance-text" href="{{ post.path }}">{{ post.title|typo }}</a></li>
                         {% endfor %}
                     </ul>
                 {% else %}
-                    <p class="centered">—</p>
+                    <p>—</p>
                 {% endif %}
             </section>
         {% endfor %}

@@ -36,12 +36,6 @@ img, video {
     text-wrap: balanced;
 }
 
-@media (min-width: 512px) {
-    .posts {
-        margin-left: 44px
-    }
-}
-
 .icons {
     letter-spacing: 0.5ex;
     animation: toggle-icons 16s ease-in-out 0s infinite;
