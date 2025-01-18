@@ -62,6 +62,7 @@ to feel at home:
 1. [Hammerspoon](https://www.hammerspoon.org)
 1. [Visual Studio Code](https://code.visualstudio.com)
     - ⇧⌘P sync settings using GitHub
+1. [Cursor](https://www.cursor.com)
 1. [CleanShot X](https://cleanshot.com)
 1. [Bun](https://bun.sh)
 1. [VLC](https://www.videolan.org/vlc/)
