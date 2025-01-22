@@ -20,4 +20,8 @@ Genuary 22: gradients
 
 ![](details.jpg)
 
+- [Mastodon](https://vis.social/@narf/113873357830585126)
+- [Instagram](https://www.instagram.com/p/DFIyY0BuZjg/)
+- [Threads](https://www.threads.net/@narfdotpl/post/DFIy8KyORlq)
+
   [Genuary]: https://genuary.art/
