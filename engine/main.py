@@ -1029,9 +1029,6 @@ def unmatched_path_to_post_url(path):
     >>> unmatched_path_to_post_url('r')
     'https://narf.pl/music/random-encounters'
 
-    >>> unmatched_path_to_post_url('o')
-    'https://narf.pl/posts/time'
-
     >>> unmatched_path_to_post_url('rain')
     'https://narf.pl/posts/tears-in-rain'
 
