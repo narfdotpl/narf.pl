@@ -6,7 +6,7 @@ index:
 music:
   section: soundtracks
 description: Video of an interactive experiment.
-promo_text: Psst! Watch {link}, my~new~experiment.
+promo_text: Psst! Watch {link}, my~reactive~experiment.
 
 Phototropism
 ============
