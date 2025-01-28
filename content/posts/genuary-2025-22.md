@@ -1,6 +1,8 @@
 date: 2025-01-22
 description: Based on the "gradients only" prompt.
 collections: [pen plotter, procedural]
+index:
+  subtitle: pen plotter sketch
 
 Genuary 22: gradients
 =====================
