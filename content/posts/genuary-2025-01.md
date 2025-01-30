@@ -5,7 +5,7 @@ collections: [pen plotter, procedural]
 Genuary 1: procedural New York
 ==============================
 
-![](scan.jpg)
+![](photo.jpg)
 
 [Genuary][] 1: procedural New York based on the "vertical or horizontal lines only" prompt. ~100 minutes of coding, ~40 minutes of plotting.
 
