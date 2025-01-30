@@ -34,6 +34,7 @@ to feel at home:
         - [spotlight](macos/spotlight.png)
     - configure [hot corners](macos/hot-corners.png)
     - configure [spaces](macos/spaces.png)
+    - configure [tiling](macos/tiling.png)
     - disable "click wallpaper to reveal desktop"
     - disable [autocorrection](macos/keyboard.png)
     - add Stage Manager shortcut in keyboard shortcuts
