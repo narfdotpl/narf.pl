@@ -35,6 +35,7 @@ to feel at home:
     - configure [spaces](macos/spaces.png)
     - configure [tiling](macos/tiling.png)
     - disable "click wallpaper to reveal desktop"
+    - add [Unicode Hex input source](macos/unicode.png) to enable the Greek layer on [my keyboard](https://github.com/narfdotpl/zmk-config)
     - disable [autocorrection](macos/keyboard.png)
     - add Stage Manager shortcut in keyboard shortcuts
     - configure Finder
