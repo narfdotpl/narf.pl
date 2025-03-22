@@ -5,4 +5,4 @@ PyYAML==6.0.1
 beautifulsoup4==4.12.3
 smartypants==2.0.1
 typogrify==2.0.7
-gunicorn==22.0.0
+gunicorn==23.0.0
