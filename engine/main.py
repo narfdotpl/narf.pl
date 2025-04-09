@@ -318,6 +318,10 @@ class memoized(metaclass=MetaMemoize):
                 social_image_url = img['src']
                 break
 
+        # make social image smaller
+        if social_image_url:
+            social_image_url = static_url.for_thumbnail(social_image_url, max_width=1080, max_height=1080)
+
         # set social image
         ctx['social_image_url'] = social_image_url
 
@@ -397,6 +401,11 @@ class static_url(object):
     @staticmethod
     def for_asset(path):
         # 'a/b/c' → '/static/assets/a/b/c?sdfsdfsdf'
+
+        is_absolute = path.startswith(static_url.base())
+        if is_absolute:
+            return path
+
         full_path = join(settings.ASSETS_DIR, path)
         base = static_url.base()
         return '%s/assets/%s?%s' % (base, path, get_file_hash(full_path))
@@ -408,8 +417,19 @@ class static_url(object):
         if not resize:
             return static_url.for_asset(path)
 
-        # get asset data
-        asset_path = join(settings.ASSETS_DIR, path)
+        # get image path on disk
+        is_absolute = path.startswith(static_url.base())
+        if is_absolute:
+            # naively strip query params
+            relative_path = path \
+                .split('?')[0] \
+                .removeprefix(static_url.base()) \
+                .removeprefix('/')
+            asset_path = join(settings.STATIC_DIR, relative_path)
+        else:
+            asset_path = join(settings.ASSETS_DIR, path)
+
+        # read image
         image = Image.open(asset_path)
         width, height = image.size
 
