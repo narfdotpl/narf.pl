@@ -45,7 +45,7 @@ to feel at home:
         - [advanced](safari/advanced.png)
         - search -- DuckDuckGo
     - open a video call, click on the camera button in the menu bar, and disable reactions
-1. [Fira Code](https://github.com/tonsky/FiraCode/wiki/Installing)
+1. [0xProto](https://github.com/0xType/0xProto)
 1. [MacVim](https://macvim-dev.github.io/macvim/)
 1. [iTerm](https://iterm2.com/)
 1. copy files from another Mac:
