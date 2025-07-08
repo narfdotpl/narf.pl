@@ -1,4 +1,4 @@
-![](16-9.jpg)
+![](16-9-plotter.jpg)
 
 I create software, make procedural graphics, and compose [music][].
 I'm an experienced engineer and I like making cool stuff, so if my taste resonates with you, let's build something great together! Email me at {{ email_tag }}.
