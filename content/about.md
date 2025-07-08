@@ -1,13 +1,10 @@
 ![](16-9-plotter.jpg)
 
 I create software, make procedural graphics, and compose [music][].
-I'm an experienced engineer and I like making cool stuff, so if my taste resonates with you, let's build something great together! Email me at {{ email_tag }}.
 
-That's the tldr ^ (turns out, it's bloody difficult to write an /about page for your own website). For my professional history, check out my {{ profiles.linkedin.tag }} or continue reading.
+I'm an experienced engineer and I like making cool stuff. If my taste resonates with you, let's build something great together! Email me at {{ email_tag }}.
 
 *TODO: add an awesome reel of [personal projects](/) here*
-
-<hr/>
 
 I enjoy working on projects requiring a holistic/multidisciplinary approach and I like learning new techniques and technologies, especially when they open possibilities for exciting results. During two decades of building software, I have worked on web backends, web frontends, native iPhone and iPad apps, an iPhone and iPad [game][], a four-legged spider [robot][], [2D][] and [3D][] procedural animations, GPU-based [simulations][], interactive [experiments][], data visualization that was on the front page of [Reddit][], as well as countless internal and open-source tools, libraries, microframeworks, and plugins.
 
