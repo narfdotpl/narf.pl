@@ -1010,6 +1010,7 @@ def redirect_from_old_path(path):
             '/plain.txt': ('/posts/plain-text', permanent),
             '/quit.txt': ('/posts/quit-delicious', permanent),
 
+            '/bc': (profiles['bandcamp'].url, not permanent),
             '/cv': ('/about', not permanent),
             '/resume': ('/about', not permanent),
             '/blog': ('/posts', not permanent),
