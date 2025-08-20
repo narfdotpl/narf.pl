@@ -28,7 +28,7 @@ class Profile:
         )
 
 
-profiles = {p.id: p for p in [
+ps = [
     Profile.make('Mastodon', 'https://vis.social/@narf', '@narf@vis.social'),
     Profile.make('Instagram', 'https://www.instagram.com/narfdotpl/'),
     Profile.make('YouTube', 'https://www.youtube.com/@narfdotpl'),
@@ -37,4 +37,8 @@ profiles = {p.id: p for p in [
     Profile.make('Spotify', 'https://open.spotify.com/artist/54VsVeo4UsHNvTXN5wz9kR'),
     Profile.make('Last.fm', 'http://www.last.fm/user/narfdotpl'),
     Profile.make('GitHub', 'https://github.com/narfdotpl'),
-]}
+]
+
+profiles = {p.id: p for p in ps}
+profiles['all'] = ps
+profiles['visible'] = [p for p in ps if not p.hidden]
