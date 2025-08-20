@@ -30,13 +30,14 @@ class Profile:
 
 ps = [
     Profile.make('Mastodon', 'https://vis.social/@narf', '@narf@vis.social'),
-    Profile.make('Instagram', 'https://www.instagram.com/narfdotpl/'),
-    Profile.make('YouTube', 'https://www.youtube.com/@narfdotpl'),
-    Profile.make('LinkedIn', 'https://www.linkedin.com/in/narfdotpl/', hidden=True),
     Profile.make('Bandcamp', 'https://narfdotpl.bandcamp.com/'),
-    Profile.make('Spotify', 'https://open.spotify.com/artist/54VsVeo4UsHNvTXN5wz9kR'),
-    Profile.make('Last.fm', 'http://www.last.fm/user/narfdotpl'),
     Profile.make('GitHub', 'https://github.com/narfdotpl'),
+
+    Profile.make('Instagram', 'https://www.instagram.com/narfdotpl/', hidden=True),
+    Profile.make('YouTube', 'https://www.youtube.com/@narfdotpl', hidden=True),
+    Profile.make('Spotify', 'https://open.spotify.com/artist/54VsVeo4UsHNvTXN5wz9kR', hidden=True),
+    Profile.make('Last.fm', 'http://www.last.fm/user/narfdotpl', hidden=True),
+    Profile.make('LinkedIn', 'https://www.linkedin.com/in/narfdotpl/', hidden=True),
 ]
 
 profiles = {p.id: p for p in ps}
