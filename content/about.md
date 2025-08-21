@@ -1,6 +1,6 @@
 ![](16-9-plotter.jpg)
 
-I create software, [music][], graphics, etc.
+I create software, [music][], graphics…
 
 I'm an experienced engineer and I like making [cool stuff](/). If my taste resonates with you, let's build something great together! Email me at {{ email_tag }}.
 
