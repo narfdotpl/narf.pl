@@ -15,8 +15,6 @@ Maladaptive
 Sleep well, stranger.
 
 - [Bandcamp](https://narfdotpl.bandcamp.com/track/maladaptive) -- pay what you want
-- [Spotify](https://open.spotify.com/album/18qULw9EP6xvrfuW3ljGBD)
-- [Apple Music](https://music.apple.com/pl/album/maladaptive-single/1707499002)
 - [YouTube](https://youtu.be/5DmewCUYs5Y)
 
 <br/>

@@ -14,6 +14,8 @@ when [Spotify][] became available in Poland.
 
 It has changed the way I listen to music.
 
+*Update 2025: [I don't use Spotify anymore](/posts/leaving).*
+
 Some changes were qualitative -- for example, I started listening to
 [playlists][], instead of being a full album purist.  Other changes,
 like the number of artists I listen to, were quantitative.  In this post

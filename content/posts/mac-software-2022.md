@@ -18,7 +18,6 @@ to feel at home:
 1. if this is a laptop, enable Touch ID
 1. if this is a personal Mac, sign in with Apple ID
 1. [Things](https://culturedcode.com/things/)
-1. [Spotify](https://www.spotify.com/us/download/mac/)
 1. [SteerMouse](https://plentycom.jp/en/steermouse/download.php)
     - configure [buttons](steermouse/buttons.png)
     - configure [sensitivity](steermouse/sensitivity.png)

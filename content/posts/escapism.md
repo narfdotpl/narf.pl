@@ -16,10 +16,7 @@ Escapism
 I'm excited to announce that I have released a short music album titled *Escapism*. You can listen to it on:
 
 - [Bandcamp](https://narfdotpl.bandcamp.com/album/escapism), where you can also buy it
-- [Spotify](https://open.spotify.com/album/1O3Hl28AuRnaBhk6mOWLWK)
 - [YouTube](https://www.youtube.com/watch?v=8nnQtcT8aS8)
-- [SoundCloud](https://soundcloud.com/narfdotpl/sets/escapism)
-- and [Apple Music](https://music.apple.com/pl/album/escapism-ep/1593483523)
 
 *Escapism* is a cinematic journey inwards. It reflects, captures, documents parts of the music making adventure, on which I have embarked about a year prior to releasing the album. Each track on the record is different as each was created using different tools and different techniques. A learning process and an exploration.
 
