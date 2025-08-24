@@ -998,6 +998,15 @@ def profiles_route():
     return memoized.rendered_profiles()
 
 
+@app.route('/profiles/<path:id>')
+def profile(id):
+    for p in profiles['all']:
+        if p.id == id:
+            return redirect(p.url, 302)
+
+    return memoized.rendered_404()
+
+
 @app.route('/<path:path>')
 def redirect_from_old_path(path):
     # DSL-ish
