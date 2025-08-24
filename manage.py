@@ -49,6 +49,7 @@ def get_all_paths():
         '/about',
         '/music',
         '/posts',
+        '/profiles',
     ]
     yield from get_post_paths()
 

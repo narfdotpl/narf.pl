@@ -352,6 +352,10 @@ class memoized(metaclass=MetaMemoize):
 
         return resolve_asset_urls(html)
 
+    def rendered_profiles():
+        html = render_template('profiles.html')
+        return resolve_asset_urls(html)
+
     def rendered_music():
         latest_entry = None
         section_titles = ['Releases', 'Soundtracks']
@@ -987,6 +991,11 @@ def feed_json():
     response = make_response(memoized.rendered_json_feed())
     response.mimetype = 'application/json'
     return response
+
+
+@app.route('/profiles')
+def profiles_route():
+    return memoized.rendered_profiles()
 
 
 @app.route('/<path:path>')

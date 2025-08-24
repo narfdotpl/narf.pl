@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+
+{% block title %}Music{% endblock %}
+
+
+{% block body %}
+    <div id="main-wrapper" class="narrow legible">
+        <header class="narrow">
+            <h1 class="centered">Profiles</h1>
+        </header>
+
+        <section class="narrow">
+            <ul>
+                {% for profile in profiles.visible %}
+                    <li>{{ profile.tag }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        {% include "footer-icons.html" %}
+        <br class="hidden-elsewhere"/>
+    </div>
+{% endblock %}
