@@ -1087,7 +1087,7 @@ def unmatched_path_to_post_url(path):
     'https://narf.pl/music/escapism'
 
     >>> unmatched_path_to_post_url('r')
-    'https://narf.pl/music/random-encounters'
+    'https://narf.pl/music/jam-2025-06-04-orca'
 
     >>> unmatched_path_to_post_url('rain')
     'https://narf.pl/posts/tears-in-rain'
