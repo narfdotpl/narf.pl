@@ -375,20 +375,24 @@ class memoized(metaclass=MetaMemoize):
                 if music['section'] == section['title'].lower():
                     section['entries'].append(entry)
 
-        posts_in_sections = []
+        used_posts = []
         for section in sections:
             for entry in section['entries']:
-                posts_in_sections.append(entry['post'])
+                used_posts.append(entry['post'])
 
         all_posts = memoized.public_posts()
+        jams = [p for p in all_posts if p['is_jam']]
+        used_posts += jams
+
         other_music_posts = [
             p for p in all_posts
             if 'music and sound' in p['collection_ids']
-            and p not in posts_in_sections
+            and p not in used_posts
         ]
 
         html = render_template('music.html',
             sections=sections,
+            jams=jams,
             other_posts=other_music_posts,
             latest_entry=latest_entry,
         )
@@ -477,6 +481,7 @@ class Header:
     music: dict[str, Any] = field(default_factory=dict)
     promo_text: Optional[PromoText] = None
     is_selected: bool = False
+    is_jam: bool = False
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self) | {
@@ -496,12 +501,14 @@ class Header:
             d['date'] = d['date'].isoformat()
 
         def change_ids(id):
-            if id in ['music', 'sound']:
+            if id in ['music', 'sound', 'jam']:
                 return 'music and sound'
             else:
                 return id
 
-        d['collection_ids'] = list(map(change_ids, d.pop('collections', [])))
+        collection_ids = d.pop('collections', [])
+        d['is_jam'] = 'jam' in collection_ids
+        d['collection_ids'] = list(map(change_ids, collection_ids))
         d['index_config'] = d.pop('index', {})
 
         if s := d.pop('promo_text', None):

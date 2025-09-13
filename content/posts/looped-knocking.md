@@ -1,5 +1,5 @@
 date: 2017-04-24
-collections: [sound]
+collections: [jam]
 
 Looped knocking
 ===============

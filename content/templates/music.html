@@ -63,15 +63,20 @@
             </section>
         {% endfor %}
 
-        <section class="narrow">
-            <h2>Other music and sound posts</h2>
+        {% for (title, posts) in [
+            ('Jams', jams),
+            ('Other music and sound posts', other_posts),
+        ]: %}
+            <section class="narrow">
+                <h2>{{ title }}</h2>
 
-            <ul>
-                {% for post in other_posts %}
-                    <li><a class="balance-text" href="{{ post.path }}">{{ post.title|typo }}</a></li>
-                {% endfor %}
-            </ul>
-        </section>
+                <ul>
+                    {% for post in posts %}
+                        <li><a class="balance-text" href="{{ post.path }}">{{ post.title|typo }}</a></li>
+                    {% endfor %}
+                </ul>
+            </section>
+        {% endfor %}
 
         {% include "footer-icons.html" %}
         <br class="hidden-elsewhere"/>
