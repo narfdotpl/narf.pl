@@ -108,7 +108,7 @@ class memoized(metaclass=MetaMemoize):
         # get data from sections
         slug = filename[:-len('.md')]
         title = title_prefix + sections[1].rstrip('=').rstrip('\n')
-        path = ('/music/' if header['is_music_release'] else '/posts/') + slug
+        path = ('/music/' if header['is_music_release_or_jam'] else '/posts/') + slug
 
         return {
             'is_draft': is_draft,
@@ -485,7 +485,7 @@ class Header:
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self) | {
-            'is_music_release': self.music.get('section') == 'releases',
+            'is_music_release_or_jam': self.music.get('section') == 'releases' or self.is_jam,
             'uses_black_css': self.theme == 'black',
             'is_promoted': bool(self.promo_text),
         }
