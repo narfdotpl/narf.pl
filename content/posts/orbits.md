@@ -32,4 +32,4 @@ All drawings are code-based and were drawn in Warsaw, Poland, using red and blue
 
 If you'd like to have a drawing like this on your wall, email me at {{ email_tag }}. See&nbsp;you next time.
 
-PS These phone photos don't cut it. I might use a proper camera in the future.
+*PS These phone photos don't cut it. I might use a proper camera in the future.*
