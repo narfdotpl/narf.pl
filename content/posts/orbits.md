@@ -3,7 +3,6 @@ description: A series of procedural drawings made with a pen plotter, exploring 
 collections: [pen plotter, procedural]
 index:
   subtitle: pen plotter series
-promo_text: Psst! Check out {link}, my new pen plotter series.
 
 Orbits
 ======
