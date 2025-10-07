@@ -1,8 +1,6 @@
 date: 2025-05-08
 description: A series of procedural drawings made with a pen plotter, exploring gravitational attraction and usage of different rendering techniques in different sections of the image.
 collections: [pen plotter, procedural]
-index:
-  subtitle: pen plotter series
 
 Orbits
 ======
