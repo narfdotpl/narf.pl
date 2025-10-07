@@ -251,7 +251,9 @@ class memoized(metaclass=MetaMemoize):
         with open(join(settings.CONTENT_DIR, 'about.md')) as f:
             markdown = f.read()
 
-        ctx = memoized.base_context()
+        ctx = memoized.base_context() | {
+            'uses_black_css': True,
+        }
 
         # render and process markdown
         ctx['about'] = antimap(markdown, [

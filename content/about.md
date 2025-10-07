@@ -1,4 +1,4 @@
-![](16-9-plotter.jpg)
+![](asset:autoportrait-2025/side-front.jpg)
 
 I create software, [music][], graphics…
 
