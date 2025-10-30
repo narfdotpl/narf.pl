@@ -1,6 +1,6 @@
 ![](asset:autoportrait-2025/side-front.jpg)
 
-I create software, [music][], graphics…
+I create software, [music][], and graphics.
 
 I'm an experienced engineer and I like making [cool stuff](/). If my taste resonates with you, let's build something great together! Email me at {{ email_tag }}.
 
