@@ -18,6 +18,12 @@ h2 {
     margin-top: 2.86em;
 }
 
+@media (min-width: 532px) {
+    section:nth-of-type(3) h2 {
+        margin-top: 4.86em;
+    }
+}
+
 @media (max-width: 532px) {
     #main-wrapper .narrow {
         width: 100%;
