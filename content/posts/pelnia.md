@@ -13,4 +13,4 @@ Pełnia
 
 [![](cover.jpg)](https://narfdotpl.bandcamp.com/album/pelnia)
 
-I've released an ambient/experimental piece of music called *Pełnia* (the full moon in Polish). It's a journey through the night in three movements. Best experienced with eyes closed. Available on [Bandcamp](https://narfdotpl.bandcamp.com/album/pelnia).
+I've released an ambient/experimental piece of music called *Pełnia* (the full moon in Polish). It's a journey through the night in three movements, best experienced with eyes closed. Available on [Bandcamp](https://narfdotpl.bandcamp.com/album/pelnia).
