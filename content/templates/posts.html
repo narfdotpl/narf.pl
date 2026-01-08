@@ -36,7 +36,7 @@
                 {% if posts %}
                     <ul>
                         {% for post in posts %}
-                            <li><a class="balance-text" href="{{ post.path }}">{{ post.title|typo }}</a></li>
+                            <li>{% if post.is_short %}— {% endif %}<a class="balance-text" href="{{ post.path }}">{{ post.title|typo }}</a></li>
                         {% endfor %}
                     </ul>
                 {% else %}
