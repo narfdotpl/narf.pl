@@ -18,4 +18,3 @@ In this jam, [Condukt][], running on the iPhone, is giving me a helping hand and
   [mp4]: landing.mp4
   [Wired Tunes]: https://wiredtunes.pl
   [Condukt]: https://condukt.app
-  [email]: mailto:{{ email }}

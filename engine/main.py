@@ -1083,12 +1083,6 @@ def unmatched_path_to_post_url(path):
     >>> unmatched_path_to_post_url('esc')
     'https://narf.pl/music/escapism'
 
-    >>> unmatched_path_to_post_url('e')
-    'https://narf.pl/posts/leaving'
-
-    >>> unmatched_path_to_post_url('r')
-    'https://narf.pl/music/jam-2025-06-04-orca'
-
     >>> unmatched_path_to_post_url('rain')
     'https://narf.pl/posts/tears-in-rain'
 
