@@ -6,7 +6,6 @@ index:
 music:
   section: releases
 description: Sleep well, stranger.
-promo_text: Listen to {link}, my new release.
 
 Pełnia
 ======

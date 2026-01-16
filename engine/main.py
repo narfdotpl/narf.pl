@@ -132,11 +132,6 @@ class memoized(metaclass=MetaMemoize):
             partial(sorted, key=lambda x: x['date'], reverse=True),
         ])
 
-    def promoted_post():
-        for post in memoized.public_posts():
-            if post['is_promoted']:
-                return post
-
     def feed_entries():
         # get entries from YAML
         path = join(settings.CONTENT_DIR, 'feed.yaml')
@@ -277,11 +272,6 @@ class memoized(metaclass=MetaMemoize):
         # get post data
         post = memoized.post_data(filename)
         ctx = memoized.base_context() | post
-
-        # add promoted post
-        promoted_post = memoized.promoted_post()
-        if promoted_post and promoted_post != post:
-            ctx['promoted_post'] = promoted_post
 
         # inject youtube function
         ctx['youtube_iframe'] = make_youtube_iframe
@@ -469,12 +459,6 @@ class static_url(object):
 
 
 @dataclass
-class PromoText:
-    prefix: str
-    suffix: str
-
-
-@dataclass
 class Header:
     date: str
     description: Optional[str] = None
@@ -482,7 +466,6 @@ class Header:
     collection_ids: list[str] = field(default_factory=list)
     index_config: dict[str, Any] = field(default_factory=dict)
     music: dict[str, Any] = field(default_factory=dict)
-    promo_text: Optional[PromoText] = None
     is_selected: bool = False
     is_jam: bool = False
 
@@ -490,7 +473,6 @@ class Header:
         return asdict(self) | {
             'is_music_release_or_jam': self.music.get('section') == 'releases' or self.is_jam,
             'uses_black_css': self.theme == 'black',
-            'is_promoted': bool(self.promo_text),
         }
 
     @staticmethod
@@ -513,9 +495,6 @@ class Header:
         d['is_jam'] = 'jam' in collection_ids
         d['collection_ids'] = list(map(change_ids, collection_ids))
         d['index_config'] = d.pop('index', {})
-
-        if s := d.pop('promo_text', None):
-            d['promo_text'] = PromoText(*Markup(s.replace('~', '&nbsp;')).split('{link}'))
 
         return Header(**d)
 
