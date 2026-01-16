@@ -6,6 +6,13 @@ nav {
     padding-bottom: 7px;
     margin-bottom: 25px;
     border-bottom: 1px solid #ccc;
+
+    opacity: 33%;
+    transition: opacity 0.5s ease-out;
+}
+
+nav:hover {
+    opacity: 100%;
 }
 
 nav .logo {
