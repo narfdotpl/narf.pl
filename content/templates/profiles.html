@@ -6,11 +6,13 @@
 
 {% block body %}
     <div id="main-wrapper" class="narrow legible">
-        <header class="narrow">
-            <h1 class="centered">Profiles</h1>
+        {% include "navigation.html" %}
+
+        <header class="centered">
+            <h1>Profiles</h1>
         </header>
 
-        <section class="narrow">
+        <section>
             <ul>
                 {% for profile in profiles.visible %}
                     <li>{{ profile.tag }}</li>

@@ -14,6 +14,10 @@
         {% endif %}
 
         <link rel="stylesheet" href="asset:index/css/base.css"/>
+        {% if uses_black_css %}
+            <link rel="stylesheet" href="asset:index/css/base-black.css"/>
+        {% endif %}
+
         <link rel="stylesheet" href="asset:index/icons/css/all.min.css"/>
 
         <link href="/feed" rel="alternate" title="Feed (Atom)" type="application/atom+xml"/>

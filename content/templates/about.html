@@ -2,8 +2,6 @@
 
 
 {% block extra_head %}
-    <link rel="stylesheet" href="asset:index/css/index.css"/>
-
     <meta property="og:url" content="https://narf.pl/about"/>
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="Maciej Konieczny aka narf"/>
@@ -12,7 +10,18 @@
 
     <style>
         header h1 {
+            font-weight: normal;
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-top: 100px;  /* 100 = 4 * 25 */
             margin-bottom: 0;
+        }
+
+        @media (max-width: 532px) {
+            header h1 {
+                font-size: 1.19em;
+                margin: 50px 10px;
+            }
         }
     </style>
 {% endblock %}
@@ -20,6 +29,8 @@
 
 {% block body %}
     <div id="main-wrapper" class="legible">
+        {% include "navigation.html" %}
+
         <header>
             <h1 align="left">
                 I am <b>Maciej Konieczny</b> aka~<b>narf</b> —<br/>

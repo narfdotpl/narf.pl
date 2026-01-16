@@ -37,6 +37,8 @@
 {% block body %}
     {# https://www.readability.com/developers/guidelines #}
     <article id="main-wrapper" class="hentry">
+        {% include "navigation.html" %}
+
         <header class="centered narrow legible">
             <h1 class="entry-title balance-text">{{ title|typo }}</h1>
 

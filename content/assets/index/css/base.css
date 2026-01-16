@@ -1,3 +1,31 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 7px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #ccc;
+}
+
+nav .logo {
+    color: #333;
+    font-weight: bold;
+}
+
+nav .menu {
+    display: flex;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav .menu li:not(:last-child)::after {
+    content: "·";
+    padding: 0 7px;
+}
+
 video {
     display: block;
     margin-left: auto;
