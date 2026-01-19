@@ -1,3 +1,16 @@
+#main-wrapper {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -18,7 +31,7 @@ nav .border {
     height: 1px;
     background-color: #ccc;
     transform: translateX(-50%);
-    animation: expandBorder 0.666s ease-out forwards;
+    animation: expandBorder 0.6s ease-out forwards;
 }
 
 nav:hover {
