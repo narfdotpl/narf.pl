@@ -5,10 +5,33 @@ nav {
     padding-top: 40px;
     padding-bottom: 7px;
     margin-bottom: 25px;
-    border-bottom: 1px solid #ccc;
+    position: relative;
 
     opacity: 33%;
     transition: opacity 0.5s ease-out;
+}
+
+nav .border {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 1px;
+    background-color: #ccc;
+    transform: translateX(-50%);
+    animation: expandBorder 0.666s ease-out forwards;
+}
+
+nav:hover {
+    opacity: 1;
+}
+
+@keyframes expandBorder {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
 }
 
 nav:hover {
