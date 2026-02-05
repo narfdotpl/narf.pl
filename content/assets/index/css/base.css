@@ -74,6 +74,13 @@ nav .menu li:not(:last-child)::after {
     padding: 0 7px;
 }
 
+@media (max-width: 532px) {
+    nav {
+        padding-top: 12px;
+        opacity: 50%;
+    }
+}
+
 
 /* media */
 
