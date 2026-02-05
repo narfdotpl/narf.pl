@@ -1,3 +1,5 @@
+/* main */
+
 #main-wrapper {
     animation: fadeIn 0.3s ease-out forwards;
 }
@@ -10,6 +12,9 @@
         opacity: 1;
     }
 }
+
+
+/* nav */
 
 nav {
     display: flex;
@@ -69,6 +74,9 @@ nav .menu li:not(:last-child)::after {
     padding: 0 7px;
 }
 
+
+/* media */
+
 video {
     display: block;
     margin-left: auto;
@@ -106,6 +114,9 @@ img, video {
 .balance-text {
     text-wrap: balanced;
 }
+
+
+/* icons */
 
 .icons {
     letter-spacing: 0.5ex;
