@@ -5,20 +5,35 @@
     margin-bottom: 0;
 }
 
-header h1 {
-    font-weight: normal;
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-top: 150px;  /* 150 = 6 * 25 */
+header {
+    text-align: left;
+    margin-top: 150px;
     margin-bottom: 150px;
 }
 
+header h1 {
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+}
+
+header h1, header p {
+    font-size: 28px;
+    line-height: calc(40 / 28 * 1em);
+    margin-top: 1lh;
+    margin-bottom: 1lh;
+}
+
 @media (max-width: 532px) {
-    header h1 {
+    header h1, header p {
         font-size: 1.19em;
-        margin: 50px 10px;
+    }
+
+    header {
+        margin: 0;
     }
 }
+
 
 footer {
     margin-top: 52px;

@@ -17,18 +17,18 @@
     {% if debug %}<!-- debug={{ debug }} -->{% endif %}
     <div id="main-wrapper" class="centered legible">
         <header>
-            <h1 align="left">
+            <h1>
                 I am <b>Maciej Konieczny</b> aka~<b>narf</b> —<br/>
                 a code artist living in Warsaw.
-                <br/>
-                <br/>
+            </h1>
+            <p>
                 <i>Metal in spirit, electronic in nature.</i>
-                <br/>
-                <br/>
+            </p>
+            <p>
                 I create software, <a href="/music">music</a>, and graphics.<br class="hidden-landscape"/>
                 See my <a href="/about">/about</a> page to learn more about~me.
-                <br/>
-                <br/>
+            </p>
+            <p>
                 This is my <a href="/posts">blog</a>.
                 <span id="web2-trigger" class="hidden">I am also <a href="#">elsewhere</a> on the web.</span>
                 <span id="web2">
@@ -40,7 +40,7 @@
                     <br/><br/>
                 </span>
                 If~you want to get in touch, <a href="mailto:{{ email }}">email</a>~is~best.
-            </h1>
+            </p>
         </header>
 
         {% for entry in entries %}
