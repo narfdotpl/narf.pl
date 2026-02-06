@@ -35,6 +35,25 @@ header h1, header p {
 }
 
 
+/* make text color gradient */
+header p {
+    /* scale color linearly with zero-based index: 0 is max, 2 is min */
+    --base-rgb: 153;
+    --i0: 0;
+    --rgb: calc(var(--base-rgb) * (1 + (0.5 - 1) * (var(--i0) / 2)));
+    color: rgb(var(--rgb) var(--rgb) var(--rgb));
+}
+
+header p a {
+    --base-rgb: 221;
+    --rgb: calc(var(--base-rgb) * (1 + (0.5 - 1) * (var(--i0) / 2)));
+    color: rgb(var(--rgb) var(--rgb) var(--rgb));
+}
+
+header p:nth-of-type(2) { --i0: 1; }
+header p:nth-of-type(3) { --i0: 2; }
+
+
 footer {
     margin-top: 52px;
     margin-bottom: 78px;
