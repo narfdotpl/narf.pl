@@ -67,6 +67,7 @@ class memoized(metaclass=MetaMemoize):
             'email': email,
             'email_tag': Markup(f'<a href="mailto:{email}">{email}</a>'),
             'profiles': profiles,
+            'uses_black_css': True,
         }
 
     def collections():
@@ -247,9 +248,7 @@ class memoized(metaclass=MetaMemoize):
         with open(join(settings.CONTENT_DIR, 'about.md')) as f:
             markdown = f.read()
 
-        ctx = memoized.base_context() | {
-            'uses_black_css': True,
-        }
+        ctx = memoized.base_context()
 
         # render and process markdown
         ctx['about'] = antimap(markdown, [
@@ -472,7 +471,7 @@ class Header:
     def to_dict(self) -> dict[str, Any]:
         return asdict(self) | {
             'is_music_release_or_jam': self.music.get('section') == 'releases' or self.is_jam,
-            'uses_black_css': self.theme == 'black',
+            'uses_black_css': self.theme == 'black' or (self.theme == 'default' and self.date >= '2026-02-01'),
         }
 
     @staticmethod
