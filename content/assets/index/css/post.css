@@ -43,16 +43,23 @@ ul.gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
+    --gap: 2px;
+    gap: var(--gap);
 }
 
 ul.gallery li {
-    max-width: 338px;
-    margin: 0 2px 4px;
+    --columns: 3;
+    width: calc((100% - var(--gap) * (var(--columns) - 1)) / var(--columns));
+    margin: 0;
 }
 
-@media (max-width: 679px) {
+@media (max-width: 640px) {
     ul.gallery li {
-        max-width: 375px;
-        margin: 0 0 2px;
+        --columns: 2;
     }
+}
+
+ul.gallery li img {
+    width: 100%;
 }

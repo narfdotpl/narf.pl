@@ -27,14 +27,10 @@ emerging from a large number of simple elements, organic shapes
 contrasted against unnatural precision.
 
 {% for i in range(1, 8) %}
-<figure class="full-width">
-    <img data='{"resize": false}' src="triptychs/{{ i }}.png"/>
-</figure>
+![wide](triptychs/{{ i }}.png)
 
 {% if i == 5 %}
-<figure class="full-width">
-    <img data='{"resize": false}' src="big.png"/>
-</figure>
+![wide](big.png)
 {% endif %}
 
 {% if i in [1, 2, 7] %}

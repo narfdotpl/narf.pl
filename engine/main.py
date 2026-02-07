@@ -784,6 +784,10 @@ def stupify(s):
     return stupify_regex.sub('', s.lower())
 
 
+def is_tall_image(img):
+    return img.attrs.get('alt') == 'tall'
+
+
 def is_wide_image(img):
     return img.attrs.get('alt') == 'wide'
 
@@ -802,7 +806,7 @@ def thumbnail_big_images(soup):
         if url.startswith(prefix):
             path = url[len(prefix):]
 
-            if is_wide_image(img):
+            if is_wide_image(img) or is_tall_image(img):
                 kwargs = {'resize': False}
                 img.attrs.pop('alt')
             else:
@@ -823,8 +827,6 @@ def transform_image_lists_to_galleries(soup):
 
         if is_gallery:
             ul['class'] = 'gallery'
-            for img in ul.find_all('img'):
-                img['data'] = '{"max_width": %d}' % (375 * 2)
 
 
 @soup
@@ -861,9 +863,11 @@ def wrap_images_in_figures_instead_of_paragraphs(soup):
         if parent and parent.name == 'p':
             parent.name = 'figure'
 
-            # make wide
+            # make wide/tall
             if is_wide_image(img):
-                parent['class'] = 'full-ish-width'
+                parent['class'] = 'wide'
+            elif is_tall_image(img):
+                parent['class'] = 'tall'
 
 
 @soup

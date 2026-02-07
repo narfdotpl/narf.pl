@@ -58,7 +58,7 @@ in Team League and Quick Match from November, December, and January.  (I
 don't do Hero League because I play almost exclusively with friends.)
 Here are normalized histograms of my results:
 
-<img data='{"max_height": 1792}' class="max-height-initial" src="graphs.png"/>
+![tall](graphs.png)
 
 Well. I didn't expect to see *this*.  Quick Match is similar between
 patches.  The median Team League game is actually 1.5 minute *shorter*.

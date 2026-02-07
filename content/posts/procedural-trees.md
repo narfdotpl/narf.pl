@@ -137,7 +137,7 @@ the tip, etc. I love that the range of results is wide even though they
 all use the same settings. Some trees even look like they were chopped
 down or broken by wind:
 
-<img data='{"max_height": 3108}' class="max-height-initial" src="big-trees/mosaic.png"/>
+![tall](big-trees/mosaic.png)
 
 
 Different branching rules

@@ -92,30 +92,28 @@ video {
     height: auto;
 }
 
-img, video {
-    max-height: 100%;
+figure, ul.gallery {
+    margin: 0 0 28px;
+
+    /* take full width up to 1024px */
+    max-width: min(100vw, 1024px);
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
-figure {
-    margin: 0 -192px 28px;
+figure.wide {
+    /* take full width up to 1024px, then 90% */
+    max-width: max(min(100vw, 1024px), 90vw);
 }
 
 img, video {
     max-height: 780px;
 }
 
-.full-width img, .full-width video {
+figure.wide img, figure.wide video,
+figure.tall img, figure.tall video {
     max-height: initial;
-}
-
-.max-height-initial {
-    max-height: initial;
-}
-
-@media (max-width: 1024px) {
-    figure {
-        margin: 0 -12px 28px;
-    }
 }
 
 .balance-text {

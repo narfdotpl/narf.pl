@@ -17,7 +17,7 @@ of tweaking it produces beautiful forms, some of which look
 three-dimensional:
 
 
-<img data='{"max_height": 4600}' class="max-height-initial" src="catastrophe.png"/>
+![tall](catastrophe.png)
 
 *The results of applying "divide edges" and "zigzag" procedures multiple
 times.  Most rows show the same algorithm applied to a triangle, square,
