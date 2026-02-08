@@ -6,31 +6,63 @@
 }
 
 header {
+    /* 90%H on wide screens, 80%H on tall screens */
+    min-height: min(90vh, max(80vh, 80vw));
+    margin: 0;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: left;
-    margin-top: 150px;
-    margin-bottom: 150px;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: min(1024px, 100vw);
+    height: 100%;
+
+    background-image: url('/static/assets/autoportrait-2025/index-header.jpg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+
+    z-index: -1;
 }
 
 header h1 {
     font-weight: normal;
     padding: 0;
     margin: 0;
+    margin-top: 1lh;
 }
 
 header h1, header p {
     font-size: 28px;
     line-height: calc(40 / 28 * 1em);
-    margin-top: 1lh;
     margin-bottom: 1lh;
+
+    /* correct for the `span.bg` padding */
+    --bg-padding-x: 0.4em;
+    margin-left: calc(-1 * var(--bg-padding-x));
+}
+
+header span.bg {
+    background-color: black;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    padding: 0.2em var(--bg-padding-x);
 }
 
 @media (max-width: 532px) {
     header h1, header p {
         font-size: 1.19em;
-    }
-
-    header {
-        margin: 0;
     }
 }
 

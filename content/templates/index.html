@@ -18,28 +18,36 @@
     <div id="main-wrapper" class="centered legible">
         <header>
             <h1>
-                I am <b>Maciej Konieczny</b> aka~<b>narf</b> —<br/>
-                a code artist living in Warsaw.
+                <span class="bg">
+                    I am <b>Maciej Konieczny</b> aka~<b>narf</b> —<br/>
+                    a code artist living in Warsaw.
+                </span>
             </h1>
             <p>
-                <i>Metal in spirit, electronic in nature.</i>
-            </p>
-            <p>
-                I create software, <a href="/music">music</a>, and graphics.<br class="hidden-landscape"/>
-                See my <a href="/about">/about</a> page to learn more about~me.
-            </p>
-            <p>
-                This is my <a href="/posts">blog</a>.
-                <span id="web2-trigger" class="hidden">I am also <a href="#">elsewhere</a> on the web.</span>
-                <span id="web2">
-                    I also have a~<a href="https://links.narf.pl/">link blog</a> and I~am
-                    {% for p in profiles.visible %}
-                        {% if loop.last %}and{% endif %}
-                        {% if loop.first %}on~{% endif %}{{ p.tag }}{% if loop.last %}~too.{% else %},{% endif %}
-                    {% endfor %}
-                    <br/><br/>
+                <span class="bg">
+                    <i>Metal in spirit, electronic in nature.</i>
                 </span>
-                If~you want to get in touch, <a href="mailto:{{ email }}">email</a>~is~best.
+            </p>
+            <p>
+                <span class="bg">
+                    I create software, <a href="/music">music</a>, and graphics.<br class="hidden-landscape"/>
+                    See my <a href="/about">/about</a> page to learn more about~me.
+                </span>
+            </p>
+            <p>
+                <span class="bg">
+                    This is my <a href="/posts">blog</a>.
+                    <span id="web2-trigger" class="hidden">I am also <a href="#">elsewhere</a> on the web.</span>
+                    <span id="web2">
+                        I also have a~<a href="https://links.narf.pl/">link blog</a> and I~am
+                        {% for p in profiles.visible %}
+                            {% if loop.last %}and{% endif %}
+                            {% if loop.first %}on~{% endif %}{{ p.tag }}{% if loop.last %}~too.{% else %},{% endif %}
+                        {% endfor %}
+                        <br/><br/>
+                    </span>
+                    If~you want to get in touch, <a href="mailto:{{ email }}">email</a>~is~best.
+                </span>
             </p>
         </header>
 
