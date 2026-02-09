@@ -57,7 +57,7 @@ header span.bg {
     background-color: black;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
-    padding: 0.2em var(--bg-padding-x);
+    padding: 0.1em var(--bg-padding-x);
 }
 
 @media (max-width: 532px) {
