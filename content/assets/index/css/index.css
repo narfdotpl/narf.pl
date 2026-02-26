@@ -34,6 +34,7 @@ header::before {
     background-size: auto 100%;
 
     z-index: -1;
+    animation: fadeIn 3s ease-out forwards;
 }
 
 header h1 {
