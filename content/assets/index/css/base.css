@@ -133,3 +133,27 @@ figure.tall img, figure.tall video {
 
 .footer.icons a       { color: #ccc; }
 .footer.icons a:hover { color: #444; }
+
+
+/* posts: light badge */
+
+span.light {
+    display: inline-block;
+    background-color: #202020;
+    color: #000;
+    border-radius: 4px;
+    margin-right: 10px;
+    padding: 5px 10px;
+    font-size: 0.6em;
+    line-height: 1;
+    vertical-align: middle;
+    transition: background-color 0.25s ease-out;
+}
+
+span.light:hover, a:hover span.light {
+    background-color: #383838;
+}
+
+span.light::before {
+    content: "LIGHT";
+}

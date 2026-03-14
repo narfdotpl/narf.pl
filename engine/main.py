@@ -119,7 +119,7 @@ class memoized(metaclass=MetaMemoize):
             'slug': slug,
             'path': path,
             'url': 'https://narf.pl%s' % path,
-            'is_short': any(title.startswith(prefix) for prefix in ['Genuary ', 'Jam: ']),
+            'is_light': any(title.startswith(prefix) for prefix in ['Genuary ', 'Jam: ']),
             **header,
         }
 
