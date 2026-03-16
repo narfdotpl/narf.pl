@@ -46,7 +46,6 @@ to feel at home:
     - open a video call, click on the camera button in the menu bar, and disable reactions
 1. [0xProto](https://github.com/0xType/0xProto)
 1. [MacVim](https://macvim-dev.github.io/macvim/)
-1. [iTerm](https://iterm2.com/)
 1. copy files from another Mac:
     - `~/.zsh_history`
     - Quake 3 sounds (used in git aliases)
@@ -54,11 +53,7 @@ to feel at home:
     - go through "configure SSO" for this key on GitHub
 1. [Homebrew](https://brew.sh)
 1. [dotfiles](https://github.com/narfdotpl/dotfiles)
-    - `m + : ln -s ~/dotfiles/home .`
-    - configure [iTerm](iterm.png)
-    - close iTerm
-    - open Terminal (not iTerm)
-    - `h : g rh`
+    - `c : m + : ln -s ~/dotfiles/home .`
 1. [Hammerspoon](https://www.hammerspoon.org)
 1. [Visual Studio Code](https://code.visualstudio.com)
     - ⇧⌘P sync settings using GitHub
