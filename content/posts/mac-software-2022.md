@@ -2,23 +2,19 @@ date: 2022-06-09
 collections: [setup]
 description: What I install, and in what order, to feel at home.
 
-Mac software: 2022+
-===================
+Mac software: 2022–2026
+=======================
 
-*I [update][] this post when I set up new machines.*
+I keep this post [updated][] and I use it when I set up new Macs.<br/> Here's what I do and install, and in what order, to feel at home:
 
-  [update]: https://github.com/narfdotpl/narf.pl/commits/master/content/posts/mac-software-2022.md
-
-In May I've set up three different Macs (don't ask) starting from a clean
-latest macOS installation. Here's what I do and install, and in what order,
-to feel at home:
+  [updated]: https://github.com/narfdotpl/narf.pl/commits/master/content/posts/mac-software-2022.md
 
 1. update the OS
 1. if this is a laptop, enable "tap to click" in trackpad settings
 1. if this is a laptop, enable Touch ID
 1. if this is a personal Mac, sign in with Apple ID
-1. [Things](https://culturedcode.com/things/)
-1. [SteerMouse](https://plentycom.jp/en/steermouse/download.php)
+1. install [Things](https://culturedcode.com/things/)
+1. install [SteerMouse](https://plentycom.jp/en/steermouse/download.php)
     - configure [buttons](steermouse/buttons.png)
     - configure [sensitivity](steermouse/sensitivity.png)
     - enter license
@@ -44,24 +40,21 @@ to feel at home:
         - [advanced](safari/advanced.png)
         - search -- DuckDuckGo
     - open a video call, click on the camera button in the menu bar, and disable reactions
-1. [0xProto](https://github.com/0xType/0xProto)
-1. [MacVim](https://macvim-dev.github.io/macvim/)
+1. install [MacVim](https://macvim-dev.github.io/macvim/) (I'd like to replace it with Zed)
 1. copy files from another Mac:
     - `~/.zsh_history`
     - Quake 3 sounds (used in git aliases)
 1. generate a [new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
     - go through "configure SSO" for this key on GitHub
-1. [Homebrew](https://brew.sh)
-1. [dotfiles](https://github.com/narfdotpl/dotfiles)
+1. install [Homebrew](https://brew.sh)
+1. install [dotfiles](https://github.com/narfdotpl/dotfiles)
     - `c : m + : ln -s ~/dotfiles/home .`
-1. [Hammerspoon](https://www.hammerspoon.org)
-1. [Visual Studio Code](https://code.visualstudio.com)
+    - the installer will use Homebrew to install Ghostty, Hammerspoon, Zed, 0xProtto, etc.
+1. [Visual Studio Code](https://code.visualstudio.com) (I'd like to replace it with Zed)
     - ⇧⌘P sync settings using GitHub
-1. [Cursor](https://www.cursor.com)
 1. [CleanShot X](https://cleanshot.com)
 1. [Bun](https://bun.sh)
-1. [VLC](https://www.videolan.org/vlc/)
-1. Xcode
+1. Xcode (I haven't used it in some time)
     - [general](xcode/general.png)
     - [text editing](xcode/text-editing.png)
     - install [One Dark theme](https://github.com/bojan/xcode-one-dark)
