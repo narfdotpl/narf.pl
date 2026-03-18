@@ -78,7 +78,7 @@ header p {
 }
 
 header p a {
-    --base-rgb: 221;
+    --base-rgb: 240;
     --rgb: calc(var(--base-rgb) * (1 + (0.5 - 1) * (var(--i0) / 2)));
     color: rgb(var(--rgb) var(--rgb) var(--rgb));
 }
