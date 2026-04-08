@@ -1,16 +1,21 @@
 ![](asset:autoportrait-2025/side-front.jpg)
 
 I create software, [music][], and graphics.
+I am interested in the intersection of the synthetic and the organic.
 
-I'm an experienced engineer and I like making [cool stuff](/). If my taste resonates with you, let's build something great together! Email me at {{ email_tag }}.
+I'm a Senior Software Engineer at [Ro][], a New York-based health tech startup focused on goal-oriented healthcare.
+
+You can email me at {{ email_tag }}.
+
+---
 
 *TODO: add an awesome reel of [personal projects](/) here*
 
-I enjoy working on multidisciplinary projects that a require a holistic approach. During two decades of building software, I have worked on web backends, web frontends, native iPhone and iPad apps, an iPhone and iPad [game][], a four-legged spider [robot][], [2D][] and [3D][] procedural animations, procedural [music][aurora], GPU-based [simulations][], interactive [experiments][], data visualization that was on the front page of [Reddit][], as well as countless internal and open-source tools, libraries, microframeworks, and plugins.
+I enjoy working on multidisciplinary projects that a require a holistic approach. During two decades of building software, I have worked on web backends, web frontends, native iPhone and iPad apps, an iPhone and iPad [game][], a four-legged spider [robot][], [2D][] and [3D][] procedural animations, procedural [music][aurora], GPU-based [simulations][], interactive [experiments][], data visualization that was on the front page of [Reddit][], as well as  internal and open-source tools, libraries, microframeworks, and plugins.
 
-For the last seven years, I've been working remotely with [Ro][], a health tech startup focused on goal-oriented healthcare, headquartered in New York. I've joined Ro as the fourth backend engineer. Since then, I've been a part of many teams and I have witnessed the company grow 15x: from dozens to hundreds of people and a $7B valuation. Over the years, I have worked on many aspects of our systems, touching applications for patients, doctors, and pharmacists. These days, I help create tools and processes to enable tech teams.
+I'm a Senior Software Engineer. For the last eight years, I've been working remotely with [Ro][], a New York-based health tech startup focused on goal-oriented healthcare. I've joined Ro as the fourth backend engineer. Since then, I've been a part of many teams and I have witnessed the company grow 15x: from dozens to hundreds of people and a $7B valuation. Over the years, I have worked on many aspects of our systems, touching applications for patients, doctors, and pharmacists. These days, I help create tools and processes to enable tech teams.
 
-Before you go, check out my [personal projects](/) and feel free to browse the rest of my [blog][]. When it comes to other online presence, I also have a~[link blog][] and I am on{% for p in profiles.visible %}{% if loop.last %} and{% endif %} {{ p.tag }}{% if loop.last %} too.{% else %},{% endif %}{% endfor %} My email is {{ email_tag }}.
+Before you go, take a look at my [personal projects](/) and feel free to browse the rest of my [blog][]. When it comes to other online presence, I also have a~[link blog][] and I am on{% for p in profiles.visible %}{% if loop.last %} and{% endif %} {{ p.tag }}{% if loop.last %} too.{% else %},{% endif %}{% endfor %} My email is {{ email_tag }}.
 
 Cheers!
 
