@@ -1,5 +1,5 @@
 date: 2020-11-21
-collections: [sound, procedural]
+collections: [procedural, music]
 is_selected: true
 theme: black
 

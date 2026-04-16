@@ -1,5 +1,5 @@
 date: 2020-01-25
-collections: [procedural, sound]
+collections: [procedural, music]
 theme: black
 index:
   subtitle: animation

@@ -109,7 +109,7 @@ class memoized(metaclass=MetaMemoize):
         # get data from sections
         slug = filename[:-len('.md')]
         title = title_prefix + sections[1].rstrip('=').rstrip('\n')
-        path = ('/music/' if header['is_music_release_or_jam'] else '/posts/') + slug
+        path = ('/music/' if header['is_mainly_music'] else '/posts/') + slug
 
         return {
             'is_draft': is_draft,
@@ -348,44 +348,54 @@ class memoized(metaclass=MetaMemoize):
         return resolve_asset_urls(html)
 
     def rendered_music():
-        latest_entry = None
-        section_titles = ['Releases', 'Soundtracks']
-        sections = [{'title': title, 'entries': []} for title in section_titles]
-        for section in sections:
-            for entry in memoized.index_entries():
-                music = (entry['post'] or {}).get('music')
-                if not music:
-                    continue
-
-                entry = entry.copy()
-                entry['subtitle'] = music.get('subtitle', entry['subtitle'])
-
-                if latest_entry is None:
-                    latest_entry = entry
-
-                if music['section'] == section['title'].lower():
-                    section['entries'].append(entry)
-
-        used_posts = []
-        for section in sections:
-            for entry in section['entries']:
-                used_posts.append(entry['post'])
-
-        all_posts = memoized.public_posts()
-        jams = [p for p in all_posts if p['is_jam']]
-        used_posts += jams
-
-        other_music_posts = [
-            p for p in all_posts
-            if 'music and sound' in p['collection_ids']
-            and p not in used_posts
+        releases = MusicSection('Releases', has_images=True)
+        soundtracks = MusicSection('Soundtracks', has_images=True)
+        jams = MusicSection('Jams')
+        other = MusicSection('Other music and sound posts')
+        sections = [
+            releases,
+            soundtracks,
+            jams,
+            other,
         ]
+
+        index_entries_by_url = {e['url']: e for e in memoized.index_entries()}
+
+        def index_post_to_entry(post):
+            entry = index_entries_by_url.get(post['path'])
+            if not entry:
+                return None
+
+            # override subtitle
+            entry = entry.copy()
+            entry['subtitle'] = post.get('music', {}).get('subtitle', entry['subtitle'])
+
+            return entry
+
+        def regular_post_to_entry(post):
+            return {
+                'title': post['title'],
+                'url': post['path'],
+            }
+
+        def post_to_entry(post):
+            return index_post_to_entry(post) or regular_post_to_entry(post)
+
+        for post in memoized.public_posts():
+            if 'music' in post.get('collection_ids', []):
+                section_id = post.get('music', {}).get('section')
+                entry = post_to_entry(post)
+
+                for section in sections:
+                    if section.id == section_id:
+                        break
+                else:
+                    section = other
+                section.entries.append(entry)
 
         html = render_template('music.html',
             sections=sections,
-            jams=jams,
-            other_posts=other_music_posts,
-            latest_entry=latest_entry,
+            latest_entry=releases.entries[0],
         )
 
         return resolve_asset_urls(html)
@@ -466,11 +476,10 @@ class Header:
     music: dict[str, Any] = field(default_factory=dict)
     is_selected: bool = False
     is_light: bool = False
-    is_jam: bool = False
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self) | {
-            'is_music_release_or_jam': self.music.get('section') == 'releases' or self.is_jam,
+            'is_mainly_music': len(self.collection_ids) > 0 and self.collection_ids[0] == 'music',
             'uses_black_css': self.theme == 'black' or (self.theme == 'default' and self.date >= '2026-02-01'),
         }
 
@@ -484,15 +493,7 @@ class Header:
         if isinstance(d['date'], datetime.date):
             d['date'] = d['date'].isoformat()
 
-        def change_ids(id):
-            if id in ['music', 'sound', 'jam']:
-                return 'music and sound'
-            else:
-                return id
-
-        collection_ids = d.pop('collections', [])
-        d['is_jam'] = 'jam' in collection_ids
-        d['collection_ids'] = list(map(change_ids, collection_ids))
+        d['collection_ids'] = d.pop('collections', [])
         d['index_config'] = d.pop('index', {})
 
         return Header(**d)
@@ -510,6 +511,20 @@ class PostCollection:
 
     def __repr__(self):
         return self.name
+
+
+@dataclass
+class MusicSection:
+    id: str
+    title: str
+    has_images: bool
+    entries: list
+
+    def __init__(self, title: str, *, has_images: bool = False):
+        self.id = title.lower()
+        self.title = title
+        self.has_images = has_images
+        self.entries = []
 
 
 def antimap(x, functions):

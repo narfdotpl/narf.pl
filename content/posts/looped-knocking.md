@@ -1,5 +1,7 @@
 date: 2017-04-24
-collections: [jam]
+collections: [music]
+music:
+  section: jams
 
 Looped knocking
 ===============

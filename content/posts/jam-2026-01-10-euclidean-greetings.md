@@ -1,6 +1,8 @@
 date: 2026-01-10
-collections: [jam]
+collections: [music]
 is_light: true
+music:
+  section: jams
 
 Jam: Euclidean greetings
 ========================

@@ -1,7 +1,9 @@
 date: 2025-07-27
-collections: [jam]
+collections: [music]
 theme: black
 is_light: true
+music:
+  section: jams
 
 Jam: guitar pickup
 ==================

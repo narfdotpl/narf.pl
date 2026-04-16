@@ -43,40 +43,33 @@
         </section>
 
         {% for section in sections %}
-            <section>
-                <h2 class="narrow">{{ section.title }}</h2>
-
-                {% for entry in section.entries %}
-                    <article>
-                        <a href="{{ entry.url }}">
-                            <figure>
-                                <img src="{{ entry.image }}">
-
-                                <div class="overlay">
-                                    <div class="centered content">
-                                        <h1 class="balance-text">{{ entry.title }}</h1>
-                                        <p class="subtitle">{{ entry.subtitle }}</p>
-                                    </div>
-                                </div>
-                            </figure>
-                        </a>
-                    </article>
-                {% endfor %}
-            </section>
-        {% endfor %}
-
-        {% for (title, posts) in [
-            ('Jams', jams),
-            ('Other music and sound posts', other_posts),
-        ]: %}
             <section class="narrow">
-                <h2>{{ title }}</h2>
+                <h2>{{ section.title }}</h2>
 
-                <ul>
-                    {% for post in posts %}
-                        <li><a class="balance-text" href="{{ post.path }}">{{ post.title|typo }}</a></li>
+                {% if section.has_images %}
+                    {% for entry in section.entries %}
+                        <article>
+                            <a href="{{ entry.url }}">
+                                <figure>
+                                    <img src="{{ entry.image }}">
+
+                                    <div class="overlay">
+                                        <div class="centered content">
+                                            <h1 class="balance-text">{{ entry.title }}</h1>
+                                            <p class="subtitle">{{ entry.subtitle }}</p>
+                                        </div>
+                                    </div>
+                                </figure>
+                            </a>
+                        </article>
                     {% endfor %}
-                </ul>
+                {% else %}
+                    <ul>
+                        {% for entry in section.entries %}
+                            <li><a class="balance-text" href="{{ entry.url }}">{{ entry.title|typo }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
             </section>
         {% endfor %}
 

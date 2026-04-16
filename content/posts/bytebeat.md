@@ -1,6 +1,8 @@
 date: 2016-05-03
-collections: [jam, procedural]
+collections: [music, procedural]
 is_selected: true
+music:
+  section: jams
 
 Bytebeat: live-coding sound waves
 =================================
