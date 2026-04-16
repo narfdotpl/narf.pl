@@ -350,13 +350,15 @@ class memoized(metaclass=MetaMemoize):
     def rendered_music():
         releases = MusicSection('Releases', has_images=True)
         soundtracks = MusicSection('Soundtracks', has_images=True)
+        experiments = MusicSection('Experiments')
+        other = MusicSection('Posts')
         jams = MusicSection('Jams')
-        other = MusicSection('Other music and sound posts')
         sections = [
             releases,
             soundtracks,
-            jams,
+            experiments,
             other,
+            jams,
         ]
 
         index_entries_by_url = {e['url']: e for e in memoized.index_entries()}

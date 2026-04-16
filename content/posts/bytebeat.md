@@ -2,7 +2,7 @@ date: 2016-05-03
 collections: [music, procedural]
 is_selected: true
 music:
-  section: jams
+  section: experiments
 
 Bytebeat: live-coding sound waves
 =================================

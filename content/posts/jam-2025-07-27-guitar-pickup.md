@@ -3,10 +3,10 @@ collections: [music]
 theme: black
 is_light: true
 music:
-  section: jams
+  section: experiments
 
-Jam: guitar pickup
-==================
+Guitar pickup
+=============
 
 {{ youtube_iframe('YPk1P8FRCp8') }}
 

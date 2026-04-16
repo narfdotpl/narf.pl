@@ -3,9 +3,9 @@ collections: [music]
 theme: black
 is_light: true
 music:
-  section: jams
+  section: experiments
 
-Jam: MIDI pendulum
-==================
+MIDI pendulum
+=============
 
 {{ youtube_iframe('dDqLsy0wHqg') }}

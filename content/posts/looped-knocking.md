@@ -1,7 +1,7 @@
 date: 2017-04-24
 collections: [music]
 music:
-  section: jams
+  section: experiments
 
 Looped knocking
 ===============
