@@ -1,6 +1,7 @@
 date: 2025-01-22
 description: Based on the "gradients only" prompt.
 collections: [pen plotter, procedural]
+is_light: true
 
 Genuary 22: gradients
 =====================

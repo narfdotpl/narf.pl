@@ -1,6 +1,7 @@
 date: 2025-01-25
 description: Based on the prompt "one line that may or may not intersect itself".
 collections: [pen plotter, procedural]
+is_light: true
 
 Genuary 25: one line
 ====================

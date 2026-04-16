@@ -1,6 +1,7 @@
 date: 2025-01-13
 description: Based on the "triangles and nothing else" prompt.
 collections: [pen plotter, procedural]
+is_light: true
 
 Genuary 13: triangles
 =====================

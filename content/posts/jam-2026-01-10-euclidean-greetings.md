@@ -1,5 +1,6 @@
 date: 2026-01-10
 collections: [jam]
+is_light: true
 
 Jam: Euclidean greetings
 ========================

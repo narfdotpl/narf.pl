@@ -119,7 +119,6 @@ class memoized(metaclass=MetaMemoize):
             'slug': slug,
             'path': path,
             'url': 'https://narf.pl%s' % path,
-            'is_light': any(title.startswith(prefix) for prefix in ['Genuary ', 'Jam: ']),
             **header,
         }
 
@@ -466,6 +465,7 @@ class Header:
     index_config: dict[str, Any] = field(default_factory=dict)
     music: dict[str, Any] = field(default_factory=dict)
     is_selected: bool = False
+    is_light: bool = False
     is_jam: bool = False
 
     def to_dict(self) -> dict[str, Any]:

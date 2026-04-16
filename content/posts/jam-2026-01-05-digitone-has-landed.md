@@ -1,6 +1,7 @@
 date: 2026-01-05
 collections: [jam]
 theme: black
+is_light: true
 
 Jam: Digitone has landed
 ========================

@@ -1,6 +1,7 @@
 date: 2025-01-03
 description: Based on the "layers upon layers upon layers" prompt.
 collections: [pen plotter, procedural]
+is_light: true
 
 Genuary 2: flower meadow
 ========================

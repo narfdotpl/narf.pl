@@ -1,6 +1,7 @@
 date: 2026-01-27
 collections: [jam]
 theme: black
+is_light: true
 
 Jam: PO-12 plant pot beat
 =========================

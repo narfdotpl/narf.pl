@@ -1,6 +1,7 @@
 date: 2025-01-01
 description: Based on the "vertical or horizontal lines only" prompt.
 collections: [pen plotter, procedural]
+is_light: true
 
 Genuary 1: procedural New York
 ==============================

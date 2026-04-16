@@ -1,6 +1,7 @@
 date: 2025-09-28
 collections: [jam]
 theme: black
+is_light: true
 
 Jam: Syntakt
 ============
