@@ -14,7 +14,7 @@ Reflection
 
 All code. Drawn in Warsaw, Poland, using a black Uni Pin 0.4 fineliner on white 250 g/m<sup>2</sup> A4 Bristol paper by a NextDraw A3 pen plotter. Almost two hours of plotting -- lots of dots, in fact, 36604 strokes.
 
-I want to sale my pen plotter in order to focus on making music. I decided to work on this old project idea as a kind of farewell to this big black bar of aluminium that's been sitting on my desk as well as a goodbye to Construct, my pen plotter-oriented creative coding environment that I built in TypeScript and Vue.
+I want to sale my pen plotter in order to focus on making [music](/music). I decided to work on this old project idea as a kind of farewell to this big black bar of aluminium that's been sitting on my desk as well as a goodbye to Construct, my pen plotter-oriented creative coding environment that I built in TypeScript and Vue.
 
 Construct in particular is an aspect of this journey that fills me with pride. It's a bespoke tool that provides a cohesive development experience. Text is not the best medium to convey this experience... but the list of Construct's attributes and features is pretty cool in isolation too:
 
