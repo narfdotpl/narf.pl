@@ -4,7 +4,7 @@ theme: black
 index:
   subtitle: piano track
 music:
-  section: releases
+  section: experiments
 description: I wrote a program that plays the piano.
 
 Random encounters
