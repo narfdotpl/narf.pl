@@ -1,8 +1,10 @@
 ![](asset:autoportrait-2025/side-front.jpg)
 
+(Privately)
 I create software, [music][], and graphics.
 I am interested in the intersection of the synthetic and the organic.
 
+(Professionally)
 I'm a Senior Software Engineer at [Ro][], a New York-based health tech startup focused on goal-oriented healthcare.
 
 You can email me at {{ email_tag }}.
