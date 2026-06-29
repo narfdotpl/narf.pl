@@ -3,6 +3,7 @@
 (Privately)
 I create software, [music][], and graphics.
 I am interested in the intersection of the synthetic and the organic.
+This does *not* include the so called "artificial intelligence" of the mid-2020s.
 
 (Professionally)
 I'm a Senior Software Engineer at [Ro][], a New York-based health tech startup focused on goal-oriented healthcare.
