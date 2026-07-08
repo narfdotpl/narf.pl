@@ -295,9 +295,10 @@ class memoized(metaclass=MetaMemoize):
         ctx['collections'] = [by_id[id] for id in ctx['collection_ids']]
 
         # get dedicated social image
+        slug = filename[:-len('.md')]
         social_image_url = None
         for extension in ['jpg', 'png']:
-            relative_path = '%s/social.%s' % (filename[:-len('.md')],extension)
+            relative_path = '%s/social.%s' % (slug, extension)
             if relative_path in memoized.asset_relative_paths():
                 social_image_url = static_url.for_asset(relative_path)
                 break
@@ -308,6 +309,12 @@ class memoized(metaclass=MetaMemoize):
             for img in soup.find_all('img'):
                 social_image_url = img['src']
                 break
+
+        # use index image as a fallback
+        if social_image_url is None:
+            relative_path = slug + '/index.jpg'
+            if relative_path in memoized.asset_relative_paths():
+                social_image_url = static_url.for_asset(relative_path)
 
         # make social image smaller
         if social_image_url:
