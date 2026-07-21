@@ -6,8 +6,7 @@
 }
 
 header {
-    /* 90%H on wide screens, 80%H on tall screens */
-    min-height: min(90vh, max(80vh, 80vw));
+    min-height: 100vh;
     margin: 0;
 
     position: relative;
