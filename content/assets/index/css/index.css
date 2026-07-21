@@ -31,6 +31,7 @@ header::before {
     background-repeat: no-repeat;
     background-position: right center;
     background-size: auto 100%;
+    image-rendering: pixelated;
 
     z-index: -1;
     animation: fadeIn 3s ease-out forwards;
