@@ -85,6 +85,7 @@ header p a {
 
 header p:nth-of-type(2) { --i0: 1; }
 header p:nth-of-type(3) { --i0: 2; }
+header p:nth-of-type(4) { --i0: 3; }
 
 
 footer {
