@@ -1,5 +1,10 @@
 /* main */
 
+/* address horizontal scroll issue */
+html, body {
+  overflow-x: hidden;
+}
+
 #main-wrapper {
     animation: fadeIn 0.3s ease-out forwards;
 }
