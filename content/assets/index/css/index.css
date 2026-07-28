@@ -34,7 +34,9 @@ header::before {
     image-rendering: pixelated;
 
     z-index: -1;
-    animation: fadeIn 3s ease-out forwards;
+
+    opacity: 0;
+    animation: fadeIn 3s ease-in-out forwards;
 }
 
 header h1 {
