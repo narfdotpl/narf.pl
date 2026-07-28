@@ -70,6 +70,11 @@ header span.bg {
 }
 
 
+header {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
 /* make text color gradient */
 header p {
     /* scale color linearly with zero-based index: 0 is max, 2 is min */
