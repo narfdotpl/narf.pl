@@ -136,6 +136,16 @@ def test_accept():
 
 
 @task
+def t():
+    test()
+
+
+@task
+def ta():
+    test_accept()
+
+
+@task
 def visit():
     'Visit https://narf.pl/.'
 
