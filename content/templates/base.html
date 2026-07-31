@@ -22,15 +22,13 @@
 
         <link href="/feed" rel="alternate" title="Feed (Atom)" type="application/atom+xml"/>
 
+        <script defer src="asset:index/main.js"></script>
+
         {% block extra_head %}
         {% endblock %}
     </head>
     <body>
         {% block body %}
-        {% endblock %}
-
-        <script src="asset:index/main.js"></script>
-        {% block extra_js %}
         {% endblock %}
     </body>
 </html>
