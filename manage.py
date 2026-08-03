@@ -60,6 +60,7 @@ def deploy():
 
     test()
     logs_fetch()
+    logs_show()
     system('git push --force private HEAD:master')
     visit()
     system('open https://dashboard.render.com')
@@ -83,15 +84,14 @@ def js():
 
 @task
 def logs_fetch():
-    # TODO: get logs from Render
-    pass
-    # logs start at the last deployment
-    # system(f"ssh dokku -t 'docker logs $(cat /home/dokku/narf.pl/CONTAINER.web.1)' | gzip > \"{LOGS_DIR}/$(date +%Y-%m-%d_%H%M).txt.gz\"")
+    # logs start 30 days ago (and reset on deployment?)
+    # but Render only returns the last 1000 lines, so utility of this is limited
+    system(f"render logs --resources=narf.pl --limit 1000 --start $(date -v-30d -Iseconds) | gzip > \"{LOGS_DIR}/$(date +%Y-%m-%d_%H%M).txt.gz\"")
 
 
 @task
 def logs_show():
-    system(f"cd \"{LOGS_DIR}\"; gunzip -c $(ls *.txt.gz) | ag -v 'GET /static' | goaccess -o html > index.html && open index.html")
+    system(f"cd \"{LOGS_DIR}\"; gunzip -c $(ls *.txt.gz | tail -1) | rg -v 'GET /static' | tr -s ' ' | cut -d' ' -f3- | goaccess --log-format=COMBINED -o index.html && open index.html")
 
 
 @task
