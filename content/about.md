@@ -1,7 +1,7 @@
 ![](asset:autoportrait-2025/side-front.jpg)
 
 (Privately)
-I create software, [music][], and graphics.
+I create software, [music][], graphics, and objects.
 I am interested in the intersection of the synthetic and the organic.
 This does *not* include the so-called "artificial intelligence" of the mid-2020s.
 
