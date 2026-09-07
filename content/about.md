@@ -22,6 +22,12 @@ Before you go, take a look at my [personal projects](/) and feel free to browse 
 
 Cheers!
 
+
+Colophon
+--------
+
+I build this site with Python and Markdown using a [bespoke engine][engine]. I don't use cookies or trackers of any kind, I almost never look at logs, and my hosting doesn't store them past 30 days. When I embed third-party media, like a YouTube video, that third party almost certainly tracks you.
+
   [music]: /music
   [game]: /checkers
   [robot]: /posts/its-alive
@@ -36,3 +42,4 @@ Cheers!
 
   [blog]: /posts
   [link blog]: https://links.narf.pl/
+  [engine]: https://github.com/narfdotpl/narf.pl
