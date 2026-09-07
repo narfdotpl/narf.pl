@@ -20,6 +20,26 @@ html, body {
 }
 
 
+/* justification */
+
+p {
+    hyphens: auto;
+    hanging-punctuation: allow-end last;
+}
+
+@media (min-width: 640px) {
+    p {
+        text-align: justify;
+        text-justify: inter-word;
+        word-spacing: -0.075em;
+    }
+
+    .centered {
+        word-spacing: normal;
+    }
+}
+
+
 /* nav */
 
 nav {
